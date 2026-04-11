@@ -27,8 +27,8 @@ body[data-slug="index"] {
 
   article.home {
     padding: 12vh 0 6rem;
-    font-size: 1.02rem;
-    line-height: 1.88;
+    font-size: 1rem;
+    line-height: 1.8;
   }
 
   article.home > h1:first-of-type {
@@ -38,17 +38,28 @@ body[data-slug="index"] {
     letter-spacing: -0.08em;
   }
 
+  // 第一段简介字体减小
+  article.home > p:first-of-type {
+    max-width: 680px;
+    color: var(--home-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
   article.home h2 {
-    margin-top: 4.5rem;
+    margin-top: 3.5rem;
     padding-top: 1.6rem;
     border-top: 1px solid var(--lightgray);
-    font-size: clamp(1.45rem, 4vw, 2.15rem);
+    font-size: clamp(1.35rem, 4vw, 1.9rem);
     letter-spacing: -0.04em;
   }
 
   article.home h3 {
     color: var(--secondary);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
   article.home strong {
@@ -59,16 +70,109 @@ body[data-slug="index"] {
     padding-left: 1.15rem;
   }
 
+  // 链接默认带下划线，hover更明显，去掉背景色
   article.home a {
+    text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-underline-offset: 0.22em;
+    text-underline-offset: 0.2em;
+    background: transparent !important;
+    padding: 0 !important;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
   }
 
-  article.home > p:nth-of-type(1),
-  article.home > p:nth-of-type(2) {
-    max-width: 680px;
-    color: var(--home-muted);
-    font-size: clamp(1.08rem, 2.2vw, 1.32rem);
+  // 工作经历折叠面板 - 更简洁
+  details {
+    margin-top: 1.5rem;
+
+    summary {
+      padding: 0.5rem 0;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--secondary);
+      user-select: none;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::before {
+        content: "→";
+        font-size: 0.8em;
+        transition: transform 0.2s ease;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    > *:not(summary) {
+      margin-top: 1rem;
+    }
+  }
+
+  // 博客分区 - 简洁列表样式
+  .recent-posts {
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    // 去掉引用块背景，改为简洁列表
+    blockquote {
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: transparent;
+
+      p {
+        margin: 0;
+        padding: 0.35rem 0;
+        border-bottom: 1px solid var(--lightgray);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      a {
+        color: var(--dark);
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+
+        &:hover {
+          color: var(--secondary);
+        }
+      }
+    }
+
+    .view-more {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--secondary);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+
+      &:hover {
+        text-decoration-thickness: 2px;
+      }
+    }
   }
 }
 

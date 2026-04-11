@@ -11,9 +11,8 @@ aliases:
 cssclasses:
   - home
 ---
-Yo，我是梁程，也可以叫我梁非凡。这里是我的个人博客，主要写 **技术**、**英语** 和 **生活**。
 
-我现在在 **霸王茶姬** 做中国区 App 的 Flutter 开发；之前在华为参与 ToB 网管 Dashboard、复杂表格、拓扑图和数据可视化相关工作。平时也会做一些 Vibe Coding 独立 iOS 应用，用 SwiftUI、SwiftData 和 AI 工具把想法尽快做成能上线的产品。
+Yo，我是梁程，也可以叫我梁非凡。这里是我的个人博客，主要写 **技术**、**英语** 和 **生活**。
 
 - **Now:** 霸王茶姬，中国区 App Flutter 开发
 - **Stack:** Flutter / React / TypeScript / SwiftUI 
@@ -24,15 +23,14 @@ Yo，我是梁程，也可以叫我梁非凡。这里是我的个人博客，主
 
 ## 我在做什么
 
-**霸王茶姬**
-
-2026.04 - 至今
+**霸王茶姬** — 2026.04 至今
 
 主要参与中国区 App 的 Flutter 开发，关注移动端业务交付、跨端 UI 体验、工程效率和 AI 辅助研发流。
 
-**华为 / 外企德科 OD**
+<details>
+<summary>查看过往经历</summary>
 
-2023.02 - 2026.04
+**华为 / 外企德科 OD** — 2023.02 - 2026.04
 
 参与通信运营商网管类 ToB 产品建设，长期负责 Dashboard、复杂表格、拓扑图、可视化和历史页面重构。
 
@@ -44,48 +42,37 @@ Yo，我是梁程，也可以叫我梁非凡。这里是我的个人博客，主
 - [GeekBio](https://apps.apple.com/us/app/geekbio/id6758457562)：代码风格个人名片工具
 - Roam Focus：把专注计时和虚拟旅程结合的专注力管理应用
 
+</details>
+
 ## 博客分区
 
-**技术**
+<div class="recent-posts">
 
-- [[技术/AI 浪潮下的前端程序员转型指南|AI 浪潮下的前端程序员转型指南]]
+### 技术
 
-**英语**
+> [[技术/AI 浪潮下的前端程序员转型指南|AI 浪潮下的前端程序员转型指南]]
+> 
+> [[学习资源]] — 我收集的技术学习资源和推荐
 
-- [[英语/英语学习之道|英语学习之道]]
-- [[英语/六级备考方法|六级备考方法：听力、阅读、写作与翻译]]
-- [[英语/学习词汇的方法|学习词汇的方法：从背单词到用英语思考]]
+### 英语
 
-**生活**
+> [[英语/英语学习之道|英语学习之道]]
+> 
+> [[英语/六级备考方法|六级备考方法：听力、阅读、写作与翻译]]
+> 
+> [[英语/学习词汇的方法|学习词汇的方法：从背单词到用英语思考]]
 
-- [[生活/答粉丝问：我们是如何在一起的|答粉丝问：我们是如何在一起的]]
-- [[生活/Before the snow melts|Before the snow melts]]
-- [[生活/Day 1|Day 1]]
-- [[生活/Day 2|Day 2]]
-- [[生活/Day 3|Day 3]]
+### 生活
 
-## 学习资源
+> [[生活/答粉丝问：我们是如何在一起的|答粉丝问：我们是如何在一起的]]
+> 
+> [[生活/Before the snow melts|Before the snow melts]]
 
-**课程**
+<a href="/tags/" class="view-more">查看更多 →</a>
 
-- [Scrimba](https://scrimba.com/)
-- [Udemy](https://www.udemy.com/)
-- [100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui)
+</div>
 
-**博客**
-
-- [Josh W. Comeau](https://www.joshwcomeau.com/)
-- [Overreacted](https://overreacted.io/)
-
-**前端与算法**
-
-- [如何科学刷题 by 灵茶山艾府](https://leetcode.cn/discuss/post/3141566/ru-he-ke-xue-shua-ti-by-endlesscheng-q3yd/)
-- [前端面试宝典](https://feinterview.poetries.top/docs/docs/base#_1-%E5%89%8D%E7%AB%AF%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E5%93%AA%E4%BA%9Bseo)
-- [Vue3 面试题](https://vue3js.cn/interview/)
-- [FE-Interview](https://huruji.github.io/FE-Interview/#/docs/JavaScript?id=_1%e5%bc%95%e8%b5%b7%e5%86%85%e5%ad%98%e6%b3%84%e6%bc%8f%e7%9a%84%e6%93%8d%e4%bd%9c%e6%9c%89%e5%93%aa%e4%ba%9b)
-- [labuladong 的算法笔记](https://labuladong.online/algo/)
-- [代码随想录](https://programmercarl.com/)
-- [算法通关之路](https://leetcode.cn/leetbook/detail/algorithms-and-data-structures/)
+---
 
 ## English
 
