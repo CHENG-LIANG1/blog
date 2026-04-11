@@ -83,20 +83,19 @@ strong {
 
 a {
   font-weight: $semiBoldWeight;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
   transition: color 0.2s ease;
   color: var(--secondary);
 
   &:hover {
     color: var(--tertiary);
+    text-decoration-thickness: 2px;
   }
 
   &.internal {
-    text-decoration: none;
-    background-color: var(--highlight);
-    padding: 0 0.1rem;
-    border-radius: 5px;
-    line-height: 1.4rem;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 
     &.broken {
       color: var(--secondary);
@@ -108,9 +107,7 @@ a {
     }
 
     &:has(> img) {
-      background-color: transparent;
-      border-radius: 0;
-      padding: 0;
+      text-decoration: none;
     }
     &.tag-link {
       &::before {
@@ -120,12 +117,7 @@ a {
   }
 
   &.external .external-icon {
-    height: 1ex;
-    margin: 0 0.15em;
-
-    > path {
-      fill: var(--dark);
-    }
+    display: none;
   }
 }
 

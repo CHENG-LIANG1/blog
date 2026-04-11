@@ -28,22 +28,53 @@ export const defaultContentPageLayout: PageLayout = {
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-        { Component: Component.ReaderMode() },
-      ],
+    Component.Search(),
+    Component.Explorer({
+      filterFn: (node) => {
+        // Only hide tags folder
+        if (node.slugSegment === "tags") {
+          return false
+        }
+        return true
+      },
+      sortFn: (a, b) => {
+        // Custom order: 技术 > Projects > 英语 > 生活
+        const orderMap: Record<string, number> = {
+          "技术": 1,
+          "Projects": 2,
+          "英语": 3,
+          "生活": 4,
+        }
+        
+        const aOrder = orderMap[a.displayName] || 99
+        const bOrder = orderMap[b.displayName] || 99
+        
+        if (aOrder !== 99 || bOrder !== 99) {
+          return aOrder - bOrder
+        }
+        
+        // Default alphabetical sort for others
+        if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
+        }
+        
+        return a.isFolder ? -1 : 1
+      },
     }),
-    Component.Explorer(),
+    Component.AllBlogsLink(),
   ],
   right: [
-    Component.Graph(),
+    Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    Component.Backlinks({
+      filterFn: (file) => {
+        // 隐藏生活文件夹的内容
+        return !file.slug?.startsWith("生活/")
+      },
+    }),
   ],
 }
 
@@ -53,16 +84,45 @@ export const defaultListPageLayout: PageLayout = {
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-      ],
+    Component.Search(),
+    Component.Explorer({
+      filterFn: (node) => {
+        // Only hide tags folder
+        if (node.slugSegment === "tags") {
+          return false
+        }
+        return true
+      },
+      sortFn: (a, b) => {
+        // Custom order: 技术 > Projects > 英语 > 生活
+        const orderMap: Record<string, number> = {
+          "技术": 1,
+          "Projects": 2,
+          "英语": 3,
+          "生活": 4,
+        }
+        
+        const aOrder = orderMap[a.displayName] || 99
+        const bOrder = orderMap[b.displayName] || 99
+        
+        if (aOrder !== 99 || bOrder !== 99) {
+          return aOrder - bOrder
+        }
+        
+        // Default alphabetical sort for others
+        if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
+        }
+        
+        return a.isFolder ? -1 : 1
+      },
     }),
-    Component.Explorer(),
+    Component.AllBlogsLink(),
   ],
-  right: [],
+  right: [
+    Component.Darkmode(),
+  ],
 }

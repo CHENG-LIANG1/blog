@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluent Wing Reader v17</title>
+    <script src="https://unpkg.com/compromise"></script>
+    <style>
+        /* --- Design Tokens --- */
+        :root {
+            --bg-color: #050505;
+            --card-bg: #141414;
+            --card-border: rgba(255, 255, 255, 0.08);
+            
+            --text-main: #e0e0e0;
+            --text-sub: #909090;
+            --text-dim: #505050;
+            
+            --accent: #60cdff;
+            --accent-glow: rgba(96, 205, 255, 0.2);
+            --accent-purple: #d8b4fe;
+            --accent-heart: #ff4757; 
+            
+            /* 布局尺寸调整 */
+            --panel-width: 320px; /* 侧边栏稍窄 */
+            --main-width: 660px;  /* 主卡片适中 */
+            --gap: 24px;          /* 卡片间距 */
+            --card-height: 85vh;
+            
+            --shadow-card: 0 40px 80px rgba(0,0,0,0.8);
+            --ease-fluent: cubic-bezier(0.1, 0.9, 0.2, 1);
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 10%, #1a1a1a 0%, transparent 60%);
+            color: var(--text-main);
+            font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: auto; /* 允许横向滚动以防屏幕太窄 */
+            overflow-y: hidden;
+        }
+
+        .stage {
+            position: relative;
+            width: var(--main-width);
+            height: var(--card-height);
+            display: flex;
+            justify-content: center;
+            perspective: 1200px;
+            /* 保证舞台不被压缩 */
+            min-width: var(--main-width); 
+        }
+
+        /* --- 卡片通用 --- */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            box-shadow: var(--shadow-card);
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: transform 0.6s var(--ease-fluent), opacity 0.5s ease;
+            overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+
+        /* --- 左翼 (Library) --- */
+        .card-left { 
+            width: var(--panel-width); 
+            z-index: 1; 
+            left: 0; 
+            opacity: 0; 
+            /* 初始状态：藏在主卡片下面一点点 */
+            transform: translateX(0) scale(0.95); 
+            background: #111; 
+        }
+        
+        /* 激活状态：完全移出，加上间距 */
+        .stage.show-left .card-left { 
+            transform: translateX(calc(-100% - var(--gap))); 
+            opacity: 1; 
+        }
+
+        /* --- 右翼 (Detail) --- */
+        .card-right { 
+            width: var(--panel-width); 
+            z-index: 1; 
+            right: 0; 
+            opacity: 0; 
+            /* 初始状态 */
+            transform: translateX(0) scale(0.95); 
+            background: #111; 
+            border-left: 1px solid var(--card-border); 
+        }
+        
+        /* 激活状态：完全移出，加上间距 */
+        .stage.show-right .card-right { 
+            transform: translateX(calc(100% + var(--gap))); 
+            opacity: 1; 
+        }
+
+        /* --- 中间 (Main) --- */
+        .card-center { 
+            width: 100%; 
+            z-index: 10; 
+            background: #1a1a1a; 
+            /* 确保主卡片总是盖住未滑出的侧边栏 */
+            position: relative; 
+        }
+
+        /* --- 内容样式保持不变 --- */
+        .reader-header { padding: 20px 32px; border-bottom: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center; }
+        .brand { font-family: 'Georgia', serif; font-weight: 700; letter-spacing: 0.5px; font-size: 15px; opacity: 0.7; }
+        
+        .icon-btn {
+            background: transparent; border: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-sub); width: 36px; height: 36px; border-radius: 8px;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            transition: all 0.2s;
+        }
+        .icon-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+        .icon-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+        
+        /* Spinning Loader (Icon Only) */
+        .icon-btn.spinning { pointer-events: none; border-color: rgba(96, 205, 255, 0.3); }
+        .icon-btn.spinning svg { animation: spin 0.8s linear infinite; color: var(--accent); }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .article-scroll { padding: 30px 48px; overflow-y: auto; flex: 1; }
+        .article-text {
+            font-family: 'Georgia', serif; font-size: 20px; line-height: 1.75;      
+            color: rgba(255,255,255,0.92); text-align: justify; min-height: 100px;
+        }
+
+        /* 无感高亮 */
+        .word-token {
+            display: inline-block; cursor: pointer; border-radius: 4px; 
+            padding: 0 1px; margin: 0 1px; border: 1px solid transparent; 
+            transition: background 0.15s, color 0.15s;
+        }
+        .word-token:hover { background: rgba(255, 255, 255, 0.08); }
+        .word-token.active { 
+            background: var(--accent); color: #000; font-weight: 600; 
+            box-shadow: 0 2px 8px var(--accent-glow); border-color: var(--accent);
+        }
+
+        .trans-box { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--card-border); font-size: 15px; color: var(--text-sub); line-height: 1.6; font-family: system-ui, sans-serif; }
+        .author-tag { margin-top: 20px; font-size: 14px; color: var(--accent); font-weight: bold; text-align: right; }
+
+        /* Detail Panel */
+        .detail-scroll { padding: 25px; overflow-y: auto; flex: 1; }
+        .d-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--card-border); }
+        .d-word { font-size: 32px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 6px; word-break: break-all; }
+        .d-phonetic { font-family: 'Segoe UI', sans-serif; color: var(--accent); font-size: 14px; opacity: 0.9; letter-spacing: 0.5px; }
+        
+        .btn-heart { 
+            background: transparent; border: 1px solid rgba(255,255,255,0.06); 
+            width: 32px; height: 32px; border-radius: 8px; cursor: pointer; 
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-sub); transition: all 0.2s cubic-bezier(0.3, 0, 0, 1.5);
+        }
+        .btn-heart:hover { background: rgba(255,255,255,0.08); color: #fff; transform: scale(1.05); }
+        .btn-heart svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+        .btn-heart.saved { border-color: var(--accent-heart); background: rgba(255, 71, 87, 0.1); color: var(--accent-heart); }
+        .btn-heart.saved svg { fill: currentColor; stroke: none; }
+
+        .d-section { margin-bottom: 30px; }
+        .d-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #555; margin-bottom: 10px; font-weight: 700; border-left: 2px solid var(--accent); padding-left: 8px; }
+
+        .meaning-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.03); border-radius: 8px; padding: 12px 16px; }
+        .d-cn-main { font-size: 16px; color: #fff; font-weight: 500; margin-bottom: 4px; }
+        .d-cn-sub { font-size: 13px; color: var(--text-sub); line-height: 1.4; opacity: 0.8; }
+        
+        .family-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .fam-item { background: rgba(255,255,255,0.03); padding: 8px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.03); display: flex; flex-direction: column; }
+        .fam-tag { font-size: 9px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 2px; font-weight: 700; }
+        .fam-word { font-size: 13px; color: var(--text-main); font-weight: 500; }
+        .type-noun .fam-tag { color: #60cdff; }
+        .type-verb .fam-tag { color: #ffb900; }
+        .type-adj .fam-tag { color: #6ccb5f; }
+        .type-adv .fam-tag { color: #ff99a4; }
+
+        .info-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+        .info-item { background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 6px; font-size: 13px; color: var(--text-sub); line-height: 1.5; }
+        .pos-tag { color: #000; background: var(--accent); padding: 1px 5px; border-radius: 3px; font-size: 10px; font-weight: bold; margin-right: 6px; }
+        .example-item { border-left: 2px solid #444; font-style: italic; color: #ccc; font-family: 'Georgia', serif; }
+        .ex-highlight { color: var(--accent); font-weight: bold; font-style: normal; }
+
+        /* Lib */
+        .lib-header { padding: 20px; border-bottom: 1px solid var(--card-border); display: flex; justify-content: space-between; font-size: 12px; letter-spacing: 1px; font-weight: bold; color: #666; }
+        .lib-list { overflow-y: auto; flex: 1; padding: 5px; }
+        .lib-item { padding: 12px 16px; border-radius: 6px; margin-bottom: 2px; cursor: pointer; transition: background 0.2s; }
+        .lib-item:hover { background: rgba(255,255,255,0.06); }
+        .lib-word { color: #fff; font-weight: 600; font-size: 14px; }
+        .lib-def { font-size: 11px; color: #666; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .skeleton { background: rgba(255,255,255,0.05); color: transparent; border-radius: 4px; animation: pulse 2s infinite; }
+        @keyframes pulse { 50% { opacity: 0.5; } }
+    </style>
+</head>
+<body>
+
+<div class="stage" id="stage">
+    <div class="card card-left">
+        <div class="lib-header"><span>VOCABULARY</span><span id="vocab-count" style="color:var(--accent)">0</span></div>
+        <div class="lib-list" id="lib-list"></div>
+    </div>
+    <div class="card card-right">
+        <div class="detail-scroll">
+            <div class="d-header">
+                <div><div class="d-word" id="d-word">Word</div><div class="d-phonetic" id="d-phonetic">/ ... /</div></div>
+                <button class="btn-heart" id="btn-heart" onclick="toggleCollect()" title="Like/Unlike">
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </button>
+            </div>
+            
+            <div class="d-section">
+                <div class="d-label">Definition (CN)</div>
+                <div class="meaning-card" id="d-meaning-card">
+                    <div class="d-cn-main skeleton">Select a word</div>
+                </div>
+            </div>
+
+            <div class="d-section" id="sec-family" style="display:none">
+                <div class="d-label">Word Family</div>
+                <div class="family-grid" id="d-family-grid"></div>
+            </div>
+
+            <div class="d-section"><div class="d-label">English Definitions</div><ul class="info-list" id="d-def-list"></ul></div>
+            <div class="d-section"><div class="d-label">Context (Examples)</div><ul class="info-list" id="d-example-list"></ul></div>
+            <div class="d-section"><div class="d-label">Etymology</div><div class="info-item" id="d-root" style="color:var(--accent-purple)">...</div></div>
+        </div>
+    </div>
+    <div class="card card-center">
+        <div class="reader-header">
+            <div class="brand">WING READER XVII</div>
+            <div style="display:flex; gap:10px">
+                <button class="icon-btn" id="btn-lib-toggle" onclick="toggleLeft(event)" title="Library">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0 3h4v2h-4zm0-6h8v2h-8z"/></svg>
+                </button>
+                <button class="icon-btn" id="btn-refresh" onclick="initApp()" title="New Quote">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="article-scroll">
+            <div id="article-text" class="article-text">Loading content...</div>
+            <div id="author-tag" class="author-tag"></div>
+            <div id="trans-text" class="trans-box"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const API_URL = "https://api.quotable.io/quotes/random?minLength=100&tags=history|science|wisdom|technology|politics|philosophy";
+    
+    let currentTerm = null;
+    let vocabDB = JSON.parse(localStorage.getItem('wing_vocab_v17')) || [];
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.card') && !e.target.closest('.word-token') && !e.target.closest('#btn-lib-toggle')) {
+            closeAll();
+        }
+    });
+
+    function closeAll() {
+        const stage = document.getElementById('stage');
+        stage.classList.remove('show-right');
+        stage.classList.remove('show-left');
+        document.getElementById('btn-lib-toggle').classList.remove('active');
+        document.querySelectorAll('.word-token').forEach(w => w.classList.remove('active'));
+    }
+
+    function toggleLeft(e) {
+        if(e) e.stopPropagation();
+        const stage = document.getElementById('stage');
+        if(stage.classList.contains('show-right')) {
+            stage.classList.remove('show-right');
+            document.querySelectorAll('.word-token').forEach(w => w.classList.remove('active'));
+        }
+        stage.classList.toggle('show-left');
+        document.getElementById('btn-lib-toggle').classList.toggle('active');
+        renderLib();
+    }
+
+    function openRight() {
+        const stage = document.getElementById('stage');
+        stage.classList.add('show-right');
+        stage.classList.remove('show-left');
+        document.getElementById('btn-lib-toggle').classList.remove('active');
+    }
+
+    async function initApp() {
+        const textEl = document.getElementById('article-text');
+        const transEl = document.getElementById('trans-text');
+        const authorEl = document.getElementById('author-tag');
+        const btn = document.getElementById('btn-refresh');
+        
+        closeAll();
+        textEl.innerHTML = '<span class="skeleton">Fetching wisdom...</span>';
+        transEl.innerText = '';
+        authorEl.innerText = '';
+        btn.classList.add('spinning');
+
+        try {
+            const timestamp = new Date().getTime();
+            const res = await fetch(`${API_URL}&t=${timestamp}`);
+            const data = await res.json();
+            const quote = Array.isArray(data) ? data[0] : data;
+
+            if(quote) {
+                renderText(quote.content);
+                authorEl.innerText = `— ${quote.author}`;
+                fetchTrans(quote.content);
+            } else {
+                textEl.innerText = "No quotes found.";
+            }
+        } catch (e) {
+            textEl.innerText = "Network Error.";
+        } finally {
+            btn.classList.remove('spinning');
+        }
+        renderLib();
+    }
+
+    function renderText(text) {
+        const container = document.getElementById('article-text');
+        container.innerHTML = '';
+        const doc = nlp(text);
+        doc.termList().forEach(term => {
+            const isWord = !term.tags.has('Punctuation');
+            const span = document.createElement('span');
+            span.innerText = term.text;
+            if(isWord) {
+                span.className = 'word-token';
+                span.onclick = (e) => handleWordClick(e, term.text);
+            } else {
+                span.style.marginRight = '2px';
+            }
+            container.appendChild(span);
+            if(term.post) container.appendChild(document.createTextNode(term.post));
+        });
+    }
+
+    async function fetchTrans(text) {
+        try {
+            const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text.substring(0,450))}&langpair=en|zh`);
+            const data = await res.json();
+            document.getElementById('trans-text').innerText = data.responseData.translatedText || "";
+        } catch(e) {}
+    }
+
+    async function handleWordClick(e, rawWord, source = 'article') {
+        if(e) e.stopPropagation();
+        document.querySelectorAll('.word-token').forEach(w => w.classList.remove('active'));
+        if(source === 'article' && e) e.target.classList.add('active');
+        openRight();
+
+        const doc = nlp(rawWord);
+        let root = rawWord.toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()]/g,"");
+        if(doc.has('#Verb')) {
+            const v = doc.verbs().conjugate()[0];
+            if(v && v.Infinitive) root = v.Infinitive;
+        } else if (doc.has('#Noun')) {
+            const n = doc.nouns().toSingular().text();
+            if(n) root = n;
+        }
+
+        // UI Reset
+        document.getElementById('d-word').innerText = rawWord;
+        document.getElementById('d-phonetic').innerText = '...';
+        const cnCard = document.getElementById('d-meaning-card');
+        cnCard.innerHTML = '<div class="d-cn-main skeleton">Searching...</div>';
+        document.getElementById('d-def-list').innerHTML = '';
+        document.getElementById('d-example-list').innerHTML = '<li class="info-item">Scanning corpus...</li>';
+        document.getElementById('d-root').innerText = '...';
+        document.getElementById('sec-family').style.display = 'none';
+        
+        updateHeart(rawWord);
+
+        const [dictData, simpleTrans, familyData] = await Promise.all([
+            fetchDictionary(root),
+            fetchSimpleTrans(root),
+            fetchWordFamily(root)
+        ]);
+
+        if (dictData) {
+            let phonetic = dictData.phonetic || '/../';
+            document.getElementById('d-phonetic').innerText = phonetic;
+            document.getElementById('d-root').innerText = dictData.origin || 'N/A';
+
+            const defList = document.getElementById('d-def-list');
+            defList.innerHTML = '';
+            if(dictData.definitions.length > 0) {
+                dictData.definitions.slice(0, 3).forEach(d => {
+                    defList.innerHTML += `<li class="info-item"><span class="pos-tag">${d.pos}</span> ${d.text}</li>`;
+                });
+            }
+
+            const exList = document.getElementById('d-example-list');
+            exList.innerHTML = '';
+            if(dictData.examples.length > 0) {
+                dictData.examples.slice(0, 3).forEach(ex => {
+                    const highlightedEx = highlightWord(ex, root);
+                    exList.innerHTML += `<li class="info-item example-item">"${highlightedEx}"</li>`;
+                });
+            } else { exList.innerHTML = '<li class="info-item">No examples available.</li>'; }
+
+            renderFamilyGrid(familyData, root);
+
+            const detailCn = await fetchSimpleTrans(dictData.definitions[0]?.text || root);
+            cnCard.innerHTML = `
+                <div class="d-cn-main">${simpleTrans}</div>
+                <div class="d-cn-sub">"${detailCn}"</div>
+            `;
+
+            currentTerm = { word: rawWord, cn: simpleTrans, en: dictData.definitions[0]?.text };
+        } else {
+            cnCard.innerHTML = `<div class="d-cn-main">${simpleTrans}</div>`;
+            currentTerm = { word: rawWord, cn: simpleTrans, en: '' };
+        }
+    }
+
+    function highlightWord(sentence, root) {
+        const regex = new RegExp(`(${root}\\w*)`, 'gi'); 
+        return sentence.replace(regex, '<span class="ex-highlight">$1</span>');
+    }
+
+    async function fetchWordFamily(root) {
+        try {
+            const res = await fetch(`https://api.datamuse.com/words?ml=${root}&max=15`);
+            const data = await res.json();
+            const doc = nlp(root);
+            
+            let family = { Verb: [], Noun: [], Adj: [], Adv: [] };
+
+            if (doc.has('#Verb')) {
+                const c = doc.verbs().conjugate()[0];
+                if(c) {
+                    if(c.PastTense) family.Verb.push(c.PastTense);
+                    if(c.Gerund) family.Noun.push(c.Gerund);
+                }
+            }
+            if (doc.has('#Adjective')) {
+                const adj = doc.adjectives();
+                family.Adv.push(root + 'ly');
+            }
+
+            data.forEach(item => {
+                const w = item.word;
+                if (w.startsWith(root.substring(0, 3))) {
+                     const wDoc = nlp(w);
+                     if(wDoc.has('#Noun')) family.Noun.push(w);
+                     else if(wDoc.has('#Adjective')) family.Adj.push(w);
+                     else if(wDoc.has('#Adverb')) family.Adv.push(w);
+                     else if(wDoc.has('#Verb')) family.Verb.push(w);
+                }
+            });
+
+            for(let key in family) {
+                family[key] = [...new Set(family[key])].filter(w => w !== root).slice(0, 2);
+            }
+            const rootPos = doc.has('#Verb') ? 'Verb' : (doc.has('#Adjective') ? 'Adj' : (doc.has('#Adverb') ? 'Adv' : 'Noun'));
+            family[rootPos].unshift(root + "*");
+
+            return family;
+        } catch(e) { return null; }
+    }
+
+    function renderFamilyGrid(fam, root) {
+        const grid = document.getElementById('d-family-grid');
+        const section = document.getElementById('sec-family');
+        let html = '';
+        let hasContent = false;
+        const makeBlock = (type, words, cssClass) => {
+            if(words.length === 0) return;
+            hasContent = true;
+            html += `<div class="fam-item ${cssClass}"><div class="fam-tag">${type}</div>${words.map(w => `<div class="fam-word">${w.replace('*','')}</div>`).join('')}</div>`;
+        };
+        if(fam) {
+            makeBlock('Verb', fam.Verb, 'type-verb');
+            makeBlock('Noun', fam.Noun, 'type-noun');
+            makeBlock('Adj', fam.Adj, 'type-adj');
+            makeBlock('Adv', fam.Adv, 'type-adv');
+        }
+        grid.innerHTML = html;
+        section.style.display = hasContent ? 'block' : 'none';
+    }
+
+    async function fetchDictionary(word) {
+        try {
+            const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+            if(!res.ok) return null;
+            const data = await res.json();
+            const entry = data[0];
+            let defs = [], exs = [];
+            
+            let phonetic = entry.phonetic;
+            if(!phonetic && entry.phonetics) {
+                const p = entry.phonetics.find(x => x.text);
+                if(p) phonetic = p.text;
+            }
+
+            entry.meanings.forEach(m => {
+                m.definitions.forEach(d => {
+                    defs.push({pos: m.partOfSpeech, text: d.definition});
+                    if(d.example) exs.push(d.example);
+                });
+            });
+            return {
+                phonetic: phonetic, origin: entry.origin,
+                definitions: defs, examples: exs
+            };
+        } catch { return null; }
+    }
+
+    async function fetchSimpleTrans(text) {
+        try {
+            const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|zh`);
+            const data = await res.json();
+            return data.responseData.translatedText;
+        } catch { return text; }
+    }
+
+    function toggleCollect() {
+        if(!currentTerm) return;
+        const idx = vocabDB.findIndex(v => v.word === currentTerm.word);
+        if(idx > -1) vocabDB.splice(idx, 1);
+        else vocabDB.push(currentTerm);
+        localStorage.setItem('wing_vocab_v17', JSON.stringify(vocabDB));
+        updateHeart(currentTerm.word);
+        renderLib();
+    }
+
+    function updateHeart(word) {
+        const btn = document.getElementById('btn-heart');
+        const isSaved = vocabDB.some(v => v.word === word);
+        if(isSaved) btn.classList.add('saved');
+        else btn.classList.remove('saved');
+    }
+
+    function renderLib() {
+        const list = document.getElementById('lib-list');
+        document.getElementById('vocab-count').innerText = vocabDB.length;
+        list.innerHTML = '';
+        if(vocabDB.length === 0) { list.innerHTML = '<div style="padding:20px;text-align:center;color:#444;font-size:12px">Empty</div>'; return; }
+        [...vocabDB].reverse().forEach(v => {
+            const el = document.createElement('div');
+            el.className = 'lib-item';
+            el.innerHTML = `<div class="lib-word">${v.word}</div><div class="lib-def">${v.cn}</div>`;
+            el.onclick = (e) => handleWordClick(e, v.word, 'lib');
+            list.appendChild(el);
+        });
+    }
+
+    initApp();
+</script>
+</body>
+</html>

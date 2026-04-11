@@ -130,10 +130,20 @@ button.desktop-explorer {
       color: var(--dark);
       opacity: 0.75;
       pointer-events: all;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: var(--secondary);
+        opacity: 1;
+      }
 
       &.active {
         opacity: 1;
         color: var(--tertiary);
+
+        &:hover {
+          color: var(--secondary);
+        }
       }
     }
   }
@@ -279,4 +289,12 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
       overscroll-behavior: contain;
     }
   }
+}
+
+// Folder title wrapper
+.folder-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
 }

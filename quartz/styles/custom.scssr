@@ -1,0 +1,194 @@
+@use "./base.scss";
+
+// put your custom CSS here!
+
+body[data-slug="index"] {
+  --home-accent: #d97706;
+  --home-muted: color-mix(in srgb, var(--darkgray) 78%, transparent);
+
+  #quartz-body {
+    grid-template:
+      "grid-sidebar-left grid-center grid-sidebar-right" auto
+      "grid-footer grid-footer grid-footer" auto
+      / minmax(0, 0.35fr) minmax(0, 820px) minmax(0, 0.35fr);
+  }
+
+  .sidebar,
+  .page-header,
+  .page-footer,
+  hr {
+    display: none;
+  }
+
+  .center {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  article.home {
+    padding: 12vh 0 6rem;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  article.home > h1:first-of-type {
+    margin: 0 0 1.25rem;
+    font-size: clamp(3rem, 11vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+  }
+
+  // 第一段简介字体减小
+  article.home > p:first-of-type {
+    max-width: 680px;
+    color: var(--home-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  article.home h2 {
+    margin-top: 3.5rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--lightgray);
+    font-size: clamp(1.35rem, 4vw, 1.9rem);
+    letter-spacing: -0.04em;
+  }
+
+  article.home h3 {
+    color: var(--secondary);
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  article.home strong {
+    color: var(--dark);
+  }
+
+  article.home ul {
+    padding-left: 1.15rem;
+  }
+
+  // 链接默认带下划线，hover更明显，去掉背景色
+  article.home a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    background: transparent !important;
+    padding: 0 !important;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  // 工作经历折叠面板 - 更简洁
+  details {
+    margin-top: 1.5rem;
+
+    summary {
+      padding: 0.5rem 0;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--secondary);
+      user-select: none;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::before {
+        content: "→";
+        font-size: 0.8em;
+        transition: transform 0.2s ease;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    > *:not(summary) {
+      margin-top: 1rem;
+    }
+  }
+
+  // 博客分区 - 简洁列表样式
+  .recent-posts {
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    // 去掉引用块背景，改为简洁列表
+    blockquote {
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: transparent;
+
+      p {
+        margin: 0;
+        padding: 0.35rem 0;
+        border-bottom: 1px solid var(--lightgray);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      a {
+        color: var(--dark);
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+
+        &:hover {
+          color: var(--secondary);
+        }
+      }
+    }
+
+    .view-more {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--secondary);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+
+      &:hover {
+        text-decoration-thickness: 2px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  body[data-slug="index"] {
+    #quartz-body {
+      display: block;
+    }
+
+    .center {
+      margin: 0;
+      padding: 0 1.25rem;
+    }
+
+    article.home {
+      padding-top: 4rem;
+    }
+  }
+}

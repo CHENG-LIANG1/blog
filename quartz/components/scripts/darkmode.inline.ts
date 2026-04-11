@@ -1,5 +1,6 @@
-const userPref = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"
-const currentTheme = localStorage.getItem("theme") ?? userPref
+// 强制默认深色模式
+const savedTheme = localStorage.getItem("theme")
+const currentTheme = savedTheme || "dark"
 document.documentElement.setAttribute("saved-theme", currentTheme)
 
 const emitThemeChangeEvent = (theme: "light" | "dark") => {
