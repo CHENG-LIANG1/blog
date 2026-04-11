@@ -11,9 +11,6 @@ aliases:
 cssclasses:
   - home
 ---
-
-# 梁程
-
 Hey，我是梁程，也可以叫我梁非凡。这里是我的个人博客，主要写 **技术**、**英语** 和 **生活**。
 
 我现在在 **霸王茶姬** 做中国区 App 的 Flutter 开发；之前在华为参与 ToB 网管 Dashboard、复杂表格、拓扑图和数据可视化相关工作。平时也会做一些 Vibe Coding 独立 iOS 应用，用 SwiftUI、SwiftData 和 AI 工具把想法尽快做成能上线的产品。
