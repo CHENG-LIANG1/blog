@@ -120,6 +120,10 @@ Cloud Gaming Pass、Cloud Gaming Zone 等海外云游戏产品。
 - Science and Engineering Faculty
 - GPA 6.13 / 7，专业前 10%
 
+## 最新文章
+
+- [[文章/AI 浪潮下的前端程序员转型指南|AI 浪潮下的前端程序员转型指南]]
+
 ## 联系方式
 
 欢迎通过邮箱或 GitHub 联系我。
