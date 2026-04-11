@@ -20,7 +20,7 @@ aliases:
 
 - 现居南京
 - 英语雅思 7.5，能无障碍阅读英文技术资料并参与跨国协作
-- 邮箱：[madfool@icloud.com](mailto:madfool@icloud.com)
+- 邮箱：[liangcheng2456@gmail.com](mailto:liangcheng2456@gmail.com) / [liangcheng2456@163.com](mailto:liangcheng2456@163.com)
 - GitHub：[CHENG-LIANG1](https://github.com/CHENG-LIANG1)
 
 ## 技术关键词
@@ -120,5 +120,5 @@ Cloud Gaming Pass、Cloud Gaming Zone 等海外云游戏产品。
 
 欢迎通过邮箱或 GitHub 联系我。
 
-- 邮箱：[madfool@icloud.com](mailto:madfool@icloud.com)
+- 邮箱：[liangcheng2456@gmail.com](mailto:liangcheng2456@gmail.com) / [liangcheng2456@163.com](mailto:liangcheng2456@163.com)
 - GitHub：[https://github.com/CHENG-LIANG1](https://github.com/CHENG-LIANG1)
