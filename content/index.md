@@ -19,7 +19,7 @@ Yo，我是梁程，也可以叫我梁非凡。这里是我的个人博客，主
 - **Stack:** Flutter / React / TypeScript / SwiftUI 
 - **Focus:** 前端工程、移动端体验、AI-Powered Development、英语学习
 - **Location:** 南京
-- **Contact:** [liangcheng2456@gmail.com](mailto:liangcheng2456@gmail.com) / [liangcheng2456@163.com](mailto:liangcheng2456@163.com)
+- **Contact:** `liangcheng2456@gmail.com` / `liangcheng2456@163.com`
 - **GitHub:** [CHENG-LIANG1](https://github.com/CHENG-LIANG1)
 
 ## 我在做什么
@@ -95,7 +95,7 @@ Frontend / Flutter Engineer based in Nanjing, China. I currently work on the Chi
 
 I am also an AI-powered independent builder. I ship SwiftUI / SwiftData iOS apps, use Cursor, Trae and Claude heavily in my daily workflow, and care about turning ideas into usable products with a clear engineering loop.
 
-- **Email:** [liangcheng2456@163.com](mailto:liangcheng2456@163.com)
+- **Email:** `liangcheng2456@163.com`
 - **GitHub:** [CHENG-LIANG1](https://github.com/CHENG-LIANG1)
 - **English:** IELTS 7.5
 - **Web:** HTML, CSS, JavaScript, TypeScript, React
