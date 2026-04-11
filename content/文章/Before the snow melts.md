@@ -2,12 +2,7 @@
 title: Before the snow melts
 description: 一篇关于 Coldplay 韩国演唱会、日韩婚假旅行、富士山、静冈小丸子巡礼、名古屋乐高乐园与大阪日常的长篇记录。
 tags:
-  - 创作
-  - 竹子
-  - 旅行
-  - 韩国
-  - 日本
-  - Coldplay
+  - 生活
 aliases:
   - Before the snow melts
   - 日韩婚假旅行

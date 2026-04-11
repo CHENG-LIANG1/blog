@@ -1,3 +1,90 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+body[data-slug="index"] {
+  --home-accent: #d97706;
+  --home-muted: color-mix(in srgb, var(--darkgray) 78%, transparent);
+
+  #quartz-body {
+    grid-template:
+      "grid-sidebar-left grid-center grid-sidebar-right" auto
+      "grid-footer grid-footer grid-footer" auto
+      / minmax(0, 0.35fr) minmax(0, 820px) minmax(0, 0.35fr);
+  }
+
+  .sidebar,
+  .page-header,
+  .page-footer,
+  hr {
+    display: none;
+  }
+
+  .center {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  article.home {
+    padding: 12vh 0 6rem;
+    font-size: 1.02rem;
+    line-height: 1.88;
+  }
+
+  article.home > h1:first-of-type {
+    margin: 0 0 1.25rem;
+    font-size: clamp(3rem, 11vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+  }
+
+  article.home h2 {
+    margin-top: 4.5rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--lightgray);
+    font-size: clamp(1.45rem, 4vw, 2.15rem);
+    letter-spacing: -0.04em;
+  }
+
+  article.home h3 {
+    color: var(--secondary);
+    font-size: 1.15rem;
+  }
+
+  article.home strong {
+    color: var(--dark);
+  }
+
+  article.home ul {
+    padding-left: 1.15rem;
+  }
+
+  article.home a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+  }
+
+  article.home > p:nth-of-type(1),
+  article.home > p:nth-of-type(2) {
+    max-width: 680px;
+    color: var(--home-muted);
+    font-size: clamp(1.08rem, 2.2vw, 1.32rem);
+  }
+}
+
+@media all and (max-width: 800px) {
+  body[data-slug="index"] {
+    #quartz-body {
+      display: block;
+    }
+
+    .center {
+      margin: 0;
+      padding: 0 1.25rem;
+    }
+
+    article.home {
+      padding-top: 4rem;
+    }
+  }
+}

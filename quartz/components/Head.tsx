@@ -19,6 +19,10 @@ export default (() => {
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
       unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description)
+    const keywords =
+      fileData.slug === "index"
+        ? "梁程, Liang Cheng, 梁非凡, 前端开发工程师, Flutter, React, TypeScript, 霸王茶姬, 个人博客"
+        : undefined
 
     const { css, js, additionalHead } = externalResources
 
@@ -29,12 +33,45 @@ export default (() => {
 
     // Url of current page
     const socialUrl =
-      fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
+      fileData.slug === "404" || fileData.slug === "index"
+        ? url.toString()
+        : joinSegments(url.toString(), fileData.slug!)
 
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
       (e) => e.name === CustomOgImagesEmitterName,
     )
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
+    const canonicalUrl = socialUrl.endsWith("/") ? socialUrl.slice(0, -1) : socialUrl
+    const structuredData =
+      fileData.slug === "index"
+        ? {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "梁程",
+            alternateName: ["Liang Cheng", "梁非凡", "CHENG-LIANG1"],
+            jobTitle: "Frontend / Flutter Engineer",
+            url: "https://chengliang.vercel.app",
+            sameAs: ["https://github.com/CHENG-LIANG1"],
+            email: "mailto:liangcheng2456@163.com",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Nanjing",
+              addressCountry: "CN",
+            },
+            worksFor: {
+              "@type": "Organization",
+              name: "霸王茶姬",
+            },
+            knowsAbout: [
+              "Flutter",
+              "React",
+              "TypeScript",
+              "SwiftUI",
+              "AI-powered development",
+              "Frontend engineering",
+            ],
+          }
+        : undefined
 
     return (
       <head>
@@ -56,6 +93,9 @@ export default (() => {
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        {keywords && <meta name="keywords" content={keywords} />}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
@@ -85,6 +125,12 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        {structuredData && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          />
+        )}
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
