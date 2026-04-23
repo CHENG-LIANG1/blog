@@ -11,7 +11,16 @@ Hey! I'm Cheng **Liang**, a frontend engineer and indie app developer. Born in H
 
 Working at [霸王茶姬 (CHAGEE)](https://www.chagee.cn/), building the China-region mobile app with **Flutter**.
 
-Creator of [ActiveHabits](https://apps.apple.com/us/app/active-habits/id6758425099) · [GeekBio](https://apps.apple.com/us/app/geekbio/id6758457562) · [ActiveToDo](/Projects/ActiveToDo) · [ActiveTranslation](/Projects/ActiveTranslation)
+### App Store Apps
+
+- [Active Habits](https://apps.apple.com/us/app/active-habits/id6758425099): A habit-building app that helps you stay consistent with your daily routines.
+- [GeekBio](https://apps.apple.com/us/app/geekbio/id6758457562): A personal bio app for organizing your profile and links in one clean page.
+- [Roam Focus](https://apps.apple.com/cn/app/roam-focus/id6759795571): A focus timer app designed for deep work and distraction-free sessions.
+
+### Other Projects
+
+- [ActiveToDo](/Projects/ActiveToDo): A complete and clean to-do app for adding, finishing, and managing tasks.
+- [ActiveTranslation](/Projects/ActiveTranslation): A practical translation app that supports multilingual text translation.
 
 ---
 
@@ -19,7 +28,16 @@ Creator of [ActiveHabits](https://apps.apple.com/us/app/active-habits/id67584250
 
 目前在 [霸王茶姬](https://www.chagee.cn/) 做 **Flutter** 开发，负责中国区 App。
 
-开发 [ActiveHabits](https://apps.apple.com/us/app/active-habits/id6758425099) · [GeekBio](https://apps.apple.com/us/app/geekbio/id6758457562) · [ActiveToDo](/Projects/ActiveToDo) · [ActiveTranslation](/Projects/ActiveTranslation)
+### App Store 上架应用
+
+- [Active Habits](https://apps.apple.com/us/app/active-habits/id6758425099)：一款习惯养成应用，帮助你稳定坚持每日目标。
+- [GeekBio](https://apps.apple.com/us/app/geekbio/id6758457562)：一款个人主页应用，用一个页面集中展示你的身份与链接。
+- [Roam Focus](https://apps.apple.com/cn/app/roam-focus/id6759795571)：一款专注计时应用，帮助你进入深度工作状态。
+
+### 其他项目
+
+- [ActiveToDo](/Projects/ActiveToDo)：一个功能完整的待办事项应用，支持添加、完成与管理任务。
+- [ActiveTranslation](/Projects/ActiveTranslation)：一个实用的翻译工具应用，支持多语言文本互译。
 
 ---
 
