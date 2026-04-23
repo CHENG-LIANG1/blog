@@ -1,0 +1,32 @@
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.25rem 0 1rem;
+  padding: 0.2rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 999px;
+  background: var(--light);
+
+  .lang-toggle-btn {
+    border: none;
+    background: transparent;
+    color: var(--darkgray);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .lang-toggle-btn:hover {
+    color: var(--dark);
+    background: var(--lightgray);
+  }
+
+  .lang-toggle-btn.active {
+    background: var(--secondary);
+    color: var(--light);
+  }
+}

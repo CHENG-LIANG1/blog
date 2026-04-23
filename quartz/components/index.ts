@@ -25,6 +25,7 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import AllBlogsLink from "./AllBlogsLink"
 import Lock from "./Lock"
+import LanguageToggle from "./LanguageToggle"
 
 export {
   ArticleTitle,
@@ -54,4 +55,5 @@ export {
   ConditionalRender,
   AllBlogsLink,
   Lock,
+  LanguageToggle,
 }
