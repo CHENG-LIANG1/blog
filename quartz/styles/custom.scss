@@ -213,3 +213,75 @@ body[data-slug="index"] {
     }
   }
 }
+
+// -----------------------------
+// 布局与左侧目录（Explorer）可读性优化
+// -----------------------------
+
+// 1) 整体左右留白偏大：减少侧栏内边距 + 适度放大页面最大宽度
+@media all and (min-width: 1200px) {
+  .page {
+    // 默认是 desktop(1200px)+300px=1500px，这里略放大让内容区更宽
+    max-width: 1680px;
+  }
+
+  .page > #quartz-body {
+    // 左侧栏稍加宽，右侧栏略收窄，给正文腾空间同时让 Explorer 更好读
+    grid-template-columns: 380px minmax(0, 1fr) 280px;
+    column-gap: 14px;
+  }
+
+  .page > #quartz-body .sidebar {
+    // 默认 2rem 左右 padding 会“吃掉”可用宽度
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+// 2) 平板宽度下也给左侧目录更充裕空间
+@media all and (min-width: 800px) and (max-width: 1199px) {
+  .page > #quartz-body {
+    grid-template-columns: 360px minmax(0, 1fr);
+  }
+
+  .page > #quartz-body .sidebar.left {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+// 3) Explorer 条目换行容易“粘”在一起：增加行高/内边距/块级点击区域，并强化当前页高亮
+.explorer-content ul li > a {
+  display: block;
+  padding: 0.2rem 0.45rem;
+  margin: 0.05rem 0;
+  border-radius: 6px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.explorer-content ul li > a:hover {
+  background: color-mix(in srgb, var(--secondary) 10%, transparent);
+}
+
+.explorer-content ul li > a.active {
+  font-weight: 650;
+  background: color-mix(in srgb, var(--tertiary) 16%, transparent);
+  box-shadow: inset 3px 0 0 var(--tertiary);
+}
+
+// 4) 文件夹标题也允许换行，并给一点垂直间距
+.folder-container {
+  align-items: flex-start;
+}
+
+.folder-container div > a,
+.folder-container div > button span {
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.folder-container div > a {
+  display: block;
+  padding: 0.15rem 0.2rem;
+}

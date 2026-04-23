@@ -1,7 +1,14 @@
+---
+tags:
+  - 技术
+aliases:
+  - Structured Output
+  - 结构化输出
+---
 
-# 🏗️ 结构化输出 (Structured Output) 学习笔记：从幻觉到确定性
+> 一句话看懂：**结构化输出是把 LLM 的“自由作文”变成“可解析、可校验、可落地”的数据**，让你的代码不再靠猜。
 
-## 一、 核心概念：为什么需要结构化？
+## 1. 为什么需要结构化？
 
 大模型本质上是一个“概率预测复读机”，它的原生输出是**非结构化文本**。
 
@@ -12,11 +19,11 @@
 
 ---
 
-## 二、 浅层实践：基于 Prompt 的“格式契约”
+## 2. 软约束：用 Prompt 建立“格式契约”
 
 这是最快、最直观的方法，适用于快速验证 MVP 想法。
 
-### 1. 使用 Markdown 标识符
+**1) 使用 Markdown 标识符**
 
 在 Prompt 中明确要求输出格式，并提供一个 Empty Template。
 
@@ -36,7 +43,7 @@
 > 
 > **注意：只返回 JSON，不要任何开场白。**”
 
-### 2. 少样本引导 (Few-Shot for Structure)
+**2) 少样本引导（Few-Shot for Structure）**
 
 通过 1-2 个例子，让模型形成“条件反射”。
 
@@ -52,15 +59,15 @@
 
 ---
 
-## 三、 中阶进阶：Schema 约束与校验
+## 3. 硬约束：Schema 约束与校验
 
 当你需要构建生产级别的应用（比如自动化 UI 生成、数据看板）时，简单的 Prompt 约束可能会失效（模型偶尔会多吐一个逗号或一段解释）。
 
-### 1. JSON Schema：给 AI 戴上“紧箍咒”
+**3.1 JSON Schema：给 AI 戴上“紧箍咒”**
 
 目前主流的 API（如 OpenAI, Gemini）都支持 **JSON Mode** 或 **Response Schema**。你只需要定义一个标准的 JSON Schema，模型就会保证输出绝对合法。
-[[JSON Schema]]
-### 2. XML 标签：长文本的最佳容器
+[[JSON Schema 笔记]]
+**3.2 XML 标签：长文本的最佳容器**
 
 在处理复杂的长任务（如：生成一整个 Flutter 页面）时，XML 标签比 JSON 更鲁棒，因为 JSON 对嵌套中的特殊字符（如引号、换行）非常敏感。
 
@@ -80,11 +87,11 @@ XML
 
 ---
 
-## 四、 高阶工程化：类型驱动开发 (Type-Driven)
+## 4. 工程化：类型驱动（Type-Driven）
 
 在实际的业务开发（如你在 Chagee 的组件库维护或个人 iOS 项目）中，手写 JSON Schema 太累了。这时候需要借助**类型定义库**。
 
-### 1. Python 阵营：Pydantic + Instructor
+**1) Python 阵营：Pydantic + Instructor**
 
 这是目前 AI 工程界最流行的组合。你定义一个类，它自动帮你处理 Prompt 转换和校验失败后的自动重试。
 
@@ -102,13 +109,13 @@ class AppFeature(BaseModel):
 # Instructor 会自动要求模型返回符合 AppFeature 结构的 JSON
 ```
 
-### 2. TypeScript 阵营：Zod + TypeChat
+**2) TypeScript 阵营：Zod + TypeChat**
 
 在前端或 Node.js 环境下，利用 Zod 定义 Schema，可以实现从“大模型输出”到“前端类型安全”的无缝对接。
 
 ---
 
-## 五、 Vibe Coding 视角下的实战建议
+## 5. 实战建议（写给“要上线的人”）
 
 1. **先降级再升级：** 如果模型在复杂的 JSON 上翻车，先尝试让它输出 XML 标签包裹的内容，再在代码里做简单的正则或解析。
     
@@ -128,4 +135,7 @@ class AppFeature(BaseModel):
 - **JSON Schema** 是“硬约束”（适合稳）。
     
 - **Type-Driven** 是“工程化约束”（适合大项目）。
-    
+
+## 6. 相关笔记
+- [[JSON Schema 笔记]]：最常见的“硬约束”实现方式。
+- [[Function Calling & Tool Use 笔记]]：工具调用参数也是结构化输出的一种。
