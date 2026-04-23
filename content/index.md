@@ -21,6 +21,7 @@ Working at [霸王茶姬 (CHAGEE)](https://www.chagee.com/zh-cn), building the C
 
 - [ActiveToDo](/Projects/ActiveToDo): A complete and clean to-do app for adding, finishing, and managing tasks.
 - [ActiveTranslation](/Projects/ActiveTranslation): A practical translation app that supports multilingual text translation.
+- [Tikkuu MultiPlanner](/Projects/Tikkuu%20MultiPlanner): A multi-tab project planner with Kanban drag-and-drop, subtasks, deadlines, and recurring-task reset automation.
 
 <hr data-lang-split="en-zh" />
 
@@ -38,6 +39,7 @@ Working at [霸王茶姬 (CHAGEE)](https://www.chagee.com/zh-cn), building the C
 
 - [ActiveToDo](/Projects/ActiveToDo)：一个功能完整的待办事项应用，支持添加、完成与管理任务。
 - [ActiveTranslation](/Projects/ActiveTranslation)：一个实用的翻译工具应用，支持多语言文本互译。
+- [Tikkuu MultiPlanner](/Projects/Tikkuu%20MultiPlanner)：一个多标签项目规划工具，支持看板拖拽排序、子任务、截止日期与重复任务自动重置。
 
 <hr data-lang-split="zh-rest" />
 
