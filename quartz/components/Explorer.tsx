@@ -23,9 +23,9 @@ export interface Options {
 }
 
 const defaultOptions: Options = {
-  folderDefaultState: "collapsed",
+  folderDefaultState: "open",
   folderClickBehavior: "link",
-  useSavedState: true,
+  useSavedState: false,
   mapFn: (node) => {
     return node
   },
@@ -97,6 +97,8 @@ export default ((userOpts?: Partial<Options>) => {
             <line x1="4" x2="20" y1="18" y2="18" />
           </svg>
         </button>
+        {/* 移动端抽屉背景遮罩 */}
+        <div class="explorer-backdrop" aria-hidden="true" />
         <button
           type="button"
           class="title-button explorer-toggle desktop-explorer"
@@ -106,17 +108,16 @@ export default ((userOpts?: Partial<Options>) => {
           <h2>{opts.title ?? i18n(cfg.locale).components.explorer.title}</h2>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="5 8 14 8"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            stroke="none"
             class="fold"
+            aria-hidden="true"
           >
-            <polyline points="6 9 12 15 18 9"></polyline>
+            {/* 实心三角形（展开/收起） */}
+            <path d="M7 10 L12 15 L17 10 Z" />
           </svg>
         </button>
         <div id={id} class="explorer-content" aria-expanded={false} role="group">
@@ -132,17 +133,16 @@ export default ((userOpts?: Partial<Options>) => {
             <div class="folder-container">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                viewBox="5 8 14 8"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="none"
                 class="folder-icon"
+                aria-hidden="true"
               >
-                <polyline points="6 9 12 15 18 9"></polyline>
+                {/* 实心三角形（展开/收起） */}
+                <path d="M7 10 L12 15 L17 10 Z" />
               </svg>
               <div class="folder-title-wrapper">
                 <button class="folder-button">

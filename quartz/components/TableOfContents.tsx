@@ -45,14 +45,13 @@ export default ((opts?: Partial<Options>) => {
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            fill="currentColor"
+            stroke="none"
             class="fold"
+            aria-hidden="true"
           >
-            <polyline points="6 9 12 15 18 9"></polyline>
+            {/* 实心三角形（展开/收起） */}
+            <path d="M7 10 L12 15 L17 10 Z" />
           </svg>
         </button>
         <OverflowList

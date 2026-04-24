@@ -21,18 +21,31 @@ type FolderState = {
 
 let currentExplorerState: Array<FolderState>
 
+function closeMobileExplorer(explorer: HTMLElement) {
+  explorer.classList.add("collapsed")
+  explorer.setAttribute("aria-expanded", "false")
+  const content = explorer.querySelector(".explorer-content") as MaybeHTMLElement
+  content?.setAttribute("aria-expanded", "false")
+  document.documentElement.classList.remove("mobile-no-scroll")
+}
+
 function toggleExplorer(this: HTMLElement) {
   const nearestExplorer = this.closest(".explorer") as HTMLElement
   if (!nearestExplorer) return
-  const explorerCollapsed = nearestExplorer.classList.toggle("collapsed")
-  nearestExplorer.setAttribute(
-    "aria-expanded",
-    nearestExplorer.getAttribute("aria-expanded") === "true" ? "false" : "true",
-  )
+  const nowCollapsed = nearestExplorer.classList.toggle("collapsed")
+  const isOpen = !nowCollapsed
 
-  if (!explorerCollapsed) {
+  // keep aria-expanded in sync for a11y
+  this.setAttribute("aria-expanded", isOpen ? "true" : "false")
+  nearestExplorer.setAttribute("aria-expanded", isOpen ? "true" : "false")
+  const content = nearestExplorer.querySelector(".explorer-content") as MaybeHTMLElement
+  content?.setAttribute("aria-expanded", isOpen ? "true" : "false")
+
+  // only lock scroll on mobile drawer
+  const isMobileToggle = this.dataset.mobile === "true"
+  if (isMobileToggle && isOpen) {
     document.documentElement.classList.add("mobile-no-scroll")
-  } else {
+  } else if (isMobileToggle && !isOpen) {
     document.documentElement.classList.remove("mobile-no-scroll")
   }
 }
@@ -230,6 +243,26 @@ async function setupExplorer(currentSlug: FullSlug) {
     for (const button of explorerButtons) {
       button.addEventListener("click", toggleExplorer)
       window.addCleanup(() => button.removeEventListener("click", toggleExplorer))
+    }
+
+    // Mobile: click backdrop to close drawer
+    const backdrop = explorer.querySelector(".explorer-backdrop") as MaybeHTMLElement
+    if (backdrop) {
+      const onBackdropClick = () => closeMobileExplorer(explorer)
+      backdrop.addEventListener("click", onBackdropClick)
+      window.addCleanup(() => backdrop.removeEventListener("click", onBackdropClick))
+    }
+
+    // Mobile: close drawer after clicking any link (file or folder link)
+    const mobileToggle = explorer.querySelector(".mobile-explorer") as MaybeHTMLElement
+    const shouldCloseOnClick = mobileToggle?.checkVisibility?.() ?? false
+    if (shouldCloseOnClick) {
+      const links = explorer.querySelectorAll(".explorer-content a") as NodeListOf<HTMLAnchorElement>
+      const onLinkClick = () => closeMobileExplorer(explorer)
+      for (const a of links) {
+        a.addEventListener("click", onLinkClick)
+        window.addCleanup(() => a.removeEventListener("click", onLinkClick))
+      }
     }
 
     if (opts.folderClickBehavior === "collapse") {

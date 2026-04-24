@@ -34,6 +34,9 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Explorer({
+      // 默认展开所有目录（不再使用 localStorage 记录折叠状态）
+      folderDefaultState: "open",
+      useSavedState: false,
       filterFn: (node) => {
         // Only hide tags folder
         if (node.slugSegment === "tags") {
@@ -90,6 +93,9 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Explorer({
+      // 默认展开所有目录（不再使用 localStorage 记录折叠状态）
+      folderDefaultState: "open",
+      useSavedState: false,
       filterFn: (node) => {
         // Only hide tags folder
         if (node.slugSegment === "tags") {
