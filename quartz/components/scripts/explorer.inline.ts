@@ -1,5 +1,5 @@
 import { FileTrieNode } from "../../util/fileTrie"
-import { FullSlug, resolveRelative, simplifySlug } from "../../util/path"
+import { FullSlug, resolveRelative } from "../../util/path"
 import { ContentDetails } from "../../plugins/emitters/contentIndex"
 
 type MaybeHTMLElement = HTMLElement | undefined
@@ -147,11 +147,7 @@ function createFolderNode(
     currentExplorerState.find((item) => item.path === folderPath)?.collapsed ??
     opts.folderDefaultState === "collapsed"
 
-  const simpleFolderPath = simplifySlug(folderPath)
-  const folderIsPrefixOfCurrentSlug =
-    simpleFolderPath === currentSlug.slice(0, simpleFolderPath.length)
-
-  if (!isCollapsed || folderIsPrefixOfCurrentSlug) {
+  if (!isCollapsed) {
     folderOuter.classList.add("open")
   }
 
