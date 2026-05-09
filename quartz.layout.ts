@@ -17,6 +17,7 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
+    Component.ScrollControls(),
     Component.ConditionalRender({
       component: Component.LanguageToggle(),
       condition: (page) => page.fileData.slug === "index" || page.fileData.slug === "个人经历",

@@ -11,11 +11,13 @@ interface ContentMetaOptions {
    * Whether to display reading time
    */
   showReadingTime: boolean
+  showWordCount: boolean
   showComma: boolean
 }
 
 const defaultOptions: ContentMetaOptions = {
   showReadingTime: true,
+  showWordCount: true,
   showComma: true,
 }
 
@@ -34,12 +36,22 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       }
 
       // Display reading time if enabled
-      if (options.showReadingTime) {
-        const { minutes, words: _words } = readingTime(text)
+      if (options.showReadingTime || options.showWordCount) {
+        const { minutes, words } = readingTime(text)
         const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
           minutes: Math.ceil(minutes),
         })
-        segments.push(<span>{displayedTime}</span>)
+        if (options.showReadingTime) {
+          segments.push(<span>{displayedTime}</span>)
+        }
+
+        if (options.showWordCount) {
+          const formattedWords = new Intl.NumberFormat(cfg.locale).format(words)
+          const displayedWords = cfg.locale.startsWith("zh")
+            ? `字数 ${formattedWords}`
+            : `${formattedWords} words`
+          segments.push(<span>{displayedWords}</span>)
+        }
       }
 
       return (

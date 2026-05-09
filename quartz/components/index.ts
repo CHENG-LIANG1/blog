@@ -26,6 +26,7 @@ import ConditionalRender from "./ConditionalRender"
 import AllBlogsLink from "./AllBlogsLink"
 import Lock from "./Lock"
 import LanguageToggle from "./LanguageToggle"
+import ScrollControls from "./ScrollControls"
 
 export {
   ArticleTitle,
@@ -56,4 +57,5 @@ export {
   AllBlogsLink,
   Lock,
   LanguageToggle,
+  ScrollControls,
 }
