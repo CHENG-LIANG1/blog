@@ -19,7 +19,7 @@ export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
       component: Component.LanguageToggle(),
-      condition: (page) => page.fileData.slug === "index",
+      condition: (page) => page.fileData.slug === "index" || page.fileData.slug === "个人经历",
     }),
     Component.ConditionalRender({
       component: Component.Breadcrumbs(),

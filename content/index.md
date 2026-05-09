@@ -11,6 +11,8 @@ Hey! I'm Cheng **Liang**, a frontend engineer and indie app developer. Born in H
 
 Working at [霸王茶姬 (CHAGEE)](https://www.chagee.com/zh-cn), building the China-region mobile app with **Flutter**.
 
+- [Resume](个人经历.md)
+
 ## App Store Apps
 
 - [Active Habits](https://apps.apple.com/us/app/active-habits/id6758425099): A habit-building app that helps you stay consistent with your daily routines.
@@ -28,6 +30,8 @@ Working at [霸王茶姬 (CHAGEE)](https://www.chagee.com/zh-cn), building the C
 你好！我是 **梁**程，一名前端工程师和独立开发者。出生于**江苏南通海门**，现定居**南京**。**雅思 7.5** — 英语流利，可作为工作语言。
 
 目前在 [霸王茶姬](https://www.chagee.com/zh-cn) 做 **Flutter** 开发，负责中国区 App。
+
+- [个人经历](个人经历.md)
 
 ## App Store 上架应用
 

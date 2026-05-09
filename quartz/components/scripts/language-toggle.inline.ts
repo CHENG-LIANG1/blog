@@ -44,8 +44,8 @@ const toggleTocByLanguage = (lang: PreferredLanguage) => {
   }
 }
 
-const applyLanguageToIndexContent = (lang: PreferredLanguage) => {
-  const article = document.querySelector<HTMLElement>('body[data-slug="index"] article')
+const applyLanguageToSplitContent = (lang: PreferredLanguage) => {
+  const article = document.querySelector<HTMLElement>("article")
   if (!article) {
     return
   }
@@ -53,18 +53,40 @@ const applyLanguageToIndexContent = (lang: PreferredLanguage) => {
   const firstSplit = article.querySelector<HTMLElement>('hr[data-lang-split="en-zh"]')
   const secondSplit = article.querySelector<HTMLElement>('hr[data-lang-split="zh-rest"]')
   const thirdSplit = article.querySelector<HTMLElement>('hr[data-lang-split="en-rest-zh-rest"]')
-  if (!firstSplit || !secondSplit) {
+  if (!firstSplit) {
     return
   }
 
   const blocks = Array.from(article.children)
   const firstIndex = blocks.indexOf(firstSplit)
-  const secondIndex = blocks.indexOf(secondSplit)
-  if (firstIndex === -1 || secondIndex === -1 || firstIndex >= secondIndex) {
+  if (firstIndex === -1) {
     return
   }
 
-  // If the third split is not present, fallback to the old 2-zone + shared-content behavior.
+  if (!secondSplit) {
+    for (let index = 0; index < blocks.length; index++) {
+      const block = blocks[index] as HTMLElement
+
+      if (index === firstIndex) {
+        block.style.display = "none"
+        continue
+      }
+
+      if (index < firstIndex) {
+        block.style.display = lang === "en" ? "" : "none"
+        continue
+      }
+
+      block.style.display = lang === "zh" ? "" : "none"
+    }
+    return
+  }
+
+  const secondIndex = blocks.indexOf(secondSplit)
+  if (secondIndex === -1 || firstIndex >= secondIndex) {
+    return
+  }
+
   if (!thirdSplit) {
     for (let index = 0; index < blocks.length; index++) {
       const block = blocks[index] as HTMLElement
@@ -136,7 +158,7 @@ const syncLanguageButtons = (lang: PreferredLanguage) => {
 
 const applyLanguage = (lang: PreferredLanguage) => {
   document.documentElement.setAttribute("data-language", lang)
-  applyLanguageToIndexContent(lang)
+  applyLanguageToSplitContent(lang)
   toggleTocByLanguage(lang)
   syncLanguageButtons(lang)
 }
