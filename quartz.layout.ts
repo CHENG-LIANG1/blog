@@ -77,12 +77,6 @@ export const defaultContentPageLayout: PageLayout = {
   right: [
     Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks({
-      filterFn: (file) => {
-        // 隐藏生活文件夹的内容
-        return !file.slug?.startsWith("生活/")
-      },
-    }),
   ],
 }
 

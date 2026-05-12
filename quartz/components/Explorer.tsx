@@ -108,16 +108,18 @@ export default ((userOpts?: Partial<Options>) => {
           <h2>{opts.title ?? i18n(cfg.locale).components.explorer.title}</h2>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="14"
+            height="14"
             viewBox="0 0 24 24"
-            fill="currentColor"
-            stroke="none"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
             class="fold"
             aria-hidden="true"
           >
-            {/* 实心三角形（展开/收起） */}
-            <path d="M7 10 L12 15 L17 10 Z" />
+            <path d="M6 9l6 6 6-6" />
           </svg>
         </button>
         <div id={id} class="explorer-content" aria-expanded={false} role="group">
@@ -133,16 +135,18 @@ export default ((userOpts?: Partial<Options>) => {
             <div class="folder-container">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="12"
+                height="12"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                stroke="none"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
                 class="folder-icon"
                 aria-hidden="true"
               >
-                {/* 实心三角形（展开/收起） */}
-                <path d="M7 10 L12 15 L17 10 Z" />
+                <path d="M6 9l6 6 6-6" />
               </svg>
               <div class="folder-title-wrapper">
                 <button class="folder-button">

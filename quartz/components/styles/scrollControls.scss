@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 2px;
   z-index: 1000;
   opacity: 0;
   transition: opacity 0.2s ease;
@@ -17,7 +17,7 @@
 .reading-progress-bar {
   width: 100%;
   height: 100%;
-  background: var(--secondary);
+  background: linear-gradient(90deg, var(--secondary), var(--tertiary));
   transform-origin: 0 0;
   transform: scaleX(0);
 }
@@ -27,24 +27,26 @@
   right: 1rem;
   bottom: 1rem;
   z-index: 1000;
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid var(--secondary);
-  background: var(--secondary);
-  color: var(--light);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--darkgray);
   display: grid;
   place-items: center;
   opacity: 0;
   pointer-events: none;
   transform: translateY(8px);
   cursor: pointer;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
   transition:
     opacity 0.2s ease,
     transform 0.2s ease,
     border-color 0.2s ease,
-    filter 0.2s ease;
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .back-to-top.visible {
@@ -54,7 +56,10 @@
 }
 
 .back-to-top:hover {
-  filter: brightness(1.08);
+  background: var(--lightgray);
+  color: var(--dark);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  transform: translateY(-2px);
 }
 
 .back-to-top > svg {

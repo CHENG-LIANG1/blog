@@ -20,11 +20,17 @@ button.toc-header {
   color: var(--dark);
   display: flex;
   align-items: center;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--secondary);
+  }
 
   & h3 {
     font-size: 1rem;
     display: inline-block;
     margin: 0;
+    font-weight: 600;
   }
 
   & .fold {
@@ -42,26 +48,41 @@ button.toc-header {
 ul.toc-content.overflow {
   list-style: none;
   position: relative;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
   padding: 0;
   max-height: calc(100% - 2rem);
   overscroll-behavior: contain;
   list-style: none;
 
   & > li > a {
-    color: var(--dark);
-    opacity: 0.35;
+    color: var(--darkgray);
+    opacity: 0.55;
     transition:
-      0.5s ease opacity,
-      0.3s ease color;
+      0.3s ease opacity,
+      0.2s ease color;
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    margin: 0.15rem 0;
+    display: block;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+
+    &:hover {
+      opacity: 0.85;
+      color: var(--dark);
+    }
+
+    // 当前正在阅读的章节 — 只用字体颜色强调，无背景色
     &.in-view {
-      opacity: 0.75;
+      opacity: 1;
+      font-weight: 600;
+      color: var(--secondary);
     }
   }
 
   @for $i from 0 through 6 {
     & .depth-#{$i} {
-      padding-left: calc(1rem * #{$i});
+      padding-left: calc(0.85rem * #{$i});
     }
   }
 }

@@ -4,19 +4,27 @@
   position: relative;
   background: none;
   border: none;
-  width: 20px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   margin: 0;
   text-align: inherit;
   flex-shrink: 0;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: var(--lightgray);
+  }
 
   & svg {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    top: calc(50% - 10px);
+    width: 18px;
+    height: 18px;
+    top: calc(50% - 9px);
     fill: var(--darkgray);
-    transition: opacity 0.1s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
   }
 }
 

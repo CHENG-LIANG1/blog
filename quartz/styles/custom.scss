@@ -1,121 +1,127 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
-// Mono 字体栈 - 全站等宽字体
+// ============================================
+// 字体系统 - Inter + 中文系统字体栈
+// ============================================
 :root {
-  --font-sans: 'JetBrains Mono', 'Noto Sans SC', 'Fira Code', 'Source Code Pro', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Source Code Pro', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
+// 标题使用更紧凑的字距，更有设计感
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
 code, pre {
   font-family: var(--font-mono);
+  font-feature-settings: normal;
 }
 
-// Stack pills - Anthony Fu 风格
+// 正文字号与行高优化
+p, ul, ol, li {
+  line-height: 1.75;
+}
+
+article > p {
+  margin-bottom: 1.25rem;
+}
+
+// ============================================
+// Stack pills - 更精致的标签
+// ============================================
 .stack-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.3em 0.75em;
+  padding: 0.35em 0.85em;
   margin: 0.25rem 0.4rem 0.25rem 0;
-  border-radius: 4px;
-  font-size: 0.9em;
-  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
-  font-weight: 400;
+  border-radius: 999px;
+  font-size: 0.85em;
+  font-family: var(--font-mono);
+  font-weight: 500;
   line-height: 1.5;
   height: auto;
   min-height: 2em;
   box-sizing: border-box;
   text-decoration: none !important;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid var(--lightgray);
   cursor: default;
   vertical-align: middle;
-  // 统一背景色和文字色
-  background: var(--lightgray);
-  color: var(--dark);
-  
+  background: var(--light);
+  color: var(--darkgray);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+
   svg {
     flex-shrink: 0;
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
   }
-  
+
   &:hover {
     transform: translateY(-1px);
     text-decoration: none !important;
     cursor: pointer;
-    background: var(--gray);
+    background: var(--lightgray);
     color: var(--dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--gray);
   }
-  
+
   // 图标颜色保持不同
-  
-  // React - 蓝色
-  &.react svg {
-    color: #087ea4;
-  }
-  
-  // Flutter - 天蓝色
-  &.flutter svg {
-    color: #02569b;
-  }
-  
-  // SwiftUI - 橙色
-  &.swift svg {
-    color: #f05138;
-  }
-  
-  // TypeScript - 蓝色
-  &.ts svg {
-    color: #3178c6;
-  }
-  
-  // AI 工具图标颜色
-  
-  // Codex - 绿色 (OpenAI)
-  &.codex svg {
-    color: #059669;
-  }
-  
-  // Trae - 紫色 (字节)
-  &.trae svg {
-    color: #7c3aed;
-  }
-  
-  // Cursor - 灰色/黑色
-  &.cursor svg {
-    color: #374151;
-  }
-  
-  // Claude - 橙色/珊瑚色 (Anthropic)
-  &.claude svg {
-    color: #ea580c;
-  }
-  
-  // ChatGPT - 绿色
-  &.chatgpt svg {
-    color: #10a37f;
-  }
+  &.react svg { color: #087ea4; }
+  &.flutter svg { color: #02569b; }
+  &.swift svg { color: #f05138; }
+  &.ts svg { color: #3178c6; }
+  &.codex svg { color: #059669; }
+  &.trae svg { color: #7c3aed; }
+  &.cursor svg { color: #374151; }
+  &.claude svg { color: #ea580c; }
+  &.chatgpt svg { color: #10a37f; }
 }
 
-// 链接样式 - 统一使用下划线（除了文件树）
+// ============================================
+// 链接样式 - 更克制的下划线
+// ============================================
 a {
   text-decoration: underline;
-  text-underline-offset: 0.2em;
-  
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--secondary) 35%, transparent);
+  transition: all 0.2s ease;
+
   &:hover {
     text-decoration-thickness: 2px;
+    text-decoration-color: var(--secondary);
   }
 }
 
@@ -161,51 +167,184 @@ h6 a[href^="#"] {
   display: none !important;
 }
 
+// ============================================
+// 引用块优化
+// ============================================
+blockquote {
+  margin: 1.5rem 0;
+  border-left: 3px solid var(--secondary);
+  padding-left: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background: color-mix(in srgb, var(--secondary) 3%, transparent);
+  border-radius: 0 8px 8px 0;
+  transition: border-color 0.2s ease, background 0.2s ease;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ============================================
+// 代码块优化
+// ============================================
+pre {
+  border-radius: 10px;
+  border: 1px solid var(--lightgray);
+  background: var(--lightgray);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+figure[data-rehype-pretty-code-figure] {
+  margin: 1.5rem 0;
+
+  & > [data-rehype-pretty-code-title] {
+    border-radius: 8px 8px 0 0;
+    border: 1px solid var(--lightgray);
+    border-bottom: none;
+    margin-bottom: 0;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gray);
+    background: var(--lightgray);
+  }
+
+  & > pre {
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+  }
+
+  &:not(:has(> [data-rehype-pretty-code-title])) > pre {
+    border-radius: 10px;
+    border: 1px solid var(--lightgray);
+  }
+}
+
+code {
+  border-radius: 5px;
+  padding: 0.15rem 0.35rem;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+// ============================================
+// 表格优化
+// ============================================
+.table-container > table {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--lightgray);
+
+  th {
+    background: var(--lightgray);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--gray);
+    padding: 0.6rem 1rem;
+  }
+
+  td {
+    padding: 0.5rem 1rem;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+// ============================================
+// 图片优化
+// ============================================
+img {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+  }
+}
+
+// ============================================
 // 首页基础样式
+// ============================================
 body[data-slug="index"] {
   article {
     padding: 2rem 0;
   }
 }
 
+// ============================================
 // 工作经历折叠区域
+// ============================================
 .resume-section {
   margin: 1.5rem 0;
-  
+  border: 1px solid var(--lightgray);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  background: color-mix(in srgb, var(--light) 50%, transparent);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: var(--gray);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
   summary {
-    font-size: 1.1em;
-    font-weight: 500;
+    font-size: 1.05em;
+    font-weight: 600;
     cursor: pointer;
     padding: 0.5rem 0;
     color: var(--dark);
     transition: color 0.2s ease;
-    
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+      content: "▸";
+      font-size: 0.8em;
+      color: var(--gray);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
     &:hover {
       color: var(--secondary);
+
+      &::before {
+        color: var(--secondary);
+      }
     }
   }
-  
+
+  &[open] summary::before {
+    transform: rotate(90deg);
+  }
+
   &[open] summary {
     margin-bottom: 1rem;
   }
-  
+
   h3 {
     font-size: 1rem;
     margin: 1.2rem 0 0.5rem;
     color: var(--dark);
   }
-  
+
   h3 + p {
     font-size: 0.85em;
     color: var(--darkgray);
     opacity: 0.8;
     margin: 0 0 0.5rem;
   }
-  
+
   ul {
     margin: 0.5rem 0;
     padding-left: 1.2rem;
-    
+
     li {
       margin: 0.3rem 0;
       font-size: 0.9em;
@@ -214,34 +353,31 @@ body[data-slug="index"] {
   }
 }
 
-// -----------------------------
+// ============================================
 // 布局与左侧目录（Explorer）可读性优化
-// -----------------------------
+// ============================================
 
 // 1) 整体左右留白偏大：减少侧栏内边距 + 适度放大页面最大宽度
 @media all and (min-width: 1200px) {
   .page {
-    // 默认是 desktop(1200px)+300px=1500px，这里略放大让内容区更宽
-    max-width: 1680px;
+    max-width: 1720px;
   }
 
   .page > #quartz-body {
-    // 左侧栏稍加宽，右侧栏略收窄，给正文腾空间同时让 Explorer 更好读
-    grid-template-columns: 380px minmax(0, 1fr) 280px;
-    column-gap: 14px;
+    grid-template-columns: 360px minmax(0, 1fr) 280px;
+    column-gap: 20px;
   }
 
   .page > #quartz-body .sidebar {
-    // 默认 2rem 左右 padding 会“吃掉”可用宽度
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
 // 2) 平板宽度下也给左侧目录更充裕空间
 @media all and (min-width: 800px) and (max-width: 1199px) {
   .page > #quartz-body {
-    grid-template-columns: 360px minmax(0, 1fr);
+    grid-template-columns: 340px minmax(0, 1fr);
   }
 
   .page > #quartz-body .sidebar.left {
@@ -250,38 +386,392 @@ body[data-slug="index"] {
   }
 }
 
-// 3) Explorer 条目换行容易“粘”在一起：增加行高/内边距/块级点击区域，并强化当前页高亮
+// 3) Explorer 条目换行容易"粘"在一起：增加行高/内边距/块级点击区域，并强化当前页高亮
 .explorer-content ul li > a {
   display: block;
-  padding: 0.2rem 0.45rem;
-  margin: 0.05rem 0;
-  border-radius: 6px;
-  line-height: 1.35;
+  padding: 0.3rem 0.55rem;
+  margin: 0.1rem 0;
+  border-radius: 8px;
+  line-height: 1.45;
   overflow-wrap: anywhere;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
 }
 
 .explorer-content ul li > a:hover {
-  background: color-mix(in srgb, var(--secondary) 10%, transparent);
+  background: color-mix(in srgb, var(--secondary) 8%, transparent);
+  color: var(--secondary);
 }
 
 .explorer-content ul li > a.active {
-  font-weight: 650;
-  background: color-mix(in srgb, var(--tertiary) 16%, transparent);
-  box-shadow: inset 3px 0 0 var(--tertiary);
+  font-weight: 600;
+  color: var(--secondary);
+  background: color-mix(in srgb, var(--secondary) 5%, transparent);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5px;
+    height: 14px;
+    border-radius: 0 2px 2px 0;
+    background: var(--secondary);
+    opacity: 0.85;
+  }
 }
 
 // 4) 文件夹标题也允许换行，并给一点垂直间距
 .folder-container {
   align-items: flex-start;
+  padding: 0.25rem 0;
 }
 
 .folder-container div > a,
 .folder-container div > button span {
   white-space: normal;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 
 .folder-container div > a {
   display: block;
-  padding: 0.15rem 0.2rem;
+  padding: 0.2rem 0.3rem;
+}
+
+// 文件夹图标更精致
+.folder-icon {
+  opacity: 0.7;
+  transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.folder-container:hover .folder-icon {
+  opacity: 1;
+}
+
+// ============================================
+// 右侧目录 (TOC) 优化
+// ============================================
+.toc-content.overflow > li > a {
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  margin: 0.1rem 0;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: color-mix(in srgb, var(--secondary) 6%, transparent);
+    opacity: 0.9 !important;
+  }
+
+  &.in-view {
+    font-weight: 600;
+    color: var(--secondary);
+    opacity: 1 !important;
+    background: transparent;
+  }
+}
+
+// ============================================
+// 搜索框优化
+// ============================================
+.search > .search-button {
+  border-radius: 8px;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  height: 2.25rem;
+  padding: 0 0.75rem 0 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+
+  &:hover {
+    border-color: var(--gray);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  & > p {
+    font-size: 0.9rem;
+    color: var(--gray);
+  }
+
+  & svg {
+    width: 16px;
+    min-width: 16px;
+    margin: 0 0.5rem;
+  }
+}
+
+.search > .search-container > .search-space > input {
+  border-radius: 10px;
+  border: 1px solid var(--lightgray);
+  padding: 0.6em 1em;
+  font-size: 1.05em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+
+  &:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--secondary) 15%, transparent);
+  }
+}
+
+.search > .search-container > .search-space > .search-layout > .results-container .result-card {
+  border-radius: 6px;
+  margin: 0.25rem;
+  border-bottom: none;
+  transition: all 0.15s ease;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background: color-mix(in srgb, var(--secondary) 6%, transparent);
+    transform: translateX(2px);
+  }
+}
+
+// ============================================
+// 暗色模式切换按钮优化
+// ============================================
+.darkmode {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: var(--lightgray);
+  }
+
+  & svg {
+    position: static;
+    width: 18px;
+    height: 18px;
+    fill: var(--darkgray);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+}
+
+// ============================================
+// 悬浮预览 (Popover) 优化
+// ============================================
+.popover > .popover-inner {
+  border-radius: 12px;
+  border: 1px solid var(--lightgray);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.12),
+    0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+}
+
+// ============================================
+// 回到顶部按钮优化
+// ============================================
+.back-to-top {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--darkgray);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+
+  &:hover {
+    background: var(--lightgray);
+    color: var(--dark);
+    filter: none;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  }
+}
+
+// ============================================
+// 阅读进度条优化
+// ============================================
+.reading-progress {
+  height: 2px;
+}
+
+.reading-progress-bar {
+  background: linear-gradient(90deg, var(--secondary), var(--tertiary));
+}
+
+// ============================================
+// 水平分割线优化
+// ============================================
+hr {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--lightgray), transparent);
+  margin: 2.5rem auto;
+}
+
+// ============================================
+// 标签链接优化
+// ============================================
+a.internal.tag-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--secondary) 8%, transparent);
+  color: var(--secondary);
+  font-size: 0.85em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &::before {
+    content: "#";
+    margin-right: 0.1em;
+    opacity: 0.6;
+  }
+
+  &:hover {
+    background: color-mix(in srgb, var(--secondary) 16%, transparent);
+    color: var(--secondary);
+    transform: translateY(-1px);
+  }
+}
+
+// ============================================
+// 移动端优化
+// ============================================
+@media all and ($mobile) {
+  // 整体字号微调
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    line-height: 1.7;
+  }
+
+  // 标题大小优化
+  h1 {
+    font-size: 1.625rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  // 文章内边距优化
+  article {
+    padding: 0 0.25rem;
+  }
+
+  .page > #quartz-body {
+    padding: 0 0.75rem;
+  }
+
+  // 引用块移动端适配
+  blockquote {
+    margin: 1.25rem -0.25rem;
+    padding-left: 1rem;
+    border-radius: 0 8px 8px 0;
+  }
+
+  // 图片去 hover 效果（移动端不需要）
+  img {
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+
+    &:hover {
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      transform: none;
+    }
+  }
+
+  // 代码块移动端适配
+  pre {
+    border-radius: 8px;
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+
+  figure[data-rehype-pretty-code-figure] {
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+
+  // Stack pill 在移动端稍微缩小
+  .stack-pill {
+    font-size: 0.8em;
+    padding: 0.3em 0.7em;
+  }
+
+  // 工作经历折叠区域
+  .resume-section {
+    padding: 0.75rem 1rem;
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+
+  // 回到顶部按钮在移动端位置调整
+  .back-to-top {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+}
+
+// ============================================
+// 平板端优化
+// ============================================
+@media all and ($tablet) {
+  .page > #quartz-body {
+    padding: 0 1.25rem;
+  }
+}
+
+// ============================================
+// 暗色模式额外优化
+// ============================================
+:root[saved-theme="dark"] {
+  .popover > .popover-inner {
+    border-color: color-mix(in srgb, var(--lightgray) 80%, transparent);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.3),
+      0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .search > .search-container > .search-space > input {
+    background: var(--light);
+    border-color: var(--lightgray);
+
+    &:focus {
+      box-shadow: 0 4px 16px color-mix(in srgb, var(--secondary) 15%, transparent);
+    }
+  }
+
+  img {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  pre {
+    background: var(--lightgray);
+    border-color: var(--gray);
+  }
+
+  .back-to-top {
+    background: var(--lightgray);
+    border-color: var(--gray);
+    color: var(--darkgray);
+
+    &:hover {
+      background: var(--gray);
+      color: var(--dark);
+    }
+  }
 }
