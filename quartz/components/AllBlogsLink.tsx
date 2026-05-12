@@ -4,7 +4,7 @@ import { classNames } from "../util/lang"
 const AllBlogsLink: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
   return (
     <div class={classNames(displayClass, "all-blogs-link")}>
-      <a href="/tags/">所有博客 / All blogs →</a>
+      <a href="/tags/">所有博客 / All blogs</a>
     </div>
   )
 }
