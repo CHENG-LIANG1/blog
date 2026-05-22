@@ -180,7 +180,11 @@ blockquote {
   border-radius: 0 8px 8px 0;
   transition: border-color 0.2s ease, background 0.2s ease;
 
-  p:last-child {
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
     margin-bottom: 0;
   }
 }
