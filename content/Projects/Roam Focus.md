@@ -475,7 +475,7 @@ aliases:
         Roam Focus 是一款把番茄钟、地图路线、天气、地点探索和历史记录结合起来的专注 App。你选择出发地点、交通方式和时长，它会生成一段路线，让每一次专注都像一次从现实出发的漫游。
       </p>
       <div class="roam-actions">
-        <a class="roam-button roam-button-primary" href="https://apps.apple.com/cn/app/roam-focus/id6759795571" target="_blank" rel="noopener">在 App Store 下载</a>
+        <a class="roam-button roam-button-primary" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener noreferrer" data-router-ignore>在 App Store 下载</a>
         <a class="roam-button roam-button-secondary" href="#screens">查看界面</a>
       </div>
       <div class="roam-stats" aria-label="Roam Focus 当前数据">
@@ -693,7 +693,7 @@ aliases:
         <h2>现在开始第一段专注旅程。</h2>
         <p>Roam Focus 已在 App Store 上架，Android 与 HarmonyOS 版本正在规划中。</p>
       </div>
-      <a class="roam-button roam-button-primary" href="https://apps.apple.com/cn/app/roam-focus/id6759795571" target="_blank" rel="noopener">下载 Roam Focus</a>
+      <a class="roam-button roam-button-primary" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener noreferrer" data-router-ignore>下载 Roam Focus</a>
     </div>
   </section>
 </main>

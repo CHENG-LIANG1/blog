@@ -280,6 +280,11 @@ body[data-slug="index"] {
   }
 }
 
+body[data-slug="Projects/Roam-Focus"] {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 body[data-slug="Projects/Roam-Focus"] .page {
   max-width: none;
 }
