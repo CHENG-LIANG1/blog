@@ -85,6 +85,7 @@ I build products heavily with AI assistance, leveraging tools like:
 
 - GitHub: [github.com/CHENG-LIANG1](https://github.com/CHENG-LIANG1)
 - Xiaohongshu: [刻刻](https://xhslink.com/m/9Sb4uJ0KtIk)
+- Heybox: [My Heybox profile](https://www.xiaoheihe.cn/bbs/user_profile_share?user_id=85696763823c&h_src=heyboxapp), where I focus on English teaching and AI education, with 4,000+ followers and 3M+ reads.
 - Email: `liangcheng2456@gmail.com` / `liangcheng2456@163.com`
 
 <hr data-lang-split="en-rest-zh-rest" />
@@ -127,4 +128,5 @@ I build products heavily with AI assistance, leveraging tools like:
 
 - GitHub: [github.com/CHENG-LIANG1](https://github.com/CHENG-LIANG1)
 - 小红书: [刻刻](https://xhslink.com/m/9Sb4uJ0KtIk)
+- 小黑盒: [我的小黑盒主页](https://www.xiaoheihe.cn/bbs/user_profile_share?user_id=85696763823c&h_src=heyboxapp)，主要致力于英语教学与 AI 科普，已有 4000+ 粉丝和 300 万+ 阅读量。
 - 邮箱: `liangcheng2456@gmail.com` / `liangcheng2456@163.com`
