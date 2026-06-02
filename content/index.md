@@ -17,10 +17,9 @@ Working at [霸王茶姬 (CHAGEE)](https://www.chagee.com/zh-cn), building the C
 
 - [Active Habits](https://apps.apple.com/us/app/active-habits/id6758425099): A habit-building app that helps you stay consistent with your daily routines.
 - [GeekBio](https://apps.apple.com/us/app/geekbio/id6758457562): A personal bio app for organizing your profile and links in one clean page.
-- [Roam Focus](https://apps.apple.com/cn/app/roam-focus/id6759795571): A focus timer app designed for deep work and distraction-free sessions.
+- [Roam Focus](https://apps.apple.com/cn/app/roam-focus/id6759795571): My flagship project — 1,000+ active users, actively maintained, with Android & HarmonyOS versions planned.
 
 ## Other Projects
-
 - [ActiveToDo](/Projects/ActiveToDo): A complete and clean to-do app for adding, finishing, and managing tasks.
 - [ActiveTranslation](/Projects/ActiveTranslation): A practical translation app that supports multilingual text translation.
 - [Tikkuu MultiPlanner](/Projects/Tikkuu%20MultiPlanner): A multi-tab project planner with Kanban drag-and-drop, subtasks, deadlines, and recurring-task reset automation.
@@ -37,10 +36,9 @@ Working at [霸王茶姬 (CHAGEE)](https://www.chagee.com/zh-cn), building the C
 
 - [Active Habits](https://apps.apple.com/us/app/active-habits/id6758425099)：一款习惯养成应用，帮助你稳定坚持每日目标。
 - [GeekBio](https://apps.apple.com/us/app/geekbio/id6758457562)：一款个人主页应用，用一个页面集中展示你的身份与链接。
-- [Roam Focus](https://apps.apple.com/cn/app/roam-focus/id6759795571)：一款专注计时应用，帮助你进入深度工作状态。
+- [Roam Focus](https://apps.apple.com/cn/app/roam-focus/id6759795571)：我的代表作 — 活跃用户 1000+，持续稳定迭代中，计划开发 Android 与鸿蒙 App。
 
 ## 其他项目
-
 - [ActiveToDo](/Projects/ActiveToDo)：一个功能完整的待办事项应用，支持添加、完成与管理任务。
 - [ActiveTranslation](/Projects/ActiveTranslation)：一个实用的翻译工具应用，支持多语言文本互译。
 - [Tikkuu MultiPlanner](/Projects/Tikkuu%20MultiPlanner)：一个多标签项目规划工具，支持看板拖拽排序、子任务、截止日期与重复任务自动重置。

@@ -280,6 +280,33 @@ body[data-slug="index"] {
   }
 }
 
+body[data-slug="Projects/Roam-Focus"] .page {
+  max-width: none;
+}
+
+body[data-slug="Projects/Roam-Focus"] .page > #quartz-body {
+  display: block;
+  padding: 0;
+}
+
+body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .left.sidebar,
+body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .right.sidebar,
+body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .page-header,
+body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .page-footer,
+body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .center > hr,
+body[data-slug="Projects/Roam-Focus"] .page > #quartz-body > footer {
+  display: none;
+}
+
+body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .center,
+body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .center > article {
+  max-width: none;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 // ============================================
 // 工作经历折叠区域
 // ============================================
