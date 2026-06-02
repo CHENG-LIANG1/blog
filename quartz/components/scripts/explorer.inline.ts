@@ -289,6 +289,7 @@ document.addEventListener("prenav", async () => {
 
 document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   const currentSlug = e.detail.url
+  document.documentElement.classList.remove("mobile-no-scroll")
   await setupExplorer(currentSlug)
 
   for (const explorer of document.getElementsByClassName("explorer")) {

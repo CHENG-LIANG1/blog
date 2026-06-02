@@ -285,6 +285,15 @@ body[data-slug="Projects/Roam-Focus"] {
   overflow-y: auto;
 }
 
+html.mobile-no-scroll:has(body[data-slug="Projects/Roam-Focus"]) {
+  overflow: auto;
+}
+
+html.mobile-no-scroll:has(body[data-slug="Projects/Roam-Focus"])
+  body[data-slug="Projects/Roam-Focus"] {
+  overflow-y: auto;
+}
+
 body[data-slug="Projects/Roam-Focus"] .page {
   max-width: none;
 }
