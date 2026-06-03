@@ -17,7 +17,7 @@ Working at [霸王茶姬 (CHAGEE)](https://www.chagee.com/zh-cn), building the C
 
 - [Active Habits](https://apps.apple.com/us/app/active-habits/id6758425099): A habit-building app that helps you stay consistent with your daily routines.
 - [GeekBio](https://apps.apple.com/us/app/geekbio/id6758457562): A personal bio app for organizing your profile and links in one clean page.
-- [Roam Focus](https://apps.apple.com/cn/app/roam-focus/id6759795571): My flagship project — 1,000+ active users, actively maintained, with Android & HarmonyOS versions planned.
+- [[Roam Focus|RoamFocus]] My flagship project — 1,000+ active users, actively maintained, with Android & HarmonyOS versions planned.
 
 ## Other Projects
 - [ActiveToDo](/Projects/ActiveToDo): A complete and clean to-do app for adding, finishing, and managing tasks.
