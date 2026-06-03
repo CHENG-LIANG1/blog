@@ -1,6 +1,9 @@
 
+我这个教程面向无编程背景，无超能力的读者。
+
 我已经用 Vibe Coding 做了上百款 Demo 网页，有些可能是一句话生成的， 有些费了大功夫，
 这个就是一句话生成的 [AI产品进化论](https://eosstkspzhhms.ok.kimi.link)
+
 
 我还有3个 App Store 上架应用，纯 Vibe Coding 产物，欢迎体验提意见。
 Roam Focus: 地图 + 番茄钟
@@ -13,18 +16,34 @@ Active Habits: 习惯打卡
 https://apps.apple.com/us/app/active-habits/id6758425099
 
 以下最佳实践，纯手打，来自我这半年的亲身体验。
-## UI 怎么做？
-1. 不做，让 AI 自己出一版 mvp，你只需要指定风格 (拟物、扁平、Liquid Glass、Fluent UI、Material Design)
-2. 在这个网站找好看的网页，让AI 抄 [Awwwards - Website Awards - Best Web Design Trends](https://www.awwwards.com/)，我一般用 https://www.osmo.supply/
-3. 用 Google Stitch 画，这个可以在出了 MVP 之后让它进行大胆创作，或者改风格
+
+## 需要理解的概念
+- PRD: Product Requirement Doc, 需求文档
+- MVP: Minimum Viable Product, 最小可行方案，也就是初版
+- 部署: 网页上线
+- Chatbot: AI 聊天网站，如 ChatGPT, DeepSeek, Kimi, 豆包
+- AI IDE: AI 编程工具，如 Trae, Cursor, Codex。其实这里还分 IDE 模式和任务模式(专注任务，看不到文件目录)，但这里不区分讲
+- Landing Page: 应用落地页，如果你上架了想要宣传，这个必不可少，因为很多人都会问你「这个干啥的？」,如我的这个 https://www.chengliang.pro/Projects/Roam-Focus
+- Onboarding Page: 应用内教程，首次打开应用，教学用户如何使用 App
+
+## 需要准备什么？
+1. 随便哪个 chatbot，只要支持问答聊天就行，国内外都可以
+2. 随便哪个 AI IDE 或者 VS Code AI 插件，只要能打开文件夹，能对话就行，有能力的可以订阅一个月试水
+3. 一台电脑，mac 优先，windows 也可以
+4. 一个想法，随便什么想法都可以，哪怕是重复的
 
 ## 怎么上手？
-1. 和 chatbot 沟通需求，任意一个都可以，沟通完了让它输出 prd
+0. 有一个想法
+1. 和 chatbot 沟通需求，沟通完了让它输出 prd
 2. 把 prd 发给 codex, trae, cursor 什么的，自己挑，前端建议选用 gemini 3.1 pro 模型，我用着没啥问题。
 3. 先给个长任务，让它搭一个 MVP 出来，这一步时间可能比较长，这里可以加一个限制，让它写完了自己 build 一下，不要出现报错的情况。
 4. 后续自己去用，第一版不可能是完美的，一点点改，明显 bug 改完之后，再考虑新增功能，优化用户体验。
 5. 如果是 App，一定不要忘了做 Tutorial，也就是 Onboarding page，这个非常重要。
 
+## UI 怎么做？
+1. 不做，让 AI 自己出一版 mvp，你只需要指定风格 (拟物、扁平、Liquid Glass、Fluent UI、Material Design)
+2. 在这个网站找好看的网页，让AI 抄 [Awwwards - Website Awards - Best Web Design Trends](https://www.awwwards.com/)，我一般用 https://www.osmo.supply/
+3. 用 Google Stitch 画，这个可以在出了 MVP 之后让它进行大胆创作，或者改风格
 ## 怎么部署？
 web:
 1. github + vercel，让 AI 自己做，你在该登录的时候登录一下

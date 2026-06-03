@@ -36,37 +36,148 @@ aliases:
     padding: 0;
   }
 
-  .roam-page {
-    --bg: #080b12;
-    --panel: #151a29;
-    --panel-2: #1d2235;
-    --panel-3: #242938;
-    --text: #f7f8ff;
-    --muted: #a2a7b8;
-    --line: rgba(255, 255, 255, 0.1);
+  .rf-shell {
+    --bg: #070913;
+    --panel: rgba(18, 22, 37, 0.82);
+    --panel-strong: rgba(24, 29, 48, 0.92);
+    --text: rgba(248, 250, 255, 0.96);
+    --muted: rgba(192, 199, 221, 0.72);
+    --line: rgba(255, 255, 255, 0.12);
     --blue: #3385ff;
     --purple: #8167f2;
     --green: #53d477;
     --orange: #d0805e;
-    --yellow: #ffc64d;
-    --shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+    --shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+    min-height: 100vh;
     color: var(--text);
-    margin: 0;
-    padding: 0 max(24px, calc((100vw - 1180px) / 2));
+    padding: 0 max(22px, calc((100vw - 1180px) / 2));
     background:
-      radial-gradient(circle at 78% 8%, rgba(51, 133, 255, 0.24), transparent 34%),
-      radial-gradient(circle at 18% 28%, rgba(129, 103, 242, 0.2), transparent 36%),
-      linear-gradient(180deg, #080b12 0%, #0d111d 48%, #080b12 100%);
+      radial-gradient(1000px 520px at 74% 14%, rgba(51, 133, 255, 0.24), transparent 55%),
+      radial-gradient(980px 520px at 18% 26%, rgba(129, 103, 242, 0.22), transparent 52%),
+      radial-gradient(760px 440px at 28% 84%, rgba(83, 212, 119, 0.14), transparent 60%),
+      linear-gradient(180deg, #070913 0%, #0b0f1e 50%, #070913 100%);
   }
 
-  .roam-page * {
+  .rf-shell * {
     box-sizing: border-box;
     letter-spacing: 0;
   }
 
-  .roam-page a {
+  .rf-shell a {
     color: inherit;
     text-decoration: none;
+  }
+
+  .rf-shell :focus-visible {
+    outline: 2px solid rgba(51, 133, 255, 0.8);
+    outline-offset: 3px;
+    border-radius: 10px;
+  }
+
+  .rf-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .rf-top {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    background: linear-gradient(180deg, rgba(7, 9, 19, 0.88) 0%, rgba(7, 9, 19, 0.28) 100%);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .rf-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    font-weight: 950;
+    letter-spacing: -0.02em;
+  }
+
+  .rf-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, rgba(159, 184, 255, 0.88), rgba(49, 130, 255, 0.9) 60%, rgba(117, 104, 237, 0.84));
+    box-shadow: 0 18px 42px rgba(51, 133, 255, 0.22);
+    color: #fff;
+  }
+
+  .rf-brand-meta {
+    display: grid;
+    gap: 1px;
+  }
+
+  .rf-brand-meta strong {
+    display: block;
+    font-size: 0.98rem;
+    line-height: 1.05;
+  }
+
+  .rf-brand-meta span {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.05;
+  }
+
+  .rf-switch {
+    display: inline-flex;
+    padding: 4px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .rf-switch label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 900;
+    font-size: 0.92rem;
+    color: rgba(192, 199, 221, 0.78);
+    cursor: pointer;
+    user-select: none;
+    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .rf-switch label:hover {
+    color: rgba(248, 250, 255, 0.92);
+  }
+
+  .rf-view {
+    display: none;
+  }
+
+  #rf-lang-zh:checked ~ .rf-view-zh,
+  #rf-lang-en:checked ~ .rf-view-en {
+    display: block;
+  }
+
+  #rf-lang-zh:checked ~ .rf-top .rf-switch label[for="rf-lang-zh"],
+  #rf-lang-en:checked ~ .rf-top .rf-switch label[for="rf-lang-en"] {
+    background: rgba(255, 255, 255, 0.14);
+    color: rgba(248, 250, 255, 0.98);
+    transform: translateY(-1px);
+  }
+
+  .roam-page {
+    margin: 0;
+    padding: 0;
   }
 
   .roam-hero {
@@ -83,7 +194,7 @@ aliases:
     align-items: center;
     gap: 10px;
     margin: 0 0 20px;
-    color: #dce7ff;
+    color: rgba(220, 231, 255, 0.92);
     font-weight: 850;
   }
 
@@ -101,7 +212,7 @@ aliases:
     margin: 0;
     color: var(--text);
     font-size: clamp(3rem, 7vw, 6.4rem);
-    line-height: 0.94;
+    line-height: 0.92;
     font-weight: 950;
   }
 
@@ -110,7 +221,7 @@ aliases:
     margin: 26px 0 0;
     color: var(--muted);
     font-size: clamp(1.08rem, 1.8vw, 1.32rem);
-    line-height: 1.78;
+    line-height: 1.85;
   }
 
   .roam-actions {
@@ -129,6 +240,7 @@ aliases:
     border: 1px solid var(--line);
     border-radius: 12px;
     font-weight: 900;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
   }
 
   .roam-button-primary {
@@ -141,6 +253,19 @@ aliases:
   .roam-button-secondary {
     background: rgba(255, 255, 255, 0.06);
     color: var(--text);
+  }
+
+  .roam-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .roam-button-primary:hover {
+    box-shadow: 0 22px 46px rgba(51, 133, 255, 0.34);
+  }
+
+  .roam-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.18);
   }
 
   .roam-stats {
@@ -156,8 +281,14 @@ aliases:
     padding: 18px;
     border: 1px solid var(--line);
     border-radius: 18px;
-    background: rgba(21, 26, 41, 0.76);
+    background: var(--panel);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition: transform 180ms ease, background 180ms ease;
+  }
+
+  .roam-stat:hover {
+    transform: translateY(-1px);
+    background: rgba(24, 29, 48, 0.88);
   }
 
   .roam-stat strong {
@@ -210,6 +341,7 @@ aliases:
   .roam-section {
     padding: clamp(48px, 8vw, 96px) 0;
     border-top: 1px solid var(--line);
+    scroll-margin-top: 92px;
   }
 
   .roam-section-head {
@@ -231,7 +363,7 @@ aliases:
   .roam-section p {
     margin: 0;
     color: var(--muted);
-    line-height: 1.78;
+    line-height: 1.85;
   }
 
   .roam-feature-grid {
@@ -245,8 +377,15 @@ aliases:
     padding: 24px;
     border: 1px solid var(--line);
     border-radius: 22px;
-    background: rgba(21, 26, 41, 0.78);
+    background: var(--panel);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .roam-feature:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(24, 29, 48, 0.9);
   }
 
   .roam-icon {
@@ -293,8 +432,14 @@ aliases:
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: 30px;
-    background: var(--panel);
+    background: var(--panel-strong);
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+    transition: transform 180ms ease, border-color 180ms ease;
+  }
+
+  .roam-shot:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.18);
   }
 
   .roam-shot-caption {
@@ -324,7 +469,7 @@ aliases:
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: 34px;
-    background: var(--panel);
+    background: var(--panel-strong);
     box-shadow: var(--shadow);
   }
 
@@ -340,9 +485,15 @@ aliases:
     padding: 18px 20px;
     border: 1px solid var(--line);
     border-radius: 18px;
-    background: rgba(21, 26, 41, 0.78);
+    background: var(--panel);
     color: var(--muted);
     line-height: 1.65;
+    transition: border-color 180ms ease, background 180ms ease;
+  }
+
+  .roam-list li:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(24, 29, 48, 0.9);
   }
 
   .roam-list strong {
@@ -363,8 +514,15 @@ aliases:
     padding: 22px;
     border: 1px solid var(--line);
     border-radius: 20px;
-    background: rgba(21, 26, 41, 0.78);
+    background: var(--panel);
     counter-increment: roam-step;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .roam-step:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(24, 29, 48, 0.9);
   }
 
   .roam-step::before {
@@ -397,7 +555,7 @@ aliases:
     border-radius: 28px;
     background:
       linear-gradient(135deg, rgba(51, 133, 255, 0.18), rgba(129, 103, 242, 0.14)),
-      rgba(21, 26, 41, 0.88);
+      rgba(18, 22, 37, 0.88);
     color: var(--text);
     font-size: clamp(1.35rem, 3vw, 2.4rem);
     line-height: 1.45;
@@ -414,7 +572,7 @@ aliases:
     border-radius: 28px;
     background:
       linear-gradient(135deg, rgba(51, 133, 255, 0.22), rgba(129, 103, 242, 0.18)),
-      rgba(21, 26, 41, 0.88);
+      rgba(18, 22, 37, 0.88);
   }
 
   .roam-bottom h2 {
@@ -422,6 +580,10 @@ aliases:
   }
 
   @media (max-width: 980px) {
+    .rf-top {
+      flex-wrap: wrap;
+    }
+
     .roam-hero,
     .roam-section-head,
     .roam-split,
@@ -441,7 +603,7 @@ aliases:
   }
 
   @media (max-width: 640px) {
-    .roam-page {
+    .rf-shell {
       padding: 0 18px;
     }
 
@@ -464,236 +626,511 @@ aliases:
       width: min(360px, 94vw);
     }
   }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .roam-hero > * {
+      animation: rf-rise 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    .roam-hero > :nth-child(2) {
+      animation-delay: 80ms;
+    }
+
+    @keyframes rf-rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
 </style>
 
-<main class="roam-page">
-  <section class="roam-hero">
-    <div>
-      <p class="roam-eyebrow">Roam Focus for iOS</p>
-      <h1 class="roam-title">把一段专注时间，变成地图上的真实旅行。</h1>
-      <p class="roam-lead">
-        Roam Focus 是一款把番茄钟、地图路线、天气、地点探索和历史记录结合起来的专注 App。你选择出发地点、交通方式和时长，它会生成一段路线，让每一次专注都像一次从现实出发的漫游。
-      </p>
-      <div class="roam-actions">
-        <a class="roam-button roam-button-primary" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener noreferrer" data-router-ignore>在 App Store 下载</a>
-        <a class="roam-button roam-button-secondary" href="#screens">查看界面</a>
-      </div>
-      <div class="roam-stats" aria-label="Roam Focus 当前数据">
-        <div class="roam-stat">
-          <strong>1000+</strong>
-          <span>活跃用户</span>
+<div class="rf-shell">
+  <input class="rf-input" type="radio" name="rf-lang" id="rf-lang-zh" checked />
+  <input class="rf-input" type="radio" name="rf-lang" id="rf-lang-en" />
+  <header class="rf-top" aria-label="Roam Focus 页面导航">
+    <a class="rf-brand" href="/" data-router-ignore>
+      <span class="rf-mark" aria-hidden="true">RF</span>
+      <span class="rf-brand-meta">
+        <strong>Roam Focus</strong>
+        <span>Focus as a journey</span>
+      </span>
+    </a>
+    <div class="rf-switch" role="tablist" aria-label="语言切换">
+      <label for="rf-lang-zh" role="tab" aria-controls="rf-view-zh" tabindex="0">中文</label>
+      <label for="rf-lang-en" role="tab" aria-controls="rf-view-en" tabindex="0">EN</label>
+    </div>
+  </header>
+
+  <div class="rf-view rf-view-zh" id="rf-view-zh">
+    <main class="roam-page">
+      <section class="roam-hero">
+        <div>
+          <p class="roam-eyebrow">Roam Focus for iOS</p>
+          <h1 class="roam-title">把一段专注时间，变成地图上的真实旅行。</h1>
+          <p class="roam-lead">
+            Roam Focus 是一款把番茄钟、地图路线、天气、地点探索和历史记录结合起来的专注 App。你选择出发地点、交通方式和时长，它会生成一段路线，让每一次专注都像一次从现实出发的漫游。
+          </p>
+          <div class="roam-actions">
+            <a class="roam-button roam-button-primary" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener noreferrer" data-router-ignore>在 App Store 下载</a>
+            <a class="roam-button roam-button-secondary" href="#screens-zh">查看界面</a>
+          </div>
+          <div class="roam-stats" aria-label="Roam Focus 当前数据">
+            <div class="roam-stat">
+              <strong>1000+</strong>
+              <span>活跃用户</span>
+            </div>
+            <div class="roam-stat">
+              <strong>iOS</strong>
+              <span>App Store 已上架</span>
+            </div>
+            <div class="roam-stat">
+              <strong>持续</strong>
+              <span>稳定维护与迭代</span>
+            </div>
+          </div>
         </div>
-        <div class="roam-stat">
-          <strong>iOS</strong>
-          <span>App Store 已上架</span>
+        <div class="roam-phone-stage">
+          <div class="roam-phone">
+            <img src="/Projects/roam-focus/home.jpg" alt="Roam Focus 主界面，包含天气、出发地点、交通方式和时长选择" loading="eager" />
+          </div>
         </div>
-        <div class="roam-stat">
-          <strong>持续</strong>
-          <span>稳定维护与迭代</span>
+      </section>
+
+      <section class="roam-section">
+        <div class="roam-section-head">
+          <h2>不是只盯着数字变小。</h2>
+          <p>
+            大多数专注工具只给你一个倒计时。Roam Focus 让这段时间拥有起点、路线、速度、天气和结束后的记录。你不是被一个计时器催着坐住，而是在地图上慢慢走完一段路。
+          </p>
         </div>
-      </div>
-    </div>
-    <div class="roam-phone-stage">
-      <div class="roam-phone">
-        <img src="/Projects/roam-focus/home.jpg" alt="Roam Focus 主界面，包含天气、出发地点、交通方式和时长选择" loading="eager" />
-      </div>
-    </div>
-  </section>
-
-  <section class="roam-section">
-    <div class="roam-section-head">
-      <h2>不是只盯着数字变小。</h2>
-      <p>
-        大多数专注工具只给你一个倒计时。Roam Focus 让这段时间拥有起点、路线、速度、天气和结束后的记录。你不是被一个计时器催着坐住，而是在地图上慢慢走完一段路。
-      </p>
-    </div>
-    <div class="roam-flow">
-      <div class="roam-step">
-        <h3>选择出发地点</h3>
-        <p>用当前位置开始，也可以从东京、首尔、南京、纽约等预设地点出发。</p>
-      </div>
-      <div class="roam-step">
-        <h3>选择交通方式</h3>
-        <p>步行、骑行、驾驶、滑板，对应不同速度，也对应不同任务节奏。</p>
-      </div>
-      <div class="roam-step">
-        <h3>设定专注时长</h3>
-        <p>从常用时长快速开始，也可以按自己的状态调整这一轮旅程。</p>
-      </div>
-      <div class="roam-step">
-        <h3>开始漫游</h3>
-        <p>地图跟随路线推进，结束后留下时间、距离、天气和地点记录。</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="screens" class="roam-section">
-    <div class="roam-section-head">
-      <h2>主要界面围绕一次专注旅程展开。</h2>
-      <p>
-        从开始前的设置，到漫游中的地图，再到结束后的总结，Roam Focus 的每个界面都尽量保留清晰的行动感：选好、开始、坚持、回看。
-      </p>
-    </div>
-    <div class="roam-showcase">
-      <article class="roam-shot">
-        <img src="/Projects/roam-focus/location.jpg" alt="Roam Focus 选择出发地点界面" loading="lazy" />
-        <div class="roam-shot-caption">
-          <h3>选择出发地点</h3>
-          <p>支持当前位置、地图选点和预设城市。专注可以从眼前开始，也可以从远方开始。</p>
+        <div class="roam-flow">
+          <div class="roam-step">
+            <h3>选择出发地点</h3>
+            <p>用当前位置开始，也可以从东京、首尔、南京、纽约等预设地点出发。</p>
+          </div>
+          <div class="roam-step">
+            <h3>选择交通方式</h3>
+            <p>步行、骑行、驾驶、滑板，对应不同速度，也对应不同任务节奏。</p>
+          </div>
+          <div class="roam-step">
+            <h3>设定专注时长</h3>
+            <p>从常用时长快速开始，也可以按自己的状态调整这一轮旅程。</p>
+          </div>
+          <div class="roam-step">
+            <h3>开始漫游</h3>
+            <p>地图跟随路线推进，结束后留下时间、距离、天气和地点记录。</p>
+          </div>
         </div>
-      </article>
-      <article class="roam-shot">
-        <img src="/Projects/roam-focus/weather.jpg" alt="Roam Focus 天气详情界面" loading="lazy" />
-        <div class="roam-shot-caption">
-          <h3>天气详情</h3>
-          <p>温度、湿度、风速、能见度和逐小时预报，让这段虚拟旅程更有现场感。</p>
+      </section>
+
+      <section id="screens-zh" class="roam-section">
+        <div class="roam-section-head">
+          <h2>主要界面围绕一次专注旅程展开。</h2>
+          <p>
+            从开始前的设置，到漫游中的地图，再到结束后的总结，Roam Focus 的每个界面都尽量保留清晰的行动感：选好、开始、坚持、回看。
+          </p>
         </div>
-      </article>
-      <article class="roam-shot">
-        <img src="/Projects/roam-focus/history.jpg" alt="Roam Focus 漫游历史界面" loading="lazy" />
-        <div class="roam-shot-caption">
-          <h3>漫游历史</h3>
-          <p>总时长、距离、常去地点和交通方式会沉淀下来，更像旅行相册而不是成绩单。</p>
+        <div class="roam-showcase">
+          <article class="roam-shot">
+            <img src="/Projects/roam-focus/location.jpg" alt="Roam Focus 选择出发地点界面" loading="lazy" />
+            <div class="roam-shot-caption">
+              <h3>选择出发地点</h3>
+              <p>支持当前位置、地图选点和预设城市。专注可以从眼前开始，也可以从远方开始。</p>
+            </div>
+          </article>
+          <article class="roam-shot">
+            <img src="/Projects/roam-focus/weather.jpg" alt="Roam Focus 天气详情界面" loading="lazy" />
+            <div class="roam-shot-caption">
+              <h3>天气详情</h3>
+              <p>温度、湿度、风速、能见度和逐小时预报，让这段虚拟旅程更有现场感。</p>
+            </div>
+          </article>
+          <article class="roam-shot">
+            <img src="/Projects/roam-focus/history.jpg" alt="Roam Focus 漫游历史界面" loading="lazy" />
+            <div class="roam-shot-caption">
+              <h3>漫游历史</h3>
+              <p>总时长、距离、常去地点和交通方式会沉淀下来，更像旅行相册而不是成绩单。</p>
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
-  </section>
+      </section>
 
-  <section class="roam-section">
-    <div class="roam-split">
-      <div>
-        <h2>专注进行中，地图就是你的进度条。</h2>
-        <p>
-          开始漫游后，Roam Focus 会在真实地图上展示当前位置、路线、剩余时间、已行驶距离和当前速度。倒计时仍然存在，但它不再是唯一主角。
-        </p>
-        <ul class="roam-list">
-          <li>
-            <strong>路线推进</strong>
-            虚拟头像沿着地图前进，让“我又坚持了几分钟”变成“我又走过了一段路”。
-          </li>
-          <li>
-            <strong>低干扰反馈</strong>
-            核心控制只有停止和暂停，信息集中在底部面板里，不把专注过程做成复杂仪表盘。
-          </li>
-          <li>
-            <strong>地点发现</strong>
-            地图上的景点和地点会成为旅程的一部分，让每一次专注都有一点探索感。
-          </li>
-        </ul>
-      </div>
-      <div class="roam-wide-shot">
-        <img src="/Projects/roam-focus/session.jpg" alt="Roam Focus 漫游进行中地图界面" loading="lazy" />
-      </div>
-    </div>
-  </section>
+      <section class="roam-section">
+        <div class="roam-split">
+          <div>
+            <h2>专注进行中，地图就是你的进度条。</h2>
+            <p>
+              开始漫游后，Roam Focus 会在真实地图上展示当前位置、路线、剩余时间、已行驶距离和当前速度。倒计时仍然存在，但它不再是唯一主角。
+            </p>
+            <ul class="roam-list">
+              <li>
+                <strong>路线推进</strong>
+                虚拟头像沿着地图前进，让“我又坚持了几分钟”变成“我又走过了一段路”。
+              </li>
+              <li>
+                <strong>低干扰反馈</strong>
+                核心控制只有停止和暂停，信息集中在底部面板里，不把专注过程做成复杂仪表盘。
+              </li>
+              <li>
+                <strong>地点发现</strong>
+                地图上的景点和地点会成为旅程的一部分，让每一次专注都有一点探索感。
+              </li>
+            </ul>
+          </div>
+          <div class="roam-wide-shot">
+            <img src="/Projects/roam-focus/session.jpg" alt="Roam Focus 漫游进行中地图界面" loading="lazy" />
+          </div>
+        </div>
+      </section>
 
-  <section class="roam-section">
-    <div class="roam-split">
-      <div class="roam-wide-shot">
-        <img src="/Projects/roam-focus/summary.jpg" alt="Roam Focus 查看总结界面" loading="lazy" />
-      </div>
-      <div>
-        <h2>结束以后，留下的是一段行程。</h2>
-        <p>
-          一次专注完成后，Roam Focus 会整理时间段、专注时长、天气、距离、交通方式、平均时速和地图位置。即使只有几分钟，也能被认真记录下来。
-        </p>
-        <ul class="roam-list">
-          <li>
-            <strong>不是二元成败</strong>
-            中途停止并不代表这段时间没有意义，走过的路依然是走过的路。
-          </li>
-          <li>
-            <strong>可保存与分享</strong>
-            总结页适合保存成自己的专注记录，也可以分享给朋友。
-          </li>
-          <li>
-            <strong>长期使用有回声</strong>
-            历史、统计和奖杯系统会把一次次短专注连接成长期积累。
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+      <section class="roam-section">
+        <div class="roam-split">
+          <div class="roam-wide-shot">
+            <img src="/Projects/roam-focus/summary.jpg" alt="Roam Focus 查看总结界面" loading="lazy" />
+          </div>
+          <div>
+            <h2>结束以后，留下的是一段行程。</h2>
+            <p>
+              一次专注完成后，Roam Focus 会整理时间段、专注时长、天气、距离、交通方式、平均时速和地图位置。即使只有几分钟，也能被认真记录下来。
+            </p>
+            <ul class="roam-list">
+              <li>
+                <strong>不是二元成败</strong>
+                中途停止并不代表这段时间没有意义，走过的路依然是走过的路。
+              </li>
+              <li>
+                <strong>可保存与分享</strong>
+                总结页适合保存成自己的专注记录，也可以分享给朋友。
+              </li>
+              <li>
+                <strong>长期使用有回声</strong>
+                历史、统计和奖杯系统会把一次次短专注连接成长期积累。
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-  <section class="roam-section">
-    <div class="roam-section-head">
-      <h2>功能为专注服务，而不是反过来占用你。</h2>
-      <p>
-        Roam Focus 保留番茄钟最直接的开始方式，同时加入地图、天气、历史和成就，让开始这件事更容易，也让完成以后更有记忆点。
-      </p>
-    </div>
-    <div class="roam-feature-grid">
-      <article class="roam-feature">
-        <span class="roam-icon">路</span>
-        <h3>真实地图路线</h3>
-        <p>把一段抽象时间映射成地图上的距离，给专注一个可见的方向。</p>
-      </article>
-      <article class="roam-feature">
-        <span class="roam-icon">速</span>
-        <h3>多种交通方式</h3>
-        <p>步行、骑行、驾驶、滑板带来不同节奏，适配不同任务状态。</p>
-      </article>
-      <article class="roam-feature">
-        <span class="roam-icon">天</span>
-        <h3>天气氛围</h3>
-        <p>结合 Apple Weather 数据，让当前位置或预设城市拥有真实天气背景。</p>
-      </article>
-      <article class="roam-feature">
-        <span class="roam-icon">点</span>
-        <h3>地点探索</h3>
-        <p>旅程会路过地标和兴趣点，给一轮专注留下一点发现感。</p>
-      </article>
-      <article class="roam-feature">
-        <span class="roam-icon">史</span>
-        <h3>历史统计</h3>
-        <p>总时长、距离、常去地点和交通方式会持续沉淀，方便回看。</p>
-      </article>
-      <article class="roam-feature">
-        <span class="roam-icon">奖</span>
-        <h3>奖杯系统</h3>
-        <p>里程、次数、地点、天气和连续天数等成就，给长期坚持一点反馈。</p>
-      </article>
-    </div>
-  </section>
+      <section class="roam-section">
+        <div class="roam-section-head">
+          <h2>功能为专注服务，而不是反过来占用你。</h2>
+          <p>
+            Roam Focus 保留番茄钟最直接的开始方式，同时加入地图、天气、历史和成就，让开始这件事更容易，也让完成以后更有记忆点。
+          </p>
+        </div>
+        <div class="roam-feature-grid">
+          <article class="roam-feature">
+            <span class="roam-icon">路</span>
+            <h3>真实地图路线</h3>
+            <p>把一段抽象时间映射成地图上的距离，给专注一个可见的方向。</p>
+          </article>
+          <article class="roam-feature">
+            <span class="roam-icon">速</span>
+            <h3>多种交通方式</h3>
+            <p>步行、骑行、驾驶、滑板带来不同节奏，适配不同任务状态。</p>
+          </article>
+          <article class="roam-feature">
+            <span class="roam-icon">天</span>
+            <h3>天气氛围</h3>
+            <p>结合 Apple Weather 数据，让当前位置或预设城市拥有真实天气背景。</p>
+          </article>
+          <article class="roam-feature">
+            <span class="roam-icon">点</span>
+            <h3>地点探索</h3>
+            <p>旅程会路过地标和兴趣点，给一轮专注留下一点发现感。</p>
+          </article>
+          <article class="roam-feature">
+            <span class="roam-icon">史</span>
+            <h3>历史统计</h3>
+            <p>总时长、距离、常去地点和交通方式会持续沉淀，方便回看。</p>
+          </article>
+          <article class="roam-feature">
+            <span class="roam-icon">奖</span>
+            <h3>奖杯系统</h3>
+            <p>里程、次数、地点、天气和连续天数等成就，给长期坚持一点反馈。</p>
+          </article>
+        </div>
+      </section>
 
-  <section class="roam-section">
-    <blockquote class="roam-quote">
-      专注不一定要很苦。它也可以像出门一样，有方向、有天气、有路过的地方，也有结束后的回忆。
-    </blockquote>
-  </section>
+      <section class="roam-section">
+        <blockquote class="roam-quote">
+          专注不一定要很苦。它也可以像出门一样，有方向、有天气、有路过的地方，也有结束后的回忆。
+        </blockquote>
+      </section>
 
-  <section class="roam-section">
-    <div class="roam-split">
-      <div>
-        <h2>隐私和边界</h2>
-        <p>
-          Roam Focus 不需要账号。定位主要用于生成旅程起点、计算路线、展示天气和发现附近地点。它不是导航 App，路线服务的是专注体验，不替代现实出行指引。
-        </p>
-      </div>
-      <ul class="roam-list">
-        <li>
-          <strong>无需账号即可使用</strong>
-          专注本来已经很难，不需要再顺便经营一个社交身份。
-        </li>
-        <li>
-          <strong>记录服务于回看</strong>
-          历史数据用于统计、奖杯和总结，不把专注变成公开排名。
-        </li>
-        <li>
-          <strong>路线不是导航建议</strong>
-          地图是让时间变得有形，不用于现实中的路线指引。
-        </li>
-      </ul>
-    </div>
-  </section>
+      <section class="roam-section">
+        <div class="roam-split">
+          <div>
+            <h2>隐私和边界</h2>
+            <p>
+              Roam Focus 不需要账号。定位主要用于生成旅程起点、计算路线、展示天气和发现附近地点。它不是导航 App，路线服务的是专注体验，不替代现实出行指引。
+            </p>
+          </div>
+          <ul class="roam-list">
+            <li>
+              <strong>无需账号即可使用</strong>
+              专注本来已经很难，不需要再顺便经营一个社交身份。
+            </li>
+            <li>
+              <strong>记录服务于回看</strong>
+              历史数据用于统计、奖杯和总结，不把专注变成公开排名。
+            </li>
+            <li>
+              <strong>路线不是导航建议</strong>
+              地图是让时间变得有形，不用于现实中的路线指引。
+            </li>
+          </ul>
+        </div>
+      </section>
 
-  <section class="roam-section">
-    <div class="roam-bottom">
-      <div>
-        <h2>现在开始第一段专注旅程。</h2>
-        <p>Roam Focus 已在 App Store 上架，Android 与 HarmonyOS 版本正在规划中。</p>
-      </div>
-      <a class="roam-button roam-button-primary" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener noreferrer" data-router-ignore>下载 Roam Focus</a>
-    </div>
-  </section>
-</main>
+      <section class="roam-section">
+        <div class="roam-bottom">
+          <div>
+            <h2>现在开始第一段专注旅程。</h2>
+            <p>Roam Focus 已在 App Store 上架，Android 与 HarmonyOS 版本正在规划中。</p>
+          </div>
+          <a class="roam-button roam-button-primary" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener noreferrer" data-router-ignore>下载 Roam Focus</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="rf-view rf-view-en" id="rf-view-en" lang="en">
+    <main class="roam-page">
+      <section class="roam-hero">
+        <div>
+          <p class="roam-eyebrow">Roam Focus for iOS</p>
+          <h1 class="roam-title">Turn focus time into a real journey on the map.</h1>
+          <p class="roam-lead">
+            Roam Focus blends a Pomodoro timer with routes, weather, place discovery, and a history log. Pick a starting point, a travel mode, and a duration—it generates a route so every session feels like a walk that begins in the real world.
+          </p>
+          <div class="roam-actions">
+            <a class="roam-button roam-button-primary" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener noreferrer" data-router-ignore>Download on the App Store</a>
+            <a class="roam-button roam-button-secondary" href="#screens-en">See screens</a>
+          </div>
+          <div class="roam-stats" aria-label="Roam Focus key stats">
+            <div class="roam-stat">
+              <strong>1,000+</strong>
+              <span>active users</span>
+            </div>
+            <div class="roam-stat">
+              <strong>iOS</strong>
+              <span>live on the App Store</span>
+            </div>
+            <div class="roam-stat">
+              <strong>Ongoing</strong>
+              <span>steady updates</span>
+            </div>
+          </div>
+        </div>
+        <div class="roam-phone-stage">
+          <div class="roam-phone">
+            <img src="/Projects/roam-focus/home.jpg" alt="Roam Focus home screen with weather, starting point, travel mode, and duration" loading="eager" />
+          </div>
+        </div>
+      </section>
+
+      <section class="roam-section">
+        <div class="roam-section-head">
+          <h2>Not just watching numbers go down.</h2>
+          <p>
+            Most focus tools only give you a countdown. Roam Focus gives that time a start, a route, a speed, a weather mood, and a record when it ends. You’re not forced to sit still—you’re walking a small path on the map.
+          </p>
+        </div>
+        <div class="roam-flow">
+          <div class="roam-step">
+            <h3>Pick a starting point</h3>
+            <p>Start from your current location, or choose a preset city like Tokyo, Seoul, Nanjing, or New York.</p>
+          </div>
+          <div class="roam-step">
+            <h3>Choose a travel mode</h3>
+            <p>Walk, bike, drive, or skate—each with its own pace and rhythm for different tasks.</p>
+          </div>
+          <div class="roam-step">
+            <h3>Set a duration</h3>
+            <p>Quick-start with common presets, or tune the session length to match your current state.</p>
+          </div>
+          <div class="roam-step">
+            <h3>Start roaming</h3>
+            <p>Follow the route on the map, and keep a record of time, distance, weather, and places.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="screens-en" class="roam-section">
+        <div class="roam-section-head">
+          <h2>Every screen is built around one journey.</h2>
+          <p>
+            From setup, to the live map, to the post-session summary, Roam Focus keeps a clear sense of motion: choose, start, stay, review.
+          </p>
+        </div>
+        <div class="roam-showcase">
+          <article class="roam-shot">
+            <img src="/Projects/roam-focus/location.jpg" alt="Starting point selection screen" loading="lazy" />
+            <div class="roam-shot-caption">
+              <h3>Starting point</h3>
+              <p>Use your location, pick a point on the map, or start from a preset city. Roaming can begin here—or far away.</p>
+            </div>
+          </article>
+          <article class="roam-shot">
+            <img src="/Projects/roam-focus/weather.jpg" alt="Weather details screen" loading="lazy" />
+            <div class="roam-shot-caption">
+              <h3>Weather mood</h3>
+              <p>Temperature, humidity, wind, visibility, and hourly forecast—giving the journey a sense of place.</p>
+            </div>
+          </article>
+          <article class="roam-shot">
+            <img src="/Projects/roam-focus/history.jpg" alt="Roaming history screen" loading="lazy" />
+            <div class="roam-shot-caption">
+              <h3>History</h3>
+              <p>Time, distance, favorite places, and travel modes accumulate—more like a travel album than a scorecard.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="roam-section">
+        <div class="roam-split">
+          <div>
+            <h2>During a session, the map becomes your progress bar.</h2>
+            <p>
+              Once you start, Roam Focus shows your position, route, time remaining, distance traveled, and current speed on a real map. The timer is still there—but it’s no longer the only protagonist.
+            </p>
+            <ul class="roam-list">
+              <li>
+                <strong>Route progress</strong>
+                A little avatar moves along the map, turning “minutes survived” into “distance traveled”.
+              </li>
+              <li>
+                <strong>Low-distraction feedback</strong>
+                Controls stay minimal—pause and stop—while details live in a calm bottom panel.
+              </li>
+              <li>
+                <strong>Place discovery</strong>
+                Landmarks and points of interest become part of the session, adding a subtle sense of exploration.
+              </li>
+            </ul>
+          </div>
+          <div class="roam-wide-shot">
+            <img src="/Projects/roam-focus/session.jpg" alt="In-session map view" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section class="roam-section">
+        <div class="roam-split">
+          <div class="roam-wide-shot">
+            <img src="/Projects/roam-focus/summary.jpg" alt="Session summary view" loading="lazy" />
+          </div>
+          <div>
+            <h2>When it ends, what remains is an itinerary.</h2>
+            <p>
+              After a session, Roam Focus organizes the time window, duration, weather, distance, travel mode, average speed, and map location. Even a few minutes deserves to be recorded.
+            </p>
+            <ul class="roam-list">
+              <li>
+                <strong>Not a binary win/lose</strong>
+                Stopping early doesn’t erase the value—distance traveled is still distance traveled.
+              </li>
+              <li>
+                <strong>Save and share</strong>
+                The summary is designed to be kept as your own record, or shared with friends.
+              </li>
+              <li>
+                <strong>Long-term resonance</strong>
+                History, stats, and trophies connect small sessions into a longer arc of progress.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="roam-section">
+        <div class="roam-section-head">
+          <h2>Features serve focus—not the other way around.</h2>
+          <p>
+            Roam Focus keeps the simplest Pomodoro start, then adds maps, weather, history, and achievements—making it easier to begin, and more memorable to finish.
+          </p>
+        </div>
+        <div class="roam-feature-grid">
+          <article class="roam-feature">
+            <span class="roam-icon">Map</span>
+            <h3>Real map routes</h3>
+            <p>Transform abstract time into distance on the map, giving focus a visible direction.</p>
+          </article>
+          <article class="roam-feature">
+            <span class="roam-icon">Mode</span>
+            <h3>Travel modes</h3>
+            <p>Walk, bike, drive, or skate—different paces for different kinds of work.</p>
+          </article>
+          <article class="roam-feature">
+            <span class="roam-icon">Wx</span>
+            <h3>Weather atmosphere</h3>
+            <p>Powered by Apple Weather data, grounding the journey in a real-world mood.</p>
+          </article>
+          <article class="roam-feature">
+            <span class="roam-icon">POI</span>
+            <h3>Place discovery</h3>
+            <p>Pass landmarks and points of interest, adding a light touch of exploration.</p>
+          </article>
+          <article class="roam-feature">
+            <span class="roam-icon">Log</span>
+            <h3>History & stats</h3>
+            <p>Time, distance, places, and modes accumulate over time, ready for review.</p>
+          </article>
+          <article class="roam-feature">
+            <span class="roam-icon">🏆</span>
+            <h3>Trophies</h3>
+            <p>Milestones for distance, streaks, places, weather, and more—gentle feedback for consistency.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="roam-section">
+        <blockquote class="roam-quote">
+          Focus doesn’t have to be painful. It can feel like stepping outside—direction, weather, places you pass, and a memory when it’s done.
+        </blockquote>
+      </section>
+
+      <section class="roam-section">
+        <div class="roam-split">
+          <div>
+            <h2>Privacy & boundaries</h2>
+            <p>
+              Roam Focus doesn’t require an account. Location is used to set the journey start, calculate routes, show weather, and discover nearby places. It’s not a navigation app—the route is for focus, not real-world guidance.
+            </p>
+          </div>
+          <ul class="roam-list">
+            <li>
+              <strong>No account required</strong>
+              Focus is already hard—no need to maintain a social identity on top of it.
+            </li>
+            <li>
+              <strong>Logs are for review</strong>
+              History supports stats, trophies, and summaries—never public rankings.
+            </li>
+            <li>
+              <strong>Routes aren’t navigation advice</strong>
+              The map makes time tangible, not a substitute for real travel directions.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="roam-section">
+        <div class="roam-bottom">
+          <div>
+            <h2>Start your first focus journey now.</h2>
+            <p>Roam Focus is live on the App Store. Android and HarmonyOS versions are being explored.</p>
+          </div>
+          <a class="roam-button roam-button-primary" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener noreferrer" data-router-ignore>Get Roam Focus</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
