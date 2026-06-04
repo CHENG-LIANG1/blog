@@ -7,17 +7,14 @@ aliases:
   - RoamFocus
   - Tikkuu Focus
 ---
-
 <style>
   body[data-slug="Projects/Roam-Focus"] .page {
     max-width: none;
   }
-
   body[data-slug="Projects/Roam-Focus"] .page > #quartz-body {
     display: block;
     padding: 0;
   }
-
   body[data-slug="Projects/Roam-Focus"] .left.sidebar,
   body[data-slug="Projects/Roam-Focus"] .right.sidebar,
   body[data-slug="Projects/Roam-Focus"] .page-header,
@@ -26,7 +23,6 @@ aliases:
   body[data-slug="Projects/Roam-Focus"] footer {
     display: none;
   }
-
   body[data-slug="Projects/Roam-Focus"] .center,
   body[data-slug="Projects/Roam-Focus"] .center > article {
     max-width: none;
@@ -35,7 +31,6 @@ aliases:
     margin: 0;
     padding: 0;
   }
-
   .rf-shell {
     --bg: #070913;
     --panel: rgba(18, 22, 37, 0.82);
@@ -57,29 +52,24 @@ aliases:
       radial-gradient(760px 440px at 28% 84%, rgba(83, 212, 119, 0.14), transparent 60%),
       linear-gradient(180deg, #070913 0%, #0b0f1e 50%, #070913 100%);
   }
-
   .rf-shell * {
     box-sizing: border-box;
     letter-spacing: 0;
   }
-
   .rf-shell a {
     color: inherit;
     text-decoration: none;
   }
-
   .rf-shell :focus-visible {
     outline: 2px solid rgba(51, 133, 255, 0.8);
     outline-offset: 3px;
     border-radius: 10px;
   }
-
   .rf-input {
     position: absolute;
     opacity: 0;
     pointer-events: none;
   }
-
   .rf-top {
     position: sticky;
     top: 0;
@@ -93,7 +83,6 @@ aliases:
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
-
   .rf-brand {
     display: inline-flex;
     align-items: center;
@@ -102,36 +91,41 @@ aliases:
     font-weight: 950;
     letter-spacing: -0.02em;
   }
-
   .rf-mark {
-    width: 38px;
-    height: 38px;
-    border-radius: 14px;
+    width: 40px;
+    height: 40px;
     display: grid;
     place-items: center;
-    background: linear-gradient(135deg, rgba(159, 184, 255, 0.88), rgba(49, 130, 255, 0.9) 60%, rgba(117, 104, 237, 0.84));
-    box-shadow: 0 18px 42px rgba(51, 133, 255, 0.22);
-    color: #fff;
+    flex: 0 0 auto;
+    margin-top: 0;
   }
-
+  .rf-mark-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 !important;
+    object-fit: contain;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.38));
+  }
   .rf-brand-meta {
     display: grid;
     gap: 1px;
   }
-
   .rf-brand-meta strong {
     display: block;
     font-size: 0.98rem;
     line-height: 1.05;
   }
-
   .rf-brand-meta span {
     display: block;
     font-size: 0.82rem;
     color: var(--muted);
     line-height: 1.05;
   }
-
   .rf-switch {
     display: inline-flex;
     padding: 4px;
@@ -140,7 +134,6 @@ aliases:
     background: rgba(255, 255, 255, 0.06);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
-
   .rf-switch label {
     display: inline-flex;
     align-items: center;
@@ -154,32 +147,31 @@ aliases:
     user-select: none;
     transition: background 160ms ease, color 160ms ease, transform 160ms ease;
   }
-
   .rf-switch label:hover {
     color: rgba(248, 250, 255, 0.92);
   }
-
-  .rf-view {
+  .rf-view-zh {
+    display: block;
+  }
+  .rf-view-en {
     display: none;
   }
-
-  #rf-lang-zh:checked ~ .rf-view-zh,
+  #rf-lang-en:checked ~ .rf-view-zh {
+    display: none;
+  }
   #rf-lang-en:checked ~ .rf-view-en {
     display: block;
   }
-
   #rf-lang-zh:checked ~ .rf-top .rf-switch label[for="rf-lang-zh"],
   #rf-lang-en:checked ~ .rf-top .rf-switch label[for="rf-lang-en"] {
     background: rgba(255, 255, 255, 0.14);
     color: rgba(248, 250, 255, 0.98);
     transform: translateY(-1px);
   }
-
   .roam-page {
     margin: 0;
     padding: 0;
   }
-
   .roam-hero {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(290px, 430px);
@@ -188,7 +180,6 @@ aliases:
     min-height: min(860px, calc(100vh - 20px));
     padding: clamp(36px, 7vw, 88px) 0;
   }
-
   .roam-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -197,7 +188,6 @@ aliases:
     color: rgba(220, 231, 255, 0.92);
     font-weight: 850;
   }
-
   .roam-eyebrow::before {
     content: "";
     width: 12px;
@@ -206,16 +196,15 @@ aliases:
     background: var(--green);
     box-shadow: 0 0 0 8px rgba(83, 212, 119, 0.14);
   }
-
   .roam-title {
     max-width: 780px;
     margin: 0;
     color: var(--text);
-    font-size: clamp(3rem, 7vw, 6.4rem);
-    line-height: 0.92;
+    font-size: clamp(2.6rem, 6.4vw, 5.8rem);
+    line-height: 1.04;
     font-weight: 950;
+    letter-spacing: -0.02em;
   }
-
   .roam-lead {
     max-width: 720px;
     margin: 26px 0 0;
@@ -223,14 +212,12 @@ aliases:
     font-size: clamp(1.08rem, 1.8vw, 1.32rem);
     line-height: 1.85;
   }
-
   .roam-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 32px;
   }
-
   .roam-button {
     display: inline-flex;
     align-items: center;
@@ -242,32 +229,26 @@ aliases:
     font-weight: 900;
     transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
   }
-
   .roam-button-primary {
-    border-color: transparent;
+    border: none;
     background: linear-gradient(135deg, #9fb8ff, #3182ff 58%, #7568ed);
     color: #fff;
     box-shadow: 0 18px 36px rgba(51, 133, 255, 0.26);
   }
-
   .roam-button-secondary {
     background: rgba(255, 255, 255, 0.06);
     color: var(--text);
   }
-
   .roam-button:hover {
     transform: translateY(-1px);
   }
-
   .roam-button-primary:hover {
     box-shadow: 0 22px 46px rgba(51, 133, 255, 0.34);
   }
-
   .roam-button-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.18);
   }
-
   .roam-stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -275,7 +256,6 @@ aliases:
     margin-top: 36px;
     max-width: 720px;
   }
-
   .roam-stat {
     min-height: 112px;
     padding: 18px;
@@ -285,33 +265,28 @@ aliases:
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     transition: transform 180ms ease, background 180ms ease;
   }
-
   .roam-stat:hover {
     transform: translateY(-1px);
     background: rgba(24, 29, 48, 0.88);
   }
-
   .roam-stat strong {
     display: block;
     color: var(--text);
     font-size: clamp(1.55rem, 2.8vw, 2.2rem);
     line-height: 1;
   }
-
   .roam-stat span {
     display: block;
     margin-top: 10px;
     color: var(--muted);
     font-size: 0.94rem;
   }
-
   .roam-phone-stage {
     position: relative;
     display: grid;
     place-items: center;
     min-height: 680px;
   }
-
   .roam-phone-stage::before {
     content: "";
     position: absolute;
@@ -320,7 +295,6 @@ aliases:
     background: linear-gradient(145deg, rgba(51, 133, 255, 0.3), rgba(129, 103, 242, 0.18));
     transform: rotate(-5deg);
   }
-
   .roam-phone {
     position: relative;
     width: min(390px, 86vw);
@@ -329,7 +303,6 @@ aliases:
     background: #070a10;
     box-shadow: var(--shadow);
   }
-
   .roam-phone img,
   .roam-shot img,
   .roam-wide-shot img {
@@ -337,13 +310,11 @@ aliases:
     width: 100%;
     height: auto;
   }
-
   .roam-section {
     padding: clamp(48px, 8vw, 96px) 0;
     border-top: 1px solid var(--line);
     scroll-margin-top: 92px;
   }
-
   .roam-section-head {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -351,7 +322,6 @@ aliases:
     align-items: end;
     margin-bottom: clamp(24px, 5vw, 44px);
   }
-
   .roam-section h2 {
     margin: 0;
     color: var(--text);
@@ -359,19 +329,16 @@ aliases:
     line-height: 1.04;
     font-weight: 940;
   }
-
   .roam-section p {
     margin: 0;
     color: var(--muted);
     line-height: 1.85;
   }
-
   .roam-feature-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
   }
-
   .roam-feature {
     min-height: 210px;
     padding: 24px;
@@ -381,13 +348,11 @@ aliases:
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
   }
-
   .roam-feature:hover {
     transform: translateY(-2px);
     border-color: rgba(255, 255, 255, 0.18);
     background: rgba(24, 29, 48, 0.9);
   }
-
   .roam-icon {
     display: inline-grid;
     place-items: center;
@@ -400,34 +365,28 @@ aliases:
     font-size: 1.3rem;
     font-weight: 900;
   }
-
   .roam-feature:nth-child(2) .roam-icon,
   .roam-feature:nth-child(5) .roam-icon {
     background: var(--purple);
   }
-
   .roam-feature:nth-child(3) .roam-icon,
   .roam-feature:nth-child(6) .roam-icon {
     background: var(--orange);
   }
-
   .roam-feature h3 {
     margin: 0 0 10px;
     color: var(--text);
     font-size: 1.22rem;
   }
-
   .roam-feature p {
     font-size: 0.98rem;
   }
-
   .roam-showcase {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(16px, 3vw, 28px);
     align-items: start;
   }
-
   .roam-shot {
     overflow: hidden;
     border: 1px solid var(--line);
@@ -436,35 +395,29 @@ aliases:
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
     transition: transform 180ms ease, border-color 180ms ease;
   }
-
   .roam-shot:hover {
     transform: translateY(-2px);
     border-color: rgba(255, 255, 255, 0.18);
   }
-
   .roam-shot-caption {
     padding: 18px 20px 22px;
     background: rgba(10, 14, 24, 0.92);
   }
-
   .roam-shot-caption h3 {
     margin: 0 0 8px;
     color: var(--text);
     font-size: 1.08rem;
   }
-
   .roam-shot-caption p {
     font-size: 0.92rem;
     line-height: 1.65;
   }
-
   .roam-split {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     gap: clamp(24px, 5vw, 64px);
     align-items: center;
   }
-
   .roam-wide-shot {
     overflow: hidden;
     border: 1px solid var(--line);
@@ -472,7 +425,6 @@ aliases:
     background: var(--panel-strong);
     box-shadow: var(--shadow);
   }
-
   .roam-list {
     display: grid;
     gap: 14px;
@@ -480,7 +432,6 @@ aliases:
     padding: 0;
     list-style: none;
   }
-
   .roam-list li {
     padding: 18px 20px;
     border: 1px solid var(--line);
@@ -490,25 +441,21 @@ aliases:
     line-height: 1.65;
     transition: border-color 180ms ease, background 180ms ease;
   }
-
   .roam-list li:hover {
     border-color: rgba(255, 255, 255, 0.18);
     background: rgba(24, 29, 48, 0.9);
   }
-
   .roam-list strong {
     display: block;
     margin-bottom: 4px;
     color: var(--text);
   }
-
   .roam-flow {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 14px;
     counter-reset: roam-step;
   }
-
   .roam-step {
     min-height: 174px;
     padding: 22px;
@@ -518,13 +465,11 @@ aliases:
     counter-increment: roam-step;
     transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
   }
-
   .roam-step:hover {
     transform: translateY(-2px);
     border-color: rgba(255, 255, 255, 0.18);
     background: rgba(24, 29, 48, 0.9);
   }
-
   .roam-step::before {
     content: counter(roam-step);
     display: inline-grid;
@@ -537,17 +482,14 @@ aliases:
     color: #fff;
     font-weight: 900;
   }
-
   .roam-step h3 {
     margin: 0 0 8px;
     color: var(--text);
     font-size: 1.08rem;
   }
-
   .roam-step p {
     font-size: 0.94rem;
   }
-
   .roam-quote {
     margin: 0;
     padding: clamp(28px, 5vw, 54px);
@@ -561,7 +503,6 @@ aliases:
     line-height: 1.45;
     font-weight: 900;
   }
-
   .roam-bottom {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -574,68 +515,55 @@ aliases:
       linear-gradient(135deg, rgba(51, 133, 255, 0.22), rgba(129, 103, 242, 0.18)),
       rgba(18, 22, 37, 0.88);
   }
-
   .roam-bottom h2 {
     margin: 0 0 10px;
   }
-
   @media (max-width: 980px) {
     .rf-top {
       flex-wrap: wrap;
     }
-
     .roam-hero,
     .roam-section-head,
     .roam-split,
     .roam-bottom {
       grid-template-columns: 1fr;
     }
-
     .roam-phone-stage {
       min-height: auto;
     }
-
     .roam-feature-grid,
     .roam-showcase,
     .roam-flow {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-
   @media (max-width: 640px) {
     .rf-shell {
       padding: 0 18px;
     }
-
     .roam-stats,
     .roam-feature-grid,
     .roam-showcase,
     .roam-flow {
       grid-template-columns: 1fr;
     }
-
     .roam-actions {
       display: grid;
     }
-
     .roam-button {
       width: 100%;
     }
-
     .roam-phone {
       width: min(360px, 94vw);
     }
   }
-
   @media (prefers-reduced-motion: no-preference) {
     .roam-hero > * {
       animation: rf-rise 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
     }
-
     .roam-hero > :nth-child(2) {
       animation-delay: 80ms;
     }
-
     @keyframes rf-rise {
       from {
         opacity: 0;
@@ -648,13 +576,13 @@ aliases:
     }
   }
 </style>
-
 <div class="rf-shell">
   <input class="rf-input" type="radio" name="rf-lang" id="rf-lang-zh" checked />
   <input class="rf-input" type="radio" name="rf-lang" id="rf-lang-en" />
+  <script src="/Projects/roam-focus/lang.js" defer></script>
   <header class="rf-top" aria-label="Roam Focus 页面导航">
     <a class="rf-brand" href="/" data-router-ignore>
-      <span class="rf-mark" aria-hidden="true">RF</span>
+      <span class="rf-mark" aria-hidden="true"><img class="rf-mark-img" src="/Projects/roam-focus/icon.webp" alt="" loading="eager" decoding="async" /></span>
       <span class="rf-brand-meta">
         <strong>Roam Focus</strong>
         <span>Focus as a journey</span>
@@ -665,7 +593,6 @@ aliases:
       <label for="rf-lang-en" role="tab" aria-controls="rf-view-en" tabindex="0">EN</label>
     </div>
   </header>
-
   <div class="rf-view rf-view-zh" id="rf-view-zh">
     <main class="roam-page">
       <section class="roam-hero">
@@ -700,7 +627,6 @@ aliases:
           </div>
         </div>
       </section>
-
       <section class="roam-section">
         <div class="roam-section-head">
           <h2>不是只盯着数字变小。</h2>
@@ -727,7 +653,6 @@ aliases:
           </div>
         </div>
       </section>
-
       <section id="screens-zh" class="roam-section">
         <div class="roam-section-head">
           <h2>主要界面围绕一次专注旅程展开。</h2>
@@ -759,7 +684,6 @@ aliases:
           </article>
         </div>
       </section>
-
       <section class="roam-section">
         <div class="roam-split">
           <div>
@@ -787,7 +711,6 @@ aliases:
           </div>
         </div>
       </section>
-
       <section class="roam-section">
         <div class="roam-split">
           <div class="roam-wide-shot">
@@ -815,7 +738,6 @@ aliases:
           </div>
         </div>
       </section>
-
       <section class="roam-section">
         <div class="roam-section-head">
           <h2>功能为专注服务，而不是反过来占用你。</h2>
@@ -856,13 +778,11 @@ aliases:
           </article>
         </div>
       </section>
-
       <section class="roam-section">
         <blockquote class="roam-quote">
           专注不一定要很苦。它也可以像出门一样，有方向、有天气、有路过的地方，也有结束后的回忆。
         </blockquote>
       </section>
-
       <section class="roam-section">
         <div class="roam-split">
           <div>
@@ -887,7 +807,6 @@ aliases:
           </ul>
         </div>
       </section>
-
       <section class="roam-section">
         <div class="roam-bottom">
           <div>
@@ -899,7 +818,6 @@ aliases:
       </section>
     </main>
   </div>
-
   <div class="rf-view rf-view-en" id="rf-view-en" lang="en">
     <main class="roam-page">
       <section class="roam-hero">
@@ -934,7 +852,6 @@ aliases:
           </div>
         </div>
       </section>
-
       <section class="roam-section">
         <div class="roam-section-head">
           <h2>Not just watching numbers go down.</h2>
@@ -961,7 +878,6 @@ aliases:
           </div>
         </div>
       </section>
-
       <section id="screens-en" class="roam-section">
         <div class="roam-section-head">
           <h2>Every screen is built around one journey.</h2>
@@ -993,7 +909,6 @@ aliases:
           </article>
         </div>
       </section>
-
       <section class="roam-section">
         <div class="roam-split">
           <div>
@@ -1021,7 +936,6 @@ aliases:
           </div>
         </div>
       </section>
-
       <section class="roam-section">
         <div class="roam-split">
           <div class="roam-wide-shot">
@@ -1049,7 +963,6 @@ aliases:
           </div>
         </div>
       </section>
-
       <section class="roam-section">
         <div class="roam-section-head">
           <h2>Features serve focus—not the other way around.</h2>
@@ -1090,13 +1003,11 @@ aliases:
           </article>
         </div>
       </section>
-
       <section class="roam-section">
         <blockquote class="roam-quote">
           Focus doesn’t have to be painful. It can feel like stepping outside—direction, weather, places you pass, and a memory when it’s done.
         </blockquote>
       </section>
-
       <section class="roam-section">
         <div class="roam-split">
           <div>
@@ -1121,7 +1032,6 @@ aliases:
           </ul>
         </div>
       </section>
-
       <section class="roam-section">
         <div class="roam-bottom">
           <div>
