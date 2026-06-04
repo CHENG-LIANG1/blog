@@ -8,6 +8,10 @@ aliases:
   - Tikkuu Focus
 ---
 <style>
+  html:has(body[data-slug="Projects/Roam-Focus"]),
+  body[data-slug="Projects/Roam-Focus"] {
+    background: #070913 !important;
+  }
   body[data-slug="Projects/Roam-Focus"] .page {
     max-width: none;
   }
@@ -32,6 +36,8 @@ aliases:
     padding: 0;
   }
   .rf-shell {
+    --page-gutter: clamp(18px, 4vw, 32px);
+    --section-gap: clamp(48px, 8vw, 96px);
     --bg: #070913;
     --panel: rgba(18, 22, 37, 0.82);
     --panel-strong: rgba(24, 29, 48, 0.92);
@@ -43,9 +49,23 @@ aliases:
     --green: #53d477;
     --orange: #d0805e;
     --shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+    position: relative;
+    isolation: isolate;
     min-height: 100vh;
     color: var(--text);
-    padding: 0 max(22px, calc((100vw - 1180px) / 2));
+    padding: 0 max(var(--page-gutter), calc((100vw - 1180px) / 2));
+    background:
+      radial-gradient(1000px 520px at 74% 14%, rgba(51, 133, 255, 0.24), transparent 55%),
+      radial-gradient(980px 520px at 18% 26%, rgba(129, 103, 242, 0.22), transparent 52%),
+      radial-gradient(760px 440px at 28% 84%, rgba(83, 212, 119, 0.14), transparent 60%),
+      linear-gradient(180deg, #070913 0%, #0b0f1e 50%, #070913 100%);
+  }
+  .rf-shell::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
     background:
       radial-gradient(1000px 520px at 74% 14%, rgba(51, 133, 255, 0.24), transparent 55%),
       radial-gradient(980px 520px at 18% 26%, rgba(129, 103, 242, 0.22), transparent 52%),
@@ -78,6 +98,8 @@ aliases:
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+    width: 100%;
+    margin: 0 auto;
     padding: 16px 0;
     background: linear-gradient(180deg, rgba(7, 9, 19, 0.88) 0%, rgba(7, 9, 19, 0.28) 100%);
     backdrop-filter: blur(14px);
@@ -178,7 +200,7 @@ aliases:
     gap: clamp(28px, 6vw, 72px);
     align-items: center;
     min-height: min(860px, calc(100vh - 20px));
-    padding: clamp(36px, 7vw, 88px) 0;
+    padding: clamp(32px, 7vw, 88px) 0 var(--section-gap);
   }
   .roam-eyebrow {
     display: inline-flex;
@@ -254,9 +276,12 @@ aliases:
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
     margin-top: 36px;
-    max-width: 720px;
+    width: min(100%, 720px);
   }
   .roam-stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-height: 112px;
     padding: 18px;
     border: 1px solid var(--line);
@@ -311,7 +336,7 @@ aliases:
     height: auto;
   }
   .roam-section {
-    padding: clamp(48px, 8vw, 96px) 0;
+    padding: var(--section-gap) 0;
     border-top: 1px solid var(--line);
     scroll-margin-top: 92px;
   }
@@ -521,6 +546,7 @@ aliases:
   @media (max-width: 980px) {
     .rf-top {
       flex-wrap: wrap;
+      align-items: flex-start;
     }
     .roam-hero,
     .roam-section-head,
@@ -539,22 +565,69 @@ aliases:
   }
   @media (max-width: 640px) {
     .rf-shell {
-      padding: 0 18px;
+      --page-gutter: 18px;
+      --section-gap: 40px;
+      padding: 0 var(--page-gutter);
+    }
+    .rf-top {
+      gap: 14px;
+      padding: 14px 0;
+      backdrop-filter: blur(16px);
+    }
+    .rf-brand {
+      min-height: 40px;
+      gap: 10px;
+    }
+    .rf-brand-meta strong {
+      font-size: 0.96rem;
+    }
+    .rf-brand-meta span {
+      font-size: 0.8rem;
+    }
+    .rf-switch {
+      margin-left: auto;
+    }
+    .roam-hero {
+      min-height: auto;
+      padding-top: 28px;
+    }
+    .roam-title {
+      font-size: clamp(2.3rem, 13vw, 3.7rem);
+      line-height: 1.02;
+    }
+    .roam-lead {
+      margin-top: 22px;
+      font-size: 1.02rem;
+      line-height: 1.78;
     }
     .roam-stats,
     .roam-feature-grid,
     .roam-showcase,
     .roam-flow {
       grid-template-columns: 1fr;
+      width: 100%;
     }
     .roam-actions {
       display: grid;
+      width: 100%;
     }
     .roam-button {
       width: 100%;
     }
+    .roam-stat,
+    .roam-feature,
+    .roam-step,
+    .roam-list li,
+    .roam-shot-caption {
+      padding-inline: 20px;
+    }
+    .roam-quote,
+    .roam-bottom {
+      border-radius: 24px;
+    }
     .roam-phone {
-      width: min(360px, 94vw);
+      width: min(100%, 360px);
+      margin-inline: auto;
     }
   }
   @media (prefers-reduced-motion: no-preference) {
