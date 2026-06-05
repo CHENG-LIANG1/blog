@@ -1,3 +1,8 @@
+---
+title: Vibe Coding 从 0 基础到 App Store 上架
+tags:
+  - 技术
+---
 
 我这个教程面向无编程背景，无超能力的读者。
 
@@ -56,4 +61,3 @@ ios:
 4. 文案: 用哪个 agent 做，就让哪个 agent 帮忙写，他最懂你的项目
 5. 不会填的字段，截图发给 AI
 6. 隐私政策&用户协议: Notion 或者 github pages, 让 agent 帮你生成一个单页 Html 部署就行了 比如我这个 https://cheng-liang1.github.io/App-Support/Roam%20Focus/privacy/index.html
-   
