@@ -1,3 +1,4 @@
+---
 title: 梁程 | 梁非凡 Ray | 前端工程师与独立开发者
 description: 梁程（梁非凡 Ray / Liang Feifan / Liang Cheng）的个人网站与博客，内容涵盖前端开发、Flutter、React、TypeScript、独立开发与英语学习。
 socialDescription: 梁程（梁非凡 Ray / Liang Feifan / Liang Cheng）的个人网站与博客，内容涵盖前端开发、Flutter、React、TypeScript、独立开发与英语学习。
@@ -13,7 +14,6 @@ aliases:
 
 Hey! I'm **Liang Cheng**, also known as **Liang Feifan (Ray)**, a frontend engineer and indie app developer. Born in Haimen, Nantong, Jiangsu. Based in **Nanjing**. **IELTS 7.5** — fluent in English for work and communication. I'm also an English columnist — **4,000+** followers and **3M+** reads on HeyBox.
 
-You may also see my name written online as **Liang Cheng**, **Liang Feifan**, **Ray**, or **Liang Feifan Ray**.
 
 <div class="social-pills">
 <a class="social-pill" href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.6 5.63.6 11.9c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.64 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.38-2.67 5.35-5.21 5.63.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55 4.51-1.5 7.77-5.76 7.77-10.78C23.4 5.63 18.27.5 12 .5z"/></svg><span class="social-pill-text"><span class="social-pill-platform">GitHub</span><span class="social-pill-user">CHENG-LIANG1</span></span></a>
@@ -46,8 +46,6 @@ You may also see my name written online as **Liang Cheng**, **Liang Feifan**, **
 <hr data-lang-split="en-zh" />
 
 你好！我是 **梁程**，也叫 **梁非凡 Ray**，一名前端工程师和独立开发者。出生于**江苏南通海门**，现定居**南京**。**雅思 7.5** — 英语流利，可作为工作语言。同时也是英语专栏作家，在小黑盒有 **4000+** 粉丝、**300 万+** 阅读。
-
-你也可能在网上看到我使用这些名字：**梁程**、**梁非凡**、**梁非凡 Ray**、**Liang Cheng**、**Liang Feifan**、**Ray**。
 
 <div class="social-pills">
 <a class="social-pill" href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.6 5.63.6 11.9c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.64 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.38-2.67 5.35-5.21 5.63.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55 4.51-1.5 7.77-5.76 7.77-10.78C23.4 5.63 18.27.5 12 .5z"/></svg><span class="social-pill-text"><span class="social-pill-platform">GitHub</span><span class="social-pill-user">CHENG-LIANG1</span></span></a>

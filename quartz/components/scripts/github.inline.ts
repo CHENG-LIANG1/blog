@@ -67,12 +67,19 @@ const loadGithubActivity = async () => {
   const roots = document.querySelectorAll<HTMLElement>(".github-activity")
   for (const root of Array.from(roots)) {
     const user = root.dataset.user
+    const grid = root.querySelector<HTMLElement>(".gh-heatmap-grid")
     const list = root.querySelector<HTMLUListElement>(".gh-commits")
-    if (!user || !list || list.dataset.loaded === "true") {
+    if (!user || !grid) {
       continue
     }
 
-    void renderHeatmap(root, user)
+    if (grid.dataset.loaded !== "true") {
+      await renderHeatmap(root, user)
+    }
+
+    if (!list || list.dataset.loaded === "true") {
+      continue
+    }
 
     try {
       const res = await fetch(`https://api.github.com/users/${user}/events/public?per_page=100`)
@@ -81,7 +88,6 @@ const loadGithubActivity = async () => {
       }
       const events = (await res.json()) as any[]
 
-      // 收集最近推送过的仓库（去重，按时间倒序）
       const seen = new Set<string>()
       const repos: RepoRow[] = []
       for (const ev of events) {
@@ -100,12 +106,12 @@ const loadGithubActivity = async () => {
       }
 
       if (repos.length === 0) {
-        root.classList.add("gh-empty")
         list.innerHTML = ""
+        list.dataset.loaded = "true"
+        list.hidden = true
         continue
       }
 
-      // 尽量补取每个仓库 head 提交的标题（best-effort，失败就退回分支名）
       await Promise.all(
         repos.map(async (r) => {
           if (!r.head) return
@@ -134,10 +140,11 @@ const loadGithubActivity = async () => {
         })
         .join("")
       list.dataset.loaded = "true"
-      root.classList.remove("gh-empty", "gh-error")
+      list.hidden = false
     } catch (_e) {
-      root.classList.add("gh-error")
-      list.innerHTML = `<li class="gh-commit-loading">最近提交暂时加载不出来，<a href="https://github.com/${user}" target="_blank" rel="noopener">去 GitHub 看看 →</a></li>`
+      list.innerHTML = ""
+      list.dataset.loaded = "true"
+      list.hidden = true
     }
   }
 }
