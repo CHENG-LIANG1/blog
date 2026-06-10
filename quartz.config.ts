@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "梁非凡's blog",
+    pageTitle: "梁程 | 梁非凡 Ray",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: false,

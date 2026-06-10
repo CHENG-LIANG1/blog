@@ -15,13 +15,21 @@ export default (() => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
     const title =
       (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+    const seoTitle =
+      fileData.slug === "index"
+        ? "梁程 | 梁非凡 Ray | 前端工程师、Flutter / React 开发者"
+        : title
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
       unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description)
+    const seoDescription =
+      fileData.slug === "index"
+        ? "梁程（梁非凡 Ray / Liang Feifan / Liang Cheng）的个人网站与博客，聚焦前端开发、Flutter、React、TypeScript、独立开发、作品集与英语学习。"
+        : description
     const keywords =
       fileData.slug === "index"
-        ? "梁非凡, Ray, Liang Feifan, 前端开发工程师, Flutter, React, TypeScript, 个人博客"
+        ? "梁程, 梁非凡, 梁非凡 Ray, Ray, Liang Cheng, Liang Feifan, 前端开发工程师, Flutter, React, TypeScript, 独立开发, 个人博客"
         : undefined
 
     const { css, js, additionalHead } = externalResources
@@ -44,38 +52,85 @@ export default (() => {
     const canonicalUrl = socialUrl.endsWith("/") ? socialUrl.slice(0, -1) : socialUrl
     const structuredData =
       fileData.slug === "index"
-        ? {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "梁非凡",
-            alternateName: ["Ray", "Liang Feifan", "CHENG-LIANG1"],
-            jobTitle: "Frontend / Flutter Engineer",
-            url: "https://chengliang.vercel.app",
-            sameAs: ["https://github.com/CHENG-LIANG1"],
-            email: "mailto:liangcheng2456@163.com",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Nanjing",
-              addressCountry: "CN",
+        ? [
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://chengliang.vercel.app/#website",
+              name: "梁程 | 梁非凡 Ray",
+              alternateName: ["梁非凡", "梁非凡 Ray", "Ray", "Liang Cheng", "Liang Feifan"],
+              url: "https://chengliang.vercel.app",
+              description: seoDescription,
+              inLanguage: ["zh-CN", "en"],
             },
-            worksFor: {
-              "@type": "Organization",
-              name: "霸王茶姬",
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://chengliang.vercel.app/#person",
+              name: "梁程",
+              givenName: "程",
+              familyName: "梁",
+              alternateName: [
+                "梁非凡",
+                "梁程",
+                "梁非凡 Ray",
+                "Ray",
+                "Liang Cheng",
+                "Liang Feifan",
+                "CHENG-LIANG1",
+              ],
+              description: seoDescription,
+              jobTitle: "Frontend / Flutter Engineer",
+              url: "https://chengliang.vercel.app",
+              mainEntityOfPage: "https://chengliang.vercel.app",
+              sameAs: [
+                "https://github.com/CHENG-LIANG1",
+                "https://www.threads.com/@earthboundmother3",
+                "https://www.xiaoheihe.cn/bbs/user_profile_share?user_id=85696763823c&h_src=heyboxapp",
+                "https://xhslink.com/m/9Sb4uJ0KtIk",
+              ],
+              email: "mailto:liangcheng2456@163.com",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Nanjing",
+                addressCountry: "CN",
+              },
+              worksFor: {
+                "@type": "Organization",
+                name: "霸王茶姬",
+              },
+              knowsAbout: [
+                "Flutter",
+                "React",
+                "TypeScript",
+                "SwiftUI",
+                "AI-powered development",
+                "Frontend engineering",
+              ],
             },
-            knowsAbout: [
-              "Flutter",
-              "React",
-              "TypeScript",
-              "SwiftUI",
-              "AI-powered development",
-              "Frontend engineering",
-            ],
-          }
+            {
+              "@context": "https://schema.org",
+              "@type": "ProfilePage",
+              "@id": "https://chengliang.vercel.app/#profile",
+              url: "https://chengliang.vercel.app",
+              name: seoTitle,
+              description: seoDescription,
+              isPartOf: {
+                "@id": "https://chengliang.vercel.app/#website",
+              },
+              about: {
+                "@id": "https://chengliang.vercel.app/#person",
+              },
+              mainEntity: {
+                "@id": "https://chengliang.vercel.app/#person",
+              },
+            },
+          ]
         : undefined
 
     return (
       <head>
-        <title>{title}</title>
+        <title>{seoTitle}</title>
         <meta charSet="utf-8" />
         {cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
           <>
@@ -89,18 +144,20 @@ export default (() => {
         )}
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="梁程 / 梁非凡 Ray" />
+        <meta name="creator" content="梁程 / 梁非凡 Ray" />
 
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={seoTitle} />
         <meta property="og:type" content="website" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         {keywords && <meta name="keywords" content={keywords} />}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image:alt" content={description} />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:image:alt" content={seoDescription} />
 
         {!usesCustomOgImage && (
           <>
@@ -123,7 +180,7 @@ export default (() => {
         )}
 
         <link rel="icon" href={iconPath} />
-        <meta name="description" content={description} />
+        <meta name="description" content={seoDescription} />
         <meta name="generator" content="Quartz" />
         {structuredData && (
           <script
