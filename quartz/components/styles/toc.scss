@@ -56,7 +56,7 @@ ul.toc-content.overflow {
 
   & > li > a {
     color: var(--darkgray);
-    opacity: 0.55;
+    opacity: 0.82;
     transition:
       0.3s ease opacity,
       0.2s ease color;
@@ -68,7 +68,7 @@ ul.toc-content.overflow {
     text-decoration: none !important;
 
     &:hover {
-      opacity: 0.85;
+      opacity: 0.94;
       color: var(--dark);
     }
 

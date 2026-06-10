@@ -1,14 +1,35 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
+// hub 页（首页 / 博客 / 项目 / 相册）：自带标题与排版，不显示面包屑、文章标题、元信息
+const HUB_SLUGS = new Set(["index", "blog", "Projects/index", "projects", "album"])
+const isHub = (slug: string): boolean => HUB_SLUGS.has(slug)
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
-  afterBody: [],
+  header: [
+    Component.TopTabs(),
+    Component.ConditionalRender({
+      component: Component.LanguageToggle(),
+      condition: (page) => page.fileData.slug === "index" || page.fileData.slug === "个人经历",
+    }),
+    Component.Darkmode(),
+  ],
+  afterBody: [
+    Component.ConditionalRender({
+      component: Component.RecentPosts({ limit: 200 }),
+      condition: (page) => page.fileData.slug === "blog",
+    }),
+    Component.ConditionalRender({
+      component: Component.GithubActivity({ username: "CHENG-LIANG1", title: "GitHub" }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+  ],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/CHENG-LIANG1",
+      Threads: "https://www.threads.com/@earthboundmother3",
       Blog: "https://chengliang.vercel.app",
     },
   }),
@@ -19,115 +40,42 @@ export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ScrollControls(),
     Component.ConditionalRender({
-      component: Component.LanguageToggle(),
-      condition: (page) => page.fileData.slug === "index" || page.fileData.slug === "个人经历",
+      component: Component.Breadcrumbs(),
+      condition: (page) => !isHub(page.fileData.slug ?? ""),
     }),
     Component.ConditionalRender({
-      component: Component.Breadcrumbs(),
-      condition: (page) => page.fileData.slug !== "index",
+      component: Component.ArticleTitle(),
+      condition: (page) => !isHub(page.fileData.slug ?? ""),
     }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
-  ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Explorer({
-      // 默认折叠目录（使用 localStorage 记录折叠状态）
-      folderDefaultState: "collapsed",
-      useSavedState: true,
-      filterFn: (node) => {
-        // Only hide tags folder
-        if (node.slugSegment === "tags") {
-          return false
-        }
-        return true
-      },
-      sortFn: (a, b) => {
-        // Custom order: 技术 > Projects > 英语 > 生活
-        const orderMap: Record<string, number> = {
-          "技术": 1,
-          "Projects": 2,
-          "英语": 3,
-          "生活": 4,
-        }
-        
-        const aOrder = orderMap[a.displayName] || 99
-        const bOrder = orderMap[b.displayName] || 99
-        
-        if (aOrder !== 99 || bOrder !== 99) {
-          return aOrder - bOrder
-        }
-        
-        // Default alphabetical sort for others
-        if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
-          return a.displayName.localeCompare(b.displayName, undefined, {
-            numeric: true,
-            sensitivity: "base",
-          })
-        }
-        
-        return a.isFolder ? -1 : 1
-      },
+    Component.ConditionalRender({
+      component: Component.ContentMeta(),
+      condition: (page) => !isHub(page.fileData.slug ?? ""),
     }),
-    Component.AllBlogsLink(),
+    Component.ConditionalRender({
+      component: Component.TagList(),
+      condition: (page) => !isHub(page.fileData.slug ?? ""),
+    }),
   ],
-  right: [
-    Component.Darkmode(),
-    Component.DesktopOnly(Component.TableOfContents()),
-  ],
+  left: [],
+  right: [],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Explorer({
-      // 默认折叠目录（使用 localStorage 记录折叠状态）
-      folderDefaultState: "collapsed",
-      useSavedState: true,
-      filterFn: (node) => {
-        // Only hide tags folder
-        if (node.slugSegment === "tags") {
-          return false
-        }
-        return true
-      },
-      sortFn: (a, b) => {
-        // Custom order: 技术 > Projects > 英语 > 生活
-        const orderMap: Record<string, number> = {
-          "技术": 1,
-          "Projects": 2,
-          "英语": 3,
-          "生活": 4,
-        }
-        
-        const aOrder = orderMap[a.displayName] || 99
-        const bOrder = orderMap[b.displayName] || 99
-        
-        if (aOrder !== 99 || bOrder !== 99) {
-          return aOrder - bOrder
-        }
-        
-        // Default alphabetical sort for others
-        if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
-          return a.displayName.localeCompare(b.displayName, undefined, {
-            numeric: true,
-            sensitivity: "base",
-          })
-        }
-        
-        return a.isFolder ? -1 : 1
-      },
+  beforeBody: [
+    Component.ConditionalRender({
+      component: Component.Breadcrumbs(),
+      condition: (page) => !isHub(page.fileData.slug ?? ""),
     }),
-    Component.AllBlogsLink(),
+    Component.ConditionalRender({
+      component: Component.ArticleTitle(),
+      condition: (page) => !isHub(page.fileData.slug ?? ""),
+    }),
+    Component.ConditionalRender({
+      component: Component.ContentMeta(),
+      condition: (page) => !isHub(page.fileData.slug ?? ""),
+    }),
   ],
-  right: [
-    Component.Darkmode(),
-  ],
+  left: [],
+  right: [],
 }

@@ -8,22 +8,19 @@ interface Options {
 }
 
 export default ((opts?: Options) => {
-  const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    const year = new Date().getFullYear()
-    const links = opts?.links ?? []
+  const Footer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
     return (
       <footer class={`${displayClass ?? ""}`}>
-        <p>
-          {i18n(cfg.locale).components.footer.createdWith}{" "}
-          <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
+        <p class="footer-copyright">
+          <a
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            target="_blank"
+            rel="noopener"
+          >
+            CC BY-NC-SA 4.0
+          </a>{" "}
+          2026-PRESENT © 梁非凡 &amp; Tikkuu
         </p>
-        <ul>
-          {Object.entries(links).map(([text, link]) => (
-            <li>
-              <a href={link}>{text}</a>
-            </li>
-          ))}
-        </ul>
       </footer>
     )
   }

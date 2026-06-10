@@ -1,0 +1,80 @@
+.recent-posts {
+  margin-top: 1rem;
+
+  & .recent-posts-title {
+    margin: 0 0 1.2rem 0;
+    font-size: 1.5rem;
+  }
+
+  & .post-year-group {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 0.2rem 1rem;
+    margin-bottom: 1.6rem;
+
+    @media all and (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+  }
+
+  & .post-year {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--gray);
+    user-select: none;
+
+    @media all and (max-width: 600px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  & .post-year-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .post-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    margin: 0 -0.5rem;
+    border-radius: 6px;
+    background: none;
+    color: var(--darkgray);
+    transition:
+      color 0.15s ease,
+      background 0.15s ease;
+
+    &:hover {
+      background: var(--lightgray);
+
+      & .post-row-title {
+        color: var(--secondary);
+      }
+    }
+  }
+
+  & .post-row-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--dark);
+    transition: color 0.15s ease;
+  }
+
+  & .post-row-dots {
+    flex: 1 1 auto;
+    border-bottom: 1px dashed var(--lightgray);
+    transform: translateY(-0.2rem);
+    min-width: 1rem;
+  }
+
+  & .post-row-date {
+    flex: 0 0 auto;
+    font-size: 0.8rem;
+    font-family: var(--codeFont);
+    color: var(--gray);
+  }
+}

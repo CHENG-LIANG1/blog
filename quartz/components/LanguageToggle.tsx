@@ -11,7 +11,7 @@ const LanguageToggle: QuartzComponent = ({ displayClass }: QuartzComponentProps)
         中文
       </button>
       <button type="button" class="lang-toggle-btn" data-lang-target="en">
-        English
+        EN
       </button>
     </div>
   )

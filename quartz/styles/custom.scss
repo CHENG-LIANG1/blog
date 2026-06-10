@@ -820,3 +820,369 @@ a.internal.tag-link {
     }
   }
 }
+
+// ============================================
+// antfu 风格：顶部导航 + 无侧栏 + 居中窄栏
+// ============================================
+
+// 1) 折叠左右空侧栏，单列居中（Roam-Focus 全屏页的更高优先级规则不受影响）
+.page {
+  max-width: 768px;
+}
+
+.page > #quartz-body {
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-areas:
+    "grid-header"
+    "grid-center"
+    "grid-footer" !important;
+  column-gap: 0 !important;
+
+  & > .left.sidebar,
+  & > .right.sidebar {
+    display: none !important;
+  }
+}
+
+// 站点底部版权（antfu 风格，居中淡色）
+.page > #quartz-body > footer {
+  & ul {
+    display: none;
+  }
+
+  & .footer-copyright {
+    margin: 0;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--gray);
+
+    & a {
+      background: none;
+      color: var(--gray);
+
+      &:hover {
+        color: var(--secondary);
+      }
+    }
+  }
+}
+
+// 2) 顶部导航条
+.page-header {
+  margin-top: 1.2rem !important;
+}
+
+.page-header header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.5rem 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 70%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--light) 78%, transparent);
+  backdrop-filter: saturate(1.2) blur(10px);
+  -webkit-backdrop-filter: saturate(1.2) blur(10px);
+
+  & h1 {
+    flex: 0 0 auto;
+  }
+
+  // header 里的 Darkmode 切换按钮靠右
+  & .darkmode {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+}
+
+// hub 页（首页/博客/项目/相册）顶部不要多余留白
+body[data-slug="index"],
+body[data-slug="blog"],
+body[data-slug="Projects/index"],
+body[data-slug="album"] {
+  & article {
+    padding-top: 0.5rem;
+  }
+}
+
+// 3) 项目页：分组卡片
+.proj-intro {
+  margin: 0 0 2rem 0;
+  color: var(--gray);
+}
+
+.proj-group {
+  margin: 0 0 2.2rem 0;
+
+  & .proj-group-title {
+    margin: 0 0 0.9rem 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+}
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+
+  @media all and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.proj-card {
+  display: block;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--light) 50%, transparent);
+  color: var(--darkgray);
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+
+  &:hover {
+    border-color: var(--lightgray);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--secondary) 10%, transparent);
+
+    & .proj-card-title {
+      color: var(--secondary);
+    }
+  }
+
+  & .proj-card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
+
+  & .proj-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+    transition: color 0.18s ease;
+  }
+
+  & .proj-card-meta {
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    font-family: var(--codeFont);
+    color: var(--darkgray);
+  }
+
+  & .proj-card-desc {
+    margin: 0.45rem 0 0 0;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--darkgray);
+  }
+}
+
+// 4) 相册页
+.album-hero {
+  margin: 0 0 2rem 0;
+
+  & .album-title {
+    margin: 0;
+  }
+
+  & .album-subtitle {
+    margin: 0.4rem 0 0 0;
+    color: var(--gray);
+  }
+}
+
+.album-section {
+  margin: 0 0 2.4rem 0;
+
+  & .album-h2 {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+
+  & .album-h2-desc {
+    margin: 0.3rem 0 1rem 0;
+    font-size: 0.85rem;
+    color: var(--gray);
+  }
+}
+
+.album-grid {
+  display: grid;
+  gap: 0.7rem;
+
+  &.album-grid-1 {
+    grid-template-columns: 1fr;
+  }
+  &.album-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  &.album-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media all and (max-width: 600px) {
+    &.album-grid-2,
+    &.album-grid-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.album-shot {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--lightgray);
+
+  & .album-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+
+    &.album-img-top {
+      object-position: top;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: none;
+    }
+  }
+}
+
+// 5) 首页：社交胶囊标签
+.social-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1.2rem 0 0.6rem 0;
+}
+
+.contact-pills {
+  margin-top: 0.9rem;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--light) 50%, transparent);
+  color: var(--darkgray);
+  line-height: 1.1;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    transform 0.18s ease;
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--secondary) 60%, var(--lightgray));
+    background: var(--highlight);
+    transform: translateY(-1px);
+
+    & .social-pill-icon,
+    & .social-pill-platform {
+      color: var(--secondary);
+    }
+  }
+
+  & .social-pill-icon {
+    flex: 0 0 auto;
+    color: var(--darkgray);
+    transition: color 0.18s ease;
+  }
+
+  & .social-pill-text {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+
+  & .social-pill-platform {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark);
+    transition: color 0.18s ease;
+  }
+
+  & .social-pill-user {
+    font-size: 0.74rem;
+    font-family: var(--codeFont);
+    color: var(--gray);
+  }
+}
+
+.social-pill-contact {
+  gap: 0.55rem;
+
+  & .social-pill-text {
+    gap: 0;
+  }
+
+  & .social-pill-badge {
+    width: auto;
+    height: auto;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+}
+
+.social-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: 0;
+  border-radius: 0.7rem;
+  background: color-mix(in srgb, var(--secondary) 12%, var(--lightgray));
+  color: var(--secondary);
+  flex: 0 0 auto;
+
+  & svg {
+    display: block;
+    width: 0.95rem;
+    height: 0.95rem;
+  }
+}
+
+.social-pill-user-email {
+  font-size: 0.82rem;
+  color: var(--dark);
+}
+
+// 首页 GitHub 模块上方收紧空隙
+body[data-slug="index"] {
+  & .center > hr {
+    display: none;
+  }
+
+  & .page-footer {
+    margin-top: 0;
+  }
+
+  & article {
+    padding-bottom: 0.5rem;
+  }
+}

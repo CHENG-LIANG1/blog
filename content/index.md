@@ -1,5 +1,5 @@
 ---
-title: 梁程 Cheng Liang | Frontend Engineer
+title: 梁非凡 Ray | Frontend Engineer
 aliases:
   - Liang Cheng
   - CHENG-LIANG1
@@ -7,126 +7,98 @@ aliases:
   - 梁非凡
 ---
 
-Hey! I'm Cheng **Liang**, a frontend engineer and indie app developer. Born in Haimen, Nantong, Jiangsu. Based in **Nanjing**. **IELTS 7.5** — fluent in English for work and communication.
+Hey! I'm **Ray** (Liang Feifan), a frontend engineer and indie app developer. Born in Haimen, Nantong, Jiangsu. Based in **Nanjing**. **IELTS 7.5** — fluent in English for work and communication. I'm also an English columnist — **4,000+** followers and **3M+** reads on HeyBox.
 
-Working at [霸王茶姬 (CHAGEE)](https://www.chagee.com/zh-cn), building the China-region mobile app with **Flutter**.
+<div class="social-pills">
+<a class="social-pill" href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.6 5.63.6 11.9c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.64 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.38-2.67 5.35-5.21 5.63.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55 4.51-1.5 7.77-5.76 7.77-10.78C23.4 5.63 18.27.5 12 .5z"/></svg><span class="social-pill-text"><span class="social-pill-platform">GitHub</span><span class="social-pill-user">CHENG-LIANG1</span></span></a>
+<a class="social-pill" href="https://www.threads.com/@earthboundmother3" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M16.7 11.2c-.1 0-.2-.1-.3-.1-.2-3.2-1.9-5-4.8-5-1.7 0-3.2.7-4 2l1.6 1.1c.6-1 1.6-1.2 2.4-1.2 1 0 1.8.3 2.3.9.4.4.6 1 .7 1.7-.8-.1-1.6-.2-2.5-.1-2.6.1-4.2 1.6-4.1 3.7 0 1 .6 1.9 1.5 2.5.8.5 1.7.7 2.8.7 1.4-.1 2.4-.6 3.2-1.5.6-.7 1-1.6 1.1-2.8.7.4 1.2 1 1.5 1.7.5 1.1.5 3-1 4.5-1.3 1.3-2.9 1.9-5.2 1.9-2.6 0-4.5-.8-5.8-2.4C5 17.1 4.4 15 4.3 12.4c.1-2.6.7-4.7 1.9-6.2C7.5 4.6 9.4 3.8 12 3.8c2.6 0 4.5.8 5.9 2.4 1 .9 1.6 2 1.9 3.2l2-.5c-.4-1.6-1.2-3-2.4-4.1C17.6 2.7 15.1 1.8 12 1.8 9 1.8 6.4 2.7 4.7 4.6 3.1 6.4 2.3 8.9 2.3 12v.1c0 3.1.8 5.6 2.4 7.4 1.7 1.9 4.3 2.8 7.3 2.8 2.7 0 4.7-.7 6.4-2.4 2.2-2.2 2.1-5 1.4-6.7-.5-1.2-1.5-2.2-2.8-2.9z"/></svg><span class="social-pill-text"><span class="social-pill-platform">Threads</span><span class="social-pill-user">@earthboundmother3</span></span></a>
+<a class="social-pill" href="https://xhslink.com/m/9Sb4uJ0KtIk" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 1024 1024" width="18" height="18" aria-hidden="true"><path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#FF2E4D"/><path d="M199.936 439.04H147.456c4.608 68.352-12.288 120.064-12.288 120.064l28.16 51.456c37.376-15.872 36.608-171.52 36.608-171.52m169.984 0H317.44s-0.768 155.648 36.352 171.52l28.16-51.456c0.256 0.256-16.64-51.712-12.032-120.064M232.96 595.712H199.936c0 38.656 32.512 41.984 32.512 41.984h16.64c33.536 0 34.816-38.4 34.816-38.4v-228.352H232.96v224.768z m176.128-109.568h34.048L417.28 539.392s-15.104 29.952 9.216 30.976h56.576l22.528-41.216h-28.416c-2.56 0-4.864-2.048-4.864-4.864 0-0.768 0.256-1.536 0.512-2.048l42.24-82.944H465.92l-2.816 5.888h-3.328c-2.56 0-4.864-2.048-4.864-4.864 0-0.768 0.256-1.536 0.512-2.048l35.328-67.328h-49.152l-41.984 84.48c0.512 0-14.592 29.696 9.472 30.72m7.68 100.608s-6.4 0.512-10.496-3.584l-25.344 48.896s4.096 5.632 12.8 5.632h62.976l26.88-50.944h-66.816z" fill="#FFFFFF"/><path d="M606.976 439.04h32.512v-52.224h-115.968v52.224h32.768v149.248h-48.64l-24.32 49.152h172.8v-49.152h-49.152v-149.248z m232.192 38.656h-5.888v-33.792c0-31.488-25.6-57.088-57.088-57.088h-19.712v-15.872h-50.176v15.872h-31.488v51.2h31.488v39.68h-50.176v51.2h50.176v109.056h50.176v-108.8h68.864c6.656 0 12.288 5.376 12.288 12.288v53.76h-47.872c0 23.808 19.2 43.008 43.008 43.008h13.056c23.808 0 43.008-19.2 43.008-43.008v-67.584c-0.256-27.904-22.272-49.92-49.664-49.92M756.48 437.76h17.92c4.352 0 7.68 3.584 7.68 7.68v32h-25.856V437.76z" fill="#FFFFFF"/><path d="M888.064 411.904c0-13.824-11.008-24.832-24.832-24.832-13.824 0-24.832 11.008-24.832 24.832v24.832h24.832c13.568 0 24.832-11.264 24.832-24.832" fill="#FFFFFF"/></svg><span class="social-pill-text"><span class="social-pill-platform">RedNote</span><span class="social-pill-user">刻刻</span></span></a>
+<a class="social-pill" href="https://www.xiaoheihe.cn/bbs/user_profile_share?user_id=85696763823c&h_src=heyboxapp" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 1024 1024" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M547.997989 923.105982c-8.796-6.81-32.195999-21.054-51.995999-31.649999-19.8-10.602-98.999998-56.267999-176.003996-101.483998L179.999996 707.759986l-2.141999-193.235996-2.142-193.235996 22.139999-15.384c118.115998-82.073998 113.495998-87.617998 114.431998 137.303997 0.438 104.705998 2.7 188.471996 5.028 186.143997 2.328-2.328 27.419999 9.96 55.769999 27.311999 28.343999 17.346 55.895999 32.399999 61.223999 33.438l9.689999 1.895999 4.002-55.997998 3.996-55.997999h119.999998l2.16 177.995996L576.299989 935.999982l-6.15-0.252c-3.39-0.144-13.356-5.832-22.158-12.642z m164.003997-330.695994v-183.599996l-26.003999-19.092c-14.298-10.5-43.139999-28.865999-64.097999-40.799999l-38.099999-21.707999-3.696 10.391999c-2.034 5.718-4.686 31.997999-5.898 58.397999l-2.208 47.999999h-119.999998l-2.154-178.001996c-1.182-97.895998-0.204-177.995997 2.172-177.995997 2.382 0 17.748 8.436 34.158 18.75C513.11999 123.695998 549.671989 145.013997 731.999986 250.145995c30.797999 17.76 69.563999 40.835999 86.141998 51.275999l30.143999 18.99-2.142 193.451996-2.141999 193.451996-56.003999 33.756c-30.797999 18.564-60.497999 34.019999-65.999999 34.337999l-9.996 0.588z"/></svg><span class="social-pill-text"><span class="social-pill-platform">HeyBox</span><span class="social-pill-user">戴维鲍曼</span></span></a>
+</div>
 
-- [Resume](个人经历.md)
+<div class="social-pills contact-pills">
+<a class="social-pill social-pill-contact" href="mailto:liangcheng2456@gmail.com"><span class="social-pill-badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5h18v11H3zM3.5 7l8.5 6 8.5-6"/></svg></span><span class="social-pill-text"><span class="social-pill-user social-pill-user-email">liangcheng2456@gmail.com</span></span></a>
+<a class="social-pill social-pill-contact" href="mailto:liangcheng2456@163.com"><span class="social-pill-badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5h18v11H3zM3.5 7l8.5 6 8.5-6"/></svg></span><span class="social-pill-text"><span class="social-pill-user social-pill-user-email">liangcheng2456@163.com</span></span></a>
+</div>
+
+## Featured
+
+<div class="proj-grid">
+<a class="proj-card" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">Flutter · App</span></div><p class="proj-card-desc">Flagship app, 1,000+ active users, actively maintained, with Android & HarmonyOS planned.</p></a>
+<a class="proj-card" href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding: from zero to the App Store</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">A reusable path from PRD and MVP to a real shipped app.</p></a>
+<a class="proj-card" href="/英语/英语学习之道"><div class="proj-card-head"><span class="proj-card-title">The Way of Learning English</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">How I actually reached working fluency.</p></a>
+</div>
 
 ## App Store Apps
 
-- [Active Habits](https://apps.apple.com/us/app/active-habits/id6758425099): A habit-building app that helps you stay consistent with your daily routines.
-- [GeekBio](https://apps.apple.com/us/app/geekbio/id6758457562): A personal bio app for organizing your profile and links in one clean page.
-- [Roam Focus](/Projects/Roam-Focus): My flagship project — 1,000+ active users, actively maintained, with Android & HarmonyOS versions planned.
-
-## Other Projects
-- [ActiveToDo](/Projects/ActiveToDo): A complete and clean to-do app for adding, finishing, and managing tasks.
-- [ActiveTranslation](/Projects/ActiveTranslation): A practical translation app that supports multilingual text translation.
-- [Tikkuu MultiPlanner](/Projects/Tikkuu%20MultiPlanner): A multi-tab project planner with Kanban drag-and-drop, subtasks, deadlines, and recurring-task reset automation.
+<div class="proj-grid">
+<a class="proj-card" href="https://apps.apple.com/us/app/active-habits/id6758425099" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Active Habits</span><span class="proj-card-meta"> SwiftUI · iOS</span></div><p class="proj-card-desc">A habit-building app that helps you stay consistent with your daily routines.</p></a>
+<a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta"> SwiftUI · iOS</span></div><p class="proj-card-desc">A personal bio app for organizing your profile and links in one clean page.</p></a>
+<a class="proj-card" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">Flutter · App</span></div><p class="proj-card-desc">Turn focus time into a real journey on the map — 1,000+ active users.</p></a>
+</div>
 
 <hr data-lang-split="en-zh" />
 
-你好！我是 **梁**程，一名前端工程师和独立开发者。出生于**江苏南通海门**，现定居**南京**。**雅思 7.5** — 英语流利，可作为工作语言。
+你好！我是 **梁非凡**，一名前端工程师和独立开发者。出生于**江苏南通海门**，现定居**南京**。**雅思 7.5** — 英语流利，可作为工作语言。同时也是英语专栏作家，在小黑盒有 **4000+** 粉丝、**300 万+** 阅读。
 
-目前在 [霸王茶姬](https://www.chagee.com/zh-cn) 做 **Flutter** 开发，负责中国区 App。
+<div class="social-pills">
+<a class="social-pill" href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.6 5.63.6 11.9c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.64 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.38-2.67 5.35-5.21 5.63.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55 4.51-1.5 7.77-5.76 7.77-10.78C23.4 5.63 18.27.5 12 .5z"/></svg><span class="social-pill-text"><span class="social-pill-platform">GitHub</span><span class="social-pill-user">CHENG-LIANG1</span></span></a>
+<a class="social-pill" href="https://www.threads.com/@earthboundmother3" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M16.7 11.2c-.1 0-.2-.1-.3-.1-.2-3.2-1.9-5-4.8-5-1.7 0-3.2.7-4 2l1.6 1.1c.6-1 1.6-1.2 2.4-1.2 1 0 1.8.3 2.3.9.4.4.6 1 .7 1.7-.8-.1-1.6-.2-2.5-.1-2.6.1-4.2 1.6-4.1 3.7 0 1 .6 1.9 1.5 2.5.8.5 1.7.7 2.8.7 1.4-.1 2.4-.6 3.2-1.5.6-.7 1-1.6 1.1-2.8.7.4 1.2 1 1.5 1.7.5 1.1.5 3-1 4.5-1.3 1.3-2.9 1.9-5.2 1.9-2.6 0-4.5-.8-5.8-2.4C5 17.1 4.4 15 4.3 12.4c.1-2.6.7-4.7 1.9-6.2C7.5 4.6 9.4 3.8 12 3.8c2.6 0 4.5.8 5.9 2.4 1 .9 1.6 2 1.9 3.2l2-.5c-.4-1.6-1.2-3-2.4-4.1C17.6 2.7 15.1 1.8 12 1.8 9 1.8 6.4 2.7 4.7 4.6 3.1 6.4 2.3 8.9 2.3 12v.1c0 3.1.8 5.6 2.4 7.4 1.7 1.9 4.3 2.8 7.3 2.8 2.7 0 4.7-.7 6.4-2.4 2.2-2.2 2.1-5 1.4-6.7-.5-1.2-1.5-2.2-2.8-2.9z"/></svg><span class="social-pill-text"><span class="social-pill-platform">Threads</span><span class="social-pill-user">@earthboundmother3</span></span></a>
+<a class="social-pill" href="https://xhslink.com/m/9Sb4uJ0KtIk" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 1024 1024" width="18" height="18" aria-hidden="true"><path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#FF2E4D"/><path d="M199.936 439.04H147.456c4.608 68.352-12.288 120.064-12.288 120.064l28.16 51.456c37.376-15.872 36.608-171.52 36.608-171.52m169.984 0H317.44s-0.768 155.648 36.352 171.52l28.16-51.456c0.256 0.256-16.64-51.712-12.032-120.064M232.96 595.712H199.936c0 38.656 32.512 41.984 32.512 41.984h16.64c33.536 0 34.816-38.4 34.816-38.4v-228.352H232.96v224.768z m176.128-109.568h34.048L417.28 539.392s-15.104 29.952 9.216 30.976h56.576l22.528-41.216h-28.416c-2.56 0-4.864-2.048-4.864-4.864 0-0.768 0.256-1.536 0.512-2.048l42.24-82.944H465.92l-2.816 5.888h-3.328c-2.56 0-4.864-2.048-4.864-4.864 0-0.768 0.256-1.536 0.512-2.048l35.328-67.328h-49.152l-41.984 84.48c0.512 0-14.592 29.696 9.472 30.72m7.68 100.608s-6.4 0.512-10.496-3.584l-25.344 48.896s4.096 5.632 12.8 5.632h62.976l26.88-50.944h-66.816z" fill="#FFFFFF"/><path d="M606.976 439.04h32.512v-52.224h-115.968v52.224h32.768v149.248h-48.64l-24.32 49.152h172.8v-49.152h-49.152v-149.248z m232.192 38.656h-5.888v-33.792c0-31.488-25.6-57.088-57.088-57.088h-19.712v-15.872h-50.176v15.872h-31.488v51.2h31.488v39.68h-50.176v51.2h50.176v109.056h50.176v-108.8h68.864c6.656 0 12.288 5.376 12.288 12.288v53.76h-47.872c0 23.808 19.2 43.008 43.008 43.008h13.056c23.808 0 43.008-19.2 43.008-43.008v-67.584c-0.256-27.904-22.272-49.92-49.664-49.92M756.48 437.76h17.92c4.352 0 7.68 3.584 7.68 7.68v32h-25.856V437.76z" fill="#FFFFFF"/><path d="M888.064 411.904c0-13.824-11.008-24.832-24.832-24.832-13.824 0-24.832 11.008-24.832 24.832v24.832h24.832c13.568 0 24.832-11.264 24.832-24.832" fill="#FFFFFF"/></svg><span class="social-pill-text"><span class="social-pill-platform">小红书</span><span class="social-pill-user">刻刻</span></span></a>
+<a class="social-pill" href="https://www.xiaoheihe.cn/bbs/user_profile_share?user_id=85696763823c&h_src=heyboxapp" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 1024 1024" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M547.997989 923.105982c-8.796-6.81-32.195999-21.054-51.995999-31.649999-19.8-10.602-98.999998-56.267999-176.003996-101.483998L179.999996 707.759986l-2.141999-193.235996-2.142-193.235996 22.139999-15.384c118.115998-82.073998 113.495998-87.617998 114.431998 137.303997 0.438 104.705998 2.7 188.471996 5.028 186.143997 2.328-2.328 27.419999 9.96 55.769999 27.311999 28.343999 17.346 55.895999 32.399999 61.223999 33.438l9.689999 1.895999 4.002-55.997998 3.996-55.997999h119.999998l2.16 177.995996L576.299989 935.999982l-6.15-0.252c-3.39-0.144-13.356-5.832-22.158-12.642z m164.003997-330.695994v-183.599996l-26.003999-19.092c-14.298-10.5-43.139999-28.865999-64.097999-40.799999l-38.099999-21.707999-3.696 10.391999c-2.034 5.718-4.686 31.997999-5.898 58.397999l-2.208 47.999999h-119.999998l-2.154-178.001996c-1.182-97.895998-0.204-177.995997 2.172-177.995997 2.382 0 17.748 8.436 34.158 18.75C513.11999 123.695998 549.671989 145.013997 731.999986 250.145995c30.797999 17.76 69.563999 40.835999 86.141998 51.275999l30.143999 18.99-2.142 193.451996-2.141999 193.451996-56.003999 33.756c-30.797999 18.564-60.497999 34.019999-65.999999 34.337999l-9.996 0.588z"/></svg><span class="social-pill-text"><span class="social-pill-platform">小黑盒</span><span class="social-pill-user">戴维鲍曼</span></span></a>
+</div>
 
-- [个人经历](个人经历.md)
+<div class="social-pills contact-pills">
+<a class="social-pill social-pill-contact" href="mailto:liangcheng2456@gmail.com"><span class="social-pill-badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5h18v11H3zM3.5 7l8.5 6 8.5-6"/></svg></span><span class="social-pill-text"><span class="social-pill-user social-pill-user-email">liangcheng2456@gmail.com</span></span></a>
+<a class="social-pill social-pill-contact" href="mailto:liangcheng2456@163.com"><span class="social-pill-badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5h18v11H3zM3.5 7l8.5 6 8.5-6"/></svg></span><span class="social-pill-text"><span class="social-pill-user social-pill-user-email">liangcheng2456@163.com</span></span></a>
+</div>
+
+## 代表作
+
+<div class="proj-grid">
+<a class="proj-card" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · App</span></div><p class="proj-card-desc">代表作，活跃用户 1000+，持续稳定迭代，计划开发 Android 与鸿蒙版本。</p></a>
+<a class="proj-card" href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding 从 0 基础到 App Store 上架</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">从 PRD、MVP 到真实上架，一条可复用的交付路径。</p></a>
+<a class="proj-card" href="/英语/英语学习之道"><div class="proj-card-head"><span class="proj-card-title">英语学习之道</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">我是怎么真正把英语练到能当工作语言的。</p></a>
+</div>
 
 ## App Store 上架应用
 
-- [Active Habits](https://apps.apple.com/us/app/active-habits/id6758425099)：一款习惯养成应用，帮助你稳定坚持每日目标。
-- [GeekBio](https://apps.apple.com/us/app/geekbio/id6758457562)：一款个人主页应用，用一个页面集中展示你的身份与链接。
-- [Roam Focus](/Projects/Roam-Focus)：我的代表作 — 活跃用户 1000+，持续稳定迭代中，计划开发 Android 与鸿蒙 App。
-
-## 其他项目
-- [ActiveToDo](/Projects/ActiveToDo)：一个功能完整的待办事项应用，支持添加、完成与管理任务。
-- [ActiveTranslation](/Projects/ActiveTranslation)：一个实用的翻译工具应用，支持多语言文本互译。
-- [Tikkuu MultiPlanner](/Projects/Tikkuu%20MultiPlanner)：一个多标签项目规划工具，支持看板拖拽排序、子任务、截止日期与重复任务自动重置。
+<div class="proj-grid">
+<a class="proj-card" href="https://apps.apple.com/us/app/active-habits/id6758425099" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Active Habits</span><span class="proj-card-meta"> SwiftUI · iOS</span></div><p class="proj-card-desc">一款习惯养成应用，帮助你稳定坚持每日目标。</p></a>
+<a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta"> SwiftUI · iOS</span></div><p class="proj-card-desc">一款个人主页应用，用一个页面集中展示你的身份与链接。</p></a>
+<a class="proj-card" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">把专注时间变成地图上的真实旅程，活跃用户 1000+。</p></a>
+</div>
 
 <hr data-lang-split="zh-rest" />
 
 ## Stack
 
-<a href="https://react.dev" target="_blank" class="stack-pill react">
-  <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278z"/></svg>
-  React
-</a>
-
-<a href="https://flutter.dev" target="_blank" class="stack-pill flutter">
-  <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
-  Flutter
-</a>
-
-<a href="https://developer.apple.com/xcode/swiftui/" target="_blank" class="stack-pill swift">
-  <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7.508 0c-.287 0-.573 0-.86.002-.241.002-.483.003-.724.01-.132.003-.263.009-.395.015A9.154 9.154 0 0 0 4.348.15 5.492 5.492 0 0 0 2.85.645 5.04 5.04 0 0 0 .645 2.848c-.245.48-.4.972-.495 1.5-.093.52-.122 1.05-.136 1.576a35.2 35.2 0 0 0-.012.724C0 6.935 0 7.221 0 7.508v8.984c0 .287 0 .575.002.862.002.24.005.481.012.722.014.526.043 1.057.136 1.576.095.528.25 1.02.495 1.5a5.03 5.03 0 0 0 2.205 2.203c.48.244.97.4 1.498.495.52.093 1.05.124 1.576.138.241.007.483.009.724.01.287.002.573.002.86.002h8.984c.287 0 .573 0 .86-.002.241-.001.483-.003.724-.01a10.523 10.523 0 0 0 1.578-.138 5.322 5.322 0 0 0 1.498-.495 5.035 5.035 0 0 0 2.203-2.203c.245-.48.4-.972.495-1.5.093-.52.124-1.05.138-1.576.007-.241.009-.481.01-.722.002-.287.002-.575.002-.862V7.508c0-.287 0-.573-.002-.86a33.662 33.662 0 0 0-.01-.724 10.5 10.5 0 0 0-.138-1.576 5.328 5.328 0 0 0-.495-1.5A5.039 5.039 0 0 0 21.152.645 5.32 5.32 0 0 0 19.654.15a10.493 10.493 0 0 0-1.578-.138 34.98 34.98 0 0 0-.722-.01C17.067 0 16.779 0 16.492 0H7.508zm6.035 3.41c4.114 2.47 6.545 7.162 5.549 11.131-.024.093-.05.181-.076.272l.002.001c2.062 2.538 1.5 5.258 1.236 4.745-1.072-2.086-3.066-1.568-4.088-1.043a6.803 6.803 0 0 1-.281.158l-.02.012-.002.002c-2.115 1.123-4.957 1.205-7.812-.022a12.568 12.568 0 0 1-5.64-4.838c.649.48 1.35.902 2.097 1.252 3.019 1.414 6.051 1.311 8.197-.002C9.651 12.73 7.101 9.67 5.146 7.191a10.628 10.628 0 0 1-1.005-1.384c2.34 2.142 6.038 4.83 7.365 5.576C8.69 8.408 6.208 4.743 6.324 4.86c4.436 4.47 8.528 6.996 8.528 6.996.154.085.27.154.36.213.085-.215.16-.437.224-.668.708-2.588-.09-5.548-1.893-7.992z"/></svg>
-  SwiftUI
-</a>
-
-<a href="https://www.typescriptlang.org" target="_blank" class="stack-pill ts">
-  <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg>
-  TypeScript
-</a>
-
----
+<a href="https://react.dev" target="_blank" class="stack-pill react"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278z"/></svg> React</a>
+<a href="https://flutter.dev" target="_blank" class="stack-pill flutter"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg> Flutter</a>
+<a href="https://developer.apple.com/xcode/swiftui/" target="_blank" class="stack-pill swift"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M11.666 2.054c2.81 1.761 4.545 4.314 4.545 4.314s-3.791-2.483-7.25-2.205c-3.46.277-7.466 2.658-7.466 2.658s3.407-1.127 7.02-1.082c3.613.045 7.158 2.073 7.158 2.073s-4.041-1.39-8.085-.826c-4.045.565-7.411 2.92-7.411 2.92s4.238-1.743 8.358-1.28c4.12.463 7.054 2.858 7.054 2.858s-4.521-1.874-8.835-1.126c-4.315.748-7.234 3.328-7.234 3.328s4.654-2.222 9.076-1.126c4.422 1.096 6.375 3.513 6.375 3.513s-4.945-2.29-9.356-.788c-4.411 1.503-6.52 4.186-6.52 4.186s5.293-2.613 9.774-.374c4.48 2.24 5.378 4.793 5.378 4.793s-5.836-3.036-10.457.23c-4.62 3.266-5.518 6.074-5.518 6.074s6.666-3.738 11.603.627c4.937 4.364 4.195 7.42 4.195 7.42s-6.398-3.923-12.02.836c-5.623 4.758-4.148 7.915-4.148 7.915s6.621-3.66 12.83 1.34c6.208 5 3.385 7.733 3.385 7.733s-6.505-3.08-13.628 3.036c-7.123 6.116-2.583 9.488-2.583 9.488s6.31-2.583 14.167 4.153C20.67 22.378 24 24 24 24c0-4.62-1.39-9.15-4.5-13.064-3.11-3.914-8.08-6.953-11.455-8.406 4.385.19 8.811-1.353 11.665-2.054z"/></svg> SwiftUI</a>
+<a href="https://www.typescriptlang.org" target="_blank" class="stack-pill ts"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg> TypeScript</a>
 
 ## Vibe Coding
 
-I ship products using **Vibe Coding** and turn ideas into products with AI.
-
-I build products heavily with AI assistance, leveraging tools like:
+I ship products with **Vibe Coding** — describe the idea in natural language, then let AI implement it fast. I build heavily with AI assistance, using tools like:
 
 <span class="stack-pill codex">Codex</span><span class="stack-pill trae">Trae</span><span class="stack-pill cursor">Cursor</span><span class="stack-pill claude">Claude</span><span class="stack-pill chatgpt">ChatGPT</span>
 
----
-
-## Find me on
-
-- GitHub: [github.com/CHENG-LIANG1](https://github.com/CHENG-LIANG1)
-- Threads: [@earthboundmother3](https://www.threads.com/@earthboundmother3)
-- Xiaohongshu: [刻刻](https://xhslink.com/m/9Sb4uJ0KtIk)
-- Heybox: [My Heybox profile](https://www.xiaoheihe.cn/bbs/user_profile_share?user_id=85696763823c&h_src=heyboxapp), where I focus on English teaching and AI education, with 4,000+ followers and 3M+ reads.
-- Email: `liangcheng2456@gmail.com` / `liangcheng2456@163.com`
+A paid subscriber of **Codex**, **Claude**, **Trae** and **Kimi**.
 
 <hr data-lang-split="en-rest-zh-rest" />
 
 ## 技术栈
 
-<a href="https://react.dev" target="_blank" class="stack-pill react">
-  <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278z"/></svg>
-  React
-</a>
-
-<a href="https://flutter.dev" target="_blank" class="stack-pill flutter">
-  <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
-  Flutter
-</a>
-
-<a href="https://developer.apple.com/xcode/swiftui/" target="_blank" class="stack-pill swift">
-  <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7.508 0c-.287 0-.573 0-.86.002-.241.002-.483.003-.724.01-.132.003-.263.009-.395.015A9.154 9.154 0 0 0 4.348.15 5.492 5.492 0 0 0 2.85.645 5.04 5.04 0 0 0 .645 2.848c-.245.48-.4.972-.495 1.5-.093.52-.122 1.05-.136 1.576a35.2 35.2 0 0 0-.012.724C0 6.935 0 7.221 0 7.508v8.984c0 .287 0 .575.002.862.002.24.005.481.012.722.014.526.043 1.057.136 1.576.095.528.25 1.02.495 1.5a5.03 5.03 0 0 0 2.205 2.203c.48.244.97.4 1.498.495.52.093 1.05.124 1.576.138.241.007.483.009.724.01.287.002.573.002.86.002h8.984c.287 0 .573 0 .86-.002.241-.001.483-.003.724-.01a10.523 10.523 0 0 0 1.578-.138 5.322 5.322 0 0 0 1.498-.495 5.035 5.035 0 0 0 2.203-2.203c.245-.48.4-.972.495-1.5.093-.52.124-1.05.138-1.576.007-.241.009-.481.01-.722.002-.287.002-.575.002-.862V7.508c0-.287 0-.573-.002-.86a33.662 33.662 0 0 0-.01-.724 10.5 10.5 0 0 0-.138-1.576 5.328 5.328 0 0 0-.495-1.5A5.039 5.039 0 0 0 21.152.645 5.32 5.32 0 0 0 19.654.15a10.493 10.493 0 0 0-1.578-.138 34.98 34.98 0 0 0-.722-.01C17.067 0 16.779 0 16.492 0H7.508zm6.035 3.41c4.114 2.47 6.545 7.162 5.549 11.131-.024.093-.05.181-.076.272l.002.001c2.062 2.538 1.5 5.258 1.236 4.745-1.072-2.086-3.066-1.568-4.088-1.043a6.803 6.803 0 0 1-.281.158l-.02.012-.002.002c-2.115 1.123-4.957 1.205-7.812-.022a12.568 12.568 0 0 1-5.64-4.838c.649.48 1.35.902 2.097 1.252 3.019 1.414 6.051 1.311 8.197-.002C9.651 12.73 7.101 9.67 5.146 7.191a10.628 10.628 0 0 1-1.005-1.384c2.34 2.142 6.038 4.83 7.365 5.576C8.69 8.408 6.208 4.743 6.324 4.86c4.436 4.47 8.528 6.996 8.528 6.996.154.085.27.154.36.213.085-.215.16-.437.224-.668.708-2.588-.09-5.548-1.893-7.992z"/></svg>
-  SwiftUI
-</a>
-
-<a href="https://www.typescriptlang.org" target="_blank" class="stack-pill ts">
-  <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg>
-  TypeScript
-</a>
-
----
+<a href="https://react.dev" target="_blank" class="stack-pill react"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278z"/></svg> React</a>
+<a href="https://flutter.dev" target="_blank" class="stack-pill flutter"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg> Flutter</a>
+<a href="https://developer.apple.com/xcode/swiftui/" target="_blank" class="stack-pill swift"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M11.666 2.054c2.81 1.761 4.545 4.314 4.545 4.314s-3.791-2.483-7.25-2.205c-3.46.277-7.466 2.658-7.466 2.658s3.407-1.127 7.02-1.082c3.613.045 7.158 2.073 7.158 2.073s-4.041-1.39-8.085-.826c-4.045.565-7.411 2.92-7.411 2.92s4.238-1.743 8.358-1.28c4.12.463 7.054 2.858 7.054 2.858s-4.521-1.874-8.835-1.126c-4.315.748-7.234 3.328-7.234 3.328s4.654-2.222 9.076-1.126c4.422 1.096 6.375 3.513 6.375 3.513s-4.945-2.29-9.356-.788c-4.411 1.503-6.52 4.186-6.52 4.186s5.293-2.613 9.774-.374c4.48 2.24 5.378 4.793 5.378 4.793s-5.836-3.036-10.457.23c-4.62 3.266-5.518 6.074-5.518 6.074s6.666-3.738 11.603.627c4.937 4.364 4.195 7.42 4.195 7.42s-6.398-3.923-12.02.836c-5.623 4.758-4.148 7.915-4.148 7.915s6.621-3.66 12.83 1.34c6.208 5 3.385 7.733 3.385 7.733s-6.505-3.08-13.628 3.036c-7.123 6.116-2.583 9.488-2.583 9.488s6.31-2.583 14.167 4.153C20.67 22.378 24 24 24 24c0-4.62-1.39-9.15-4.5-13.064-3.11-3.914-8.08-6.953-11.455-8.406 4.385.19 8.811-1.353 11.665-2.054z"/></svg> SwiftUI</a>
+<a href="https://www.typescriptlang.org" target="_blank" class="stack-pill ts"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg> TypeScript</a>
 
 ## AI 驱动开发
 
-我使用 **Vibe Coding** 进行产品开发，用自然语言描述想法，再让 AI 快速落地实现。
-
-我主要配合这些工具高频协作：
+我用 **Vibe Coding** 进行产品开发：用自然语言描述想法，再让 AI 快速落地实现。我主要配合这些工具高频协作：
 
 <span class="stack-pill codex">Codex</span><span class="stack-pill trae">Trae</span><span class="stack-pill cursor">Cursor</span><span class="stack-pill claude">Claude</span><span class="stack-pill chatgpt">ChatGPT</span>
 
----
-
-## 联系我
-
-- GitHub: [github.com/CHENG-LIANG1](https://github.com/CHENG-LIANG1)
-- Threads: [@earthboundmother3](https://www.threads.com/@earthboundmother3)
-- 小红书: [刻刻](https://xhslink.com/m/9Sb4uJ0KtIk)
-- 小黑盒: [我的小黑盒主页](https://www.xiaoheihe.cn/bbs/user_profile_share?user_id=85696763823c&h_src=heyboxapp)，主要致力于英语教学与 AI 科普，已有 4000+ 粉丝和 300 万+ 阅读量。
-- 邮箱: `liangcheng2456@gmail.com` / `liangcheng2456@163.com`
+我是 **Codex**、**Claude**、**Trae**、**Kimi** 的订阅会员。

@@ -28,6 +28,9 @@ import AllBlogsLink from "./AllBlogsLink"
 import Lock from "./Lock"
 import LanguageToggle from "./LanguageToggle"
 import ScrollControls from "./ScrollControls"
+import TopTabs from "./TopTabs"
+import RecentPosts from "./RecentPosts"
+import GithubActivity from "./GithubActivity"
 
 export {
   ArticleTitle,
@@ -60,4 +63,7 @@ export {
   Lock,
   LanguageToggle,
   ScrollControls,
+  TopTabs,
+  RecentPosts,
+  GithubActivity,
 }

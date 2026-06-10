@@ -21,7 +21,7 @@ export default (() => {
       unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description)
     const keywords =
       fileData.slug === "index"
-        ? "梁程, Liang Cheng, 梁非凡, 前端开发工程师, Flutter, React, TypeScript, 霸王茶姬, 个人博客"
+        ? "梁非凡, Ray, Liang Feifan, 前端开发工程师, Flutter, React, TypeScript, 个人博客"
         : undefined
 
     const { css, js, additionalHead } = externalResources
@@ -47,8 +47,8 @@ export default (() => {
         ? {
             "@context": "https://schema.org",
             "@type": "Person",
-            name: "梁程",
-            alternateName: ["Liang Cheng", "梁非凡", "CHENG-LIANG1"],
+            name: "梁非凡",
+            alternateName: ["Ray", "Liang Feifan", "CHENG-LIANG1"],
             jobTitle: "Frontend / Flutter Engineer",
             url: "https://chengliang.vercel.app",
             sameAs: ["https://github.com/CHENG-LIANG1"],
