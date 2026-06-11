@@ -1,5 +1,5 @@
 ---
-title: 梁程 | 梁非凡 Ray | 前端工程师与独立开发者
+title: 梁非凡 Ray | 前端工程师与独立开发者
 description: 梁程（梁非凡 Ray / Liang Feifan / Liang Cheng）的个人网站与博客，内容涵盖前端开发、Flutter、React、TypeScript、独立开发与英语学习。
 socialDescription: 梁程（梁非凡 Ray / Liang Feifan / Liang Cheng）的个人网站与博客，内容涵盖前端开发、Flutter、React、TypeScript、独立开发与英语学习。
 aliases:
