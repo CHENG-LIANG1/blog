@@ -45,10 +45,12 @@ async function optimize() {
     const ext = path.extname(filePath).toLowerCase()
     const tmpPath = `${filePath}.tmp`
 
-    let pipeline = sharp(filePath).resize(maxWidth, maxWidth, {
-      fit: sharp.fit.inside,
-      withoutEnlargement: true,
-    })
+    let pipeline = sharp(filePath)
+      .rotate() // auto-rotate based on EXIF Orientation
+      .resize(maxWidth, maxWidth, {
+        fit: sharp.fit.inside,
+        withoutEnlargement: true,
+      })
 
     if (ext === ".jpg" || ext === ".jpeg") {
       pipeline = pipeline.jpeg({ quality, progressive: true, mozjpeg: true })
