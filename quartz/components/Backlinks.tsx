@@ -26,7 +26,7 @@ export default ((opts?: Partial<BacklinksOptions>) => {
   }: QuartzComponentProps) => {
     const slug = simplifySlug(fileData.slug!)
     let backlinkFiles = allFiles.filter((file) => file.links?.includes(slug))
-    
+
     // Apply custom filter if provided
     if (options.filterFn) {
       backlinkFiles = backlinkFiles.filter(options.filterFn)

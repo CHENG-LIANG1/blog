@@ -28,4 +28,3 @@ aliases:
 - [[结构化输出（Structured Output）笔记]]
   - > 结构化输出是把 LLM 的“自由作文”变成“可解析、可校验、可落地”的数据
 - [[JSON Schema 笔记]]
-

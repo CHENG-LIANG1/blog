@@ -5,8 +5,13 @@
 // 字体系统 - Inter + 中文系统字体栈
 // ============================================
 :root {
-  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans:
+    "Inter", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "WenQuanYi Micro Hei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 body {
@@ -18,7 +23,12 @@ body {
 }
 
 // 标题使用更紧凑的字距，更有设计感
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-sans);
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -41,13 +51,17 @@ h3 {
   font-weight: 600;
 }
 
-code, pre {
+code,
+pre {
   font-family: var(--font-mono);
   font-feature-settings: normal;
 }
 
 // 正文字号与行高优化
-p, ul, ol, li {
+p,
+ul,
+ol,
+li {
   line-height: 1.75;
 }
 
@@ -98,15 +112,33 @@ article > p {
   }
 
   // 图标颜色保持不同
-  &.react svg { color: #087ea4; }
-  &.flutter svg { color: #02569b; }
-  &.swift svg { color: #f05138; }
-  &.ts svg { color: #3178c6; }
-  &.codex svg { color: #059669; }
-  &.trae svg { color: #7c3aed; }
-  &.cursor svg { color: #374151; }
-  &.claude svg { color: #ea580c; }
-  &.chatgpt svg { color: #10a37f; }
+  &.react svg {
+    color: #087ea4;
+  }
+  &.flutter svg {
+    color: #02569b;
+  }
+  &.swift svg {
+    color: #f05138;
+  }
+  &.ts svg {
+    color: #3178c6;
+  }
+  &.codex svg {
+    color: #059669;
+  }
+  &.trae svg {
+    color: #7c3aed;
+  }
+  &.cursor svg {
+    color: #374151;
+  }
+  &.claude svg {
+    color: #ea580c;
+  }
+  &.chatgpt svg {
+    color: #10a37f;
+  }
 }
 
 // ============================================
@@ -178,7 +210,9 @@ blockquote {
   padding-bottom: 0.5rem;
   background: color-mix(in srgb, var(--secondary) 3%, transparent);
   border-radius: 0 8px 8px 0;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
 
   & > :first-child {
     margin-top: 0;
@@ -263,7 +297,9 @@ code {
 img {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 
   &:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -330,7 +366,9 @@ body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .center > article {
   border-radius: 10px;
   padding: 1rem 1.25rem;
   background: color-mix(in srgb, var(--light) 50%, transparent);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     border-color: var(--gray);
@@ -353,7 +391,9 @@ body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .center > article {
       content: "▸";
       font-size: 0.8em;
       color: var(--gray);
-      transition: transform 0.2s ease, color 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        color 0.2s ease;
     }
 
     &:hover {
@@ -488,7 +528,10 @@ body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .center > article {
 // 文件夹图标更精致
 .folder-icon {
   opacity: 0.7;
-  transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .folder-container:hover .folder-icon {
@@ -593,7 +636,9 @@ body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .center > article {
     width: 18px;
     height: 18px;
     fill: var(--darkgray);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
   }
 }
 

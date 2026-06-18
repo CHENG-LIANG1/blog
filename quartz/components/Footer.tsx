@@ -1,7 +1,5 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/footer.scss"
-import { version } from "../../package.json"
-import { i18n } from "../i18n"
 
 interface Options {
   links: Record<string, string>
@@ -9,6 +7,7 @@ interface Options {
 
 export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
+    const links = opts?.links ?? {}
     return (
       <footer class={`${displayClass ?? ""}`}>
         <p class="footer-copyright">
@@ -21,6 +20,15 @@ export default ((opts?: Options) => {
           </a>{" "}
           2026-PRESENT © 梁非凡 &amp; Tikkuu
         </p>
+        <ul>
+          {Object.entries(links).map(([name, href]) => (
+            <li>
+              <a href={href} target="_blank" rel="noopener">
+                {name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </footer>
     )
   }

@@ -13,9 +13,7 @@ aliases:
 大模型本质上是一个“概率预测复读机”，它的原生输出是**非结构化文本**。
 
 - **痛点：** 如果你让 AI 生成一个用户列表，它可能一会儿给 Markdown 表格，一会儿给一段话。这对于代码逻辑（尤其是你的 Flutter 或 iOS App）来说是无法直接解析的灾难。
-    
 - **定义：** 结构化输出是指通过特定手段，强制大模型按照预定义的格式（如 **JSON**, **XML**, **YAML**）返回数据，确保输出内容符合编程语言的类型系统（Type System）。
-    
 
 ---
 
@@ -30,17 +28,17 @@ aliases:
 **Example:**
 
 > “请分析这段代码的 Bug，并按以下 JSON 格式返回结果：
-> 
+>
 > {
-> 
+>
 > "has_bug": boolean,
-> 
+>
 > "severity": "low" | "medium" | "high",
-> 
+>
 > "fix_suggestion": "string"
-> 
+>
 > }
-> 
+>
 > **注意：只返回 JSON，不要任何开场白。**”
 
 **2) 少样本引导（Few-Shot for Structure）**
@@ -50,11 +48,11 @@ aliases:
 **Example:**
 
 > **User:** 提取地址信息。
-> 
+>
 > 例子：输入“南京市雨花台区软件大道”，输出：{"city": "南京", "district": "雨花台区"}
-> 
+>
 > 问题：输入“杭州市余杭区文一西路”
-> 
+>
 > **AI:** {"city": "杭州", "district": "余杭区"}
 
 ---
@@ -118,24 +116,19 @@ class AppFeature(BaseModel):
 ## 5. 实战建议（写给“要上线的人”）
 
 1. **先降级再升级：** 如果模型在复杂的 JSON 上翻车，先尝试让它输出 XML 标签包裹的内容，再在代码里做简单的正则或解析。
-    
 2. **拒绝“解释性废话”：** 在 System Prompt 中加入 `Ensure the output is a valid JSON. Do not include any markdown formatting or pre/post-text.`。
-    
 3. **MVP 快速通道：** 在使用 Cursor 时，可以直接在 `.cursorrules` 中规定：“所有 Bug 分析必须以结构化 JSON 注释的形式出现在文件顶部”。
-    
 4. **容错处理：** 永远假设结构化输出**可能**会失败。在你的 App 代码中，必须包裹 `try-catch` 并设置默认值 (Fallback)，这是软件工程师最后的体面。
-    
 
 ---
 
 **总结：**
 
 - **Prompt 约束** 是“软约束”（适合快）。
-    
 - **JSON Schema** 是“硬约束”（适合稳）。
-    
 - **Type-Driven** 是“工程化约束”（适合大项目）。
 
 ## 6. 相关笔记
+
 - [[JSON Schema 笔记]]：最常见的“硬约束”实现方式。
 - [[Function Calling & Tool Use 笔记]]：工具调用参数也是结构化输出的一种。

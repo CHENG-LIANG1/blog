@@ -12,7 +12,9 @@ const config: QuartzConfig = {
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: false,
-    analytics: null,
+    analytics: {
+      provider: "vercel",
+    },
     locale: "zh-CN",
     baseUrl: "chengliang.vercel.app",
     ignorePatterns: ["private", "templates", ".obsidian"],
@@ -82,6 +84,7 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
+      Plugin.LazyImages(),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [

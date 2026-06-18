@@ -35,7 +35,9 @@ const renderHeatmap = async (root: HTMLElement, user: string) => {
     if (!res.ok) {
       throw new Error(`contrib ${res.status}`)
     }
-    const data = (await res.json()) as { contributions?: Array<{ date: string; count: number; level: number }> }
+    const data = (await res.json()) as {
+      contributions?: Array<{ date: string; count: number; level: number }>
+    }
     const days = Array.isArray(data.contributions) ? data.contributions : []
     if (days.length === 0) {
       throw new Error("contrib empty")

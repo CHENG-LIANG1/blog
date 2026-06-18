@@ -6,7 +6,11 @@ import { classNames } from "../util/lang"
 
 const LanguageToggle: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
   return (
-    <div class={classNames(displayClass, "language-toggle")} role="group" aria-label="Language switch">
+    <div
+      class={classNames(displayClass, "language-toggle")}
+      role="group"
+      aria-label="Language switch"
+    >
       <button type="button" class="lang-toggle-btn" data-lang-target="zh">
         中文
       </button>

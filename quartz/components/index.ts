@@ -25,7 +25,6 @@ import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import AllBlogsLink from "./AllBlogsLink"
-import Lock from "./Lock"
 import LanguageToggle from "./LanguageToggle"
 import ScrollControls from "./ScrollControls"
 import TopTabs from "./TopTabs"
@@ -60,7 +59,6 @@ export {
   Flex,
   ConditionalRender,
   AllBlogsLink,
-  Lock,
   LanguageToggle,
   ScrollControls,
   TopTabs,

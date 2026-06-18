@@ -1,14 +1,20 @@
 type PreferredLanguage = "zh" | "en"
 
-const STORAGE_KEY = "preferred-language"
-const EN_TOC_IDS = new Set(["app-store-apps", "other-projects", "stack", "vibe-coding", "find-me-on"])
+const LANG_STORAGE_KEY = "preferred-language"
+const EN_TOC_IDS = new Set([
+  "app-store-apps",
+  "other-projects",
+  "stack",
+  "vibe-coding",
+  "find-me-on",
+])
 const ZH_TOC_IDS = new Set(["app-store-上架应用", "其他项目", "技术栈", "ai-驱动开发", "联系我"])
 
-const isPreferredLanguage = (lang: string | null): lang is PreferredLanguage =>
+const isPreferredLanguage = (lang: string | null | undefined): lang is PreferredLanguage =>
   lang === "zh" || lang === "en"
 
 const getPreferredLanguage = (): PreferredLanguage => {
-  const stored = localStorage.getItem(STORAGE_KEY)
+  const stored = localStorage.getItem(LANG_STORAGE_KEY)
   if (isPreferredLanguage(stored)) {
     return stored
   }
@@ -182,7 +188,7 @@ document.addEventListener("nav", () => {
       return
     }
 
-    localStorage.setItem(STORAGE_KEY, targetLang)
+    localStorage.setItem(LANG_STORAGE_KEY, targetLang)
     applyLanguage(targetLang)
   }
 

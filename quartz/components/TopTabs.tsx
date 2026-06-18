@@ -57,12 +57,16 @@ const SOCIALS: Array<{ label: string; href: string; icon: preact.JSX.Element }> 
 
 const TopTabs: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const slug = fileData.slug ?? ""
-  const isHome = slug === "index"
-  const isProjects = slug === "Projects/index" || slug === "projects" || slug.startsWith("Projects/")
-  const isAlbum = slug === "album"
-  const isBlog = !isHome && !isProjects && !isAlbum
-  const active: TabKey = isHome ? "home" : isProjects ? "projects" : isAlbum ? "album" : "blog"
-  void isBlog
+  let active: TabKey | null = null
+  if (slug === "index") {
+    active = "home"
+  } else if (slug === "blog") {
+    active = "blog"
+  } else if (slug === "Projects/index" || slug === "projects" || slug.startsWith("Projects/")) {
+    active = "projects"
+  } else if (slug === "album") {
+    active = "album"
+  }
 
   return (
     <nav class={classNames(displayClass, "top-tabs")} aria-label="Primary">
@@ -78,7 +82,13 @@ const TopTabs: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
       </div>
       <div class="top-tabs-socials">
         {SOCIALS.map((s) => (
-          <a class="top-tabs-social" href={s.href} target="_blank" rel="noopener" aria-label={s.label}>
+          <a
+            class="top-tabs-social"
+            href={s.href}
+            target="_blank"
+            rel="noopener"
+            aria-label={s.label}
+          >
             {s.icon}
           </a>
         ))}

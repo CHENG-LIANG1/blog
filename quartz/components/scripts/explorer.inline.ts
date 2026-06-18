@@ -58,9 +58,7 @@ function toggleFolder(evt: MouseEvent) {
   const isSvg = target.nodeName === "svg"
 
   const folderContainer = (
-    isSvg
-      ? target.parentElement
-      : target.parentElement?.parentElement
+    isSvg ? target.parentElement : target.parentElement?.parentElement
   ) as MaybeHTMLElement
   if (!folderContainer) return
 
@@ -253,7 +251,9 @@ async function setupExplorer(currentSlug: FullSlug) {
     const mobileToggle = explorer.querySelector(".mobile-explorer") as MaybeHTMLElement
     const shouldCloseOnClick = mobileToggle?.checkVisibility?.() ?? false
     if (shouldCloseOnClick) {
-      const links = explorer.querySelectorAll(".explorer-content a") as NodeListOf<HTMLAnchorElement>
+      const links = explorer.querySelectorAll(
+        ".explorer-content a",
+      ) as NodeListOf<HTMLAnchorElement>
       const onLinkClick = () => closeMobileExplorer(explorer)
       for (const a of links) {
         a.addEventListener("click", onLinkClick)

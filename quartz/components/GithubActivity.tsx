@@ -26,7 +26,12 @@ export default ((userOpts?: Partial<Options>) => {
       <section class={classNames(displayClass, "github-activity")} data-user={opts.username}>
         <div class="gh-head">
           <h2 class="gh-title">{opts.title}</h2>
-          <a class="gh-profile-link" href={`https://github.com/${opts.username}`} target="_blank" rel="noopener">
+          <a
+            class="gh-profile-link"
+            href={`https://github.com/${opts.username}`}
+            target="_blank"
+            rel="noopener"
+          >
             @{opts.username}
           </a>
         </div>

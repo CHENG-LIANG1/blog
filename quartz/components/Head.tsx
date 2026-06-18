@@ -16,9 +16,7 @@ export default (() => {
     const title =
       (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
     const seoTitle =
-      fileData.slug === "index"
-        ? "梁程 | 梁非凡 Ray | 前端工程师、Flutter / React 开发者"
-        : title
+      fileData.slug === "index" ? "梁程 | 梁非凡 Ray | 前端工程师、Flutter / React 开发者" : title
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??

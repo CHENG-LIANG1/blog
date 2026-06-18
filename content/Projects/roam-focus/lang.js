@@ -1,4 +1,4 @@
-(function () {
+;(function () {
   function applyLanguagePreference() {
     try {
       var zhInput = document.getElementById("rf-lang-zh")
