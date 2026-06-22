@@ -60,6 +60,59 @@ aliases:
 
 Frontend engineering, Flutter and SwiftUI app development, AI-assisted product building, English learning, and the occasional personal note on collections, desk setups, and everyday interests.
 
+## Gear
+
+<div class="gear-grid">
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h16M4 16v-8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8M8 20h8"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">MacBook Air</span>
+<span class="gear-meta">M2 · 512GB · Blue</span>
+<span class="gear-role">Daily driver</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M8 21h8"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">Mac mini</span>
+<span class="gear-meta">M4 · 256GB · Silver</span>
+<span class="gear-role">Home server</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 18h6"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">iPhone 16 Pro Max</span>
+<span class="gear-meta">Apple</span>
+<span class="gear-role">Primary phone</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 18h6"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">MEIZU 20</span>
+<span class="gear-meta">Android</span>
+<span class="gear-role">Secondary</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">DJI OSMO Pocket 3</span>
+<span class="gear-meta">4K · Gimbal</span>
+<span class="gear-role">Video</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">Fuji instax SQ40</span>
+<span class="gear-meta">Instant film</span>
+<span class="gear-role">Photos</span>
+</div>
+</div>
+</div>
+
 <hr data-lang-split="en-zh" />
 
 <section class="home-hero home-hero-zh">
@@ -109,6 +162,59 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 ## 我会写什么
 
 前端工程、Flutter 和 SwiftUI App 开发、AI 辅助产品构建、英语学习，以及一些关于收藏、桌面和生活兴趣的记录。
+
+## 我的设备
+
+<div class="gear-grid">
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h16M4 16v-8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8M8 20h8"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">MacBook Air</span>
+<span class="gear-meta">M2 · 512GB · 蓝色</span>
+<span class="gear-role">主力电脑</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M8 21h8"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">Mac mini</span>
+<span class="gear-meta">M4 · 256GB · 银色</span>
+<span class="gear-role">家庭服务器</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 18h6"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">iPhone 16 Pro Max</span>
+<span class="gear-meta">Apple</span>
+<span class="gear-role">主力手机</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 18h6"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">MEIZU 20</span>
+<span class="gear-meta">Android</span>
+<span class="gear-role">副机</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">DJI OSMO Pocket 3</span>
+<span class="gear-meta">4K · 云台</span>
+<span class="gear-role">视频拍摄</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+<div class="gear-body">
+<span class="gear-name">Fuji instax SQ40</span>
+<span class="gear-meta">拍立得</span>
+<span class="gear-role">拍照</span>
+</div>
+</div>
+</div>
 
 <hr data-lang-split="zh-rest" />
 

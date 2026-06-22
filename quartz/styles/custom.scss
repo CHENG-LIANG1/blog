@@ -1068,6 +1068,107 @@ body[data-slug="album"] {
   }
 }
 
+// ============================================
+// 设备卡片 (Gear)
+// ============================================
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 0 0;
+
+  @media all and (max-width: 720px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media all and (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gear-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--light) 60%, transparent);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border-color: color-mix(in srgb, var(--secondary) 20%, var(--lightgray));
+    background: color-mix(in srgb, var(--light) 80%, transparent);
+  }
+}
+
+.gear-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--secondary) 10%, var(--light));
+  color: var(--secondary);
+  margin-bottom: 0.75rem;
+  transition: all 0.2s ease;
+
+  .gear-card:hover & {
+    background: color-mix(in srgb, var(--secondary) 15%, var(--light));
+  }
+}
+
+.gear-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.gear-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.gear-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.gear-meta {
+  font-size: 0.78rem;
+  color: var(--darkgray);
+  font-family: var(--codeFont);
+}
+
+.gear-role {
+  font-size: 0.72rem;
+  color: var(--gray);
+  margin-top: 0.15rem;
+}
+
+// 暗色模式设备卡片
+:root[saved-theme="dark"] {
+  .gear-card {
+    background: color-mix(in srgb, var(--lightgray) 40%, transparent);
+
+    &:hover {
+      background: color-mix(in srgb, var(--lightgray) 60%, transparent);
+    }
+  }
+
+  .gear-icon-wrap {
+    background: color-mix(in srgb, var(--secondary) 12%, var(--lightgray));
+  }
+}
+
 // 4) 相册页
 .album-hero {
   margin: 0 0 2rem 0;
