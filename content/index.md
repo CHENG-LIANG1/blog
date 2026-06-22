@@ -67,7 +67,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 <div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h16M4 16v-8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8M8 20h8"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">MacBook Air</span>
-<span class="gear-meta">M2 · 512GB · Blue</span>
+<span class="gear-meta">M2 · 512GB · Midnight</span>
 <span class="gear-role">Daily driver</span>
 </div>
 </div>
@@ -83,7 +83,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 <div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 18h6"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">iPhone 16 Pro Max</span>
-<span class="gear-meta">Apple</span>
+<span class="gear-meta">iOS · 512GB · Space Gray</span>
 <span class="gear-role">Primary phone</span>
 </div>
 </div>
@@ -91,7 +91,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 <div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 18h6"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">MEIZU 20</span>
-<span class="gear-meta">Android</span>
+<span class="gear-meta">256GB · White</span>
 <span class="gear-role">Secondary</span>
 </div>
 </div>
@@ -170,7 +170,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 <div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h16M4 16v-8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8M8 20h8"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">MacBook Air</span>
-<span class="gear-meta">M2 · 512GB · 蓝色</span>
+<span class="gear-meta">M2 · 512GB · 午夜色</span>
 <span class="gear-role">主力电脑</span>
 </div>
 </div>
@@ -186,7 +186,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 <div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 18h6"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">iPhone 16 Pro Max</span>
-<span class="gear-meta">Apple</span>
+<span class="gear-meta">iOS · 512GB · 深空灰</span>
 <span class="gear-role">主力手机</span>
 </div>
 </div>
@@ -194,7 +194,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 <div class="gear-icon-wrap"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 18h6"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">MEIZU 20</span>
-<span class="gear-meta">Android</span>
+<span class="gear-meta">256GB · 白色</span>
 <span class="gear-role">副机</span>
 </div>
 </div>
