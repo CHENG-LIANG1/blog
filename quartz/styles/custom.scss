@@ -107,7 +107,7 @@ article > p {
     cursor: pointer;
     background: var(--lightgray);
     color: var(--dark);
-    box-shadow: 0 8px 24px color-mix(in srgb, var(--secondary) 10%, transparent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border-color: var(--lightgray);
   }
 
@@ -178,6 +178,11 @@ h4 a[href^="#"],
 h5 a[href^="#"],
 h6 a[href^="#"] {
   text-decoration: none !important;
+
+  // 首页 section 标题的锚点 SVG 图标不需要显示
+  svg {
+    display: none;
+  }
 }
 
 // 右侧目录(Table of Contents)中的链接不需要下划线
@@ -311,6 +316,15 @@ img {
 // 首页基础样式
 // ============================================
 body[data-slug="index"] {
+  // 首页整体：非常微妙的暖色渐变背景
+  background: linear-gradient(
+    180deg,
+    var(--light) 0%,
+    color-mix(in srgb, var(--light) 98%, var(--secondary)) 40%,
+    color-mix(in srgb, var(--light) 99%, var(--secondary)) 70%,
+    var(--light) 100%
+  );
+
   article {
     padding: 2rem 0;
   }
@@ -690,10 +704,20 @@ body[data-slug="Projects/Roam-Focus"] .page > #quartz-body .center > article {
 // ============================================
 // 水平分割线优化
 // ============================================
-hr {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--lightgray), transparent);
-  margin: 2.5rem auto;
+// 双语切换分隔线：更粗、主题色、更大间距
+hr[data-lang-split] {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--secondary) 20%,
+    var(--tertiary) 50%,
+    var(--secondary) 80%,
+    transparent 100%
+  );
+  margin: 3.5rem auto;
+  opacity: 0.35;
+  border: none;
 }
 
 // ============================================
@@ -864,6 +888,15 @@ a.internal.tag-link {
       color: var(--dark);
     }
   }
+
+  .home-stat {
+    background: var(--lightgray);
+    border-color: color-mix(in srgb, var(--gray) 40%, transparent);
+  }
+
+  .home-hero-panel {
+    background: color-mix(in srgb, var(--lightgray) 50%, transparent);
+  }
 }
 
 // ============================================
@@ -976,7 +1009,7 @@ body[data-slug="album"] {
 .proj-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.8rem;
+  gap: 1rem;
 
   @media all and (max-width: 600px) {
     grid-template-columns: 1fr;
@@ -996,9 +1029,10 @@ body[data-slug="album"] {
     box-shadow 0.18s ease;
 
   &:hover {
-    border-color: var(--lightgray);
+    border-color: color-mix(in srgb, var(--secondary) 25%, var(--lightgray));
     transform: translateY(-2px);
     box-shadow: 0 8px 24px color-mix(in srgb, var(--secondary) 10%, transparent);
+    background: color-mix(in srgb, var(--light) 80%, transparent);
 
     & .proj-card-title {
       color: var(--secondary);
@@ -1113,7 +1147,205 @@ body[data-slug="album"] {
   }
 }
 
-// 5) 首页：社交胶囊标签
+// 5) 首页：首页首屏与项目层级
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.9fr);
+  gap: 2rem;
+  align-items: stretch;
+  margin: 0 0 2.5rem 0;
+}
+
+.home-hero-main {
+  min-width: 0;
+}
+
+.home-kicker {
+  margin: 0 0 0.55rem 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-family: var(--codeFont);
+  color: var(--gray);
+}
+
+.home-title {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.home-lede {
+  margin: 0.9rem 0 0 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--darkgray);
+  font-weight: 400;
+  max-width: 50ch;
+}
+
+.home-note,
+.home-contact-note {
+  margin: 0.7rem 0 0 0;
+  color: var(--darkgray);
+}
+
+.home-hero-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  align-content: start;
+  padding: 1.25rem;
+  border-left: none;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--lightgray) 25%, transparent);
+}
+
+.home-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.home-stat-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--secondary);
+}
+
+.home-stat-label {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--darkgray);
+}
+
+.home-now {
+  padding: 0.8rem;
+  border-top: 1px solid var(--lightgray);
+
+  & p {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: var(--darkgray);
+  }
+}
+
+.home-now-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: var(--codeFont);
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.featured-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.proj-card-featured {
+  grid-column: 1 / -1;
+  padding: 1.25rem 1.35rem;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--secondary) 8%, var(--light)) 0%,
+    color-mix(in srgb, var(--secondary) 4%, var(--light)) 100%
+  );
+  border: 1px solid color-mix(in srgb, var(--secondary) 20%, var(--lightgray));
+
+  & .proj-card-title {
+    font-size: 1.15rem;
+  }
+
+  & .proj-card-desc {
+    max-width: 42rem;
+    font-size: 0.94rem;
+  }
+}
+
+@media all and (max-width: 720px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1.7rem;
+  }
+
+  .home-hero-panel {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 0;
+    border-left: none;
+    gap: 0.45rem;
+  }
+
+  .home-now {
+    grid-column: 1 / -1;
+    padding: 0.65rem 0.1rem 0 0.1rem;
+  }
+
+  .home-stat {
+    padding: 0.6rem 0.65rem;
+  }
+
+  .home-stat-value {
+    font-size: 1.25rem;
+  }
+
+  .home-stat-label {
+    font-size: 0.74rem;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (max-width: 720px) and (min-width: 521px) {
+  .home-hero-panel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-now {
+    grid-column: 1 / -1;
+  }
+}
+
+@media all and (max-width: 520px) {
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-lede {
+    font-size: 1rem;
+  }
+
+  .social-pills {
+    margin: 0.9rem 0 0.45rem 0;
+  }
+
+  .contact-pills {
+    margin-top: 0.65rem;
+  }
+
+  .home-hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .home-stat {
+    min-height: 0;
+  }
+}
+
+// 6) 首页：社交胶囊标签
 .social-pills {
   display: flex;
   flex-wrap: wrap;
@@ -1144,6 +1376,7 @@ body[data-slug="album"] {
     border-color: color-mix(in srgb, var(--secondary) 60%, var(--lightgray));
     background: var(--highlight);
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 
     & .social-pill-icon,
     & .social-pill-platform {

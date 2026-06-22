@@ -12,7 +12,12 @@ aliases:
   - Ray
 ---
 
-Hey! I'm **Liang Cheng**, also known as **Liang Feifan (Ray)**, a frontend engineer and indie app developer. Born in Haimen, Nantong, Jiangsu. Based in **Nanjing**. **IELTS 7.5** — fluent in English for work and communication. I'm also an English columnist — **4,000+** followers and **3M+** reads on HeyBox.
+<section class="home-hero">
+<div class="home-hero-main">
+<p class="home-kicker">Frontend engineer · Indie app developer · AI-assisted builder</p>
+<h1 class="home-title">Liang Cheng / Liang Feifan Ray</h1>
+<p class="home-lede">I turn product ideas into shipped apps with Flutter, SwiftUI, React, TypeScript, and AI-assisted development workflows.</p>
+<p class="home-note">My flagship product is <strong>Roam Focus</strong>, an App Store app that turns focus time into real map journeys. Born in Haimen, Nantong, Jiangsu. Based in <strong>Nanjing</strong>. <strong>IELTS 7.5</strong>, fluent in English for work and communication.</p>
 
 <div class="social-pills">
 <a class="social-pill" href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.6 5.63.6 11.9c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.64 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.38-2.67 5.35-5.21 5.63.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55 4.51-1.5 7.77-5.76 7.77-10.78C23.4 5.63 18.27.5 12 .5z"/></svg><span class="social-pill-text"><span class="social-pill-platform">GitHub</span><span class="social-pill-user">CHENG-LIANG1</span></span></a>
@@ -26,10 +31,20 @@ Hey! I'm **Liang Cheng**, also known as **Liang Feifan (Ray)**, a frontend engin
 <a class="social-pill social-pill-contact" href="mailto:liangcheng2456@163.com"><span class="social-pill-badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5h18v11H3zM3.5 7l8.5 6 8.5-6"/></svg></span><span class="social-pill-text"><span class="social-pill-user social-pill-user-email">liangcheng2456@163.com</span></span></a>
 </div>
 
+<p class="home-contact-note">Open to conversations around indie products, frontend engineering, app development, and AI-assisted development workflows.</p>
+</div>
+<aside class="home-hero-panel" aria-label="Snapshot">
+<div class="home-stat"><span class="home-stat-value">1,000+</span><span class="home-stat-label">Roam Focus active users</span></div>
+<div class="home-stat"><span class="home-stat-value">3</span><span class="home-stat-label">App Store apps shipped</span></div>
+<div class="home-stat"><span class="home-stat-value">3M+</span><span class="home-stat-label">HeyBox reads · 4,000+ followers</span></div>
+<div class="home-now"><span class="home-now-label">Currently</span><p>Building Roam Focus, exploring AI-assisted app development, and writing about the path from vague product ideas to shipped software.</p></div>
+</aside>
+</section>
+
 ## Featured
 
-<div class="proj-grid">
-<a class="proj-card" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">Flutter · App</span></div><p class="proj-card-desc">Flagship app, 1,000+ active users, actively maintained, with Android & HarmonyOS planned.</p></a>
+<div class="proj-grid featured-grid">
+<a class="proj-card proj-card-featured" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">Turn focus time into map journeys. Shipped on the App Store, 1,000+ active users, actively maintained.</p></a>
 <a class="proj-card" href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding: from zero to the App Store</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">A reusable path from PRD and MVP to a real shipped app.</p></a>
 <a class="proj-card" href="/英语/英语学习之道"><div class="proj-card-head"><span class="proj-card-title">The Way of Learning English</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">How I actually reached working fluency.</p></a>
 </div>
@@ -37,14 +52,22 @@ Hey! I'm **Liang Cheng**, also known as **Liang Feifan (Ray)**, a frontend engin
 ## App Store Apps
 
 <div class="proj-grid">
-<a class="proj-card" href="https://apps.apple.com/us/app/active-habits/id6758425099" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Active Habits</span><span class="proj-card-meta"> SwiftUI · iOS</span></div><p class="proj-card-desc">A habit-building app that helps you stay consistent with your daily routines.</p></a>
-<a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta"> SwiftUI · iOS</span></div><p class="proj-card-desc">A personal bio app for organizing your profile and links in one clean page.</p></a>
-<a class="proj-card" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">Flutter · App</span></div><p class="proj-card-desc">Turn focus time into a real journey on the map — 1,000+ active users.</p></a>
+<a class="proj-card" href="https://apps.apple.com/us/app/active-habits/id6758425099" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Active Habits</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">Habit tracking with heatmaps, streaks, goals, and achievement feedback.</p></a>
+<a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">A code-editor-inspired profile page for links, identity, and personal presence.</p></a>
 </div>
+
+## I write about
+
+Frontend engineering, Flutter and SwiftUI app development, AI-assisted product building, English learning, and the occasional personal note on collections, desk setups, and everyday interests.
 
 <hr data-lang-split="en-zh" />
 
-你好！我是 **梁程**，也叫 **梁非凡 Ray**，一名前端工程师和独立开发者。出生于**江苏南通海门**，现定居**南京**。**雅思 7.5** — 英语流利，可作为工作语言。同时也是英语专栏作家，在小黑盒有 **4000+** 粉丝、**300 万+** 阅读。
+<section class="home-hero home-hero-zh">
+<div class="home-hero-main">
+<p class="home-kicker">前端工程师 · 独立开发者 · AI 辅助产品构建</p>
+<h1 class="home-title">梁程 / 梁非凡 Ray</h1>
+<p class="home-lede">我用 Flutter、SwiftUI、React、TypeScript 和 AI 辅助开发流程，把产品想法推进到真实上架。</p>
+<p class="home-note">我的代表作是 <strong>Roam Focus</strong>，一款把专注时间变成地图旅程的 App。出生于<strong>江苏南通海门</strong>，现定居<strong>南京</strong>。<strong>雅思 7.5</strong>，英语可作为工作语言。</p>
 
 <div class="social-pills">
 <a class="social-pill" href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.6 5.63.6 11.9c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.64 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.38-2.67 5.35-5.21 5.63.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55 4.51-1.5 7.77-5.76 7.77-10.78C23.4 5.63 18.27.5 12 .5z"/></svg><span class="social-pill-text"><span class="social-pill-platform">GitHub</span><span class="social-pill-user">CHENG-LIANG1</span></span></a>
@@ -58,10 +81,20 @@ Hey! I'm **Liang Cheng**, also known as **Liang Feifan (Ray)**, a frontend engin
 <a class="social-pill social-pill-contact" href="mailto:liangcheng2456@163.com"><span class="social-pill-badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5h18v11H3zM3.5 7l8.5 6 8.5-6"/></svg></span><span class="social-pill-text"><span class="social-pill-user social-pill-user-email">liangcheng2456@163.com</span></span></a>
 </div>
 
+<p class="home-contact-note">欢迎聊独立产品、前端工程、App 开发和 AI 辅助开发流程。</p>
+</div>
+<aside class="home-hero-panel" aria-label="概览">
+<div class="home-stat"><span class="home-stat-value">1000+</span><span class="home-stat-label">Roam Focus 活跃用户</span></div>
+<div class="home-stat"><span class="home-stat-value">3</span><span class="home-stat-label">App Store 上架应用</span></div>
+<div class="home-stat"><span class="home-stat-value">300万+</span><span class="home-stat-label">小黑盒阅读 · 4000+ 粉丝</span></div>
+<div class="home-now"><span class="home-now-label">现在在做</span><p>持续迭代 Roam Focus，探索 AI 辅助 App 开发，也记录从模糊想法到真实上架的产品构建过程。</p></div>
+</aside>
+</section>
+
 ## 代表作
 
-<div class="proj-grid">
-<a class="proj-card" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · App</span></div><p class="proj-card-desc">代表作，活跃用户 1000+，持续稳定迭代，计划开发 Android 与鸿蒙版本。</p></a>
+<div class="proj-grid featured-grid">
+<a class="proj-card proj-card-featured" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">把专注时间变成地图旅程。已上架 App Store，1000+ 活跃用户，持续迭代中。</p></a>
 <a class="proj-card" href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding 从 0 基础到 App Store 上架</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">从 PRD、MVP 到真实上架，一条可复用的交付路径。</p></a>
 <a class="proj-card" href="/英语/英语学习之道"><div class="proj-card-head"><span class="proj-card-title">英语学习之道</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">我是怎么真正把英语练到能当工作语言的。</p></a>
 </div>
@@ -69,14 +102,19 @@ Hey! I'm **Liang Cheng**, also known as **Liang Feifan (Ray)**, a frontend engin
 ## App Store 上架应用
 
 <div class="proj-grid">
-<a class="proj-card" href="https://apps.apple.com/us/app/active-habits/id6758425099" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Active Habits</span><span class="proj-card-meta"> SwiftUI · iOS</span></div><p class="proj-card-desc">一款习惯养成应用，帮助你稳定坚持每日目标。</p></a>
-<a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta"> SwiftUI · iOS</span></div><p class="proj-card-desc">一款个人主页应用，用一个页面集中展示你的身份与链接。</p></a>
-<a class="proj-card" href="https://apps.apple.com/us/app/roam-focus/id6759795571" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">把专注时间变成地图上的真实旅程，活跃用户 1000+。</p></a>
+<a class="proj-card" href="https://apps.apple.com/us/app/active-habits/id6758425099" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Active Habits</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">习惯追踪工具，包含热力图、连续记录、目标管理和成就反馈。</p></a>
+<a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">用类似代码编辑器的方式展示个人简介、链接和身份信息。</p></a>
 </div>
+
+## 我会写什么
+
+前端工程、Flutter 和 SwiftUI App 开发、AI 辅助产品构建、英语学习，以及一些关于收藏、桌面和生活兴趣的记录。
 
 <hr data-lang-split="zh-rest" />
 
 ## Stack
+
+I care about polished product UI, reliable app architecture, and shipping small ideas into usable software quickly.
 
 <a href="https://react.dev" target="_blank" class="stack-pill react"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278z"/></svg> React</a>
 <a href="https://flutter.dev" target="_blank" class="stack-pill flutter"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg> Flutter</a>
@@ -85,15 +123,17 @@ Hey! I'm **Liang Cheng**, also known as **Liang Feifan (Ray)**, a frontend engin
 
 ## Vibe Coding
 
-I ship products with **Vibe Coding** — describe the idea in natural language, then let AI implement it fast. I build heavily with AI assistance, using tools like:
+I ship products with **Vibe Coding** — turning product ideas into plans, prototypes, code, and release-ready apps with AI as a daily collaborator.
 
 <span class="stack-pill codex">Codex</span><span class="stack-pill trae">Trae</span><span class="stack-pill cursor">Cursor</span><span class="stack-pill claude">Claude</span><span class="stack-pill chatgpt">ChatGPT</span>
 
-A paid subscriber of **Codex**, **Claude**, **Trae** and **Kimi**.
+I use Codex, Claude, Trae, Cursor, ChatGPT, and Kimi across planning, prototyping, code review, debugging, and release preparation.
 
 <hr data-lang-split="en-rest-zh-rest" />
 
 ## 技术栈
+
+我关注细腻的产品界面、可靠的 App 架构，以及把小想法快速推进成可用软件的能力。
 
 <a href="https://react.dev" target="_blank" class="stack-pill react"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278z"/></svg> React</a>
 <a href="https://flutter.dev" target="_blank" class="stack-pill flutter"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg> Flutter</a>
@@ -102,8 +142,8 @@ A paid subscriber of **Codex**, **Claude**, **Trae** and **Kimi**.
 
 ## AI 驱动开发
 
-我用 **Vibe Coding** 进行产品开发：用自然语言描述想法，再让 AI 快速落地实现。我主要配合这些工具高频协作：
+我用 **Vibe Coding** 进行产品开发：把产品想法拆成计划、原型、代码和可发布的应用，让 AI 成为日常协作者。
 
 <span class="stack-pill codex">Codex</span><span class="stack-pill trae">Trae</span><span class="stack-pill cursor">Cursor</span><span class="stack-pill claude">Claude</span><span class="stack-pill chatgpt">ChatGPT</span>
 
-我是 **Codex**、**Claude**、**Trae**、**Kimi** 的订阅会员。
+我会把 Codex、Claude、Trae、Cursor、ChatGPT 和 Kimi 放进日常开发流程里，用它们做需求拆解、原型实现、代码审查、调试和发布前检查。
