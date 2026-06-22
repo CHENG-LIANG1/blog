@@ -63,7 +63,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 ## Gear
 
 <div class="gear-card">
-<div class="gear-icon-wrap macbook"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M2 16h20"/><path d="M12 18v2"/></svg></div>
+<div class="gear-icon-wrap macbook"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9"/><path d="M2 16h20"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">MacBook Air</span>
 <span class="gear-meta">M2 · 512GB · Midnight</span>
@@ -71,7 +71,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 </div>
 </div>
 <div class="gear-card">
-<div class="gear-icon-wrap macmini"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M8 21h8"/><circle cx="12" cy="11" r="1.5"/></svg></div>
+<div class="gear-icon-wrap macmini"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">Mac mini</span>
 <span class="gear-meta">M4 · 256GB · Silver</span>
@@ -79,7 +79,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 </div>
 </div>
 <div class="gear-card">
-<div class="gear-icon-wrap iphone"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 18h6"/><path d="M12 6v.01"/></svg></div>
+<div class="gear-icon-wrap iphone"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">iPhone 16 Pro Max</span>
 <span class="gear-meta">iOS · 512GB · Space Gray</span>
@@ -87,7 +87,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 </div>
 </div>
 <div class="gear-card">
-<div class="gear-icon-wrap meizu"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 18h6"/><path d="M12 5v.01"/></svg></div>
+<div class="gear-icon-wrap meizu"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">MEIZU 20</span>
 <span class="gear-meta">256GB · White</span>
@@ -95,7 +95,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 </div>
 </div>
 <div class="gear-card">
-<div class="gear-icon-wrap dji"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h2l2.5-3h9L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><circle cx="12" cy="13" r="2.5"/><path d="M12 10.5v5"/><path d="M9.5 13h5"/></svg></div>
+<div class="gear-icon-wrap dji"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">DJI OSMO Pocket 3</span>
 <span class="gear-meta">4K · Gimbal</span>
@@ -103,7 +103,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 </div>
 </div>
 <div class="gear-card">
-<div class="gear-icon-wrap fuji"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 16l5-5 4 4 5-5 4 4"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></div>
+<div class="gear-icon-wrap fuji"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">Fuji instax SQ40</span>
 <span class="gear-meta">Instant film</span>
@@ -166,7 +166,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 
 <div class="gear-grid">
 <div class="gear-card">
-<div class="gear-icon-wrap macbook"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M2 16h20"/><path d="M12 18v2"/></svg></div>
+<div class="gear-icon-wrap macbook"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9"/><path d="M2 16h20"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">MacBook Air</span>
 <span class="gear-meta">M2 · 512GB · 午夜色</span>
@@ -174,7 +174,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 </div>
 </div>
 <div class="gear-card">
-<div class="gear-icon-wrap macmini"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M8 21h8"/><circle cx="12" cy="11" r="1.5"/></svg></div>
+<div class="gear-icon-wrap macmini"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">Mac mini</span>
 <span class="gear-meta">M4 · 256GB · 银色</span>
@@ -182,7 +182,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 </div>
 </div>
 <div class="gear-card">
-<div class="gear-icon-wrap iphone"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 18h6"/><path d="M12 6v.01"/></svg></div>
+<div class="gear-icon-wrap iphone"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">iPhone 16 Pro Max</span>
 <span class="gear-meta">iOS · 512GB · 深空灰</span>
@@ -190,7 +190,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 </div>
 </div>
 <div class="gear-card">
-<div class="gear-icon-wrap meizu"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 18h6"/><path d="M12 5v.01"/></svg></div>
+<div class="gear-icon-wrap meizu"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">MEIZU 20</span>
 <span class="gear-meta">256GB · 白色</span>
@@ -198,7 +198,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 </div>
 </div>
 <div class="gear-card">
-<div class="gear-icon-wrap dji"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h2l2.5-3h9L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><circle cx="12" cy="13" r="2.5"/><path d="M12 10.5v5"/><path d="M9.5 13h5"/></svg></div>
+<div class="gear-icon-wrap dji"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">DJI OSMO Pocket 3</span>
 <span class="gear-meta">4K · 云台</span>
@@ -206,7 +206,7 @@ Frontend engineering, Flutter and SwiftUI app development, AI-assisted product b
 </div>
 </div>
 <div class="gear-card">
-<div class="gear-icon-wrap fuji"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 16l5-5 4 4 5-5 4 4"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></div>
+<div class="gear-icon-wrap fuji"><svg class="gear-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
 <div class="gear-body">
 <span class="gear-name">Fuji instax SQ40</span>
 <span class="gear-meta">拍立得</span>
