@@ -1115,13 +1115,75 @@ body[data-slug="album"] {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: color-mix(in srgb, var(--secondary) 10%, var(--light));
-  color: var(--secondary);
   margin-bottom: 0.75rem;
   transition: all 0.2s ease;
 
+  // 默认（兜底）
+  background: color-mix(in srgb, var(--secondary) 10%, var(--light));
+  color: var(--secondary);
+
   .gear-card:hover & {
     background: color-mix(in srgb, var(--secondary) 15%, var(--light));
+  }
+
+  // MacBook Air — 午夜蓝
+  &.macbook {
+    background: color-mix(in srgb, #1e293b 10%, var(--light));
+    color: #1e293b;
+
+    .gear-card:hover & {
+      background: color-mix(in srgb, #1e293b 15%, var(--light));
+    }
+  }
+
+  // Mac mini — 银灰
+  &.macmini {
+    background: color-mix(in srgb, #64748b 10%, var(--light));
+    color: #64748b;
+
+    .gear-card:hover & {
+      background: color-mix(in srgb, #64748b 15%, var(--light));
+    }
+  }
+
+  // iPhone — 深空灰
+  &.iphone {
+    background: color-mix(in srgb, #374151 10%, var(--light));
+    color: #374151;
+
+    .gear-card:hover & {
+      background: color-mix(in srgb, #374151 15%, var(--light));
+    }
+  }
+
+  // MEIZU — 品牌紫
+  &.meizu {
+    background: color-mix(in srgb, #8b5cf6 10%, var(--light));
+    color: #8b5cf6;
+
+    .gear-card:hover & {
+      background: color-mix(in srgb, #8b5cf6 15%, var(--light));
+    }
+  }
+
+  // DJI — 品牌红
+  &.dji {
+    background: color-mix(in srgb, #ef4444 10%, var(--light));
+    color: #ef4444;
+
+    .gear-card:hover & {
+      background: color-mix(in srgb, #ef4444 15%, var(--light));
+    }
+  }
+
+  // Fuji — 品牌绿
+  &.fuji {
+    background: color-mix(in srgb, #22c55e 10%, var(--light));
+    color: #22c55e;
+
+    .gear-card:hover & {
+      background: color-mix(in srgb, #22c55e 15%, var(--light));
+    }
   }
 }
 
