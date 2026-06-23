@@ -58,6 +58,55 @@ aliases:
 
 <hr data-lang-split="en-zh" />
 
+## Gear
+
+<div class="gear-grid">
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">MacBook Air</span>
+<span class="gear-meta">M2 · 512GB · Midnight</span>
+<span class="gear-role">Daily driver</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">Mac mini</span>
+<span class="gear-meta">M4 · 256GB · Silver</span>
+<span class="gear-role">Home server</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">iPhone 16 Pro Max</span>
+<span class="gear-meta">iOS · 512GB · Space Gray</span>
+<span class="gear-role">Primary phone</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">MEIZU 20</span>
+<span class="gear-meta">256GB · White</span>
+<span class="gear-role">Secondary</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">DJI OSMO Pocket 3</span>
+<span class="gear-meta">4K · Gimbal</span>
+<span class="gear-role">Video</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">Fuji instax SQ40</span>
+<span class="gear-meta">Instant film</span>
+<span class="gear-role">Photos</span>
+</div>
+</div>
+</div>
+
+<hr data-lang-split="zh-rest" />
+
 <section class="home-hero home-hero-zh">
 <div class="home-hero-main">
 <p class="home-kicker">前端工程师 · 独立开发者 · AI 辅助产品构建</p>
@@ -102,6 +151,53 @@ aliases:
 <a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">用类似代码编辑器的方式展示个人简介、链接和身份信息。</p></a>
 </div>
 <hr data-lang-split="zh-rest" />
+
+## 我的设备
+
+<div class="gear-grid">
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">MacBook Air</span>
+<span class="gear-meta">M2 · 512GB · 午夜色</span>
+<span class="gear-role">主力电脑</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">Mac mini</span>
+<span class="gear-meta">M4 · 256GB · 银色</span>
+<span class="gear-role">家庭服务器</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">iPhone 16 Pro Max</span>
+<span class="gear-meta">iOS · 512GB · 深空灰</span>
+<span class="gear-role">主力手机</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">MEIZU 20</span>
+<span class="gear-meta">256GB · 白色</span>
+<span class="gear-role">副机</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">DJI OSMO Pocket 3</span>
+<span class="gear-meta">4K · 云台</span>
+<span class="gear-role">视频拍摄</span>
+</div>
+</div>
+<div class="gear-card">
+<div class="gear-body">
+<span class="gear-name">Fuji instax SQ40</span>
+<span class="gear-meta">拍立得</span>
+<span class="gear-role">拍照</span>
+</div>
+</div>
+</div>
 
 ## Stack
 
