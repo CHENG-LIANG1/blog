@@ -49,6 +49,14 @@ aliases:
 <a class="proj-card" href="/英语/英语学习之道"><div class="proj-card-head"><span class="proj-card-title">The Way of Learning English</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">How I actually reached working fluency.</p></a>
 </div>
 
+## Recent Posts
+
+<div class="proj-grid">
+<a class="proj-card" href="/技术/我的博客是怎么做的"><div class="proj-card-head"><span class="proj-card-title">How I built this blog</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">My Obsidian, Quartz, GitHub, and Vercel publishing workflow.</p></a>
+<a class="proj-card" href="/技术/AI-浪潮下的前端程序员转型指南"><div class="proj-card-head"><span class="proj-card-title">Frontend career shifts in the AI wave</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">Paths from frontend engineering into AI products, agents, and tooling.</p></a>
+<a class="proj-card" href="/技术/Vibe-Coding-指南"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding Guide</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">A one-week delivery handbook for solo builders and indie developers.</p></a>
+</div>
+
 ## App Store Apps
 
 <div class="proj-grid">
@@ -93,6 +101,14 @@ aliases:
 <a class="proj-card proj-card-featured" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">把专注时间变成地图旅程。已上架 App Store，1000+ 活跃用户，持续迭代中。</p></a>
 <a class="proj-card" href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding 从 0 基础到 App Store 上架</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">从 PRD、MVP 到真实上架，一条可复用的交付路径。</p></a>
 <a class="proj-card" href="/英语/英语学习之道"><div class="proj-card-head"><span class="proj-card-title">英语学习之道</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">我是怎么真正把英语练到能当工作语言的。</p></a>
+</div>
+
+## 最近博客
+
+<div class="proj-grid">
+<a class="proj-card" href="/技术/我的博客是怎么做的"><div class="proj-card-head"><span class="proj-card-title">我的博客是怎么做的</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">Obsidian、Quartz、GitHub 和 Vercel 组成的个人博客发布流程。</p></a>
+<a class="proj-card" href="/技术/AI-浪潮下的前端程序员转型指南"><div class="proj-card-head"><span class="proj-card-title">AI 浪潮下的前端程序员转型指南</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">前端工程师如何转向 AI 产品、Agent 和工程化工具链。</p></a>
+<a class="proj-card" href="/技术/Vibe-Coding-指南"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding 指南</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">给独立开发者和 Solo Hacker 的一周交付手册。</p></a>
 </div>
 
 ## App Store 上架应用
