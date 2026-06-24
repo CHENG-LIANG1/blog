@@ -12,7 +12,7 @@ description: 家庭设备清单，包含办公、游戏、拍照、音频和穿�
 <div class="gear-card"><div class="gear-body"><span class="gear-name">Mac mini</span><span class="gear-meta">M4 · 256GB · 银色</span><span class="gear-role">家庭服务器</span></div></div>
 <div class="gear-card"><div class="gear-body"><span class="gear-name">iPhone 16 Pro Max</span><span class="gear-meta">512GB · 深空灰</span><span class="gear-role">手机</span></div></div>
 <div class="gear-card"><div class="gear-body"><span class="gear-name">iPhone 17 Pro Max</span><span class="gear-meta">512GB · 橙色</span><span class="gear-role">手机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">MEIZU 20</span><span class="gear-meta">256GB · 白色</span><span class="gear-role">副机</span></div></div>
+<div class="gear-card"><div class="gear-body"><span class="gear-name">MEIZU 20</span><span class="gear-meta">256GB · 白色</span><span class="gear-role">开发机</span></div></div>
 </div>
 
 ### 游戏设备
