@@ -3,13 +3,14 @@ import { classNames } from "../util/lang"
 // @ts-ignore
 import styles from "./styles/topTabs.scss"
 
-type TabKey = "home" | "blog" | "projects" | "album"
+type TabKey = "home" | "blog" | "projects" | "album" | "gear"
 
 const TABS: Array<{ key: TabKey; label: string; href: string }> = [
   { key: "home", label: "主页", href: "/" },
   { key: "blog", label: "博客", href: "/blog" },
   { key: "projects", label: "项目", href: "/Projects/" },
   { key: "album", label: "相册", href: "/album" },
+  { key: "gear", label: "设备", href: "/gear" },
 ]
 
 const SOCIALS: Array<{ label: string; href: string; icon: preact.JSX.Element }> = [
@@ -66,6 +67,8 @@ const TopTabs: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
     active = "projects"
   } else if (slug === "album") {
     active = "album"
+  } else if (slug === "gear") {
+    active = "gear"
   }
 
   return (

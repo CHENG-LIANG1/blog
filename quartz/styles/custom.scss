@@ -1086,6 +1086,46 @@ body[data-slug="album"] {
   }
 }
 
+.gear-category {
+  --gear-accent: var(--secondary);
+  margin: 1rem 0 0 0;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--gear-accent) 18%, var(--lightgray));
+  border-left: 4px solid color-mix(in srgb, var(--gear-accent) 72%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--gear-accent) 5%, var(--light));
+
+  & h4 {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--dark);
+  }
+
+  & .gear-grid {
+    margin-top: 0.75rem;
+  }
+}
+
+.gear-category-pc {
+  --gear-accent: #111827;
+}
+
+.gear-category-playstation {
+  --gear-accent: #006fcd;
+}
+
+.gear-category-nintendo {
+  --gear-accent: #e60012;
+}
+
+.gear-category-display {
+  --gear-accent: #14b8a6;
+}
+
+.gear-category-controller {
+  --gear-accent: #f59e0b;
+}
+
 .gear-card {
   display: flex;
   flex-direction: column;

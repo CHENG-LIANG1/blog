@@ -21,6 +21,7 @@ const isBlogPost = (f: QuartzPluginData): boolean => {
     slug !== "index" &&
     slug !== "blog" &&
     slug !== "album" &&
+    slug !== "gear" &&
     !slug.startsWith("tags/") &&
     !slug.endsWith("/index") &&
     !slug.startsWith("Hobbies/") &&
