@@ -92,5 +92,5 @@ description: 家庭设备清单，包含办公、游戏、拍照、音频和穿�
 <div class="gear-grid">
 <div class="gear-card"><div class="gear-body"><span class="gear-name">Apple Watch Ultra 2</span><span class="gear-meta">黑色</span><span class="gear-role">手表</span></div></div>
 <div class="gear-card"><div class="gear-body"><span class="gear-name">Xiaomi Watch S3</span><span class="gear-meta">黄色</span><span class="gear-role">手表</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Nothing Watch Pro</span><span class="gear-meta">橙色</span><span class="gear-role">手表</span></div></div>
+<div class="gear-card"><div class="gear-body"><span class="gear-name">Nothing CMF Watch Pro</span><span class="gear-meta">橙色</span><span class="gear-role">手表</span></div></div>
 </div>
