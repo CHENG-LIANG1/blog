@@ -75,6 +75,20 @@ description: 家庭设备清单，包含办公、游戏、拍照、音频和穿�
 <div class="gear-card"><div class="gear-body"><span class="gear-name">Fuji instax SQ40</span><span class="gear-meta">拍立得</span><span class="gear-role">拍照</span></div></div>
 </div>
 
+### 键盘设备
+
+<div class="gear-grid">
+<div class="gear-card"><div class="gear-body"><span class="gear-name">AngryMiao RGB65</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
+<div class="gear-card"><div class="gear-body"><span class="gear-name">MelGeek Made68</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
+<div class="gear-card"><div class="gear-body"><span class="gear-name">MelGeek Pixel</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
+<div class="gear-card"><div class="gear-body"><span class="gear-name">Kzzi K75</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
+<div class="gear-card"><div class="gear-body"><span class="gear-name">CoolKiller CK98</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
+<div class="gear-card"><div class="gear-body"><span class="gear-name">魔极客 M2</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
+<div class="gear-card"><div class="gear-body"><span class="gear-name">贱驴 A3</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
+<div class="gear-card"><div class="gear-body"><span class="gear-name">贱驴 RS2</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
+<div class="gear-card"><div class="gear-body"><span class="gear-name">米物 Art Z380</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
+</div>
+
 ### 音频设备
 
 <div class="gear-grid">
