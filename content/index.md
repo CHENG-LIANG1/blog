@@ -120,10 +120,10 @@ aliases:
 
 <hr data-lang-split="zh-rest" />
 
-## Home Gear
+## Collections
 
 <div class="proj-grid">
-<a class="proj-card" href="/gear"><div class="proj-card-head"><span class="proj-card-title">Gear</span><span class="proj-card-meta">Office · Gaming · Camera</span></div><p class="proj-card-desc">A living list of the devices I use at home.</p></a>
+<a class="proj-card" href="/collections"><div class="proj-card-head"><span class="proj-card-title">Collections</span><span class="proj-card-meta">Games · Albums · IDs</span></div><p class="proj-card-desc">A living catalog of game discs, music albums, and platform profiles.</p></a>
 </div>
 
 ## Stack
@@ -145,10 +145,10 @@ I use Codex, Claude, Trae, Cursor, ChatGPT, and Kimi across planning, prototypin
 
 <hr data-lang-split="en-rest-zh-rest" />
 
-## 家庭设备
+## 收藏
 
 <div class="proj-grid">
-<a class="proj-card" href="/gear"><div class="proj-card-head"><span class="proj-card-title">设备</span><span class="proj-card-meta">办公 · 游戏 · 拍照</span></div><p class="proj-card-desc">查看我的家庭设备清单，后面会继续补充。</p></a>
+<a class="proj-card" href="/collections"><div class="proj-card-head"><span class="proj-card-title">收藏</span><span class="proj-card-meta">游戏 · 专辑 · 账号</span></div><p class="proj-card-desc">整理我的游戏实体盘、音乐专辑和平台账号，后面会继续补充。</p></a>
 </div>
 
 ## 技术栈

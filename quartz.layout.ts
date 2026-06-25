@@ -1,8 +1,8 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
-// hub 页（首页 / 博客 / 项目 / 相册 / 设备）：自带标题与排版，不显示面包屑、文章标题、元信息
-const HUB_SLUGS = new Set(["index", "blog", "Projects/index", "projects", "album", "gear"])
+// hub 页（首页 / 博客 / 项目 / 相册 / 收藏）：自带标题与排版，不显示面包屑、文章标题、元信息
+const HUB_SLUGS = new Set(["index", "blog", "Projects/index", "projects", "album", "collections"])
 const isHub = (slug: string): boolean => HUB_SLUGS.has(slug)
 
 // components shared across all pages
