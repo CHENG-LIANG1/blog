@@ -1072,7 +1072,20 @@ body[data-slug="album"] {
 // 收藏与设备卡片 (Gear / Collections)
 // ============================================
 .collection-tabs {
+  --collection-surface: color-mix(in srgb, var(--light) 56%, transparent);
+  --collection-surface-strong: color-mix(in srgb, var(--lightgray) 38%, var(--light));
+  --collection-line: color-mix(in srgb, var(--dark) 10%, var(--lightgray));
+  --collection-line-strong: color-mix(in srgb, var(--dark) 18%, var(--lightgray));
+  --collection-text-soft: color-mix(in srgb, var(--gray) 78%, var(--darkgray));
   margin-top: 0.25rem;
+}
+
+body[data-slug="collections"] .reading-progress-bar {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--gray) 58%, transparent),
+    color-mix(in srgb, var(--darkgray) 64%, transparent)
+  );
 }
 
 .collection-tab-input {
@@ -1094,10 +1107,10 @@ body[data-slug="album"] {
   margin: 0 0 1.35rem 0;
   padding: 0.45rem;
   overflow-x: auto;
-  border: 1px solid var(--lightgray);
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--light) 62%, transparent);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--collection-line);
+  border-radius: 8px;
+  background: var(--collection-surface);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.035);
   backdrop-filter: blur(14px);
   scrollbar-width: none;
 
@@ -1114,11 +1127,11 @@ body[data-slug="album"] {
   min-height: 2.45rem;
   padding: 0 0.95rem;
   border: 1px solid transparent;
-  border-radius: 8px;
-  color: var(--darkgray);
-  background: color-mix(in srgb, var(--light) 36%, transparent);
+  border-radius: 6px;
+  color: var(--collection-text-soft);
+  background: transparent;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 650;
   line-height: 1;
   cursor: pointer;
   user-select: none;
@@ -1130,8 +1143,8 @@ body[data-slug="album"] {
 
   &:hover {
     color: var(--dark);
-    border-color: color-mix(in srgb, var(--secondary) 14%, var(--lightgray));
-    background: color-mix(in srgb, var(--light) 74%, transparent);
+    border-color: var(--collection-line);
+    background: color-mix(in srgb, var(--lightgray) 22%, transparent);
   }
 
 }
@@ -1146,9 +1159,9 @@ body[data-slug="album"] {
 #collection-tab-game:checked ~ .collection-tab-nav label[for="collection-tab-game"],
 #collection-tab-album:checked ~ .collection-tab-nav label[for="collection-tab-album"] {
   color: var(--dark);
-  border-color: color-mix(in srgb, var(--secondary) 28%, var(--lightgray));
-  background: color-mix(in srgb, var(--secondary) 11%, var(--light));
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--secondary) 9%, transparent);
+  border-color: var(--collection-line-strong);
+  background: var(--collection-surface-strong);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--light) 30%, transparent);
   transform: translateY(-1px);
 }
 
@@ -1206,12 +1219,12 @@ body[data-slug="album"] {
   flex-direction: column;
   justify-content: space-between;
   padding: 1.1rem;
-  border: 1px solid color-mix(in srgb, var(--collection-accent) 30%, var(--lightgray));
-  border-radius: 14px;
+  border: 1px solid var(--collection-line);
+  border-radius: 8px;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--collection-accent) 18%, transparent), transparent 56%),
-    color-mix(in srgb, var(--light) 76%, transparent);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+    linear-gradient(135deg, color-mix(in srgb, var(--collection-accent) 8%, transparent), transparent 58%),
+    var(--collection-surface);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
 }
 
 .collection-account-steam {
@@ -1256,10 +1269,10 @@ body[data-slug="album"] {
 .collection-copy-button {
   min-height: 1.7rem;
   padding: 0 0.62rem;
-  border: 1px solid color-mix(in srgb, var(--collection-accent) 24%, var(--lightgray));
+  border: 1px solid var(--collection-line-strong);
   border-radius: 999px;
   color: var(--dark);
-  background: color-mix(in srgb, var(--light) 80%, transparent);
+  background: color-mix(in srgb, var(--light) 70%, transparent);
   font-size: 0.72rem;
   font-weight: 700;
   line-height: 1;
@@ -1270,8 +1283,8 @@ body[data-slug="album"] {
     transform 0.2s ease;
 
   &:hover {
-    border-color: color-mix(in srgb, var(--collection-accent) 44%, var(--lightgray));
-    background: color-mix(in srgb, var(--collection-accent) 8%, var(--light));
+    border-color: color-mix(in srgb, var(--dark) 24%, var(--lightgray));
+    background: color-mix(in srgb, var(--lightgray) 20%, var(--light));
     transform: translateY(-1px);
   }
 }
@@ -1295,15 +1308,16 @@ body[data-slug="album"] {
   --gear-accent: var(--secondary);
   margin: 1rem 0 0 0;
   padding: 1rem;
-  border: 1px solid color-mix(in srgb, var(--gear-accent) 18%, var(--lightgray));
-  border-left: 4px solid color-mix(in srgb, var(--gear-accent) 72%, transparent);
-  border-radius: 14px;
-  background: color-mix(in srgb, var(--gear-accent) 5%, var(--light));
+  border: 1px solid var(--collection-line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--lightgray) 12%, transparent);
 
   & h4 {
     margin: 0;
-    font-size: 0.92rem;
-    color: var(--dark);
+    color: color-mix(in srgb, var(--dark) 88%, var(--gray));
+    font-family: "Noto Serif SC", serif;
+    font-size: 0.96rem;
+    font-weight: 700;
   }
 
   & .gear-grid {
@@ -1351,8 +1365,69 @@ body[data-slug="album"] {
   --gear-accent: #0ea5e9;
 }
 
+.collection-tab-panel-album {
+  font-family:
+    "Noto Sans HK",
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-weight: 300;
+
+  .collection-panel-head p {
+    color: var(--gray);
+    font-size: 0.88rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.collection-album-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.35rem;
+  margin: 0.1rem 0 2rem;
+  padding-bottom: 0.95rem;
+  border-bottom: 1px solid var(--collection-line);
+
+  a {
+    color: color-mix(in srgb, var(--gray) 84%, var(--darkgray));
+    font-family: "Noto Serif SC", serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-decoration: none;
+    transition:
+      color 0.2s ease,
+      opacity 0.2s ease;
+
+    &:hover {
+      color: color-mix(in srgb, var(--dark) 86%, var(--gray));
+    }
+  }
+}
+
 .collection-category-albums {
-  --gear-accent: #db2777;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+
+  & + .collection-category-albums {
+    margin-top: 2.5rem;
+  }
+
+  h4 {
+    color: var(--dark);
+    font-family: "Noto Serif SC", serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.35;
+    margin: 0 0 0.85rem;
+    word-break: break-word;
+  }
 }
 
 .gear-card {
@@ -1361,9 +1436,9 @@ body[data-slug="album"] {
   align-items: center;
   text-align: center;
   padding: 1.25rem 1rem;
-  border: 1px solid var(--lightgray);
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--light) 60%, transparent);
+  border: 1px solid var(--collection-line);
+  border-radius: 8px;
+  background: var(--collection-surface);
   transition:
     border-color 0.2s ease,
     transform 0.2s ease,
@@ -1371,9 +1446,9 @@ body[data-slug="album"] {
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    border-color: color-mix(in srgb, var(--secondary) 20%, var(--lightgray));
-    background: color-mix(in srgb, var(--light) 80%, transparent);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.045);
+    border-color: var(--collection-line-strong);
+    background: color-mix(in srgb, var(--lightgray) 12%, var(--light));
   }
 }
 
@@ -1400,6 +1475,149 @@ a.gear-card {
   }
 }
 
+.collection-album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.4rem 1rem;
+}
+
+.collection-album-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  padding: 0;
+  text-align: left;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+
+    .collection-album-cover-wrap {
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .collection-album-cover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.collection-album-cover-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 0;
+  background: none;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.collection-album-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.collection-album-body {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0.55rem 0.1rem 0;
+}
+
+.collection-album-name {
+  max-width: 100%;
+  color: var(--dark);
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.32;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.collection-album-year {
+  color: var(--gray);
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-top: 0.1rem;
+}
+
+.collection-album-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.38rem;
+}
+
+.collection-album-link {
+  --collection-album-link-color: var(--gray);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0;
+  border: none;
+  border-radius: 0;
+  color: var(--gray);
+  background: none;
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+    color: var(--dark);
+    background: none;
+    transform: none;
+  }
+
+  & + .collection-album-link::before {
+    content: "·";
+    margin-right: 0.4rem;
+    color: var(--gray);
+    opacity: 0.4;
+  }
+}
+
+.collection-album-link-douban {
+  --collection-album-link-color: #00b51d;
+}
+
+.collection-album-link-apple {
+  --collection-album-link-color: #fa2d48;
+}
+
+@media all and (max-width: 640px) {
+  .collection-album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.15rem 0.7rem;
+  }
+
+  .collection-category-albums h4 {
+    font-size: 1.05rem;
+  }
+
+  .collection-album-name {
+    font-size: 0.88rem;
+  }
+
+  .collection-album-year {
+    font-size: 0.72rem;
+  }
+}
+
 .collection-game-card {
   align-items: stretch;
   justify-content: center;
@@ -1420,10 +1638,10 @@ a.gear-card {
   justify-content: center;
   min-height: 1.55rem;
   padding: 0 0.48rem;
-  border: 1px solid color-mix(in srgb, var(--collection-game-link-color) 28%, var(--lightgray));
+  border: 1px solid var(--collection-line);
   border-radius: 999px;
-  color: color-mix(in srgb, var(--collection-game-link-color) 74%, var(--dark));
-  background: color-mix(in srgb, var(--collection-game-link-color) 9%, var(--light));
+  color: color-mix(in srgb, var(--darkgray) 78%, var(--dark));
+  background: color-mix(in srgb, var(--light) 62%, transparent);
   font-size: 0.68rem;
   font-weight: 700;
   line-height: 1;
@@ -1436,8 +1654,8 @@ a.gear-card {
 
   &:hover {
     color: var(--dark);
-    border-color: color-mix(in srgb, var(--collection-game-link-color) 52%, var(--lightgray));
-    background: color-mix(in srgb, var(--collection-game-link-color) 18%, var(--light));
+    border-color: var(--collection-line-strong);
+    background: color-mix(in srgb, var(--lightgray) 20%, var(--light));
     transform: translateY(-1px);
   }
 }
@@ -1486,27 +1704,29 @@ a.gear-card {
 // 暗色模式收藏与设备卡片
 :root[saved-theme="dark"] {
   .collection-tab-nav {
-    background: color-mix(in srgb, var(--lightgray) 52%, transparent);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+    border-color: color-mix(in srgb, var(--lightgray) 72%, transparent);
+    background: color-mix(in srgb, var(--lightgray) 42%, transparent);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
   }
 
   .collection-tab-label {
-    background: color-mix(in srgb, var(--lightgray) 34%, transparent);
+    color: color-mix(in srgb, var(--gray) 92%, var(--darkgray));
+    background: transparent;
   }
 
   #collection-tab-account:checked ~ .collection-tab-nav label[for="collection-tab-account"],
   #collection-tab-device:checked ~ .collection-tab-nav label[for="collection-tab-device"],
   #collection-tab-game:checked ~ .collection-tab-nav label[for="collection-tab-game"],
   #collection-tab-album:checked ~ .collection-tab-nav label[for="collection-tab-album"] {
-    color: var(--dark);
-    border-color: color-mix(in srgb, var(--secondary) 34%, var(--lightgray));
-    background: color-mix(in srgb, var(--secondary) 18%, var(--lightgray));
+    color: color-mix(in srgb, var(--dark) 66%, var(--gray));
+    border-color: color-mix(in srgb, var(--dark) 16%, var(--lightgray));
+    background: color-mix(in srgb, var(--lightgray) 58%, transparent);
   }
 
   .collection-account-card {
     background:
-      linear-gradient(135deg, color-mix(in srgb, var(--collection-accent) 26%, transparent), transparent 58%),
-      color-mix(in srgb, var(--lightgray) 42%, transparent);
+      linear-gradient(135deg, color-mix(in srgb, var(--collection-accent) 10%, transparent), transparent 58%),
+      color-mix(in srgb, var(--lightgray) 34%, transparent);
   }
 
   .gear-card {
@@ -1517,12 +1737,44 @@ a.gear-card {
     }
   }
 
-  .collection-game-link {
-    color: color-mix(in srgb, var(--collection-game-link-color) 70%, var(--dark));
-    background: color-mix(in srgb, var(--collection-game-link-color) 16%, var(--lightgray));
+  .collection-album-link {
+    color: color-mix(in srgb, var(--gray) 84%, var(--darkgray));
+    background: none;
 
     &:hover {
-      background: color-mix(in srgb, var(--collection-game-link-color) 26%, var(--lightgray));
+      color: color-mix(in srgb, var(--dark) 82%, var(--gray));
+      background: none;
+    }
+  }
+
+  .collection-album-index a {
+    color: color-mix(in srgb, var(--gray) 82%, var(--darkgray));
+
+    &:hover {
+      color: color-mix(in srgb, var(--dark) 62%, var(--gray));
+    }
+  }
+
+  .collection-category-albums h4 {
+    color: color-mix(in srgb, var(--dark) 64%, var(--gray));
+  }
+
+  .collection-album-name {
+    color: color-mix(in srgb, var(--dark) 62%, var(--gray));
+  }
+
+  .collection-album-year {
+    color: color-mix(in srgb, var(--gray) 82%, var(--darkgray));
+  }
+
+  .collection-game-link {
+    color: color-mix(in srgb, var(--gray) 82%, var(--darkgray));
+    border-color: color-mix(in srgb, var(--lightgray) 72%, transparent);
+    background: color-mix(in srgb, var(--lightgray) 26%, transparent);
+
+    &:hover {
+      color: color-mix(in srgb, var(--dark) 82%, var(--gray));
+      background: color-mix(in srgb, var(--lightgray) 40%, transparent);
     }
   }
 }

@@ -140,6 +140,10 @@ export default (() => {
             )}
           </>
         )}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&family=Noto+Sans+HK:wght@300&display=swap"
+        />
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="梁程 / 梁非凡 Ray" />

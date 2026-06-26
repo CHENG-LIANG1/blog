@@ -15,7 +15,7 @@ description: 我的游戏账号、设备、游戏实体盘和音乐专辑收藏�
 <label class="collection-tab-label" for="collection-tab-album" role="tab">专辑</label>
 </div>
 
-<section class="collection-tab-panel collection-tab-panel-account">
+<section class="collection-tab-panel collection-tab-panel-account" id="collection-account">
 <div class="collection-panel-head"><p>常用游戏平台资料，放在最前面方便查找。</p></div>
 <section class="collection-accounts">
 <div class="collection-account-card collection-account-steam">
@@ -36,7 +36,7 @@ description: 我的游戏账号、设备、游戏实体盘和音乐专辑收藏�
 </section>
 </section>
 
-<section class="collection-tab-panel collection-tab-panel-device">
+<section class="collection-tab-panel collection-tab-panel-device" id="collection-device">
 <div class="collection-panel-head"><p>办公、游戏、拍照、键盘、音频与穿戴设备。</p></div>
 
 <h3 class="collection-section-title">办公设备</h3>
@@ -144,7 +144,7 @@ description: 我的游戏账号、设备、游戏实体盘和音乐专辑收藏�
 </div>
 </section>
 
-<section class="collection-tab-panel collection-tab-panel-game">
+<section class="collection-tab-panel collection-tab-panel-game" id="collection-game">
 <div class="collection-panel-head"><p>实体盘按平台分类，支持跳转豆瓣、小黑盒和 HowLongToBeat。</p></div>
 
 <!-- 新增游戏时优先关联豆瓣、小黑盒详情和 HowLongToBeat；没有精确条目时使用对应站内搜索入口。卡片格式：
@@ -206,19 +206,67 @@ description: 我的游戏账号、设备、游戏实体盘和音乐专辑收藏�
 <div class="gear-card collection-game-card"><div class="gear-body"><span class="gear-name">奇异人生 reunion</span><span class="gear-meta">PS5 · 数字版</span><div class="collection-game-actions"><a class="collection-game-link collection-game-link-douban" href="https://m.douban.com/game/subject/38191579/" target="_blank" rel="noopener">豆瓣</a><a class="collection-game-link collection-game-link-xhh" href="https://www.xiaoheihe.cn/game/2624870" target="_blank" rel="noopener">小黑盒</a><a class="collection-game-link collection-game-link-hltb" href="https://howlongtobeat.com/?q=Life%20is%20Strange%20Reunion" target="_blank" rel="noopener">HLTB</a></div></div></div>
 </div>
 </section>
+</section>
 
-<section class="collection-tab-panel collection-tab-panel-album">
-<div class="collection-panel-head"><p>音乐专辑按歌手分类，后续条目优先关联豆瓣音乐。</p></div>
+<section class="collection-tab-panel collection-tab-panel-album" id="collection-album">
+<nav class="collection-album-index" aria-label="专辑歌手索引">
+<a href="#album-taylor-swift">Taylor Swift</a>
+<a href="#album-ed-sheeran">Ed Sheeran</a>
+<a href="#album-tizzy-bac">Tizzy Bac</a>
+<a href="#album-sodagreen">苏打绿</a>
+<a href="#album-my-little-airport">my little airport</a>
+</nav>
 
-<!-- 新增专辑时按歌手分组，并优先关联豆瓣音乐条目链接；没有精确条目时使用豆瓣搜索链接。卡片格式：
-<a class="gear-card collection-link-card" href="豆瓣链接" target="_blank" rel="noopener"><div class="gear-body"><span class="gear-name">专辑名</span><span class="gear-meta">歌手</span><span class="gear-role">豆瓣</span></div></a>
+<!-- 新增专辑时按歌手分组，并优先关联豆瓣音乐和 Apple Music 条目链接；没有精确条目时使用搜索链接。歌手名只在分组标题出现，卡片内不再重复。卡片格式：
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="封面链接" alt="专辑名 专辑封面" loading="lazy" /></div><div class="collection-album-body">
+<span class="collection-album-name">专辑名</span><span class="collection-album-year">年份</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="豆瓣链接" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="Apple Music 链接" target="_blank" rel="noopener">Apple Music</a></div></div></div>
 -->
 
-<section class="gear-category collection-category-albums">
-<h4>按歌手分类</h4>
+<section class="gear-category collection-category-albums collection-artist-taylor" id="album-taylor-swift">
+<h4>Taylor Swift</h4>
 
-<div class="gear-grid">
-<div class="gear-card collection-empty-card"><div class="gear-body"><span class="gear-name">待补充歌手</span><span class="gear-meta">Artist</span><span class="gear-role">专辑收藏</span></div></div>
+<div class="collection-album-grid">
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/67/b5/01/67b501d5-362e-797e-7dbd-942b9e273084/22UM1IM24801.rgb.jpg/600x600bb.jpg" alt="Midnights 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">Midnights</span><span class="collection-album-year">2022</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/subject/36074639/" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/us/album/midnights/1649434996?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/7c/04/ba/7c04ba17-2ff8-21b3-0ac0-7d141f86e924/20UMGIM64216.rgb.jpg/600x600bb.jpg" alt="folklore 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">folklore</span><span class="collection-album-year">2020</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/subject/35154230/" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/us/album/folklore/1524793738?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+</div>
+</section>
+
+<section class="gear-category collection-category-albums collection-artist-edsheeran" id="album-ed-sheeran">
+<h4>Ed Sheeran</h4>
+
+<div class="collection-album-grid">
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music2/v4/b0/75/ec/b075ec42-a102-cde1-132b-9cddbc0d3496/825646285891.jpg/600x600bb.jpg" alt="X 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">X</span><span class="collection-album-year">2014</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/subject/25865760/" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/us/album/x/858518077?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/15/e6/e8/15e6e8a4-4190-6a8b-86c3-ab4a51b88288/190295851286.jpg/600x600bb.jpg" alt="÷ (Deluxe) 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">÷ (Deluxe)</span><span class="collection-album-year">2017</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/subject/26954445/" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/us/album/deluxe/1193701079?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+</div>
+</section>
+
+<section class="gear-category collection-category-albums collection-artist-tizzybac" id="album-tizzy-bac">
+<h4>Tizzy Bac</h4>
+
+<div class="collection-album-grid">
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/d4/86/a9/d486a945-255d-f43a-d412-3366fcabc7bb/4711479222492.jpg/600x600bb.jpg" alt="我想你会变成这样都是我害的 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">我想你会变成这样都是我害的</span><span class="collection-album-year">2006</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/search?q=Tizzy%20Bac%20%E6%88%91%E6%83%B3%E4%BD%A0%E4%BC%9A%E5%8F%98%E6%88%90%E8%BF%99%E6%A0%B7%E9%83%BD%E6%98%AF%E6%88%91%E5%AE%B3%E7%9A%84" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/tw/album/%E6%88%91%E6%83%B3%E4%BD%A0%E6%9C%83%E8%AE%8A%E6%88%90%E9%80%99%E6%A8%A3%E9%83%BD%E6%98%AF%E6%88%91%E5%AE%B3%E7%9A%84/1373203699?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+</div>
+</section>
+
+<section class="gear-category collection-category-albums collection-artist-sodagreen" id="album-sodagreen">
+<h4>苏打绿</h4>
+
+<div class="collection-album-grid">
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/52/5b/e8/525be86f-43fc-3b3d-9c40-ae9fd0b73c2b/196872131260.jpg/600x600bb.jpg" alt="春·日光（苏打绿版） 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">春·日光（苏打绿版）</span><span class="collection-album-year">2024</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/search?q=%E8%8B%8F%E6%89%93%E7%BB%BF%20%E6%98%A5%C2%B7%E6%97%A5%E5%85%89%20%E8%8B%8F%E6%89%93%E7%BB%BF%E7%89%88" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/tw/album/spring-daylight-sodagreen-version/1747448092?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/84/d2/fb/84d2fbf0-f04a-660e-fa0e-4ae8cf0abf0f/196872413335.jpg/600x600bb.jpg" alt="夏/狂热（苏打绿版） 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">夏/狂热（苏打绿版）</span><span class="collection-album-year">2024</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/search?q=%E8%8B%8F%E6%89%93%E7%BB%BF%20%E5%A4%8F%2F%E7%8B%82%E7%83%AD%20%E8%8B%8F%E6%89%93%E7%BB%BF%E7%89%88" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/tw/album/summer-fever-sodagreen-version/1764451494?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/74/d2/d6/74d2d636-0a5a-3e71-5d06-0a598e1da123/196872607048.jpg/600x600bb.jpg" alt="秋：故事（苏打绿版） 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">秋：故事（苏打绿版）</span><span class="collection-album-year">2024</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/search?q=%E8%8B%8F%E6%89%93%E7%BB%BF%20%E7%A7%8B%EF%BC%9A%E6%95%85%E4%BA%8B%20%E8%8B%8F%E6%89%93%E7%BB%BF%E7%89%88" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/tw/album/autumn-stories-sodagreen-version/1777357248?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3c/41/73/3c417389-499e-b5ff-e816-1ff56451c501/196872866964.jpg/600x600bb.jpg" alt="冬 未了（苏打绿版） 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">冬 未了（苏打绿版）</span><span class="collection-album-year">2025</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/search?q=%E8%8B%8F%E6%89%93%E7%BB%BF%20%E5%86%AC%20%E6%9C%AA%E4%BA%86%20%E8%8B%8F%E6%89%93%E7%BB%BF%E7%89%88" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/tw/album/winter-endless-sodagreen-version/1795424991?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+</div>
+</section>
+
+<section class="gear-category collection-category-albums collection-artist-mla" id="album-my-little-airport">
+<h4>my little airport</h4>
+
+<div class="collection-album-grid">
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://mylittleairport.app/album-artwork/%E7%81%AB%E7%82%AD%E9%BA%97%E7%90%AA.jpg" alt="火炭麗琪 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">火炭麗琪</span><span class="collection-album-year">2016</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/subject/27076745/" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/us/search?term=my+little+airport+%E7%81%AB%E7%82%AD%E9%BA%97%E7%90%AA" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://mylittleairport.app/album-artwork/%E5%AF%82%E5%AF%9E%E7%9A%84%E6%98%9F%E6%9C%9F%E4%BA%94.jpg" alt="寂寞的星期五 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">寂寞的星期五</span><span class="collection-album-year">2012</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/search?q=my+little+airport+%E5%AF%82%E5%AF%9E%E7%9A%84%E6%98%9F%E6%9C%9F%E4%BA%94" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/us/album/%E5%AF%82%E5%AF%9E%E7%9A%84%E6%98%9F%E6%9C%9F%E4%BA%94/1542351618?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://mylittleairport.app/album-artwork/%E9%A6%99%E6%B8%AF%E6%98%AF%E5%80%8B%E5%A4%A7%E5%95%86%E5%A0%B4.jpg" alt="香港是個大商場 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">香港是個大商場</span><span class="collection-album-year">2011</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/search?q=my+little+airport+%E9%A6%99%E6%B8%AF%E6%98%AF%E5%80%8B%E5%A4%A7%E5%95%86%E5%A0%B4" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/us/search?term=my+little+airport+%E9%A6%99%E6%B8%AF%E6%98%AF%E5%80%8B%E5%A4%A7%E5%95%86%E5%A0%B4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
+<div class="collection-album-card"><div class="collection-album-cover-wrap"><img class="collection-album-cover" src="https://mylittleairport.app/album-artwork/%E4%BD%A0%E8%AA%AA%E4%B9%8B%E5%BE%8C%E6%9C%83%E6%89%BE%E6%88%91.jpg" alt="你說之後會找我 专辑封面" loading="lazy" /></div><div class="collection-album-body"><span class="collection-album-name">你說之後會找我</span><span class="collection-album-year">2018</span><div class="collection-album-actions"><a class="collection-album-link collection-album-link-douban" href="https://m.douban.com/music/search?q=my+little+airport+%E4%BD%A0%E8%AA%AA%E4%B9%8B%E5%BE%8C%E6%9C%83%E6%89%BE%E6%88%91" target="_blank" rel="noopener">豆瓣</a><a class="collection-album-link collection-album-link-apple" href="https://music.apple.com/us/album/%E4%BD%A0%E8%AA%AA%E4%B9%8B%E5%BE%8C%E6%9C%83%E6%89%BE%E6%88%91/1440148289?uo=4" target="_blank" rel="noopener">Apple Music</a></div></div></div>
 </div>
 </section>
 </section>
