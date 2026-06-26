@@ -3,6 +3,7 @@ const collectionTabMap = {
   device: "collection-tab-device",
   game: "collection-tab-game",
   album: "collection-tab-album",
+  vinyl: "collection-tab-vinyl",
 }
 
 function getCollectionTabFromHash(hash: string) {
@@ -13,6 +14,7 @@ function getCollectionTabFromHash(hash: string) {
   if (slug === "collection-device" || slug === "device") return "device"
   if (slug === "collection-game" || slug === "game") return "game"
   if (slug === "collection-album" || slug === "album") return "album"
+  if (slug === "collection-vinyl" || slug === "vinyl") return "vinyl"
 
   const target = document.getElementById(slug)
   const panel = target?.closest(".collection-tab-panel")
@@ -20,6 +22,7 @@ function getCollectionTabFromHash(hash: string) {
   if (panel?.classList.contains("collection-tab-panel-device")) return "device"
   if (panel?.classList.contains("collection-tab-panel-game")) return "game"
   if (panel?.classList.contains("collection-tab-panel-album")) return "album"
+  if (panel?.classList.contains("collection-tab-panel-vinyl")) return "vinyl"
 
   return undefined
 }
