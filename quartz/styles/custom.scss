@@ -1854,138 +1854,225 @@ a.gear-card {
   }
 }
 
-.collection-game-card {
-  overflow: hidden;
-  align-items: stretch;
-  justify-content: flex-start;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
+// 游戏收藏（参考专辑卡片风格）
+.collection-tab-panel-game {
+  font-family:
+    "Noto Sans HK",
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-weight: 300;
 
-  .gear-body {
-    padding: 0.62rem 0 0;
-    justify-content: flex-start;
-    gap: 0.16rem;
-  }
-
-  .gear-name {
-    color: color-mix(in srgb, var(--dark) 88%, var(--darkgray));
+  .collection-panel-head p {
+    color: var(--gray);
     font-size: 0.88rem;
-    line-height: 1.32;
+    margin-bottom: 0.75rem;
   }
+}
 
-  .gear-meta {
-    color: color-mix(in srgb, var(--gray) 84%, var(--darkgray));
-    font-family: var(--bodyFont);
-    font-size: 0.72rem;
-    letter-spacing: 0;
-  }
+.collection-game-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.1rem 0 2.2rem;
+  padding-bottom: 0.95rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--collection-line) 76%, transparent);
+}
+
+.collection-game-index-group {
+  display: flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.18rem 0;
+}
+
+.collection-game-index-region {
+  color: color-mix(in srgb, var(--dark) 72%, var(--gray));
+  font-family: "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-synthesis: none;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: color 0.2s ease;
 
   &:hover {
-    .collection-game-cover img {
-      transform: scale(1.025);
+    color: color-mix(in srgb, var(--dark) 86%, var(--gray));
+  }
+}
+
+.collection-game-region {
+  & + .collection-game-region {
+    margin-top: 3rem;
+  }
+
+  > .collection-section-title {
+    display: flex;
+    align-items: center;
+    min-height: 2.45rem;
+    padding: 0.52rem 0.78rem;
+    border: 1px solid color-mix(in srgb, var(--collection-line) 70%, transparent);
+    border-radius: 8px;
+    color: color-mix(in srgb, var(--dark) 74%, var(--gray));
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.25;
+    margin: 0 0 1.25rem;
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--secondary) 12%, transparent), transparent 58%),
+      color-mix(in srgb, var(--lightgray) 36%, transparent);
+  }
+}
+
+.collection-game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.4rem 1rem;
+}
+
+.collection-game-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  padding: 0;
+  text-align: left;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+
+    .collection-game-cover-wrap {
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .collection-game-cover {
+      transform: scale(1.03);
     }
   }
 }
 
-.collection-tab-panel-game {
-  .collection-panel-head {
-    display: none;
-  }
-
-  .gear-grid {
-    grid-template-columns: repeat(auto-fill, minmax(8.4rem, 1fr));
-    align-items: stretch;
-    gap: 1.5rem 1rem;
-  }
-
-  .gear-category {
-    margin-top: 1.65rem;
-    padding: 0;
-    border: 0;
-    background: transparent;
-
-    & h4 {
-      margin-bottom: 0.85rem;
-      padding-bottom: 0.46rem;
-      border-bottom: 1px solid color-mix(in srgb, var(--collection-line) 70%, transparent);
-    }
-  }
+.collection-game-cover-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 0;
+  background: none;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
 }
 
 .collection-game-cover {
-  display: block;
-  position: relative;
-  aspect-ratio: 3 / 4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.collection-game-body {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0.55rem 0.1rem 0;
+}
+
+.collection-game-name {
+  max-width: 100%;
+  color: var(--dark);
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.32;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   overflow: hidden;
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--lightgray) 40%, transparent);
-  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14);
-  text-decoration: none;
+}
 
-  img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transform: scale(1);
-    transition:
-      filter 0.24s ease,
-      transform 0.24s ease;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: auto 0 0;
-    height: 26%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.18), transparent);
-    pointer-events: none;
-  }
+.collection-game-year {
+  color: var(--gray);
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-top: 0.1rem;
 }
 
 .collection-game-actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 0.36rem;
-  margin-top: auto;
-  padding-top: 0.38rem;
+  gap: 0.35rem;
+  margin-top: 0.38rem;
 }
 
 .collection-game-link {
+  --collection-game-link-color: var(--gray);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 1.35rem;
-  padding: 0;
-  border: 0;
+  padding: 0.2rem 0;
+  border: none;
   border-radius: 0;
-  color: color-mix(in srgb, var(--gray) 80%, var(--darkgray));
+  color: var(--gray);
   background: none;
-  font-family: var(--bodyFont);
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
   text-decoration: none;
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
-
-  & + .collection-game-link::before {
-    content: "/";
-    margin-right: 0.42rem;
-    color: color-mix(in srgb, var(--gray) 46%, transparent);
-    font-weight: 300;
-  }
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
 
   &:hover {
-    color: color-mix(in srgb, var(--dark) 86%, var(--darkgray));
+    opacity: 1;
+    color: var(--dark);
     background: none;
-    transform: translateY(-1px);
+    transform: none;
+  }
+
+  & + .collection-game-link::before {
+    content: "·";
+    margin-right: 0.4rem;
+    color: var(--gray);
+    opacity: 0.4;
   }
 }
+
+.collection-game-link-douban {
+  --collection-game-link-color: #00b51d;
+}
+
+.collection-game-link-xhh {
+  --collection-game-link-color: #1a1a1a;
+}
+
+.collection-game-link-hltb {
+  --collection-game-link-color: #3b82f6;
+}
+
+@media all and (max-width: 640px) {
+  .collection-game-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.15rem 0.7rem;
+  }
+
+  .collection-game-name {
+    font-size: 0.88rem;
+  }
+
+  .collection-game-year {
+    font-size: 0.72rem;
+  }
+}
+
+
+
 
 .gear-body {
   display: flex;
@@ -2084,7 +2171,7 @@ a.gear-card {
   }
 
   .collection-game-link {
-    color: color-mix(in srgb, var(--gray) 82%, var(--darkgray));
+    color: color-mix(in srgb, var(--gray) 84%, var(--darkgray));
     background: none;
 
     &:hover {
@@ -2093,26 +2180,24 @@ a.gear-card {
     }
   }
 
-  .collection-game-card {
-    background: transparent;
-    box-shadow: none;
+  .collection-game-index a {
+    color: color-mix(in srgb, var(--gray) 82%, var(--darkgray));
 
     &:hover {
-      background: transparent;
-      box-shadow: none;
-    }
-
-    .gear-name {
       color: color-mix(in srgb, var(--dark) 62%, var(--gray));
-    }
-
-    .gear-meta {
-      color: color-mix(in srgb, var(--gray) 78%, var(--darkgray));
     }
   }
 
-  .collection-game-cover {
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
+  .collection-game-region > .collection-section-title {
+    color: color-mix(in srgb, var(--dark) 64%, var(--gray));
+  }
+
+  .collection-game-name {
+    color: color-mix(in srgb, var(--dark) 62%, var(--gray));
+  }
+
+  .collection-game-year {
+    color: color-mix(in srgb, var(--gray) 82%, var(--darkgray));
   }
 }
 
