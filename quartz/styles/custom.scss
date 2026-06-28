@@ -1149,7 +1149,6 @@ body[data-slug="collections"] .reading-progress-bar {
     border-color: var(--collection-line);
     background: color-mix(in srgb, var(--lightgray) 22%, transparent);
   }
-
 }
 
 .collection-tab-panel {
@@ -1229,7 +1228,11 @@ body[data-slug="collections"] .reading-progress-bar {
   border: 1px solid var(--collection-line);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--collection-accent) 8%, transparent), transparent 58%),
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--collection-accent) 8%, transparent),
+      transparent 58%
+    ),
     var(--collection-surface);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
 }
@@ -1441,7 +1444,11 @@ body[data-slug="collections"] .reading-progress-bar {
     line-height: 1.25;
     margin: 0 0 1.25rem;
     background:
-      linear-gradient(90deg, color-mix(in srgb, var(--secondary) 12%, transparent), transparent 58%),
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--secondary) 12%, transparent),
+        transparent 58%
+      ),
       color-mix(in srgb, var(--lightgray) 36%, transparent);
   }
 }
@@ -1565,9 +1572,13 @@ body[data-slug="collections"] .reading-progress-bar {
   aspect-ratio: 1 / 1;
   border-radius: 999px;
   background-image:
-    radial-gradient(circle, transparent 0 9%, rgba(255, 255, 255, 0.34) 9.5% 10.4%, transparent 10.8% 100%),
-    var(--cover),
-    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.2), transparent 18%),
+    radial-gradient(
+      circle,
+      transparent 0 9%,
+      rgba(255, 255, 255, 0.34) 9.5% 10.4%,
+      transparent 10.8% 100%
+    ),
+    var(--cover), radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.2), transparent 18%),
     repeating-radial-gradient(circle, #07080a 0 2px, #111318 3px 5px, #07080a 6px 8px);
   background-position: center;
   background-repeat: no-repeat;
@@ -1586,7 +1597,12 @@ body[data-slug="collections"] .reading-progress-bar {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: linear-gradient(115deg, transparent 8%, rgba(255, 255, 255, 0.14) 22%, transparent 38%);
+    background: linear-gradient(
+      115deg,
+      transparent 8%,
+      rgba(255, 255, 255, 0.14) 22%,
+      transparent 38%
+    );
     opacity: 0.7;
   }
 }
@@ -1612,8 +1628,8 @@ body[data-slug="collections"] .reading-progress-bar {
 .vinyl-name {
   color: color-mix(in srgb, var(--dark) 92%, var(--darkgray));
   font-family:
-    "Cormorant Garamond", "Iowan Old Style", "Palatino", "Palatino Linotype",
-    "Noto Serif SC", "Songti SC", serif;
+    "Cormorant Garamond", "Iowan Old Style", "Palatino", "Palatino Linotype", "Noto Serif SC",
+    "Songti SC", serif;
   font-size: 1.08rem;
   font-weight: 600;
   font-style: normal;
@@ -1624,8 +1640,7 @@ body[data-slug="collections"] .reading-progress-bar {
 
 .vinyl-sub {
   color: color-mix(in srgb, var(--gray) 80%, var(--darkgray));
-  font-family:
-    "Avenir Next", "Inter", "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+  font-family: "Avenir Next", "Inter", "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -1923,7 +1938,11 @@ a.gear-card {
     line-height: 1.25;
     margin: 0 0 1.25rem;
     background:
-      linear-gradient(90deg, color-mix(in srgb, var(--secondary) 12%, transparent), transparent 58%),
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--secondary) 12%, transparent),
+        transparent 58%
+      ),
       color-mix(in srgb, var(--lightgray) 36%, transparent);
   }
 }
@@ -2071,9 +2090,6 @@ a.gear-card {
   }
 }
 
-
-
-
 .gear-body {
   display: flex;
   flex-direction: column;
@@ -2128,7 +2144,11 @@ a.gear-card {
 
   .collection-account-card {
     background:
-      linear-gradient(135deg, color-mix(in srgb, var(--collection-accent) 10%, transparent), transparent 58%),
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--collection-accent) 10%, transparent),
+        transparent 58%
+      ),
       color-mix(in srgb, var(--lightgray) 34%, transparent);
   }
 
@@ -2596,5 +2616,171 @@ body[data-slug="index"] {
 
   & article {
     padding-bottom: 0.5rem;
+  }
+}
+
+// 设备收藏（参考专辑卡片风格）
+.collection-device-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.1rem 0 2.2rem;
+  padding-bottom: 0.95rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--collection-line) 76%, transparent);
+}
+
+.collection-device-index-group {
+  display: flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.18rem 0;
+}
+
+.collection-device-index-region {
+  color: color-mix(in srgb, var(--dark) 72%, var(--gray));
+  font-family: "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-synthesis: none;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: color-mix(in srgb, var(--dark) 86%, var(--gray));
+  }
+}
+
+.collection-device-region {
+  & + .collection-device-region {
+    margin-top: 3rem;
+  }
+
+  > .collection-section-title {
+    display: flex;
+    align-items: center;
+    min-height: 2.45rem;
+    padding: 0.52rem 0.78rem;
+    border: 1px solid color-mix(in srgb, var(--collection-line) 70%, transparent);
+    border-radius: 8px;
+    color: color-mix(in srgb, var(--dark) 74%, var(--gray));
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.25;
+    margin: 0 0 1.25rem;
+    background:
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--secondary) 12%, transparent),
+        transparent 58%
+      ),
+      color-mix(in srgb, var(--lightgray) 36%, transparent);
+  }
+}
+
+.collection-device-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.4rem 1rem;
+}
+
+.collection-device-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  padding: 0;
+  text-align: left;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+
+    .collection-device-cover-wrap {
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .collection-device-cover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.collection-device-cover-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid color-mix(in srgb, var(--collection-line) 50%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--lightgray) 40%, transparent);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.collection-device-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.collection-device-body {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0.55rem 0.1rem 0;
+}
+
+.collection-device-name {
+  max-width: 100%;
+  color: var(--dark);
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.32;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.collection-device-meta {
+  color: var(--gray);
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-top: 0.1rem;
+}
+
+.collection-device-role {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.38rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--secondary) 10%, var(--lightgray));
+  color: var(--secondary);
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+@media all and (max-width: 640px) {
+  .collection-device-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.15rem 0.7rem;
+  }
+
+  .collection-device-name {
+    font-size: 0.88rem;
+  }
+
+  .collection-device-meta {
+    font-size: 0.72rem;
   }
 }

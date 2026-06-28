@@ -41,109 +41,121 @@ description: 我的游戏账号、设备、游戏实体盘和音乐专辑收藏�
 <section class="collection-tab-panel collection-tab-panel-device" id="collection-device">
 <div class="collection-panel-head"><p>办公、游戏、拍照、键盘、音频与穿戴设备。</p></div>
 
+<nav class="collection-device-index" aria-label="设备分类索引">
+<div class="collection-device-index-group"><a class="collection-device-index-region" href="#device-region-office">办公</a></div>
+<div class="collection-device-index-group"><a class="collection-device-index-region" href="#device-region-pc">PC</a></div>
+<div class="collection-device-index-group"><a class="collection-device-index-region" href="#device-region-playstation">PlayStation</a></div>
+<div class="collection-device-index-group"><a class="collection-device-index-region" href="#device-region-nintendo">任天堂</a></div>
+<div class="collection-device-index-group"><a class="collection-device-index-region" href="#device-region-display">显示</a></div>
+<div class="collection-device-index-group"><a class="collection-device-index-region" href="#device-region-controller">手柄</a></div>
+<div class="collection-device-index-group"><a class="collection-device-index-region" href="#device-region-camera">拍照</a></div>
+<div class="collection-device-index-group"><a class="collection-device-index-region" href="#device-region-keyboard">键盘</a></div>
+<div class="collection-device-index-group"><a class="collection-device-index-region" href="#device-region-audio">音频</a></div>
+<div class="collection-device-index-group"><a class="collection-device-index-region" href="#device-region-wearable">穿戴</a></div>
+</nav>
+
+<section class="collection-device-region" id="device-region-office">
 <h3 class="collection-section-title">办公设备</h3>
-
-<div class="gear-grid">
-<div class="gear-card"><div class="gear-body"><span class="gear-name">MacBook Air</span><span class="gear-meta">M2 · 512GB · 午夜色</span><span class="gear-role">电脑</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Mac mini</span><span class="gear-meta">M4 · 256GB · 银色</span><span class="gear-role">家庭服务器</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">iPhone 16 Pro Max</span><span class="gear-meta">512GB · 深空灰</span><span class="gear-role">手机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">iPhone 17 Pro Max</span><span class="gear-meta">512GB · 橙色</span><span class="gear-role">手机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">MEIZU 20</span><span class="gear-meta">256GB · 白色</span><span class="gear-role">开发机</span></div></div>
-</div>
-
-<h3 class="collection-section-title">游戏设备</h3>
-
-<section class="gear-category gear-category-pc">
-<h4>PC</h4>
-
-<div class="gear-grid">
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Steam Machine</span><span class="gear-meta">黑色 · 2T</span><span class="gear-role">游戏电脑</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Steam Deck</span><span class="gear-meta">粉色 · 1T</span><span class="gear-role">掌机 PC</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">飞行家 F1 Pro</span><span class="gear-meta">黑色 · 1T</span><span class="gear-role">掌机 PC</span></div></div>
+<div class="collection-device-grid">
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/MacBook_Air.jpg" alt="MacBook Air 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">MacBook Air</span><span class="collection-device-meta">M2 · 512GB · 午夜色</span><span class="collection-device-role">电脑</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Mac_mini.jpg" alt="Mac mini 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Mac mini</span><span class="collection-device-meta">M4 · 256GB · 银色</span><span class="collection-device-role">家庭服务器</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/iPhone_16_Pro_Max.png" alt="iPhone 16 Pro Max 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">iPhone 16 Pro Max</span><span class="collection-device-meta">512GB · 深空灰</span><span class="collection-device-role">手机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/iPhone_17_Pro_Max.png" alt="iPhone 17 Pro Max 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">iPhone 17 Pro Max</span><span class="collection-device-meta">512GB · 橙色</span><span class="collection-device-role">手机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/MEIZU_20.jpg" alt="MEIZU 20 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">MEIZU 20</span><span class="collection-device-meta">256GB · 白色</span><span class="collection-device-role">开发机</span></div></div>
 </div>
 </section>
 
-<section class="gear-category gear-category-playstation">
-<h4>PlayStation</h4>
-
-<div class="gear-grid">
-<div class="gear-card"><div class="gear-body"><span class="gear-name">PS5 Pro</span><span class="gear-meta">白色 · 2T</span><span class="gear-role">主机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">PS5 Slim</span><span class="gear-meta">白色 · 1T + 4T 硬盘</span><span class="gear-role">主机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">PS VR2</span><span class="gear-meta">VR 头显</span><span class="gear-role">VR</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">PS Portal</span><span class="gear-meta">白色</span><span class="gear-role">串流掌机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">PS Vita</span><span class="gear-meta">黑色 · 32G</span><span class="gear-role">掌机</span></div></div>
+<section class="collection-device-region" id="device-region-pc">
+<h3 class="collection-section-title">PC</h3>
+<div class="collection-device-grid">
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Steam_Machine.jpg" alt="Steam Machine 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Steam Machine</span><span class="collection-device-meta">黑色 · 2T</span><span class="collection-device-role">游戏电脑</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Steam_Deck.png" alt="Steam Deck 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Steam Deck</span><span class="collection-device-meta">粉色 · 1T</span><span class="collection-device-role">掌机 PC</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/飞行家_F1_Pro.jpg" alt="飞行家 F1 Pro 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">飞行家 F1 Pro</span><span class="collection-device-meta">黑色 · 1T</span><span class="collection-device-role">掌机 PC</span></div></div>
 </div>
 </section>
 
-<section class="gear-category gear-category-nintendo">
-<h4>任天堂</h4>
-
-<div class="gear-grid">
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Switch LCD</span><span class="gear-meta">红蓝</span><span class="gear-role">主机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Switch OLED</span><span class="gear-meta">白色</span><span class="gear-role">主机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Switch 2</span><span class="gear-meta">灰色 · 256G</span><span class="gear-role">主机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">3DS LL</span><span class="gear-meta">蓝色 · 澳版</span><span class="gear-role">掌机</span></div></div>
+<section class="collection-device-region" id="device-region-playstation">
+<h3 class="collection-section-title">PlayStation</h3>
+<div class="collection-device-grid">
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/PS5_Pro.png" alt="PS5 Pro 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">PS5 Pro</span><span class="collection-device-meta">白色 · 2T</span><span class="collection-device-role">主机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/PS5_Slim.png" alt="PS5 Slim 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">PS5 Slim</span><span class="collection-device-meta">白色 · 1T + 4T 硬盘</span><span class="collection-device-role">主机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/PS_VR2.png" alt="PS VR2 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">PS VR2</span><span class="collection-device-meta">VR 头显</span><span class="collection-device-role">VR</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/PS_Portal.png" alt="PS Portal 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">PS Portal</span><span class="collection-device-meta">白色</span><span class="collection-device-role">串流掌机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/PS_Vita.jpg" alt="PS Vita 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">PS Vita</span><span class="collection-device-meta">黑色 · 32G</span><span class="collection-device-role">掌机</span></div></div>
 </div>
 </section>
 
-<section class="gear-category gear-category-display">
-<h4>显示设备</h4>
-
-<div class="gear-grid">
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Viture Pro</span><span class="gear-meta">黑色</span><span class="gear-role">XR 眼镜</span></div></div>
+<section class="collection-device-region" id="device-region-nintendo">
+<h3 class="collection-section-title">任天堂</h3>
+<div class="collection-device-grid">
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Switch_LCD.jpg" alt="Switch LCD 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Switch LCD</span><span class="collection-device-meta">红蓝</span><span class="collection-device-role">主机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Switch_OLED.jpg" alt="Switch OLED 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Switch OLED</span><span class="collection-device-meta">白色</span><span class="collection-device-role">主机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Switch_2.jpg" alt="Switch 2 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Switch 2</span><span class="collection-device-meta">灰色 · 256G</span><span class="collection-device-role">主机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/3DS_LL.jpg" alt="3DS LL 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">3DS LL</span><span class="collection-device-meta">蓝色 · 澳版</span><span class="collection-device-role">掌机</span></div></div>
 </div>
 </section>
 
-<section class="gear-category gear-category-controller">
-<h4>手柄</h4>
-
-<div class="gear-grid">
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Switch 王国之泪 Pro 手柄</span><span class="gear-meta">联名款</span><span class="gear-role">手柄</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Xbox One 2077 联名手柄</span><span class="gear-meta">联名款</span><span class="gear-role">手柄</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">DualSense 死亡搁浅联名手柄</span><span class="gear-meta">联名款</span><span class="gear-role">手柄</span></div></div>
+<section class="collection-device-region" id="device-region-display">
+<h3 class="collection-section-title">显示设备</h3>
+<div class="collection-device-grid">
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Viture_Pro.jpg" alt="Viture Pro 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Viture Pro</span><span class="collection-device-meta">黑色</span><span class="collection-device-role">XR 眼镜</span></div></div>
 </div>
 </section>
 
+<section class="collection-device-region" id="device-region-controller">
+<h3 class="collection-section-title">手柄</h3>
+<div class="collection-device-grid">
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Switch_Pro_Controller.jpg" alt="Switch 王国之泪 Pro 手柄 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Switch 王国之泪 Pro 手柄</span><span class="collection-device-meta">联名款</span><span class="collection-device-role">手柄</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Xbox_One_Controller.jpg" alt="Xbox One 2077 联名手柄 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Xbox One 2077 联名手柄</span><span class="collection-device-meta">联名款</span><span class="collection-device-role">手柄</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/DualSense_Controller.png" alt="DualSense 死亡搁浅联名手柄 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">DualSense 死亡搁浅联名手柄</span><span class="collection-device-meta">联名款</span><span class="collection-device-role">手柄</span></div></div>
+</div>
+</section>
+
+<section class="collection-device-region" id="device-region-camera">
 <h3 class="collection-section-title">拍照设备</h3>
-
-<div class="gear-grid">
-<div class="gear-card"><div class="gear-body"><span class="gear-name">DJI OSMO Pocket 3</span><span class="gear-meta">4K · 云台</span><span class="gear-role">视频拍摄</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Fuji instax SQ40</span><span class="gear-meta">拍立得</span><span class="gear-role">拍照</span></div></div>
+<div class="collection-device-grid">
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/DJI_OSMO_Pocket_3.jpg" alt="DJI OSMO Pocket 3 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">DJI OSMO Pocket 3</span><span class="collection-device-meta">4K · 云台</span><span class="collection-device-role">视频拍摄</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Fuji_instax_SQ40.png" alt="Fuji instax SQ40 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Fuji instax SQ40</span><span class="collection-device-meta">拍立得</span><span class="collection-device-role">拍照</span></div></div>
 </div>
+</section>
 
+<section class="collection-device-region" id="device-region-keyboard">
 <h3 class="collection-section-title">键盘设备</h3>
-
-<div class="gear-grid">
-<div class="gear-card"><div class="gear-body"><span class="gear-name">AngryMiao RGB65</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">MelGeek Made68</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">MelGeek Pixel</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Kzzi K75</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">CoolKiller CK98</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">魔极客 M2</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">贱驴 A3</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">贱驴 RS2</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">米物 Art Z380</span><span class="gear-meta">机械键盘</span><span class="gear-role">键盘</span></div></div>
+<div class="collection-device-grid">
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/AngryMiao_RGB65.png" alt="AngryMiao RGB65 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">AngryMiao RGB65</span><span class="collection-device-meta">机械键盘</span><span class="collection-device-role">键盘</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/MelGeek_Made68.jpg" alt="MelGeek Made68 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">MelGeek Made68</span><span class="collection-device-meta">机械键盘</span><span class="collection-device-role">键盘</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/MelGeek_Pixel.jpg" alt="MelGeek Pixel 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">MelGeek Pixel</span><span class="collection-device-meta">机械键盘</span><span class="collection-device-role">键盘</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Kzzi_K75.jpg" alt="Kzzi K75 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Kzzi K75</span><span class="collection-device-meta">机械键盘</span><span class="collection-device-role">键盘</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/CoolKiller_CK98.jpg" alt="CoolKiller CK98 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">CoolKiller CK98</span><span class="collection-device-meta">机械键盘</span><span class="collection-device-role">键盘</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/魔极客_M2.jpg" alt="魔极客 M2 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">魔极客 M2</span><span class="collection-device-meta">机械键盘</span><span class="collection-device-role">键盘</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/贱驴_A3.jpg" alt="贱驴 A3 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">贱驴 A3</span><span class="collection-device-meta">机械键盘</span><span class="collection-device-role">键盘</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/贱驴_RS2.jpg" alt="贱驴 RS2 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">贱驴 RS2</span><span class="collection-device-meta">机械键盘</span><span class="collection-device-role">键盘</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/米物_Art_Z380.jpg" alt="米物 Art Z380 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">米物 Art Z380</span><span class="collection-device-meta">机械键盘</span><span class="collection-device-role">键盘</span></div></div>
 </div>
+</section>
 
+<section class="collection-device-region" id="device-region-audio">
 <h3 class="collection-section-title">音频设备</h3>
-
-<div class="gear-grid">
-<div class="gear-card"><div class="gear-body"><span class="gear-name">索尼 WM1000X</span><span class="gear-meta">白色</span><span class="gear-role">耳机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">AirPods Max</span><span class="gear-meta">Type-C · 紫色</span><span class="gear-role">头戴耳机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">AirPods Pro 3</span><span class="gear-meta">真无线</span><span class="gear-role">耳机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">AirPods Pro 2</span><span class="gear-meta">真无线</span><span class="gear-role">耳机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Nothing Ear Stick</span><span class="gear-meta">真无线</span><span class="gear-role">耳机</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">哈曼卡顿水晶 3</span><span class="gear-meta">桌面音箱</span><span class="gear-role">音箱</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Xiaomi Sound Pro</span><span class="gear-meta">智能音箱</span><span class="gear-role">音箱</span></div></div>
+<div class="collection-device-grid">
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/索尼_WM1000X.jpg" alt="索尼 WM1000X 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">索尼 WM1000X</span><span class="collection-device-meta">白色</span><span class="collection-device-role">耳机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/AirPods_Max.jpg" alt="AirPods Max 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">AirPods Max</span><span class="collection-device-meta">Type-C · 紫色</span><span class="collection-device-role">头戴耳机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/AirPods_Pro_3.jpg" alt="AirPods Pro 3 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">AirPods Pro 3</span><span class="collection-device-meta">真无线</span><span class="collection-device-role">耳机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/AirPods_Pro_2.jpg" alt="AirPods Pro 2 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">AirPods Pro 2</span><span class="collection-device-meta">真无线</span><span class="collection-device-role">耳机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Nothing_Ear_Stick.jpg" alt="Nothing Ear Stick 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Nothing Ear Stick</span><span class="collection-device-meta">真无线</span><span class="collection-device-role">耳机</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/哈曼卡顿水晶_3.jpg" alt="哈曼卡顿水晶 3 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">哈曼卡顿水晶 3</span><span class="collection-device-meta">桌面音箱</span><span class="collection-device-role">音箱</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Xiaomi_Sound_Pro.jpg" alt="Xiaomi Sound Pro 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Xiaomi Sound Pro</span><span class="collection-device-meta">智能音箱</span><span class="collection-device-role">音箱</span></div></div>
 </div>
+</section>
 
+<section class="collection-device-region" id="device-region-wearable">
 <h3 class="collection-section-title">穿戴设备</h3>
-
-<div class="gear-grid">
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Apple Watch Ultra 2</span><span class="gear-meta">黑色</span><span class="gear-role">手表</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Xiaomi Watch S3</span><span class="gear-meta">黄色</span><span class="gear-role">手表</span></div></div>
-<div class="gear-card"><div class="gear-body"><span class="gear-name">Nothing CMF Watch Pro</span><span class="gear-meta">橙色</span><span class="gear-role">手表</span></div></div>
+<div class="collection-device-grid">
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Apple_Watch_Ultra_2.jpg" alt="Apple Watch Ultra 2 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Apple Watch Ultra 2</span><span class="collection-device-meta">黑色</span><span class="collection-device-role">手表</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Xiaomi_Watch_S3.jpg" alt="Xiaomi Watch S3 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Xiaomi Watch S3</span><span class="collection-device-meta">黄色</span><span class="collection-device-role">手表</span></div></div>
+<div class="collection-device-card"><div class="collection-device-cover-wrap"><img class="collection-device-cover" src="/blog-assets/collections/devices/Nothing_CMF_Watch_Pro.jpg" alt="Nothing CMF Watch Pro 产品图" loading="lazy" /></div><div class="collection-device-body"><span class="collection-device-name">Nothing CMF Watch Pro</span><span class="collection-device-meta">橙色</span><span class="collection-device-role">手表</span></div></div>
 </div>
+</section>
+
 </section>
 
 <section class="collection-tab-panel collection-tab-panel-game" id="collection-game">
