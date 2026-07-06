@@ -225,6 +225,10 @@ description: 我的游戏账号、设备、游戏实体盘和音乐专辑收藏�
 </section>
 
 <section class="collection-tab-panel collection-tab-panel-album" id="collection-album">
+<div class="collection-cd-wall" aria-label="流动专辑封面墙">
+<div class="collection-cd-wall-stage" aria-hidden="true"></div>
+</div>
+
 <nav class="collection-album-index" aria-label="专辑地区索引">
 <div class="collection-album-index-group">
 <a class="collection-album-index-region" href="#album-region-western">欧美</a>

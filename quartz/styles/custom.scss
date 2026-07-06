@@ -1424,6 +1424,136 @@ body[data-slug="collections"] .reading-progress-bar {
   }
 }
 
+.collection-cd-wall {
+  --cd-wall-cover-size: 112px;
+  --cd-wall-gap: clamp(0.5rem, 0.95vw, 0.78rem);
+  --cd-wall-row-gap: clamp(0.55rem, 1.1vw, 0.82rem);
+  position: relative;
+  height: calc(var(--cd-wall-cover-size) * 3 + var(--cd-wall-row-gap) * 2);
+  margin: 0 0 1.55rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(
+      90deg,
+      var(--light) 0%,
+      color-mix(in srgb, var(--lightgray) 36%, var(--light)) 48%,
+      var(--light) 100%
+    );
+  box-shadow: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    width: 18%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--light), transparent);
+    opacity: 0.95;
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--light), transparent);
+    opacity: 0.95;
+  }
+}
+
+.collection-cd-wall-stage {
+  position: absolute;
+  inset: 0 -18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--cd-wall-row-gap);
+}
+
+.collection-cd-wall-row {
+  --wall-duration: 48s;
+  --wall-row: 0;
+  width: max-content;
+  transform: translateX(calc(var(--wall-row) * -4rem));
+}
+
+.collection-cd-wall-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: collection-cd-wall-flow var(--wall-duration) linear infinite;
+  will-change: transform;
+}
+
+.collection-cd-wall-segment {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--cd-wall-gap);
+  padding-right: var(--cd-wall-gap);
+}
+
+.collection-cd-wall-row:nth-child(even) .collection-cd-wall-track {
+  animation-direction: reverse;
+}
+
+.collection-cd-wall-item {
+  position: relative;
+  display: block;
+  width: var(--cd-wall-cover-size);
+  min-width: var(--cd-wall-cover-size);
+  height: var(--cd-wall-cover-size);
+  min-height: var(--cd-wall-cover-size);
+  flex: 0 0 var(--cd-wall-cover-size);
+  overflow: hidden;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0;
+  transform: translateZ(0);
+  transition: opacity 0.28s ease;
+
+  &::after {
+    content: none;
+  }
+}
+
+.collection-cd-wall-item.is-loaded {
+  opacity: 1;
+}
+
+.collection-cd-wall-cover {
+  display: block;
+  width: var(--cd-wall-cover-size) !important;
+  min-width: var(--cd-wall-cover-size);
+  max-width: none;
+  height: var(--cd-wall-cover-size) !important;
+  min-height: var(--cd-wall-cover-size);
+  max-height: var(--cd-wall-cover-size);
+  aspect-ratio: 1 / 1;
+  object-fit: cover !important;
+  object-position: center;
+  border-radius: inherit;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+@keyframes collection-cd-wall-flow {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .collection-album-index {
   display: flex;
   flex-wrap: wrap;
@@ -1887,6 +2017,21 @@ a.gear-card {
     gap: 1.15rem 0.7rem;
   }
 
+  .collection-cd-wall {
+    --cd-wall-cover-size: 4.35rem;
+    --cd-wall-gap: 0.5rem;
+    --cd-wall-row-gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .collection-cd-wall-stage {
+    inset: 0 -44%;
+  }
+
+  .collection-cd-wall-item {
+    border-radius: 5px;
+  }
+
   .collection-category-albums h4 {
     font-size: 1.05rem;
   }
@@ -2183,6 +2328,29 @@ a.gear-card {
       color-mix(in srgb, var(--lightgray) 34%, transparent);
   }
 
+  .collection-cd-wall {
+    background:
+      linear-gradient(
+        90deg,
+        var(--light) 0%,
+        color-mix(in srgb, var(--lightgray) 38%, var(--light)) 48%,
+        var(--light) 100%
+      );
+    box-shadow: none;
+
+    &::before {
+      background: linear-gradient(90deg, var(--light), transparent);
+    }
+
+    &::after {
+      background: linear-gradient(270deg, var(--light), transparent);
+    }
+  }
+
+  .collection-cd-wall-item {
+    box-shadow: none;
+  }
+
   .gear-card {
     background: color-mix(in srgb, var(--lightgray) 40%, transparent);
 
@@ -2249,6 +2417,20 @@ a.gear-card {
 
   .collection-game-year {
     color: color-mix(in srgb, var(--gray) 82%, var(--darkgray));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collection-cd-wall-track {
+    animation: none;
+  }
+
+  .collection-cd-wall-row:nth-child(2) {
+    transform: translateX(-7rem);
+  }
+
+  .collection-cd-wall-row:nth-child(3) {
+    transform: translateX(-2.5rem);
   }
 }
 
