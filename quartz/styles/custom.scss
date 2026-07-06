@@ -22,6 +22,36 @@ body {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
+// ============================================
+// 图片骨架屏 - 加载完成前显示 shimmer 占位
+// ============================================
+@keyframes img-skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+img.img-skeleton {
+  background-color: color-mix(in srgb, var(--lightgray) 60%, transparent);
+  background-image: linear-gradient(
+    100deg,
+    transparent 30%,
+    color-mix(in srgb, var(--light) 70%, white) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: img-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+img.img-skeleton-loaded {
+  animation: none;
+  background: none;
+}
+
 // 标题使用更紧凑的字距，更有设计感
 h1,
 h2,
@@ -977,13 +1007,14 @@ a.internal.tag-link {
   }
 }
 
-// hub 页（首页/博客/项目/相册）顶部不要多余留白
+// hub 页（首页/博客/项目/相册/收藏）顶部不要多余留白
 body[data-slug="index"],
 body[data-slug="blog"],
 body[data-slug="Projects/index"],
-body[data-slug="album"] {
+body[data-slug="album"],
+body[data-slug="collections"] {
   & article {
-    padding-top: 0.5rem;
+    padding-top: 0;
   }
 }
 

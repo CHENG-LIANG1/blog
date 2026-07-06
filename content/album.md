@@ -4,7 +4,6 @@ description: 我的收藏与桌面角落。
 ---
 
 <section class="album-hero">
-<p class="album-subtitle">收藏与桌面：分门别类，慢慢积累。</p>
 </section>
 <section class="album-section">
 <h2 class="album-h2">AOT 痛车（真车）</h2>

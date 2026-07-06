@@ -6,7 +6,6 @@ aliases:
   - projects
 ---
 
-<p class="proj-intro">一些我做过或正在维护的项目：App、Web、小工具与实验。</p>
 <div class="proj-group">
 <div class="proj-group-title">Featured</div>
 <div class="proj-grid">
