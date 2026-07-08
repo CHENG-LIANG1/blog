@@ -192,6 +192,32 @@
     }
   }
 
+  // Backward-compatible aliases for any existing markup using the previous
+  // two-level directory classes.
+  & .rp-subdir {
+    @extend .rp-dir-level;
+  }
+
+  & .rp-subdir-header {
+    @extend .rp-dir-header;
+  }
+
+  & .rp-subdir-icon {
+    @extend .rp-dir-icon;
+  }
+
+  & .rp-subdir-name {
+    @extend .rp-dir-name;
+  }
+
+  & .rp-subdir-count {
+    @extend .rp-dir-count;
+  }
+
+  & .rp-subdir-body {
+    @extend .rp-dir-body;
+  }
+
   // ── 列表视图 ──────────────────────────────────
   & .rp-list-view {
     --rp-depth: 0;
