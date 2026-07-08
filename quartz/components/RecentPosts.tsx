@@ -3,8 +3,6 @@ import { resolveRelative } from "../util/path"
 import { QuartzPluginData } from "./../plugins/vfile"
 import { byDateAndAlphabetical } from "./PageList"
 import style from "./styles/recentPosts.scss"
-// @ts-ignore
-import script from "./scripts/recentPosts.inline"
 import { getDate } from "./Date"
 import { GlobalConfiguration } from "../cfg"
 import { classNames } from "../util/lang"
@@ -45,23 +43,10 @@ function formatDirLabel(segment: string): string {
   return CATEGORY_LABELS[segment] ?? SUBDIR_LABELS[segment] ?? segment
 }
 
-const CATEGORY_ORDER = ["技术", "英语"]
+const CATEGORY_ORDER = ["技术", "英语", "其他"]
 function categorySortKey(cat: string): string {
   const idx = CATEGORY_ORDER.indexOf(cat)
   return idx >= 0 ? `${idx}` : `z${cat}`
-}
-
-const SUBDIR_ORDER = ["Prompt-Engineering", "刷题"]
-function dirSortKey(dir: string, depth: number): string {
-  if (depth === 0) return categorySortKey(dir)
-  const idx = SUBDIR_ORDER.indexOf(dir)
-  return idx >= 0 ? `${idx}` : `z${dir}`
-}
-
-function sortedChildNodes(node: DirNode, depth: number): DirNode[] {
-  return [...node.children.values()].sort((a, b) =>
-    dirSortKey(a.segment, depth).localeCompare(dirSortKey(b.segment, depth)),
-  )
 }
 
 const defaultOptions = (cfg: GlobalConfiguration): Options => ({
@@ -70,38 +55,34 @@ const defaultOptions = (cfg: GlobalConfiguration): Options => ({
   sort: byDateAndAlphabetical(cfg),
 })
 
-type DirNode = {
-  segment: string
-  children: Map<string, DirNode>
-  posts: QuartzPluginData[]
+type BlogCard = {
+  page: QuartzPluginData
+  category: string
+  subcategory?: string
 }
 
-function createDirNode(segment: string): DirNode {
-  return { segment, children: new Map(), posts: [] }
+function getPostSegments(slug: string): string[] {
+  return slug.split("/").filter((part) => part.length > 0)
 }
 
-function getPostDirSegments(slug: string): string[] {
-  const parts = slug.split("/").filter((part) => part.length > 0)
-  if (parts.length <= 1) return ["其他"]
-  return parts.slice(0, -1)
+function getBlogCard(page: QuartzPluginData): BlogCard {
+  const segments = getPostSegments(page.slug ?? "")
+  return {
+    page,
+    category: segments.length > 1 ? segments[0] : "其他",
+    subcategory:
+      segments.length > 2 ? segments.slice(1, -1).map(formatDirLabel).join(" / ") : undefined,
+  }
 }
 
-function insertPost(root: DirNode, page: QuartzPluginData) {
-  const segments = getPostDirSegments(page.slug ?? "")
-  let node = root
-
-  for (const segment of segments) {
-    if (!node.children.has(segment)) node.children.set(segment, createDirNode(segment))
-    node = node.children.get(segment)!
+function getDescription(page: QuartzPluginData): string {
+  const frontmatterDescription = page.frontmatter?.description
+  if (typeof frontmatterDescription === "string" && frontmatterDescription.trim().length > 0) {
+    return frontmatterDescription.trim()
   }
 
-  node.posts.push(page)
-}
-
-function countPosts(node: DirNode): number {
-  let total = node.posts.length
-  for (const child of node.children.values()) total += countPosts(child)
-  return total
+  const description = page.description
+  return typeof description === "string" ? description.trim() : ""
 }
 
 function formatDate(cfg: GlobalConfiguration, page: QuartzPluginData): string {
@@ -119,106 +100,82 @@ export default ((userOpts?: Partial<Options>) => {
   }: QuartzComponentProps) => {
     const opts = { ...defaultOptions(cfg), ...userOpts }
     const pages = allFiles.filter(opts.filter).sort(opts.sort).slice(0, opts.limit)
+    const cards = pages.map(getBlogCard)
+    const cardsByCategory = new Map<string, BlogCard[]>()
 
-    const rootNode = createDirNode("")
-
-    for (const page of pages) insertPost(rootNode, page)
-
-    const sortedCategories = sortedChildNodes(rootNode, 0)
-
-    // 渲染单个文章列表行
-    const renderListRow = (page: QuartzPluginData) => {
-      const title = (page.frontmatter?.title as string | undefined) ?? "无标题"
-      const dateStr = formatDate(cfg, page)
-      return (
-        <a class="rp-list-row" href={resolveRelative(fileData.slug!, page.slug!)}>
-          <span class="rp-list-title">{title}</span>
-          <span class="rp-list-date">{dateStr}</span>
-        </a>
-      )
+    for (const card of cards) {
+      const existingCards = cardsByCategory.get(card.category) ?? []
+      existingCards.push(card)
+      cardsByCategory.set(card.category, existingCards)
     }
 
-    // 渲染文章列表
-    const renderPosts = (posts: QuartzPluginData[], depth = 0) => (
-      <div class="rp-list-view" style={`--rp-depth: ${depth}`}>
-        {posts.map((p) => renderListRow(p))}
-      </div>
+    const sortedCategories = [...cardsByCategory.entries()].sort(([a], [b]) =>
+      categorySortKey(a).localeCompare(categorySortKey(b)),
     )
 
-    const renderDirNode = (node: DirNode, id: string, depth: number) => {
-      const children = sortedChildNodes(node, depth)
-      const postCount = countPosts(node)
+    const renderCard = ({ page, subcategory }: BlogCard) => {
+      const title = (page.frontmatter?.title as string | undefined) ?? "无标题"
+      const dateStr = formatDate(cfg, page)
+      const description = getDescription(page)
 
       return (
-        <div class="rp-dir-level" style={`--rp-depth: ${depth}`}>
-          <div class="rp-dir-header" data-rp-toggle={`#${id}`}>
-            <span class="rp-dir-icon">
-              <svg class="rp-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M6 4l4 4-4 4"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </span>
-            <span class="rp-dir-name">{formatDirLabel(node.segment)}</span>
-            <span class="rp-dir-count">{postCount}</span>
+        <a class="rp-card" href={resolveRelative(fileData.slug!, page.slug!)}>
+          <div class="rp-card-meta">
+            {subcategory && <span class="rp-card-kicker">{subcategory}</span>}
+            {dateStr && <time class="rp-card-date">{dateStr}</time>}
           </div>
-          <div class="rp-dir-body" id={id} style={`--rp-depth: ${depth}`}>
-            {children.map((child, childIdx) =>
-              renderDirNode(child, `${id}-${childIdx}`, depth + 1),
-            )}
-            {node.posts.length > 0 && renderPosts(node.posts, depth + 1)}
-          </div>
-        </div>
+          <h3 class="rp-card-title">{title}</h3>
+          {description && <p class="rp-card-description">{description}</p>}
+          <span class="rp-card-cta" aria-hidden="true">
+            阅读文章
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M6 3.5L10.5 8L6 12.5"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </a>
       )
     }
 
     return (
       <section class={classNames(displayClass, "recent-posts")}>
-        {/* 顶部工具栏 */}
-        <div class="rp-toolbar">{opts.title && <h2 class="rp-title">{opts.title}</h2>}</div>
+        <div class="rp-toolbar">
+          <div>
+            <p class="rp-eyebrow">All writing</p>
+            <h2 class="rp-title">文章归档</h2>
+          </div>
+          <span class="rp-total">{cards.length} 篇</span>
+        </div>
 
-        {/* 分类卡片 */}
-        <div class="rp-categories">
-          {sortedCategories.map((cat, catIdx) => {
-            const catId = `cat-${catIdx}`
-            const children = sortedChildNodes(cat, 1)
+        <div class="rp-category-tabs" aria-label="文章分类">
+          {sortedCategories.map(([category, categoryCards]) => (
+            <a class="rp-category-tab" href={`#rp-${category}`}>
+              <span>{formatDirLabel(category)}</span>
+              <strong>{categoryCards.length}</strong>
+            </a>
+          ))}
+        </div>
 
-            return (
-              <div class="rp-category">
-                <div class="rp-category-header" data-rp-toggle={`#${catId}`}>
-                  <span class="rp-category-icon">
-                    <svg class="rp-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path
-                        d="M6 4l4 4-4 4"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <h3 class="rp-category-name">{formatDirLabel(cat.segment)}</h3>
-                  <span class="rp-category-count">{countPosts(cat)}</span>
-                </div>
-                <div class="rp-category-body" id={catId}>
-                  {children.map((child, childIdx) =>
-                    renderDirNode(child, `${catId}-${childIdx}`, 1),
-                  )}
-                  {cat.posts.length > 0 && renderPosts(cat.posts, 1)}
-                </div>
+        <div class="rp-sections">
+          {sortedCategories.map(([category, categoryCards]) => (
+            <section class="rp-section" id={`rp-${category}`}>
+              <div class="rp-section-heading">
+                <p class="rp-section-kicker">Category</p>
+                <h3>{formatDirLabel(category)}</h3>
               </div>
-            )
-          })}
+              <div class="rp-card-grid">{categoryCards.map(renderCard)}</div>
+            </section>
+          ))}
         </div>
       </section>
     )
   }
 
   RecentPosts.css = style
-  RecentPosts.afterDOMLoaded = script
   return RecentPosts
 }) satisfies QuartzComponentConstructor
