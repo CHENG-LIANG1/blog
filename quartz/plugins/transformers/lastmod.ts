@@ -3,6 +3,8 @@ import { Repository } from "@napi-rs/simple-git"
 import { QuartzTransformerPlugin } from "../types"
 import path from "path"
 import { styleText } from "util"
+import { execFile } from "child_process"
+import { promisify } from "util"
 
 export interface Options {
   priority: ("frontmatter" | "git" | "filesystem")[]
@@ -11,6 +13,8 @@ export interface Options {
 const defaultOptions: Options = {
   priority: ["frontmatter", "git", "filesystem"],
 }
+
+const execFileAsync = promisify(execFile)
 
 // YYYY-MM-DD
 const iso8601DateOnlyRegex = /^\d{4}-\d{2}-\d{2}$/
@@ -35,6 +39,25 @@ function coerceDate(fp: string, d: any): Date {
   }
 
   return invalidDate ? new Date() : dt
+}
+
+async function getFileFirstCommitDate(
+  repositoryWorkdir: string,
+  relativePath: string,
+): Promise<number | undefined> {
+  const { stdout } = await execFileAsync(
+    "git",
+    ["log", "--follow", "--format=%ct", "--", relativePath],
+    { cwd: repositoryWorkdir },
+  )
+  const timestamps = stdout
+    .trim()
+    .split("\n")
+    .map((line) => Number(line.trim()))
+    .filter((timestamp) => Number.isFinite(timestamp) && timestamp > 0)
+
+  const firstCommitTimestamp = timestamps.at(-1)
+  return firstCommitTimestamp ? firstCommitTimestamp * 1000 : undefined
 }
 
 type MaybeDate = undefined | string | number
@@ -80,6 +103,7 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options>> = (u
               } else if (source === "git" && repo) {
                 try {
                   const relativePath = path.relative(repositoryWorkdir, fullFp)
+                  created ||= await getFileFirstCommitDate(repositoryWorkdir, relativePath)
                   modified ||= await repo.getFileLatestModifiedDateAsync(relativePath)
                 } catch {
                   console.log(
