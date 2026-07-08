@@ -1,5 +1,5 @@
-// 博客列表交互：折叠分类 + 子目录
-(function () {
+// 博客列表交互：基于 data-rp-toggle 折叠任意目录层级
+;(function () {
   const root = document.querySelector(".recent-posts")
   if (!root) return
 

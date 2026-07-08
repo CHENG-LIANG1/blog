@@ -32,25 +32,17 @@ const isBlogPost = (f: QuartzPluginData): boolean => {
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
-  "技术": "技术",
-  "英语": "英语",
+  技术: "技术",
+  英语: "英语",
 }
 
 const SUBDIR_LABELS: Record<string, string> = {
   "Prompt-Engineering": "Prompt Engineering",
-  "刷题": "刷题",
+  刷题: "刷题",
 }
 
-function getCategory(slug: string): string {
-  const firstSlash = slug.indexOf("/")
-  if (firstSlash === -1) return "其他"
-  return slug.slice(0, firstSlash)
-}
-
-function getSubDir(slug: string): string {
-  const parts = slug.split("/")
-  if (parts.length < 3) return ""
-  return parts[1]
+function formatDirLabel(segment: string): string {
+  return CATEGORY_LABELS[segment] ?? SUBDIR_LABELS[segment] ?? segment
 }
 
 const CATEGORY_ORDER = ["技术", "英语"]
@@ -60,10 +52,16 @@ function categorySortKey(cat: string): string {
 }
 
 const SUBDIR_ORDER = ["Prompt-Engineering", "刷题"]
-function subDirSortKey(dir: string): string {
-  if (dir === "") return "0"
+function dirSortKey(dir: string, depth: number): string {
+  if (depth === 0) return categorySortKey(dir)
   const idx = SUBDIR_ORDER.indexOf(dir)
-  return idx >= 0 ? `${idx + 1}` : `z${dir}`
+  return idx >= 0 ? `${idx}` : `z${dir}`
+}
+
+function sortedChildNodes(node: DirNode, depth: number): DirNode[] {
+  return [...node.children.values()].sort((a, b) =>
+    dirSortKey(a.segment, depth).localeCompare(dirSortKey(b.segment, depth)),
+  )
 }
 
 const defaultOptions = (cfg: GlobalConfiguration): Options => ({
@@ -72,15 +70,37 @@ const defaultOptions = (cfg: GlobalConfiguration): Options => ({
   sort: byDateAndAlphabetical(cfg),
 })
 
-type YearGroup = { year: string; posts: QuartzPluginData[] }
-type SubDirMap = Map<string, YearGroup[]>
-type CategoryMap = Map<string, SubDirMap>
+type DirNode = {
+  segment: string
+  children: Map<string, DirNode>
+  posts: QuartzPluginData[]
+}
 
-function countPosts(subDirMap: SubDirMap): number {
-  let total = 0
-  for (const yearGroups of subDirMap.values()) {
-    for (const yg of yearGroups) total += yg.posts.length
+function createDirNode(segment: string): DirNode {
+  return { segment, children: new Map(), posts: [] }
+}
+
+function getPostDirSegments(slug: string): string[] {
+  const parts = slug.split("/").filter((part) => part.length > 0)
+  if (parts.length <= 1) return ["其他"]
+  return parts.slice(0, -1)
+}
+
+function insertPost(root: DirNode, page: QuartzPluginData) {
+  const segments = getPostDirSegments(page.slug ?? "")
+  let node = root
+
+  for (const segment of segments) {
+    if (!node.children.has(segment)) node.children.set(segment, createDirNode(segment))
+    node = node.children.get(segment)!
   }
+
+  node.posts.push(page)
+}
+
+function countPosts(node: DirNode): number {
+  let total = node.posts.length
+  for (const child of node.children.values()) total += countPosts(child)
   return total
 }
 
@@ -100,29 +120,11 @@ export default ((userOpts?: Partial<Options>) => {
     const opts = { ...defaultOptions(cfg), ...userOpts }
     const pages = allFiles.filter(opts.filter).sort(opts.sort).slice(0, opts.limit)
 
-    const categoryMap: CategoryMap = new Map()
+    const rootNode = createDirNode("")
 
-    for (const page of pages) {
-      const cat = getCategory(page.slug ?? "")
-      const subDir = getSubDir(page.slug ?? "")
-      const date = getDate(cfg, page)
-      const year = date ? `${date.getFullYear()}` : "更早"
+    for (const page of pages) insertPost(rootNode, page)
 
-      if (!categoryMap.has(cat)) categoryMap.set(cat, new Map())
-      const subDirMap = categoryMap.get(cat)!
-      if (!subDirMap.has(subDir)) subDirMap.set(subDir, [])
-      const yearGroups = subDirMap.get(subDir)!
-      let yearGroup = yearGroups.find((g) => g.year === year)
-      if (!yearGroup) {
-        yearGroup = { year, posts: [] }
-        yearGroups.push(yearGroup)
-      }
-      yearGroup.posts.push(page)
-    }
-
-    const sortedCategories = [...categoryMap.keys()].sort(
-      (a, b) => categorySortKey(a).localeCompare(categorySortKey(b))
-    )
+    const sortedCategories = sortedChildNodes(rootNode, 0)
 
     // 渲染单个文章列表行
     const renderListRow = (page: QuartzPluginData) => {
@@ -137,73 +139,76 @@ export default ((userOpts?: Partial<Options>) => {
     }
 
     // 渲染文章列表
-    const renderPosts = (posts: QuartzPluginData[]) => (
-      <div class="rp-list-view">
+    const renderPosts = (posts: QuartzPluginData[], depth = 0) => (
+      <div class="rp-list-view" style={`--rp-depth: ${depth}`}>
         {posts.map((p) => renderListRow(p))}
       </div>
     )
 
+    const renderDirNode = (node: DirNode, id: string, depth: number) => {
+      const children = sortedChildNodes(node, depth)
+      const postCount = countPosts(node)
+
+      return (
+        <div class="rp-dir-level" style={`--rp-depth: ${depth}`}>
+          <div class="rp-dir-header" data-rp-toggle={`#${id}`}>
+            <span class="rp-dir-icon">
+              <svg class="rp-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M6 4l4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="rp-dir-name">{formatDirLabel(node.segment)}</span>
+            <span class="rp-dir-count">{postCount}</span>
+          </div>
+          <div class="rp-dir-body" id={id} style={`--rp-depth: ${depth}`}>
+            {children.map((child, childIdx) =>
+              renderDirNode(child, `${id}-${childIdx}`, depth + 1),
+            )}
+            {node.posts.length > 0 && renderPosts(node.posts, depth + 1)}
+          </div>
+        </div>
+      )
+    }
+
     return (
       <section class={classNames(displayClass, "recent-posts")}>
         {/* 顶部工具栏 */}
-        <div class="rp-toolbar">
-          {opts.title && <h2 class="rp-title">{opts.title}</h2>}
-        </div>
+        <div class="rp-toolbar">{opts.title && <h2 class="rp-title">{opts.title}</h2>}</div>
 
         {/* 分类卡片 */}
         <div class="rp-categories">
           {sortedCategories.map((cat, catIdx) => {
-            const subDirMap = categoryMap.get(cat)!
-            const sortedSubDirs = [...subDirMap.keys()].sort(
-              (a, b) => subDirSortKey(a).localeCompare(subDirSortKey(b))
-            )
             const catId = `cat-${catIdx}`
+            const children = sortedChildNodes(cat, 1)
 
             return (
               <div class="rp-category">
                 <div class="rp-category-header" data-rp-toggle={`#${catId}`}>
                   <span class="rp-category-icon">
                     <svg class="rp-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M6 4l4 4-4 4"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
                     </svg>
                   </span>
-                  <h3 class="rp-category-name">{CATEGORY_LABELS[cat] ?? cat}</h3>
-                  <span class="rp-category-count">{countPosts(subDirMap)}</span>
+                  <h3 class="rp-category-name">{formatDirLabel(cat.segment)}</h3>
+                  <span class="rp-category-count">{countPosts(cat)}</span>
                 </div>
                 <div class="rp-category-body" id={catId}>
-                  {sortedSubDirs.map((subDir, subIdx) => {
-                    const subId = `sub-${catIdx}-${subIdx}`
-                    const yearGroups = subDirMap.get(subDir)!
-                    const allPosts = yearGroups.flatMap((yg) => yg.posts)
-
-                    if (subDir) {
-                      return (
-                        <div class="rp-subdir">
-                          <div class="rp-subdir-header" data-rp-toggle={`#${subId}`}>
-                            <span class="rp-subdir-icon">
-                              <svg class="rp-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                              </svg>
-                            </span>
-                            <span class="rp-subdir-name">{SUBDIR_LABELS[subDir] ?? subDir}</span>
-                            <span class="rp-subdir-count">{allPosts.length}</span>
-                          </div>
-                          <div class="rp-subdir-body" id={subId}>
-                            {renderPosts(allPosts)}
-                          </div>
-                        </div>
-                      )
-                    }
-
-                    // 无子目录的文章直接渲染
-                    return (
-                      <div class="rp-subdir">
-                        <div class="rp-subdir-body">
-                          {renderPosts(allPosts)}
-                        </div>
-                      </div>
-                    )
-                  })}
+                  {children.map((child, childIdx) =>
+                    renderDirNode(child, `${catId}-${childIdx}`, 1),
+                  )}
+                  {cat.posts.length > 0 && renderPosts(cat.posts, 1)}
                 </div>
               </div>
             )
