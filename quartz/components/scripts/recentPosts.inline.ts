@@ -1,33 +1,53 @@
-// 博客列表交互：折叠分类 + 子目录
-(function () {
+// 博客列表交互：基于 data-rp-toggle 折叠任意目录层级
+;(function () {
   const root = document.querySelector(".recent-posts")
   if (!root) return
 
-  // ── 折叠/展开 ──────────────────────────────
-  const toggles = root.querySelectorAll<HTMLElement>("[data-rp-toggle]")
-  toggles.forEach((el) => {
-    el.addEventListener("click", () => {
-      const target = root.querySelector(el.dataset.rpToggle ?? "") as HTMLElement | null
-      if (!target) return
+  const transitionMs = 300
 
+  const setChevronState = (toggle: HTMLElement, isCollapsed: boolean) => {
+    const chevron = toggle.querySelector(".rp-chevron") as HTMLElement | null
+    chevron?.classList.toggle("rp-chevron-collapsed", isCollapsed)
+    toggle.setAttribute("aria-expanded", String(!isCollapsed))
+  }
+
+  const syncOpenAncestors = (target: HTMLElement) => {
+    let parent = target.parentElement?.closest<HTMLElement>(".rp-category-body, .rp-dir-body")
+    while (parent) {
+      if (!parent.classList.contains("rp-collapsed")) {
+        parent.style.maxHeight = parent.scrollHeight + "px"
+      }
+      parent = parent.parentElement?.closest<HTMLElement>(".rp-category-body, .rp-dir-body") ?? null
+    }
+  }
+
+  const toggles = root.querySelectorAll<HTMLElement>("[data-rp-toggle]")
+  toggles.forEach((toggle) => {
+    const target = root.querySelector(toggle.dataset.rpToggle ?? "") as HTMLElement | null
+    if (!target) return
+
+    setChevronState(toggle, target.classList.contains("rp-collapsed"))
+
+    toggle.addEventListener("click", () => {
       const isCollapsed = target.classList.contains("rp-collapsed")
-      const chevron = el.querySelector(".rp-chevron") as HTMLElement | null
 
       if (isCollapsed) {
         target.classList.remove("rp-collapsed")
         target.style.maxHeight = target.scrollHeight + "px"
-        chevron?.classList.remove("rp-chevron-collapsed")
-        // 动画结束后移除 maxHeight 限制
-        setTimeout(() => {
+        setChevronState(toggle, false)
+        syncOpenAncestors(target)
+
+        window.setTimeout(() => {
           target.style.maxHeight = ""
-        }, 300)
+          syncOpenAncestors(target)
+        }, transitionMs)
       } else {
         target.style.maxHeight = target.scrollHeight + "px"
-        // 强制回流
         target.offsetHeight
         target.classList.add("rp-collapsed")
         target.style.maxHeight = "0"
-        chevron?.classList.add("rp-chevron-collapsed")
+        setChevronState(toggle, true)
+        syncOpenAncestors(target)
       }
     })
   })
