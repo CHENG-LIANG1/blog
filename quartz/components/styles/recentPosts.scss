@@ -113,35 +113,47 @@
     border-top-color: transparent;
   }
 
-  // ── 子目录 ──────────────────────────────────
-  & .rp-subdir {
-    padding-bottom: 0.8rem;
+  // ── 递归目录 ──────────────────────────────────
+  & .rp-dir-level {
+    --rp-depth: 1;
+    position: relative;
+    padding-bottom: 0.35rem;
 
     &:not(:last-child) {
-      border-bottom: 1px solid color-mix(in srgb, var(--lightgray) 50%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--lightgray) 35%, transparent);
     }
   }
 
-  & .rp-subdir-header {
+  & .rp-dir-level::before {
+    content: "";
+    position: absolute;
+    top: 0.55rem;
+    bottom: 0.4rem;
+    left: calc(1rem + (var(--rp-depth) - 1) * 1.35rem);
+    width: 1px;
+    background: color-mix(in srgb, var(--secondary) 22%, transparent);
+  }
+
+  & .rp-dir-header {
     display: flex;
     align-items: center;
     gap: 0.55rem;
-    padding: 0.6rem 1rem 0.6rem 1.8rem;
+    padding: 0.58rem 1rem 0.58rem calc(1.65rem + var(--rp-depth) * 1.35rem);
     cursor: pointer;
     user-select: none;
-    border-left: 2px solid color-mix(in srgb, var(--secondary) 35%, transparent);
-    margin-left: 1rem;
+    border-left: 2px solid color-mix(in srgb, var(--secondary) 30%, transparent);
+    background: color-mix(in srgb, var(--secondary) calc(2% + var(--rp-depth) * 1%), transparent);
     transition:
       background 0.15s ease,
       border-color 0.15s ease;
 
     &:hover {
-      background: color-mix(in srgb, var(--secondary) 5%, transparent);
+      background: color-mix(in srgb, var(--secondary) 7%, transparent);
       border-left-color: var(--secondary);
     }
   }
 
-  & .rp-subdir-icon {
+  & .rp-dir-icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,7 +165,7 @@
     flex-shrink: 0;
   }
 
-  & .rp-subdir-name {
+  & .rp-dir-name {
     font-size: 0.85rem;
     font-weight: 500;
     font-family: var(--codeFont);
@@ -162,7 +174,7 @@
     letter-spacing: 0.02em;
   }
 
-  & .rp-subdir-count {
+  & .rp-dir-count {
     font-size: 0.68rem;
     font-weight: 500;
     font-family: var(--codeFont);
@@ -173,13 +185,14 @@
     line-height: 1.2;
   }
 
-  & .rp-subdir-body {
+  & .rp-dir-body {
+    --rp-depth: 1;
     overflow: hidden;
     transition:
       max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
       opacity 0.25s ease,
       padding 0.3s ease;
-    padding: 0.4rem 1.1rem 1rem 2.8rem;
+    padding: 0.35rem 0 0.65rem;
 
     &.rp-collapsed {
       padding-top: 0;
@@ -188,10 +201,38 @@
     }
   }
 
+  // Backward-compatible aliases for any existing markup using the previous
+  // two-level directory classes.
+  & .rp-subdir {
+    @extend .rp-dir-level;
+  }
+
+  & .rp-subdir-header {
+    @extend .rp-dir-header;
+  }
+
+  & .rp-subdir-icon {
+    @extend .rp-dir-icon;
+  }
+
+  & .rp-subdir-name {
+    @extend .rp-dir-name;
+  }
+
+  & .rp-subdir-count {
+    @extend .rp-dir-count;
+  }
+
+  & .rp-subdir-body {
+    @extend .rp-dir-body;
+  }
+
   // ── 列表视图 ──────────────────────────────────
   & .rp-list-view {
+    --rp-depth: 0;
     display: flex;
     flex-direction: column;
+    padding-left: calc(var(--rp-depth) * 1.35rem);
   }
 
   & .rp-list-row {
