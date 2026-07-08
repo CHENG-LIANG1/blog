@@ -116,40 +116,27 @@
   // ── 递归目录 ──────────────────────────────────
   & .rp-dir-level {
     --rp-depth: 1;
-    position: relative;
-    padding-bottom: 0.35rem;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid color-mix(in srgb, var(--lightgray) 35%, transparent);
-    }
-  }
-
-  & .rp-dir-level::before {
-    content: "";
-    position: absolute;
-    top: 0.55rem;
-    bottom: 0.4rem;
-    left: calc(1rem + (var(--rp-depth) - 1) * 1.35rem);
-    width: 1px;
-    background: color-mix(in srgb, var(--secondary) 22%, transparent);
+    margin: 0.35rem 0.75rem 0.35rem calc(0.45rem + (var(--rp-depth) - 1) * 1rem);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--light) 52%, transparent);
+    overflow: hidden;
   }
 
   & .rp-dir-header {
     display: flex;
     align-items: center;
     gap: 0.55rem;
-    padding: 0.58rem 1rem 0.58rem calc(1.65rem + var(--rp-depth) * 1.35rem);
+    min-height: 2.45rem;
+    padding: 0.42rem 0.65rem;
     cursor: pointer;
     user-select: none;
-    border-left: 2px solid color-mix(in srgb, var(--secondary) 30%, transparent);
-    background: color-mix(in srgb, var(--secondary) calc(2% + var(--rp-depth) * 1%), transparent);
+    border-radius: 10px;
     transition:
       background 0.15s ease,
-      border-color 0.15s ease;
+      color 0.15s ease;
 
     &:hover {
       background: color-mix(in srgb, var(--secondary) 7%, transparent);
-      border-left-color: var(--secondary);
     }
   }
 
@@ -159,18 +146,22 @@
     justify-content: center;
     width: 20px;
     height: 20px;
-    border-radius: 4px;
-    background: color-mix(in srgb, var(--secondary) 10%, transparent);
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--secondary) 11%, transparent);
     color: var(--secondary);
     flex-shrink: 0;
   }
 
   & .rp-dir-name {
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 0.84rem;
+    font-weight: 560;
     font-family: var(--codeFont);
     color: var(--darkgray);
     flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     letter-spacing: 0.02em;
   }
 
@@ -179,7 +170,7 @@
     font-weight: 500;
     font-family: var(--codeFont);
     color: var(--gray);
-    background: var(--lightgray);
+    background: color-mix(in srgb, var(--lightgray) 75%, transparent);
     border-radius: 999px;
     padding: 0.12rem 0.45rem;
     line-height: 1.2;
@@ -190,9 +181,9 @@
     overflow: hidden;
     transition:
       max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.25s ease,
+      opacity 0.2s ease,
       padding 0.3s ease;
-    padding: 0.35rem 0 0.65rem;
+    padding: 0.1rem 0.35rem 0.65rem;
 
     &.rp-collapsed {
       padding-top: 0;
@@ -232,15 +223,15 @@
     --rp-depth: 0;
     display: flex;
     flex-direction: column;
-    padding-left: calc(var(--rp-depth) * 1.35rem);
+    padding: 0.25rem 0.75rem 0.75rem calc(0.75rem + var(--rp-depth) * 0.7rem);
   }
 
   & .rp-list-row {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    padding: 0.55rem 0.75rem;
-    margin: 0 -0.75rem;
+    padding: 0.55rem 0.65rem;
+    margin: 0;
     border-radius: 8px;
     color: var(--darkgray);
     transition:
