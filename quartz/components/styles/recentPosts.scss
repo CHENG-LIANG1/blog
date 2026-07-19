@@ -12,16 +12,6 @@
     margin: 0 0 1rem;
   }
 
-  & .rp-eyebrow {
-    margin: 0 0 0.3rem;
-    color: var(--secondary);
-    font-family: var(--codeFont);
-    font-size: 0.72rem;
-    font-weight: 750;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
   & .rp-title {
     margin: 0;
     color: var(--dark);
@@ -106,6 +96,28 @@
     padding-inline-start: 0.95rem;
   }
 
+  & .rp-filter-clear {
+    margin-left: auto;
+    border-style: solid;
+    color: var(--gray);
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+
+  & .rp-subcategory-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: -0.75rem 0 1.25rem;
+    padding: 0 0.75rem 0.75rem;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
   & .rp-list {
     display: grid;
     gap: 0.7rem;
@@ -129,6 +141,7 @@
     color: var(--darkgray);
     background: color-mix(in srgb, var(--light) 94%, transparent);
     box-shadow: 0 1px 2px color-mix(in srgb, var(--dark) 4%, transparent);
+    text-decoration: none !important;
     transition:
       transform 0.18s ease,
       border-color 0.18s ease,

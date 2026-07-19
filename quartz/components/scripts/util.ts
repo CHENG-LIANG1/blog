@@ -42,5 +42,13 @@ export async function fetchCanonical(url: URL): Promise<Response> {
   // to allow the caller to read it if it's was not a redirect
   const text = await res.clone().text()
   const [_, redirect] = text.match(canonicalRegex) ?? []
-  return redirect ? fetch(`${new URL(redirect, url)}`) : res
+  if (!redirect) {
+    return res
+  }
+
+  // Only follow canonical redirects that stay on the current origin. The
+  // canonical link points at the production domain, so in local/dev servers
+  // following it would swap in the deployed site instead of the local page.
+  const redirectUrl = new URL(redirect, url)
+  return redirectUrl.origin === url.origin ? fetch(`${redirectUrl}`) : res
 }

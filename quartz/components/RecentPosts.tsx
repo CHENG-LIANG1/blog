@@ -19,36 +19,109 @@ document.addEventListener("nav", () => {
   const roots = document.querySelectorAll(".recent-posts")
 
   roots.forEach((root) => {
-    const filterButtons = root.querySelectorAll("[data-rp-filter]")
-    const items = root.querySelectorAll("[data-rp-category]")
+    const categoryButtons = root.querySelectorAll("[data-rp-category]")
+    const subcategoryButtons = root.querySelectorAll("[data-rp-subcategory]")
+    const subcategoryPanel = root.querySelector("[data-rp-subcategory-panel]")
+    const items = root.querySelectorAll("[data-rp-item-category]")
     const count = root.querySelector("[data-rp-count]")
+    const clearButton = root.querySelector("[data-rp-clear]")
 
-    const updateFilter = (filter) => {
+    const getParams = () => {
+      const params = new URLSearchParams(window.location.search)
+      return {
+        category: params.get("category") || "all",
+        subcategory: params.get("subcategory") || "",
+      }
+    }
+
+    const setParams = (category, subcategory) => {
+      const params = new URLSearchParams(window.location.search)
+      if (category === "all") {
+        params.delete("category")
+        params.delete("subcategory")
+      } else {
+        params.set("category", category)
+        if (subcategory) {
+          params.set("subcategory", subcategory)
+        } else {
+          params.delete("subcategory")
+        }
+      }
+      const qs = params.toString()
+      const url = qs ? window.location.pathname + "?" + qs : window.location.pathname
+      window.history.replaceState(null, "", url)
+    }
+
+    const applyFilter = (category, subcategory) => {
       let visibleCount = 0
 
       items.forEach((item) => {
-        const matches =
-          filter === "all" || item.dataset.rpCategory === filter || item.dataset.rpSubcategory === filter
-        item.hidden = !matches
-        if (matches) visibleCount += 1
+        const itemCategory = item.dataset.rpItemCategory
+        const itemSubcategory = item.dataset.rpItemSubcategory || ""
+        const matchesCategory = category === "all" || itemCategory === category
+        const matchesSubcategory = !subcategory || itemSubcategory === subcategory
+        const visible = matchesCategory && matchesSubcategory
+        item.hidden = !visible
+        if (visible) visibleCount += 1
       })
 
-      filterButtons.forEach((button) => {
-        const isActive = button.dataset.rpFilter === filter
+      categoryButtons.forEach((button) => {
+        const isActive = button.dataset.rpCategory === category
         button.classList.toggle("is-active", isActive)
         button.setAttribute("aria-pressed", String(isActive))
       })
+
+      if (subcategoryPanel) {
+        const hasSubcategories = category !== "all" && root.querySelector('[data-rp-subcategory-panel][data-rp-for-category="' + category + '"]')
+        subcategoryPanel.hidden = !hasSubcategories
+      }
+
+      subcategoryButtons.forEach((button) => {
+        const isActive = button.dataset.rpSubcategory === subcategory
+        button.classList.toggle("is-active", isActive)
+        button.setAttribute("aria-pressed", String(isActive))
+      })
+
+      if (clearButton) {
+        clearButton.hidden = category === "all" && !subcategory
+      }
 
       if (count) {
         count.textContent = visibleCount + " 篇"
       }
     }
 
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => updateFilter(button.dataset.rpFilter ?? "all"))
+    categoryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.dataset.rpCategory || "all"
+        applyFilter(category, "")
+        setParams(category, "")
+      })
     })
 
-    updateFilter("all")
+    subcategoryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const subcategory = button.dataset.rpSubcategory || ""
+        const current = getParams()
+        if (current.subcategory === subcategory) {
+          applyFilter(current.category, "")
+          setParams(current.category, "")
+        } else {
+          applyFilter(current.category, subcategory)
+          setParams(current.category, subcategory)
+        }
+      })
+    })
+
+    if (clearButton) {
+      clearButton.addEventListener("click", () => {
+        applyFilter("all", "")
+        setParams("all", "")
+      })
+    }
+
+    const initial = getParams()
+    applyFilter(initial.category, initial.subcategory)
   })
 })
 `
@@ -143,26 +216,27 @@ export default ((userOpts?: Partial<Options>) => {
       .sort(opts.sort)
       .slice(0, opts.limit)
       .map(getBlogListItem)
+
     const categoryCounts = new Map<string, number>()
-    const subcategoryCounts = new Map<string, number>()
+    const subcategoryMap = new Map<string, Map<string, number>>()
 
     for (const item of items) {
       categoryCounts.set(item.category, (categoryCounts.get(item.category) ?? 0) + 1)
       if (item.subcategory) {
-        subcategoryCounts.set(item.subcategory, (subcategoryCounts.get(item.subcategory) ?? 0) + 1)
+        const subMap = subcategoryMap.get(item.category) ?? new Map<string, number>()
+        subMap.set(item.subcategory, (subMap.get(item.subcategory) ?? 0) + 1)
+        subcategoryMap.set(item.category, subMap)
       }
     }
 
     const categories = [...categoryCounts.entries()].sort(([a], [b]) =>
       categorySortKey(a).localeCompare(categorySortKey(b)),
     )
-    const subcategories = [...subcategoryCounts.entries()].sort(([a], [b]) => a.localeCompare(b))
 
     return (
       <section class={classNames(displayClass, "recent-posts")}>
         <div class="rp-toolbar">
           <div>
-            <p class="rp-eyebrow">Latest first</p>
             <h2 class="rp-title">文章列表</h2>
           </div>
           <span class="rp-total" data-rp-count>
@@ -174,30 +248,48 @@ export default ((userOpts?: Partial<Options>) => {
           <button
             class="rp-filter is-active"
             type="button"
-            data-rp-filter="all"
+            data-rp-category="all"
             aria-pressed="true"
           >
             <span>全部</span>
             <strong>{items.length}</strong>
           </button>
           {categories.map(([category, count]) => (
-            <button class="rp-filter" type="button" data-rp-filter={category} aria-pressed="false">
+            <button class="rp-filter" type="button" data-rp-category={category} aria-pressed="false">
               <span>{formatDirLabel(category)}</span>
               <strong>{count}</strong>
             </button>
           ))}
-          {subcategories.map(([subcategory, count]) => (
-            <button
-              class="rp-filter rp-filter-sub"
-              type="button"
-              data-rp-filter={subcategory}
-              aria-pressed="false"
-            >
-              <span>{formatDirLabel(subcategory)}</span>
-              <strong>{count}</strong>
-            </button>
-          ))}
+          <button class="rp-filter rp-filter-clear" type="button" data-rp-clear hidden>
+            <span>清除筛选</span>
+          </button>
         </div>
+
+        {categories.map(([category]) => {
+          const subMap = subcategoryMap.get(category)
+          if (!subMap || subMap.size === 0) return null
+          const subcategories = [...subMap.entries()].sort(([a], [b]) => a.localeCompare(b))
+          return (
+            <div
+              class="rp-subcategory-panel"
+              data-rp-subcategory-panel
+              data-rp-for-category={category}
+              hidden
+            >
+              {subcategories.map(([subcategory, count]) => (
+                <button
+                  class="rp-filter rp-filter-sub"
+                  type="button"
+                  data-rp-subcategory={subcategory}
+                  aria-pressed="false"
+                >
+                  <span>└ {formatDirLabel(subcategory)}</span>
+                  <strong>{count}</strong>
+                </button>
+              ))}
+            </div>
+          )
+        })}
 
         <ol class="rp-list">
           {items.map(({ page, category, subcategory }) => {
@@ -208,8 +300,8 @@ export default ((userOpts?: Partial<Options>) => {
             return (
               <li
                 class="rp-list-item"
-                data-rp-category={category}
-                data-rp-subcategory={subcategory ?? ""}
+                data-rp-item-category={category}
+                data-rp-item-subcategory={subcategory ?? ""}
               >
                 <a class="rp-list-link" href={resolveRelative(fileData.slug!, page.slug!)}>
                   <time class="rp-list-date">{dateStr || "未注明日期"}</time>

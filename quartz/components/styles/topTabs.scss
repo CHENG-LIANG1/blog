@@ -54,6 +54,7 @@
     &.active {
       color: var(--secondary);
       font-weight: 600;
+      background: color-mix(in srgb, var(--secondary) 10%, transparent);
     }
   }
 
@@ -106,6 +107,21 @@
 
     & .top-tabs-socials {
       display: none;
+    }
+  }
+}
+
+@media all and (max-width: 400px) {
+  .top-tabs {
+    gap: 0.35rem;
+
+    & .top-tabs-links {
+      gap: 0.15rem;
+    }
+
+    & .top-tab {
+      padding: 0.25rem 0.38rem;
+      font-size: 0.8rem;
     }
   }
 }

@@ -12,7 +12,7 @@ aliases:
   - Ray
 ---
 
-<section class="home-hero">
+<section class="home-hero" lang="en">
 <div class="home-hero-main">
 <p class="home-kicker">Frontend engineer · Indie app developer · AI-assisted builder</p>
 <h1 class="home-title">Liang Cheng / Liang Feifan Ray</h1>
@@ -41,6 +41,8 @@ aliases:
 </aside>
 </section>
 
+<div lang="en">
+
 ## Featured
 
 <div class="proj-grid featured-grid">
@@ -64,9 +66,11 @@ aliases:
 <a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">A code-editor-inspired profile page for links, identity, and personal presence.</p></a>
 </div>
 
+</div>
+
 <hr data-lang-split="en-zh" />
 
-<section class="home-hero home-hero-zh">
+<section class="home-hero home-hero-zh" lang="zh">
 <div class="home-hero-main">
 <p class="home-kicker">前端工程师 · 独立开发者 · AI 辅助产品构建</p>
 <h1 class="home-title">梁程 / 梁非凡 Ray</h1>
@@ -95,6 +99,8 @@ aliases:
 </aside>
 </section>
 
+<div lang="zh">
+
 ## 代表作
 
 <div class="proj-grid featured-grid">
@@ -118,7 +124,11 @@ aliases:
 <a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">用类似代码编辑器的方式展示个人简介、链接和身份信息。</p></a>
 </div>
 
+</div>
+
 <hr data-lang-split="zh-rest" />
+
+<div lang="en">
 
 ## Collections
 
@@ -143,7 +153,11 @@ I ship products with **Vibe Coding** — turning product ideas into plans, proto
 
 I use Codex, Claude, Trae, Cursor, ChatGPT, and Kimi across planning, prototyping, code review, debugging, and release preparation.
 
+</div>
+
 <hr data-lang-split="en-rest-zh-rest" />
+
+<div lang="zh">
 
 ## 收藏
 
@@ -167,3 +181,5 @@ I use Codex, Claude, Trae, Cursor, ChatGPT, and Kimi across planning, prototypin
 <span class="stack-pill codex">Codex</span><span class="stack-pill trae">Trae</span><span class="stack-pill cursor">Cursor</span><span class="stack-pill claude">Claude</span><span class="stack-pill chatgpt">ChatGPT</span>
 
 我会把 Codex、Claude、Trae、Cursor、ChatGPT 和 Kimi 放进日常开发流程里，用它们做需求拆解、原型实现、代码审查、调试和发布前检查。
+
+</div>

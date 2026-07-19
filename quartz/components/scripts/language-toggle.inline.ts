@@ -22,6 +22,14 @@ const getPreferredLanguage = (): PreferredLanguage => {
   return navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en"
 }
 
+// 在 DOM 构建前尽早设置 data-language，配合 CSS 隐藏对应语言内容，避免 CLS
+const setDocumentLanguage = (lang: PreferredLanguage) => {
+  document.documentElement.setAttribute("data-language", lang)
+}
+
+const initialLang = getPreferredLanguage()
+setDocumentLanguage(initialLang)
+
 const toggleTocByLanguage = (lang: PreferredLanguage) => {
   const tocLinks = document.querySelectorAll<HTMLAnchorElement>(".toc-content a[data-for]")
   if (tocLinks.length === 0) {
@@ -163,13 +171,12 @@ const syncLanguageButtons = (lang: PreferredLanguage) => {
 }
 
 const applyLanguage = (lang: PreferredLanguage) => {
-  document.documentElement.setAttribute("data-language", lang)
+  setDocumentLanguage(lang)
   applyLanguageToSplitContent(lang)
   toggleTocByLanguage(lang)
   syncLanguageButtons(lang)
 }
 
-applyLanguage(getPreferredLanguage())
 document.addEventListener("DOMContentLoaded", () => applyLanguage(getPreferredLanguage()))
 
 document.addEventListener("nav", () => {

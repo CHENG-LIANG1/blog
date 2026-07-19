@@ -2970,3 +2970,11 @@ body[data-slug="index"] {
     font-size: 0.72rem;
   }
 }
+
+// ============================================
+// 双语切换：根据 data-language 在渲染前隐藏对应内容，避免 CLS
+// ============================================
+[data-language="en"] [lang="zh"],
+[data-language="zh"] [lang="en"] {
+  display: none !important;
+}
