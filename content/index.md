@@ -15,7 +15,7 @@ aliases:
 <section class="home-hero" lang="en">
 <div class="home-hero-main">
 <p class="home-kicker">Frontend engineer · Indie app developer · AI-assisted builder</p>
-<h1 class="home-title">Liang Cheng / Liang Feifan Ray</h1>
+<h1 class="home-title"><span class="nobr">Liang Cheng</span> <span class="nobr">/ Liang Feifan Ray</span></h1>
 <p class="home-lede">I turn product ideas into shipped apps with Flutter, SwiftUI, React, TypeScript, and AI-assisted development workflows.</p>
 <p class="home-note">My flagship product is <strong>Roam Focus</strong>, an App Store app that turns focus time into real map journeys. Born in Haimen, Nantong, Jiangsu. Based in <strong>Nanjing</strong>. <strong>IELTS 7.5</strong>, fluent in English for work and communication.</p>
 

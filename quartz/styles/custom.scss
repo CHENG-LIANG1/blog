@@ -1047,13 +1047,15 @@ body[data-slug="collections"] {
   }
 }
 
-.proj-card {
+// 元素选择器提升优先级，覆盖 base.scss 的 a.internal 下划线
+a.proj-card {
   display: block;
   padding: 1rem 1.1rem;
   border: 1px solid var(--lightgray);
   border-radius: 12px;
   background: color-mix(in srgb, var(--light) 50%, transparent);
   color: var(--darkgray);
+  text-decoration: none;
   transition:
     border-color 0.18s ease,
     transform 0.18s ease,
@@ -1064,9 +1066,13 @@ body[data-slug="collections"] {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px color-mix(in srgb, var(--secondary) 10%, transparent);
     background: color-mix(in srgb, var(--light) 80%, transparent);
+    text-decoration: none;
 
     & .proj-card-title {
       color: var(--secondary);
+      text-decoration: underline;
+      text-decoration-color: color-mix(in srgb, var(--secondary) 45%, transparent);
+      text-underline-offset: 0.2em;
     }
   }
 
@@ -2529,9 +2535,9 @@ a.gear-card {
 
 .home-kicker {
   margin: 0 0 0.55rem 0;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.01em;
   font-family: var(--codeFont);
   color: var(--gray);
 }
@@ -2542,6 +2548,10 @@ a.gear-card {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
+
+  & .nobr {
+    white-space: nowrap;
+  }
 }
 
 .home-lede {
@@ -2695,14 +2705,6 @@ a.gear-card {
     font-size: 1rem;
   }
 
-  .social-pills {
-    margin: 0.9rem 0 0.45rem 0;
-  }
-
-  .contact-pills {
-    margin-top: 0.65rem;
-  }
-
   .home-hero-panel {
     grid-template-columns: 1fr;
   }
@@ -2734,6 +2736,7 @@ a.gear-card {
   background: color-mix(in srgb, var(--light) 50%, transparent);
   color: var(--darkgray);
   line-height: 1.1;
+  text-decoration: none;
   transition:
     border-color 0.18s ease,
     background 0.18s ease,
@@ -2744,6 +2747,7 @@ a.gear-card {
     background: var(--highlight);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
 
     & .social-pill-icon,
     & .social-pill-platform {
@@ -2762,6 +2766,7 @@ a.gear-card {
     flex-direction: row;
     align-items: baseline;
     gap: 0.4rem;
+    min-width: 0;
   }
 
   & .social-pill-platform {
@@ -2773,8 +2778,8 @@ a.gear-card {
 
   & .social-pill-user {
     font-size: 0.74rem;
-    font-family: var(--codeFont);
     color: var(--gray);
+    overflow-wrap: anywhere;
   }
 }
 
@@ -2816,6 +2821,23 @@ a.gear-card {
 .social-pill-user-email {
   font-size: 0.82rem;
   color: var(--dark);
+}
+
+@media all and (max-width: 520px) {
+  .social-pills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0.9rem 0 0.45rem 0;
+
+    & .social-pill {
+      justify-content: flex-start;
+    }
+  }
+
+  .contact-pills {
+    grid-template-columns: 1fr;
+    margin-top: 0.65rem;
+  }
 }
 
 // 首页 GitHub 模块上方收紧空隙

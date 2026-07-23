@@ -10,3 +10,6 @@ private/
 .replit
 replit.nix
 .vercel
+.playwright-cli/
+screenshots/
+update_collections2.py
