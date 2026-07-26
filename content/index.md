@@ -35,7 +35,7 @@ aliases:
 </div>
 <aside class="home-hero-panel" aria-label="Snapshot">
 <div class="home-stat"><span class="home-stat-value">1,000+</span><span class="home-stat-label">Roam Focus active users</span></div>
-<div class="home-stat"><span class="home-stat-value">3</span><span class="home-stat-label">App Store apps shipped</span></div>
+<div class="home-stat"><span class="home-stat-value">4</span><span class="home-stat-label">App Store apps shipped</span></div>
 <div class="home-stat"><span class="home-stat-value">3M+</span><span class="home-stat-label">HeyBox reads · 4,000+ followers</span></div>
 <div class="home-now"><span class="home-now-label">Currently</span><p>Building Roam Focus, exploring AI-assisted app development, and writing about the path from vague product ideas to shipped software.</p></div>
 </aside>
@@ -47,6 +47,7 @@ aliases:
 
 <div class="proj-grid featured-grid">
 <a class="proj-card proj-card-featured" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">Turn focus time into map journeys. Shipped on the App Store, 1,000+ active users, actively maintained.</p></a>
+<a class="proj-card" href="/Projects/兴曰"><div class="proj-card-head"><span class="proj-card-title">XingYue 兴曰</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">An immersive reader for Wang Xing's Fanfou posts — 15,000+ quotes, one at a time.</p></a>
 <a class="proj-card" href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding: from zero to the App Store</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">A reusable path from PRD and MVP to a real shipped app.</p></a>
 <a class="proj-card" href="/英语/英语学习之道"><div class="proj-card-head"><span class="proj-card-title">The Way of Learning English</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">How I actually reached working fluency.</p></a>
 </div>
@@ -64,6 +65,7 @@ aliases:
 <div class="proj-grid">
 <a class="proj-card" href="https://apps.apple.com/us/app/active-habits/id6758425099" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Active Habits</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">Habit tracking with heatmaps, streaks, goals, and achievement feedback.</p></a>
 <a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">A code-editor-inspired profile page for links, identity, and personal presence.</p></a>
+<a class="proj-card" href="https://apps.apple.com/us/app/%E5%85%B4%E6%9B%B0/id6792046505" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">XingYue 兴曰</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">An immersive reader for Wang Xing's Fanfou posts — one quote at a time, with favorites and reminders.</p></a>
 </div>
 
 </div>
@@ -93,7 +95,7 @@ aliases:
 </div>
 <aside class="home-hero-panel" aria-label="概览">
 <div class="home-stat"><span class="home-stat-value">1000+</span><span class="home-stat-label">Roam Focus 活跃用户</span></div>
-<div class="home-stat"><span class="home-stat-value">3</span><span class="home-stat-label">App Store 上架应用</span></div>
+<div class="home-stat"><span class="home-stat-value">4</span><span class="home-stat-label">App Store 上架应用</span></div>
 <div class="home-stat"><span class="home-stat-value">300万+</span><span class="home-stat-label">小黑盒阅读 · 4000+ 粉丝</span></div>
 <div class="home-now"><span class="home-now-label">现在在做</span><p>持续迭代 Roam Focus，探索 AI 辅助 App 开发，也记录从模糊想法到真实上架的产品构建过程。</p></div>
 </aside>
@@ -105,6 +107,7 @@ aliases:
 
 <div class="proj-grid featured-grid">
 <a class="proj-card proj-card-featured" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">把专注时间变成地图旅程。已上架 App Store，1000+ 活跃用户，持续迭代中。</p></a>
+<a class="proj-card" href="/Projects/兴曰"><div class="proj-card-head"><span class="proj-card-title">兴曰</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">王兴饭否语录的沉浸式阅读：收录 15,000+ 条文字，每次打开只读一句。</p></a>
 <a class="proj-card" href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding 从 0 基础到 App Store 上架</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">从 PRD、MVP 到真实上架，一条可复用的交付路径。</p></a>
 <a class="proj-card" href="/英语/英语学习之道"><div class="proj-card-head"><span class="proj-card-title">英语学习之道</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">我是怎么真正把英语练到能当工作语言的。</p></a>
 </div>
@@ -122,6 +125,7 @@ aliases:
 <div class="proj-grid">
 <a class="proj-card" href="https://apps.apple.com/us/app/active-habits/id6758425099" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">Active Habits</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">习惯追踪工具，包含热力图、连续记录、目标管理和成就反馈。</p></a>
 <a class="proj-card" href="https://apps.apple.com/us/app/geekbio/id6758457562" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">GeekBio</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">用类似代码编辑器的方式展示个人简介、链接和身份信息。</p></a>
+<a class="proj-card" href="https://apps.apple.com/us/app/%E5%85%B4%E6%9B%B0/id6792046505" target="_blank" rel="noopener"><div class="proj-card-head"><span class="proj-card-title">兴曰</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">王兴饭否文字的沉浸式阅读：每次打开只读一句，支持收藏与随机提醒。</p></a>
 </div>
 
 </div>

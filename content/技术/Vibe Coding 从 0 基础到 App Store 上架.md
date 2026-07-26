@@ -9,7 +9,7 @@ tags:
 我已经用 Vibe Coding 做了上百款 Demo 网页，有些可能是一句话生成的， 有些费了大功夫，
 这个就是一句话生成的 [AI产品进化论](https://eosstkspzhhms.ok.kimi.link)
 
-我还有3个 App Store 上架应用，纯 Vibe Coding 产物，欢迎体验提意见。
+我还有4个 App Store 上架应用，纯 Vibe Coding 产物，欢迎体验提意见。
 Roam Focus: 地图 + 番茄钟
 https://apps.apple.com/us/app/roam-focus/id6759795571
 
@@ -18,6 +18,9 @@ https://apps.apple.com/us/app/geekbio/id6758457562
 
 Active Habits: 习惯打卡
 https://apps.apple.com/us/app/active-habits/id6758425099
+
+兴曰: 王兴饭否语录沉浸式阅读
+https://apps.apple.com/us/app/%E5%85%B4%E6%9B%B0/id6792046505
 
 以下最佳实践，纯手打，来自我这半年的亲身体验。
 

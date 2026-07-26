@@ -7,17 +7,16 @@ aliases:
 ---
 
 <div class="proj-group">
-<div class="proj-group-title">Featured</div>
-<div class="proj-grid">
-<a class="proj-card" href="/Projects/Roam-Focus">
-<div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · App</span></div>
-<p class="proj-card-desc">把专注时间变成地图上的真实旅程。地图 + 番茄钟 + 旅程记录，活跃用户 1000+。</p>
-</a>
-</div>
-</div>
-<div class="proj-group">
 <div class="proj-group-title">App Store</div>
 <div class="proj-grid">
+<a class="proj-card" href="/Projects/Roam-Focus">
+<div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div>
+<p class="proj-card-desc">把专注时间变成地图上的真实旅程。地图 + 番茄钟 + 旅程记录，活跃用户 1000+。</p>
+</a>
+<a class="proj-card" href="/Projects/兴曰">
+<div class="proj-card-head"><span class="proj-card-title">兴曰</span><span class="proj-card-meta">SwiftUI · iOS</span></div>
+<p class="proj-card-desc">王兴饭否语录的沉浸式阅读：收录 15,000+ 条文字，每次打开只读一句。</p>
+</a>
 <a class="proj-card" href="https://apps.apple.com/us/app/active-habits/id6758425099" target="_blank" rel="noopener">
 <div class="proj-card-head"><span class="proj-card-title">Active Habits</span><span class="proj-card-meta">SwiftUI · iOS</span></div>
 <p class="proj-card-desc">习惯养成：记录、热力图、成就与洞察，帮助你稳定坚持每日目标。</p>
@@ -55,6 +54,18 @@ aliases:
 <a class="proj-card" href="https://github.com/CHENG-LIANG1/WalkThru" target="_blank" rel="noopener">
 <div class="proj-card-head"><span class="proj-card-title">WalkThru</span><span class="proj-card-meta">iOS</span></div>
 <p class="proj-card-desc">分支叙事的文字冒险游戏实验。</p>
+</a>
+<a class="proj-card" href="https://github.com/CHENG-LIANG1/WangXing-Said" target="_blank" rel="noopener">
+<div class="proj-card-head"><span class="proj-card-title">WangXing-Said</span><span class="proj-card-meta">SwiftUI · iOS</span></div>
+<p class="proj-card-desc">「兴曰」App 的开源仓库：王兴饭否语录合集与沉浸式阅读实现。</p>
+</a>
+<a class="proj-card" href="https://life-simulator-pied.vercel.app/" target="_blank" rel="noopener">
+<div class="proj-card-head"><span class="proj-card-title">Life-Simulator</span><span class="proj-card-meta">React · Web</span></div>
+<p class="proj-card-desc">人生模拟器：模拟人生选择与轨迹的网页小游戏。</p>
+</a>
+<a class="proj-card" href="https://moyu-calculator.vercel.app/" target="_blank" rel="noopener">
+<div class="proj-card-head"><span class="proj-card-title">moyu-calculator</span><span class="proj-card-meta">React · Web</span></div>
+<p class="proj-card-desc">摸鱼计算器：算算上班摸鱼的时间值多少钱。</p>
 </a>
 </div>
 </div>
