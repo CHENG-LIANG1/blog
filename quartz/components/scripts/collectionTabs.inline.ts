@@ -31,6 +31,9 @@ function selectCollectionTab(tab: keyof typeof collectionTabMap) {
   const input = document.getElementById(collectionTabMap[tab])
   if (input instanceof HTMLInputElement) {
     input.checked = true
+    if (tab === "album") {
+      setupCollectionCdWall()
+    }
   }
 }
 
@@ -59,7 +62,7 @@ function setupCollectionCdWall() {
   }
 
   const rowCount = 3
-  const rowSize = Math.min(18, Math.max(12, Math.ceil(covers.length / rowCount)))
+  const rowSize = Math.min(10, Math.max(8, Math.ceil(covers.length / rowCount)))
   const repeatCount = 2
 
   for (let rowIndex = 0; rowIndex < rowCount; rowIndex++) {
@@ -88,8 +91,10 @@ function setupCollectionCdWall() {
         img.className = "collection-cd-wall-cover"
         img.src = sourceCover.getAttribute("src") || sourceCover.currentSrc || sourceCover.src
         img.alt = ""
-        img.loading = "eager"
+        img.loading = "lazy"
         img.decoding = "async"
+        img.width = 160
+        img.height = 160
 
         const markLoaded = () => {
           item.classList.add("is-loaded")
@@ -127,8 +132,6 @@ function setupCollectionTabs() {
   const root = document.querySelector(".collection-tabs")
   if (!root) return
 
-  setupCollectionCdWall()
-
   const tabFromHash = getCollectionTabFromHash(window.location.hash)
   if (tabFromHash) {
     selectCollectionTab(tabFromHash)
@@ -142,6 +145,9 @@ function setupCollectionTabs() {
 
     const onClick = () => {
       window.history.replaceState({}, "", `#collection-${tab}`)
+      if (tab === "album") {
+        setupCollectionCdWall()
+      }
     }
 
     label.addEventListener("click", onClick)

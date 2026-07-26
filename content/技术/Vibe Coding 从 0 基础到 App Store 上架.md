@@ -1,5 +1,6 @@
 ---
 title: Vibe Coding 从 0 基础到 App Store 上架
+description: 面向零编程基础读者的 Vibe Coding 实战指南，从想法、PRD 和 MVP 一路走到部署、测试与 App Store 上架。
 tags:
   - 技术
 ---
@@ -9,18 +10,12 @@ tags:
 我已经用 Vibe Coding 做了上百款 Demo 网页，有些可能是一句话生成的， 有些费了大功夫，
 这个就是一句话生成的 [AI产品进化论](https://eosstkspzhhms.ok.kimi.link)
 
-我还有4个 App Store 上架应用，纯 Vibe Coding 产物，欢迎体验提意见。
-Roam Focus: 地图 + 番茄钟
-https://apps.apple.com/us/app/roam-focus/id6759795571
+我还有 4 个由 Vibe Coding 完成并上架 App Store 的应用，欢迎体验：
 
-GeekBio: 多主题程序员名片
-https://apps.apple.com/us/app/geekbio/id6758457562
-
-Active Habits: 习惯打卡
-https://apps.apple.com/us/app/active-habits/id6758425099
-
-兴曰: 王兴饭否语录沉浸式阅读
-https://apps.apple.com/us/app/%E5%85%B4%E6%9B%B0/id6792046505
+- [Roam Focus：地图旅程与番茄钟](https://apps.apple.com/us/app/roam-focus/id6759795571)
+- [GeekBio：多主题程序员名片](https://apps.apple.com/us/app/geekbio/id6758457562)
+- [Active Habits：习惯记录与热力图](https://apps.apple.com/us/app/active-habits/id6758425099)
+- [兴曰：王兴饭否语录沉浸式阅读](https://apps.apple.com/us/app/%E5%85%B4%E6%9B%B0/id6792046505)
 
 以下最佳实践，纯手打，来自我这半年的亲身体验。
 
@@ -31,7 +26,7 @@ https://apps.apple.com/us/app/%E5%85%B4%E6%9B%B0/id6792046505
 - 部署: 网页上线
 - Chatbot: AI 聊天网站，如 ChatGPT, DeepSeek, Kimi, 豆包
 - AI IDE: AI 编程工具，如 Trae, Cursor, Codex。其实这里还分 IDE 模式和任务模式(专注任务，看不到文件目录)，但这里不区分讲
-- Landing Page: 应用落地页，如果你上架了想要宣传，这个必不可少，因为很多人都会问你「这个干啥的？」,如我的这个 https://www.chengliang.pro/Projects/Roam-Focus
+- Landing Page: 应用落地页。如果你上架了想要宣传，这个必不可少，因为很多人都会问你「这个干啥的？」，例如 [Roam Focus 产品页](https://www.chengliang.pro/Projects/Roam-Focus)
 - Onboarding Page: 应用内教程，首次打开应用，教学用户如何使用 App
 
 ## 需要准备什么？
@@ -53,7 +48,7 @@ https://apps.apple.com/us/app/%E5%85%B4%E6%9B%B0/id6792046505
 ## UI 怎么做？
 
 1. 不做，让 AI 自己出一版 mvp，你只需要指定风格 (拟物、扁平、Liquid Glass、Fluent UI、Material Design)
-2. 在这个网站找好看的网页，让AI 抄 [Awwwards - Website Awards - Best Web Design Trends](https://www.awwwards.com/)，我一般用 https://www.osmo.supply/
+2. 在设计网站找参考，例如 [Awwwards](https://www.awwwards.com/) 和 [Osmo](https://www.osmo.supply/)，让 AI 分析它的布局、层级和交互，而不是机械复制
 3. 用 Google Stitch 画，这个可以在出了 MVP 之后让它进行大胆创作，或者改风格
 
 ## 怎么部署？
@@ -61,7 +56,7 @@ https://apps.apple.com/us/app/%E5%85%B4%E6%9B%B0/id6792046505
 web:
 
 1. github + vercel，让 AI 自己做，你在该登录的时候登录一下
-2. 上面那个不会，直接把文件扔给 kimi，让它部署，比如这个 https://eosstkspzhhms.ok.kimi.link
+2. 如果不会使用部署平台，也可以把文件交给支持部署的 AI 工具，例如前面的 [AI 产品进化论 Demo](https://eosstkspzhhms.ok.kimi.link)
 
 ios:
 
@@ -70,4 +65,4 @@ ios:
 3. 上架图: 截几个图，用这个做 [App Store Screenshot Generator | Google Play Preview Maker | ASO Tool](https://appcub.io/)
 4. 文案: 用哪个 agent 做，就让哪个 agent 帮忙写，他最懂你的项目
 5. 不会填的字段，截图发给 AI
-6. 隐私政策&用户协议: Notion 或者 github pages, 让 agent 帮你生成一个单页 Html 部署就行了 比如我这个 https://cheng-liang1.github.io/App-Support/Roam%20Focus/privacy/index.html
+6. 隐私政策与用户协议：可以使用 Notion 或 GitHub Pages，让 Agent 帮你生成并部署单页 HTML，例如 [Roam Focus 隐私政策](https://cheng-liang1.github.io/App-Support/Roam%20Focus/privacy/index.html)

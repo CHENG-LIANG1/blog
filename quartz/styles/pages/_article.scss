@@ -1,0 +1,57 @@
+.page-header .toc {
+  margin: 1.2rem 0 2rem;
+  padding: 1rem 1.1rem;
+  border-left: 2px solid color-mix(in srgb, var(--secondary) 65%, var(--lightgray));
+  background: color-mix(in srgb, var(--secondary) 4%, transparent);
+
+  .toc-header {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  ul.toc-content.overflow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.15rem 1rem;
+    max-height: none;
+    margin-bottom: 0;
+
+    &.collapsed {
+      display: none;
+    }
+  }
+}
+
+body:not([data-slug="index"]):not([data-slug="blog"]):not([data-slug="Projects/index"]):not(
+    [data-slug="album"]
+  ):not([data-slug="collections"]) {
+  article {
+    p,
+    li {
+      text-wrap: pretty;
+    }
+
+    h2 {
+      margin-top: 2.8rem;
+      padding-top: 0.35rem;
+    }
+
+    h3 {
+      margin-top: 2rem;
+    }
+
+    a {
+      overflow-wrap: anywhere;
+    }
+  }
+}
+
+@media all and (max-width: 600px) {
+  .page-header .toc {
+    padding: 0.9rem;
+
+    ul.toc-content.overflow {
+      grid-template-columns: 1fr;
+    }
+  }
+}

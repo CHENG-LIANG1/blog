@@ -2,7 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { resolveRelative } from "../util/path"
 import { QuartzPluginData } from "./../plugins/vfile"
 import { byDateAndAlphabetical } from "./PageList"
-import style from "./styles/recentPosts.scss"
+import style from "./styles/recentPosts.scss" // 博客筛选与编辑型文章卡片
 import { getDate } from "./Date"
 import { GlobalConfiguration } from "../cfg"
 import { classNames } from "../util/lang"
@@ -21,24 +21,29 @@ document.addEventListener("nav", () => {
   roots.forEach((root) => {
     const categoryButtons = root.querySelectorAll("[data-rp-category]")
     const subcategoryButtons = root.querySelectorAll("[data-rp-subcategory]")
-    const subcategoryPanel = root.querySelector("[data-rp-subcategory-panel]")
+    const topicButtons = root.querySelectorAll("[data-rp-topic]")
+    const subcategoryPanels = root.querySelectorAll("[data-rp-subcategory-panel]")
+    const topicPanels = root.querySelectorAll("[data-rp-topic-panel]")
     const items = root.querySelectorAll("[data-rp-item-category]")
     const count = root.querySelector("[data-rp-count]")
     const clearButton = root.querySelector("[data-rp-clear]")
+    const searchInput = root.querySelector("[data-rp-search]")
 
     const getParams = () => {
       const params = new URLSearchParams(window.location.search)
       return {
         category: params.get("category") || "all",
         subcategory: params.get("subcategory") || "",
+        topic: params.get("topic") || "",
       }
     }
 
-    const setParams = (category, subcategory) => {
+    const setParams = (category, subcategory, topic) => {
       const params = new URLSearchParams(window.location.search)
       if (category === "all") {
         params.delete("category")
         params.delete("subcategory")
+        params.delete("topic")
       } else {
         params.set("category", category)
         if (subcategory) {
@@ -46,21 +51,30 @@ document.addEventListener("nav", () => {
         } else {
           params.delete("subcategory")
         }
+        if (subcategory && topic) {
+          params.set("topic", topic)
+        } else {
+          params.delete("topic")
+        }
       }
       const qs = params.toString()
       const url = qs ? window.location.pathname + "?" + qs : window.location.pathname
       window.history.replaceState(null, "", url)
     }
 
-    const applyFilter = (category, subcategory) => {
+    const applyFilter = (category, subcategory, topic) => {
       let visibleCount = 0
+      const query = (searchInput?.value || "").trim().toLocaleLowerCase()
 
       items.forEach((item) => {
         const itemCategory = item.dataset.rpItemCategory
         const itemSubcategory = item.dataset.rpItemSubcategory || ""
+        const itemTopic = item.dataset.rpItemTopic || ""
         const matchesCategory = category === "all" || itemCategory === category
         const matchesSubcategory = !subcategory || itemSubcategory === subcategory
-        const visible = matchesCategory && matchesSubcategory
+        const matchesTopic = !topic || itemTopic === topic
+        const matchesSearch = !query || item.textContent.toLocaleLowerCase().includes(query)
+        const visible = matchesCategory && matchesSubcategory && matchesTopic && matchesSearch
         item.hidden = !visible
         if (visible) visibleCount += 1
       })
@@ -71,10 +85,9 @@ document.addEventListener("nav", () => {
         button.setAttribute("aria-pressed", String(isActive))
       })
 
-      if (subcategoryPanel) {
-        const hasSubcategories = category !== "all" && root.querySelector('[data-rp-subcategory-panel][data-rp-for-category="' + category + '"]')
-        subcategoryPanel.hidden = !hasSubcategories
-      }
+      subcategoryPanels.forEach((panel) => {
+        panel.hidden = category === "all" || panel.dataset.rpForCategory !== category
+      })
 
       subcategoryButtons.forEach((button) => {
         const isActive = button.dataset.rpSubcategory === subcategory
@@ -82,8 +95,21 @@ document.addEventListener("nav", () => {
         button.setAttribute("aria-pressed", String(isActive))
       })
 
+      topicPanels.forEach((panel) => {
+        panel.hidden =
+          !subcategory ||
+          panel.dataset.rpForCategory !== category ||
+          panel.dataset.rpForSubcategory !== subcategory
+      })
+
+      topicButtons.forEach((button) => {
+        const isActive = button.dataset.rpTopic === topic
+        button.classList.toggle("is-active", isActive)
+        button.setAttribute("aria-pressed", String(isActive))
+      })
+
       if (clearButton) {
-        clearButton.hidden = category === "all" && !subcategory
+        clearButton.hidden = category === "all" && !subcategory && !topic && !query
       }
 
       if (count) {
@@ -94,8 +120,8 @@ document.addEventListener("nav", () => {
     categoryButtons.forEach((button) => {
       button.addEventListener("click", () => {
         const category = button.dataset.rpCategory || "all"
-        applyFilter(category, "")
-        setParams(category, "")
+        applyFilter(category, "", "")
+        setParams(category, "", "")
       })
     })
 
@@ -104,24 +130,46 @@ document.addEventListener("nav", () => {
         const subcategory = button.dataset.rpSubcategory || ""
         const current = getParams()
         if (current.subcategory === subcategory) {
-          applyFilter(current.category, "")
-          setParams(current.category, "")
+          applyFilter(current.category, "", "")
+          setParams(current.category, "", "")
         } else {
-          applyFilter(current.category, subcategory)
-          setParams(current.category, subcategory)
+          applyFilter(current.category, subcategory, "")
+          setParams(current.category, subcategory, "")
+        }
+      })
+    })
+
+    topicButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const topic = button.dataset.rpTopic || ""
+        const current = getParams()
+        if (current.topic === topic) {
+          applyFilter(current.category, current.subcategory, "")
+          setParams(current.category, current.subcategory, "")
+        } else {
+          applyFilter(current.category, current.subcategory, topic)
+          setParams(current.category, current.subcategory, topic)
         }
       })
     })
 
     if (clearButton) {
       clearButton.addEventListener("click", () => {
-        applyFilter("all", "")
-        setParams("all", "")
+        if (searchInput) searchInput.value = ""
+        applyFilter("all", "", "")
+        setParams("all", "", "")
+      })
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener("input", () => {
+        const current = getParams()
+        applyFilter(current.category, current.subcategory, current.topic)
       })
     }
 
     const initial = getParams()
-    applyFilter(initial.category, initial.subcategory)
+    applyFilter(initial.category, initial.subcategory, initial.topic)
   })
 })
 `
@@ -172,6 +220,7 @@ type BlogListItem = {
   page: QuartzPluginData
   category: string
   subcategory?: string
+  topic?: string
 }
 
 function getPostSegments(slug: string): string[] {
@@ -183,18 +232,23 @@ function getBlogListItem(page: QuartzPluginData): BlogListItem {
   return {
     page,
     category: segments.length > 1 ? segments[0] : "其他",
-    subcategory: segments.length > 2 ? segments.slice(1, -1).join(" / ") : undefined,
+    subcategory: segments.length > 2 ? segments[1] : undefined,
+    topic: segments.length > 3 ? segments[2] : undefined,
   }
 }
 
 function getDescription(page: QuartzPluginData): string {
   const frontmatterDescription = page.frontmatter?.description
   if (typeof frontmatterDescription === "string" && frontmatterDescription.trim().length > 0) {
-    return frontmatterDescription.trim()
+    return sanitizeListText(frontmatterDescription)
   }
 
   const description = page.description
-  return typeof description === "string" ? description.trim() : ""
+  return typeof description === "string" ? sanitizeListText(description) : ""
+}
+
+function sanitizeListText(value: string): string {
+  return value.replace(/[→↗]/g, "，").replace(/[└─]/g, "").replace(/\s+/g, " ").trim()
 }
 
 function formatDate(cfg: GlobalConfiguration, page: QuartzPluginData): string {
@@ -219,6 +273,7 @@ export default ((userOpts?: Partial<Options>) => {
 
     const categoryCounts = new Map<string, number>()
     const subcategoryMap = new Map<string, Map<string, number>>()
+    const topicMap = new Map<string, Map<string, number>>()
 
     for (const item of items) {
       categoryCounts.set(item.category, (categoryCounts.get(item.category) ?? 0) + 1)
@@ -226,6 +281,12 @@ export default ((userOpts?: Partial<Options>) => {
         const subMap = subcategoryMap.get(item.category) ?? new Map<string, number>()
         subMap.set(item.subcategory, (subMap.get(item.subcategory) ?? 0) + 1)
         subcategoryMap.set(item.category, subMap)
+      }
+      if (item.subcategory && item.topic) {
+        const key = `${item.category}\u0000${item.subcategory}`
+        const topics = topicMap.get(key) ?? new Map<string, number>()
+        topics.set(item.topic, (topics.get(item.topic) ?? 0) + 1)
+        topicMap.set(key, topics)
       }
     }
 
@@ -236,33 +297,41 @@ export default ((userOpts?: Partial<Options>) => {
     return (
       <section class={classNames(displayClass, "recent-posts")}>
         <div class="rp-toolbar">
-          <div>
-            <h2 class="rp-title">文章列表</h2>
-          </div>
-          <span class="rp-total" data-rp-count>
-            {items.length} 篇
-          </span>
-        </div>
-
-        <div class="rp-filter-panel" aria-label="按目录筛选文章">
-          <button
-            class="rp-filter is-active"
-            type="button"
-            data-rp-category="all"
-            aria-pressed="true"
-          >
-            <span>全部</span>
-            <strong>{items.length}</strong>
-          </button>
-          {categories.map(([category, count]) => (
-            <button class="rp-filter" type="button" data-rp-category={category} aria-pressed="false">
-              <span>{formatDirLabel(category)}</span>
-              <strong>{count}</strong>
+          <div class="rp-filter-panel" aria-label="按目录筛选文章">
+            <button
+              class="rp-filter is-active"
+              type="button"
+              data-rp-category="all"
+              aria-pressed="true"
+            >
+              <span>全部</span>
+              <strong>{items.length}</strong>
             </button>
-          ))}
-          <button class="rp-filter rp-filter-clear" type="button" data-rp-clear hidden>
-            <span>清除筛选</span>
-          </button>
+            {categories.map(([category, count]) => (
+              <button
+                class="rp-filter"
+                type="button"
+                data-rp-category={category}
+                aria-pressed="false"
+              >
+                <span>{formatDirLabel(category)}</span>
+                <strong>{count}</strong>
+              </button>
+            ))}
+          </div>
+
+          <div class="rp-toolbar-tools">
+            <button class="rp-filter rp-filter-clear" type="button" data-rp-clear hidden>
+              <span>清除筛选</span>
+            </button>
+            <label class="rp-search">
+              <span class="sr-only">搜索文章</span>
+              <input type="search" placeholder="搜索文章" data-rp-search />
+            </label>
+            <span class="rp-total" data-rp-count>
+              {items.length} 篇
+            </span>
+          </div>
         </div>
 
         {categories.map(([category]) => {
@@ -283,7 +352,33 @@ export default ((userOpts?: Partial<Options>) => {
                   data-rp-subcategory={subcategory}
                   aria-pressed="false"
                 >
-                  <span>└ {formatDirLabel(subcategory)}</span>
+                  <span>{formatDirLabel(subcategory)}</span>
+                  <strong>{count}</strong>
+                </button>
+              ))}
+            </div>
+          )
+        })}
+
+        {[...topicMap.entries()].map(([key, topicCounts]) => {
+          const [category, subcategory] = key.split("\u0000")
+          const topics = [...topicCounts.entries()].sort(([a], [b]) => a.localeCompare(b))
+          return (
+            <div
+              class="rp-topic-panel"
+              data-rp-topic-panel
+              data-rp-for-category={category}
+              data-rp-for-subcategory={subcategory}
+              hidden
+            >
+              {topics.map(([topic, count]) => (
+                <button
+                  class="rp-filter rp-filter-topic"
+                  type="button"
+                  data-rp-topic={topic}
+                  aria-pressed="false"
+                >
+                  <span>{formatDirLabel(topic)}</span>
                   <strong>{count}</strong>
                 </button>
               ))}
@@ -292,8 +387,10 @@ export default ((userOpts?: Partial<Options>) => {
         })}
 
         <ol class="rp-list">
-          {items.map(({ page, category, subcategory }) => {
-            const title = (page.frontmatter?.title as string | undefined) ?? "无标题"
+          {items.map(({ page, category, subcategory, topic }) => {
+            const title = sanitizeListText(
+              (page.frontmatter?.title as string | undefined) ?? "无标题",
+            )
             const dateStr = formatDate(cfg, page)
             const description = getDescription(page)
 
@@ -302,21 +399,20 @@ export default ((userOpts?: Partial<Options>) => {
                 class="rp-list-item"
                 data-rp-item-category={category}
                 data-rp-item-subcategory={subcategory ?? ""}
+                data-rp-item-topic={topic ?? ""}
               >
                 <a class="rp-list-link" href={resolveRelative(fileData.slug!, page.slug!)}>
                   <time class="rp-list-date">{dateStr || "未注明日期"}</time>
                   <div class="rp-list-main">
                     <div class="rp-list-heading">
                       <h3>{title}</h3>
-                      <span class="rp-list-arrow" aria-hidden="true">
-                        →
-                      </span>
                     </div>
                     {description && <p>{description}</p>}
                   </div>
                   <div class="rp-list-tags" aria-label="目录">
                     <span>{formatDirLabel(category)}</span>
                     {subcategory && <span>{formatDirLabel(subcategory)}</span>}
+                    {topic && <span>{formatDirLabel(topic)}</span>}
                   </div>
                 </a>
               </li>

@@ -4,17 +4,17 @@ description: 我的游戏账号、设备、游戏实体盘和音乐专辑收藏�
 ---
 
 <section class="collection-tabs">
-<input class="collection-tab-input" type="radio" name="collection-tab" id="collection-tab-account" checked />
+<input class="collection-tab-input" type="radio" name="collection-tab" id="collection-tab-account" />
 <input class="collection-tab-input" type="radio" name="collection-tab" id="collection-tab-device" />
-<input class="collection-tab-input" type="radio" name="collection-tab" id="collection-tab-game" />
+<input class="collection-tab-input" type="radio" name="collection-tab" id="collection-tab-game" checked />
 <input class="collection-tab-input" type="radio" name="collection-tab" id="collection-tab-album" />
 <input class="collection-tab-input" type="radio" name="collection-tab" id="collection-tab-vinyl" />
-<div class="collection-tab-nav" role="tablist" aria-label="收藏分类">
-<label class="collection-tab-label" for="collection-tab-account" role="tab">账号</label>
-<label class="collection-tab-label" for="collection-tab-device" role="tab">设备</label>
-<label class="collection-tab-label" for="collection-tab-game" role="tab">游戏</label>
-<label class="collection-tab-label" for="collection-tab-album" role="tab">专辑</label>
-<label class="collection-tab-label" for="collection-tab-vinyl" role="tab">黑胶</label>
+<div class="collection-tab-nav">
+<label class="collection-tab-label" for="collection-tab-game">游戏</label>
+<label class="collection-tab-label" for="collection-tab-album">专辑</label>
+<label class="collection-tab-label" for="collection-tab-vinyl">黑胶</label>
+<label class="collection-tab-label" for="collection-tab-device">设备</label>
+<label class="collection-tab-label" for="collection-tab-account">账号</label>
 </div>
 
 <section class="collection-tab-panel collection-tab-panel-account" id="collection-account">

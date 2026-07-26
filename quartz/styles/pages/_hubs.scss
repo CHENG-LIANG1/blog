@@ -1,0 +1,29 @@
+:is(
+  body[data-slug="index"],
+  body[data-slug="blog"],
+  body[data-slug="Projects/index"],
+  body[data-slug="album"],
+  body[data-slug="collections"]
+) {
+  .page {
+    width: 100%;
+    max-width: 1120px;
+  }
+
+  .page > #quartz-body {
+    box-sizing: border-box;
+    width: 100%;
+    padding-inline: clamp(0.85rem, 3vw, 1.5rem);
+  }
+
+  .page-header,
+  .center,
+  article {
+    width: 100%;
+    max-width: none;
+  }
+
+  .collection-tab-nav {
+    box-sizing: border-box;
+  }
+}

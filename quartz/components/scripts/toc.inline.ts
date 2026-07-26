@@ -14,6 +14,12 @@ function setupToc() {
     const button = toc.querySelector(".toc-header")
     const content = toc.querySelector(".toc-content")
     if (!button || !content) return
+    if (
+      window.matchMedia("(max-width: 600px)").matches &&
+      !button.classList.contains("collapsed")
+    ) {
+      toggleToc.call(button as HTMLElement)
+    }
     button.addEventListener("click", toggleToc)
     window.addCleanup(() => button.removeEventListener("click", toggleToc))
   }

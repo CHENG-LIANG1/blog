@@ -78,7 +78,12 @@ const TopTabs: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
       </a>
       <div class="top-tabs-links">
         {TABS.map((t) => (
-          <a class={t.key === active ? "top-tab active" : "top-tab"} href={t.href}>
+          <a
+            class={t.key === active ? "top-tab active" : "top-tab"}
+            href={t.href}
+            data-tab-key={t.key}
+            aria-current={t.key === active ? "page" : undefined}
+          >
             {t.label}
           </a>
         ))}

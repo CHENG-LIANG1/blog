@@ -1,5 +1,9 @@
 @use "./base.scss";
 @use "./variables.scss" as *;
+@use "./pages/portfolio"; // 首页与紧凑间距的卡片式项目页
+@use "./pages/article";
+@use "./pages/collections";
+@use "./pages/hubs"; // 顶部五个 Tab 统一宽度
 
 // ============================================
 // 字体系统 - Inter + 中文系统字体栈

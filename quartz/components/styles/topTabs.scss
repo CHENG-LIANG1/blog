@@ -93,10 +93,14 @@
 
 @media all and (max-width: 600px) {
   .top-tabs {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.5rem;
 
     & .top-tabs-brand .top-tabs-brand-en {
+      display: none;
+    }
+
+    & .top-tab[data-tab-key="home"] {
       display: none;
     }
 

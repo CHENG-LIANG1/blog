@@ -17,6 +17,7 @@ export const sharedPageComponents: SharedLayout = {
     Component.Darkmode(),
   ],
   afterBody: [
+    Component.PostNavigation(),
     Component.ConditionalRender({
       component: Component.RecentPosts({ limit: 200 }),
       condition: (page) => page.fileData.slug === "blog",
@@ -54,6 +55,17 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ConditionalRender({
       component: Component.TagList(),
       condition: (page) => !isHub(page.fileData.slug ?? ""),
+    }),
+    Component.ConditionalRender({
+      component: Component.ArticleSummary(),
+      condition: (page) => !isHub(page.fileData.slug ?? ""),
+    }),
+    Component.ConditionalRender({
+      component: Component.TableOfContents(),
+      condition: (page) =>
+        !isHub(page.fileData.slug ?? "") &&
+        !page.fileData.slug?.startsWith("Projects/") &&
+        !page.fileData.slug?.startsWith("Hobbies/"),
     }),
   ],
   left: [],

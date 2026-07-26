@@ -21,6 +21,23 @@ export const LazyImages: QuartzTransformerPlugin<never> = () => {
 
               node.properties.loading = "lazy"
               node.properties.decoding = "async"
+
+              const classes = Array.isArray(node.properties.className)
+                ? node.properties.className.map(String)
+                : []
+              const squareCollectionImage = classes.some((className) =>
+                [
+                  "collection-game-cover",
+                  "collection-album-cover",
+                  "collection-cd-wall-cover",
+                  "vinyl-sleeve",
+                ].includes(className),
+              )
+
+              if (squareCollectionImage) {
+                node.properties.width = 600
+                node.properties.height = 600
+              }
             })
           }
         },

@@ -30,6 +30,8 @@ import ScrollControls from "./ScrollControls"
 import TopTabs from "./TopTabs"
 import RecentPosts from "./RecentPosts"
 import GithubActivity from "./GithubActivity"
+import ArticleSummary from "./ArticleSummary"
+import PostNavigation from "./PostNavigation"
 
 export {
   ArticleTitle,
@@ -64,4 +66,6 @@ export {
   TopTabs,
   RecentPosts,
   GithubActivity,
+  ArticleSummary,
+  PostNavigation,
 }
