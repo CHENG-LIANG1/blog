@@ -17,7 +17,7 @@ aliases:
 <p class="home-kicker">Frontend engineer · Indie app developer · AI-assisted builder</p>
 <h1 class="home-title"><span class="nobr">Liang Cheng</span> <span class="nobr">/ Liang Feifan Ray</span></h1>
 <p class="home-lede">I turn product ideas into shipped apps with Flutter, SwiftUI, React, TypeScript, and AI-assisted development workflows.</p>
-<p class="home-note">My flagship product is <strong>Roam Focus</strong>, an App Store app that turns focus time into real map journeys. Born in Haimen, Nantong, Jiangsu. Based in <strong>Nanjing</strong>. <strong>IELTS 7.5</strong>, fluent in English for work and communication.</p>
+<p class="home-note">My representative work includes <a href="/Projects/Roam-Focus"><strong>Roam Focus</strong></a>, an App Store app that turns focus time into real map journeys, and <a href="/技术/SciFlow：把-PDF-RAG-做成可评测、可优化的检索系统"><strong>SciFlow</strong></a>, a research-PDF RAG project with advanced retrieval and automated evaluation. Born in Haimen, Nantong, Jiangsu. Based in <strong>Nanjing</strong>. <strong>IELTS 7.5</strong>, fluent in English for work and communication.</p>
 
 <div class="social-pills">
 <a class="social-pill" href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.6 5.63.6 11.9c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.64 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.38-2.67 5.35-5.21 5.63.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55 4.51-1.5 7.77-5.76 7.77-10.78C23.4 5.63 18.27.5 12 .5z"/></svg><span class="social-pill-text"><span class="social-pill-platform">GitHub</span><span class="social-pill-user">CHENG-LIANG1</span></span></a>
@@ -46,7 +46,8 @@ aliases:
 ## Featured
 
 <div class="proj-grid featured-grid">
-<a class="proj-card proj-card-featured" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">Turn focus time into map journeys. Shipped on the App Store, 1,000+ active users, actively maintained.</p></a>
+<a class="proj-card" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">Turn focus time into map journeys. Shipped on the App Store, 1,000+ active users, actively maintained.</p></a>
+<a class="proj-card" href="/技术/SciFlow：把-PDF-RAG-做成可评测、可优化的检索系统"><div class="proj-card-head"><span class="proj-card-title">SciFlow</span><span class="proj-card-meta">Python · FastAPI · RAG</span></div><p class="proj-card-desc">A research-PDF RAG project with parent–child retrieval, multi-query fusion, reranking, and regression evaluation.</p></a>
 <a class="proj-card" href="/Projects/兴曰"><div class="proj-card-head"><span class="proj-card-title">XingYue 兴曰</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">An immersive reader for Wang Xing's Fanfou posts — 15,000+ quotes, one at a time.</p></a>
 <a class="proj-card" href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding: from zero to the App Store</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">A reusable path from PRD and MVP to a real shipped app.</p></a>
 <a class="proj-card" href="/英语/英语学习之道"><div class="proj-card-head"><span class="proj-card-title">The Way of Learning English</span><span class="proj-card-meta">Blog</span></div><p class="proj-card-desc">How I actually reached working fluency.</p></a>
@@ -77,7 +78,7 @@ aliases:
 <p class="home-kicker">前端工程师 · 独立开发者 · AI 辅助产品构建</p>
 <h1 class="home-title">梁程 / 梁非凡 Ray</h1>
 <p class="home-lede">我用 Flutter、SwiftUI、React、TypeScript 和 AI 辅助开发流程，把产品想法推进到真实上架。</p>
-<p class="home-note">我的代表作是 <strong>Roam Focus</strong>，一款把专注时间变成地图旅程的 App。出生于<strong>江苏南通海门</strong>，现定居<strong>南京</strong>。<strong>雅思 7.5</strong>，英语可作为工作语言。</p>
+<p class="home-note">我的代表作包括 <a href="/Projects/Roam-Focus"><strong>Roam Focus</strong></a>，一款把专注时间变成地图旅程的 App，以及 <a href="/技术/SciFlow：把-PDF-RAG-做成可评测、可优化的检索系统"><strong>SciFlow</strong></a>，一个包含高级检索与自动化评测的科研 PDF RAG 工程项目。出生于<strong>江苏南通海门</strong>，现定居<strong>南京</strong>。<strong>雅思 7.5</strong>，英语可作为工作语言。</p>
 
 <div class="social-pills">
 <a class="social-pill" href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener"><svg class="social-pill-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.6 5.63.6 11.9c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.64 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.38-2.67 5.35-5.21 5.63.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55 4.51-1.5 7.77-5.76 7.77-10.78C23.4 5.63 18.27.5 12 .5z"/></svg><span class="social-pill-text"><span class="social-pill-platform">GitHub</span><span class="social-pill-user">CHENG-LIANG1</span></span></a>
@@ -106,7 +107,8 @@ aliases:
 ## 代表作
 
 <div class="proj-grid featured-grid">
-<a class="proj-card proj-card-featured" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">把专注时间变成地图旅程。已上架 App Store，1000+ 活跃用户，持续迭代中。</p></a>
+<a class="proj-card" href="/Projects/Roam-Focus"><div class="proj-card-head"><span class="proj-card-title">Roam Focus</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">把专注时间变成地图旅程。已上架 App Store，1000+ 活跃用户，持续迭代中。</p></a>
+<a class="proj-card" href="/技术/SciFlow：把-PDF-RAG-做成可评测、可优化的检索系统"><div class="proj-card-head"><span class="proj-card-title">SciFlow</span><span class="proj-card-meta">Python · FastAPI · RAG</span></div><p class="proj-card-desc">面向科研 PDF 的 RAG 工程项目，包含 Parent–Child 检索、多查询融合、重排序与回归评测。</p></a>
 <a class="proj-card" href="/Projects/兴曰"><div class="proj-card-head"><span class="proj-card-title">兴曰</span><span class="proj-card-meta">SwiftUI · iOS</span></div><p class="proj-card-desc">王兴饭否语录的沉浸式阅读：收录 15,000+ 条文字，每次打开只读一句。</p></a>
 <a class="proj-card" href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架"><div class="proj-card-head"><span class="proj-card-title">Vibe Coding 从 0 基础到 App Store 上架</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">从 PRD、MVP 到真实上架，一条可复用的交付路径。</p></a>
 <a class="proj-card" href="/英语/英语学习之道"><div class="proj-card-head"><span class="proj-card-title">英语学习之道</span><span class="proj-card-meta">博客</span></div><p class="proj-card-desc">我是怎么真正把英语练到能当工作语言的。</p></a>
