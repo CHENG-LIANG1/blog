@@ -1,27 +1,3 @@
-.page-header .toc {
-  margin: 1.2rem 0 2rem;
-  padding: 1rem 1.1rem;
-  border-left: 2px solid color-mix(in srgb, var(--secondary) 65%, var(--lightgray));
-  background: color-mix(in srgb, var(--secondary) 4%, transparent);
-
-  .toc-header {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  ul.toc-content.overflow {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.15rem;
-    max-height: none;
-    margin-bottom: 0;
-
-    &.collapsed {
-      display: none;
-    }
-  }
-}
-
 body:not([data-slug="index"]):not([data-slug="blog"]):not([data-slug="Projects/index"]):not(
     [data-slug="album"]
   ):not([data-slug="collections"]) {
@@ -42,16 +18,6 @@ body:not([data-slug="index"]):not([data-slug="blog"]):not([data-slug="Projects/i
 
     a {
       overflow-wrap: anywhere;
-    }
-  }
-}
-
-@media all and (max-width: 600px) {
-  .page-header .toc {
-    padding: 0.9rem;
-
-    ul.toc-content.overflow {
-      grid-template-columns: 1fr;
     }
   }
 }
