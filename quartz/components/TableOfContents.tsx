@@ -31,32 +31,55 @@ export default ((opts?: Partial<Options>) => {
     }
 
     const id = `toc-${numTocs++}`
+    const title = i18n(cfg.locale).components.tableOfContents.title
     return (
-      <div class={classNames(displayClass, "toc")}>
+      <div
+        class={classNames(displayClass, "toc")}
+        data-default-collapsed={fileData.collapseToc ? "true" : "false"}
+      >
         <button
           type="button"
           class={fileData.collapseToc ? "collapsed toc-header" : "toc-header"}
           aria-controls={id}
           aria-expanded={!fileData.collapseToc}
+          aria-label={title}
         >
-          <h3>{i18n(cfg.locale).components.tableOfContents.title}</h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
-            fill="currentColor"
-            stroke="none"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            aria-hidden="true"
+            class="toc-mark"
+          >
+            <path d="M9 6h10M9 12h10M9 18h10" />
+            <path d="M5 6h.01M5 12h.01M5 18h.01" stroke-width="2.6" />
+          </svg>
+          <h3>{title}</h3>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
             class="fold"
             aria-hidden="true"
           >
-            {/* 实心三角形（展开/收起） */}
-            <path d="M7 10 L12 15 L17 10 Z" />
+            <path d="m8 10 4 4 4-4" />
           </svg>
         </button>
         <OverflowList
           id={id}
           class={fileData.collapseToc ? "collapsed toc-content" : "toc-content"}
+          aria-hidden={fileData.collapseToc}
         >
           {fileData.toc.map((tocEntry) => (
             <li key={tocEntry.slug} class={`depth-${tocEntry.depth}`}>
