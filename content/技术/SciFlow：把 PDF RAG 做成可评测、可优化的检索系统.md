@@ -1,15 +1,19 @@
 ---
 title: SciFlow：从基础向量检索演进到可评测的高级 RAG
-description: SciFlow 如何沿着真实失败案例，从 PDF 切片逐步演进到 Parent–Child Retrieval、多查询改写、RRF、Reranker 与自动化评测。
+description: SciFlow 如何从基础向量检索演进到可评测的高级 RAG，并进一步成为支持跨文档问答、本地部署与在线体验的科研工作台。
 tags:
   - 技术
   - AI
   - RAG
 ---
 
-[SciFlow](https://github.com/CHENG-LIANG1/SciFlow) 是一个面向科研 PDF 的 RAG API，技术栈包括 FastAPI、PostgreSQL/pgvector、PyMuPDF、Sentence Transformers 和 Moonshot/Kimi 兼容接口。
+[SciFlow](https://github.com/CHENG-LIANG1/SciFlow) 是一个本地优先的科研文档工作台。它用 React/Vite 提供研究界面，以 FastAPI、PostgreSQL/pgvector、PyMuPDF 和 Sentence Transformers 完成文档处理与检索，并支持 OpenAI-compatible 与 Anthropic 两类模型接口。
 
-项目最初只有一条基础链路：上传 PDF、切片、生成向量、检索 Top-K，再让大模型回答。两天迭代后，它逐步加入了句子感知切片、Parent–Child Retrieval、多查询改写、RRF、LLM Reranker 和自动化评测。
+> [在线体验 SciFlow Demo →](https://sciflow-demo.vercel.app)
+>
+> 公共 Demo 使用内置的模拟论文、检索过程与回答，适合查看交互，不会上传文件，也不会执行真实 RAG。要处理自己的文档，需要运行本地版。
+
+项目最初只有一条基础链路：上传 PDF、切片、生成向量、检索 Top-K，再让大模型回答。此后它逐步加入句子感知切片、Parent–Child Retrieval、多查询改写、RRF、LLM Reranker 和自动化评测；最新一轮则把这些能力接入正式 API，并封装为可一键启动的本地应用。
 
 这条演进路线并不是预先设计好的。每一层都来自一个具体失败：
 
@@ -320,7 +324,7 @@ PDF
 → LLM Listwise Reranker
 → 最终 Top-5 Parent
 → 带页码的 RAG Context
-→ Moonshot/Kimi 生成中文答案
+→ 所选模型生成答案
 → Facts + Aliases 自动评测
 ```
 
@@ -338,46 +342,48 @@ PDF
 | `rag_pipeline.py`            | 编排基础与高级流水线         |
 | `run_rag_eval.py`            | 执行回归评测并保存报告       |
 
+## 第八次演进：从高级管线到本地科研工作台
+
+前七次演进解决的是“检索能否稳定找到证据”。最新一轮开始解决另一个问题：研究者能否直接使用这条链路，而不需要手动调用 API 和维护索引。
+
+首先，上传流程被改成后台处理。接口接收文件后返回 `202`，随后完成格式标准化、逐页解析、Parent 切片、Embedding、Child 索引、摘要与首页预览。Child 索引不再依赖单独的重建命令；前端可以持续显示处理进度和失败状态。
+
+其次，高级检索正式进入问答接口。单文档问答直接调用 advanced pipeline；多文档模式最多选择 10 篇文档，对每个查询执行 Child 召回、RRF 和 Rerank，再用文档标题、页码和 Parent 原文组成统一上下文。流式接口返回的是检索、重排、生成等阶段进度，不只是最终答案。
+
+在这条管线外，项目增加了完整的研究界面：
+
+- 管理和预览 PDF、图片、文本、Markdown、CSV 与 JSON 文档；
+- 保存会话、答案、引用和收藏，并按文档范围继续提问；
+- 使用深度阅读、证据审计、主张—证据映射、引文整理、研究空白等研究技能；
+- 切换严谨研究者、文献综述者、方法论审阅者等 Persona；
+- 通过 Crossref 检索论文元数据，并在关系视图中生成 Mermaid 图；
+- 在浏览器中配置模型服务、语言和主题。
+
+部署方式也发生了变化。React 前端会在 Docker 构建阶段编译，并由 FastAPI 同源提供，因此本地只暴露 `127.0.0.1:8000` 一个入口。PostgreSQL 数据、上传文件和 Embedding 模型缓存分别保存在 Docker Volume 中；项目没有账户系统，会话、收藏、界面设置和 API Key 则保存在浏览器本地。
+
 ## 运行项目
 
-仓库要求 Python 3.11–3.13、Docker Compose 和 Moonshot API Key：
+如果只是查看交互，可以直接打开[在线 Demo](https://sciflow-demo.vercel.app)。它使用模拟数据，不代表真实检索结果。
+
+本地版只要求安装并启动 Docker Desktop。克隆仓库后，可以双击对应系统的启动脚本：
+
+- macOS：`start-local-zh.command`；
+- Windows：`start-local-zh.bat`；
+- Linux：`start-local-zh.sh`。
+
+也可以直接执行：
 
 ```bash
 git clone https://github.com/CHENG-LIANG1/SciFlow.git
 cd SciFlow
-
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-cp .env.example .env
+docker compose up -d --build --wait
 ```
 
-在 `.env` 中填写 API Key，然后启动数据库、执行迁移并运行 API：
+启动后访问 `http://127.0.0.1:8000`，在设置中填写模型服务地址、模型名和 API Key。上传文件默认上限为 100 MB；首次执行真实检索时需要下载 Embedding 模型，因此会比后续运行慢。
 
-```bash
-docker compose up -d --wait db
-alembic upgrade head
-uvicorn app.main:app --reload
-```
+如果使用云端模型，问题和召回片段会发送给相应服务商；要让推理也留在本机，可以配置兼容 OpenAI API 的本地模型服务。
 
-服务启动后可以访问：
-
-- API：`http://127.0.0.1:8000`；
-- Swagger：`http://127.0.0.1:8000/docs`；
-- OpenAPI Schema：`http://127.0.0.1:8000/openapi.json`。
-
-上传 PDF：
-
-```bash
-curl -X POST http://127.0.0.1:8000/documents/upload \
-  -H 'accept: application/json' \
-  -F 'file=@/absolute/path/to/document.pdf'
-```
-
-首次上传会从 Hugging Face 下载约 500 MB 的模型与相关文件，需要网络且耗时较长。`/rag-preview` 可以查看检索上下文和最终 Prompt，但不调用回答模型，适合定位问题。
-
-在 Child 索引已经构建的前提下，可以运行高级评测：
+开发者仍然可以运行高级评测：
 
 ```bash
 python evals/run_rag_eval.py \
@@ -390,26 +396,27 @@ python evals/run_rag_eval.py \
 
 ## 当前边界与下一步演进
 
-仓库已经包含高级检索所需模块，但在线接口和高级评测链路尚未完全接通：
+SciFlow 已经从检索实验进入可用的本地应用，但边界仍然清晰：
 
-- `/documents/{id}/rag-answer` 当前仍调用基础 Parent 向量检索，并对头部结果做相邻 Chunk 扩展；
-- advanced pipeline 目前主要由 `evals/run_rag_eval.py` 调用；
-- 上传接口会生成 Page、Parent 和 Parent Embedding，但尚未自动调用 Child 索引重建服务；
+- 公共 Demo 是静态模拟，不上传文档，也不调用真实检索与生成服务；
+- 文档处理由 FastAPI 进程内的后台任务执行，服务重启会把未完成任务标记为失败，还没有持久化队列、自动重试和断点恢复；
+- 会话、收藏、模型配置和 API Key 保存在浏览器 `localStorage`，没有账户、云同步或多端迁移；
+- Crossref 搜索只返回论文元数据，不会自动获取全文并加入本地文档库；
 - Hit@K 和 MRR 仍以页码为相关性标准，而不是目标证据片段；
 - 评测依赖规则和别名匹配，不能完整判断语义正确性与引用忠实度。
 
-因此，下一阶段的演进方向不是继续叠加检索算法，而是完成工程闭环：
+因此，下一阶段的重点不应是继续叠加检索算法，而是提高工程可靠性和评测精度：
 
 ```text
-上传 PDF 时自动构建 Child 索引
-→ 将 advanced pipeline 接入正式 API
-→ 提供检索阶段与 Rerank 阶段的可观测数据
-→ 用原文片段计算 Hit@K / MRR
+持久化文档任务，并支持重试与恢复
+→ 记录检索、Rerank、生成阶段的耗时、Token 与错误
+→ 用目标证据片段计算 Hit@K / MRR
 → 增加 Answer 与 Grounding 评测
+→ 在版权与访问许可允许时打通论文发现与全文导入
 → 将固定回归集接入 CI
 ```
 
-更进一步，还可以把同步上传改成后台任务，为 Embedding 建立批处理和索引状态，并为 Query Rewrite、Reranker 和最终回答分别记录耗时与 Token 成本。只有同时看质量、延迟和成本，高级 RAG 才能从实验进入稳定服务。
+只有同时看质量、任务可靠性、延迟和成本，这套科研工作台才能从“本地可用”继续走向长期稳定。
 
 ## 总结
 
@@ -429,4 +436,4 @@ SciFlow 的演进过程说明，RAG 优化不是一次更换模型，而是一�
 
 切片决定证据能否被表示，召回决定 Reranker 有没有机会，排序决定有限上下文里放什么，评测则决定下一次优化会不会走错方向。
 
-最终得到的不是一个“上传 PDF 然后聊天”的 Demo，而是一套已经具备演进路径的科研 RAG 工程骨架：**可运行、可观察、可评测，也知道下一步应该优化哪里。**
+最终得到的不再只是一套高级 RAG 工程骨架，而是一个可直接运行的本地科研工作台：**前端可用、后端真实执行、检索可以回归评测，下一步演进也有明确边界。**
