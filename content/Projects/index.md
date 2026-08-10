@@ -52,6 +52,9 @@ aliases:
 <section class="projects-section projects-labs">
   <div class="projects-section-head"><p class="portfolio-kicker">Labs · Repositories</p><h2>实验与开源仓库</h2></div>
   <div class="projects-lab-grid">
+    <a href="https://github.com/CHENG-LIANG1/ai-agent-dashboard" target="_blank" rel="noopener"><strong>AI Agent Dashboard</strong><span>可观测、支持多会话的 Computer Use Agent 工作台</span></a>
+    <a href="https://github.com/CHENG-LIANG1/SciFlow" target="_blank" rel="noopener"><strong>SciFlow</strong><span>本地优先的科研文档 RAG 与问答工作台</span></a>
+    <a href="https://github.com/CHENG-LIANG1/ThreeJS-Copilot" target="_blank" rel="noopener"><strong>ThreeJS Copilot</strong><span>用文本或参考图生成、微调并导出 Three.js 3D 场景</span></a>
     <a href="https://github.com/CHENG-LIANG1/CrazyEffects" target="_blank" rel="noopener"><strong>CrazyEffects</strong><span>SwiftUI 特效目录与可运行 Demo</span></a>
     <a href="https://github.com/CHENG-LIANG1/WalkThru" target="_blank" rel="noopener"><strong>WalkThru</strong><span>分支叙事文字冒险实验</span></a>
     <a href="https://github.com/CHENG-LIANG1/WangXing-Said" target="_blank" rel="noopener"><strong>WangXing-Said</strong><span>兴曰 App 开源仓库</span></a>
