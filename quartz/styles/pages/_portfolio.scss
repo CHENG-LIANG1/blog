@@ -333,25 +333,25 @@ a.portfolio-action-primary {
 }
 
 .projects-featured {
-  padding: 0.5rem 0;
+  padding: 0.75rem 0 1.25rem;
   border-top: 0;
 }
 
 .projects-section {
-  padding: 0.5rem 0;
+  padding: 1.25rem 0;
   border-top: 0;
 }
 
 .projects-featured {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .projects-section-head {
   grid-column: 1 / -1;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 
   h2 {
     max-width: none;
@@ -489,7 +489,7 @@ a.portfolio-action-primary {
 .projects-product-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
+  gap: 0.85rem;
   border-top: 0;
 
   .projects-product-row {
@@ -554,7 +554,7 @@ a.portfolio-action-primary {
 .projects-text-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.65rem;
+  gap: 0.85rem;
   border-top: 0;
 
   .projects-text-row {
@@ -618,7 +618,7 @@ a.portfolio-action-primary {
 .projects-lab-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.65rem;
+  gap: 0.85rem;
 
   a {
     display: flex;
