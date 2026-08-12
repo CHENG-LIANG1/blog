@@ -451,7 +451,11 @@ a.portfolio-action-primary {
     margin: 0 0 0.65rem;
     padding: 0;
     color: var(--gray);
-    font-size: 0.78rem;
+    font-family:
+      "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.5;
     list-style: none;
   }
 
@@ -476,9 +480,12 @@ a.portfolio-action-primary {
     color: #43272e;
   }
 
-  .project-showcase-copy > span,
-  .project-showcase-copy ul {
+  .project-showcase-copy > span {
     color: #93646f;
+  }
+
+  .project-showcase-copy ul {
+    color: #74414e;
   }
 
   .project-showcase-link {

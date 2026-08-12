@@ -43,6 +43,7 @@ aliases:
 <section class="projects-section">
   <div class="projects-section-head"><p class="portfolio-kicker">Web · Tools</p><h2>解决具体问题的小工具</h2></div>
   <div class="projects-text-list">
+    <a class="projects-text-row" href="/Projects/ForceTrack"><div><strong class="project-card-title">ForceTrack</strong><p>本地优先的 Jira 风格项目管理工作台，覆盖 Backlog、Sprint、看板与时间线。</p></div><span>Web</span></a>
     <a class="projects-text-row" href="/Projects/Tikkuu%20MultiPlanner"><div><strong class="project-card-title">Tikkuu MultiPlanner</strong><p>多标签项目规划、子任务、截止日期与重复任务自动重置。</p></div><span>Web</span></a>
     <a class="projects-text-row" href="/Projects/ActiveToDo"><div><strong class="project-card-title">ActiveToDo</strong><p>尽量零打扰的待办事项管理工具。</p></div><span>Web</span></a>
     <a class="projects-text-row" href="/Projects/ActiveTranslation"><div><strong class="project-card-title">ActiveTranslation</strong><p>面向日常场景的多语言文本互译与快速复制。</p></div><span>Web</span></a>
