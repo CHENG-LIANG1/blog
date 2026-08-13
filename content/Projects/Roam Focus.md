@@ -22,7 +22,6 @@ aliases:
   }
   body[data-slug="Projects/Roam-Focus"] .left.sidebar,
   body[data-slug="Projects/Roam-Focus"] .right.sidebar,
-  body[data-slug="Projects/Roam-Focus"] .page-header,
   body[data-slug="Projects/Roam-Focus"] .page-footer,
   body[data-slug="Projects/Roam-Focus"] .center > hr,
   body[data-slug="Projects/Roam-Focus"] footer {

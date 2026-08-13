@@ -3,14 +3,13 @@ import { classNames } from "../util/lang"
 // @ts-ignore
 import styles from "./styles/topTabs.scss"
 
-type TabKey = "home" | "blog" | "projects" | "album" | "collections"
+type TabKey = "blog" | "projects" | "album" | "collections"
 
-const TABS: Array<{ key: TabKey; label: string; href: string }> = [
-  { key: "home", label: "主页", href: "/" },
-  { key: "blog", label: "博客", href: "/blog" },
-  { key: "projects", label: "项目", href: "/Projects/" },
-  { key: "album", label: "相册", href: "/album" },
-  { key: "collections", label: "收藏", href: "/collections" },
+const TABS: Array<{ key: TabKey; label: string; labelEn: string; href: string }> = [
+  { key: "blog", label: "博客", labelEn: "Blog", href: "/blog" },
+  { key: "projects", label: "项目", labelEn: "Projects", href: "/Projects/" },
+  { key: "album", label: "相册", labelEn: "Photos", href: "/album" },
+  { key: "collections", label: "收藏", labelEn: "Stuff", href: "/collections" },
 ]
 
 const SOCIALS: Array<{ label: string; href: string; icon: preact.JSX.Element }> = [
@@ -59,9 +58,7 @@ const SOCIALS: Array<{ label: string; href: string; icon: preact.JSX.Element }> 
 const TopTabs: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const slug = fileData.slug ?? ""
   let active: TabKey | null = null
-  if (slug === "index") {
-    active = "home"
-  } else if (slug === "blog") {
+  if (slug === "blog") {
     active = "blog"
   } else if (slug === "Projects/index" || slug === "projects" || slug.startsWith("Projects/")) {
     active = "projects"
@@ -69,12 +66,16 @@ const TopTabs: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
     active = "album"
   } else if (slug === "collections") {
     active = "collections"
+  } else if (slug !== "index") {
+    active = "blog"
   }
 
   return (
     <nav class={classNames(displayClass, "top-tabs")} aria-label="Primary">
-      <a class="top-tabs-brand" href="/">
-        梁非凡 <span class="top-tabs-brand-en">Ray</span>
+      <a class="top-tabs-brand" href="/" aria-label="梁程 / Liang Cheng">
+        <span class="top-tabs-brand-mark" aria-hidden="true">
+          LC
+        </span>
       </a>
       <div class="top-tabs-links">
         {TABS.map((t) => (
@@ -84,7 +85,12 @@ const TopTabs: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
             data-tab-key={t.key}
             aria-current={t.key === active ? "page" : undefined}
           >
-            {t.label}
+            <span class="top-tab-label top-tab-label-zh" lang="zh">
+              {t.label}
+            </span>
+            <span class="top-tab-label top-tab-label-en" lang="en">
+              {t.labelEn}
+            </span>
           </a>
         ))}
       </div>

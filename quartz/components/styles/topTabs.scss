@@ -1,112 +1,138 @@
 .top-tabs {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-3, 0.75rem);
   flex: 1 1 auto;
   min-width: 0;
 
   & .top-tabs-brand {
+    box-sizing: border-box;
     display: inline-flex;
-    align-items: baseline;
-    gap: 0.4rem;
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: var(--dark);
+    flex: 0 0 auto;
+    width: 2.75rem;
+    min-height: 2.5rem;
+    align-items: center;
+    color: var(--secondary);
     background: none;
     white-space: nowrap;
+    text-decoration: none;
 
     &:hover {
-      color: var(--secondary);
+      color: var(--tertiary);
+      text-decoration: none;
     }
 
-    & .top-tabs-brand-en {
-      font-weight: 500;
-      font-size: 0.85rem;
-      color: var(--gray);
-      letter-spacing: 0.01em;
+    & .top-tabs-brand-mark {
+      display: block;
+      font-family: "Iowan Old Style", Baskerville, "Times New Roman", serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -0.12em;
+      line-height: 1;
+      transform: rotate(-5deg);
     }
   }
 
   & .top-tabs-links {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.05rem;
     margin-left: auto;
   }
 
   & .top-tab {
     position: relative;
-    padding: 0.35rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--darkgray);
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: var(--radius-sm, 6px);
+    font-size: 0.8125rem;
+    font-weight: var(--weight-medium, 500);
+    line-height: 1.3;
+    color: var(--gray);
     background: none;
+    text-decoration: none;
     transition:
       color 0.15s ease,
-      background 0.15s ease;
+      opacity 0.15s ease;
 
     &:hover {
       color: var(--dark);
-      background: var(--lightgray);
+      background: none;
+      text-decoration: none;
     }
 
     &.active {
       color: var(--secondary);
-      font-weight: 600;
-      background: color-mix(in srgb, var(--secondary) 10%, transparent);
+      font-weight: var(--weight-semibold, 600);
+      background: none;
+    }
+
+    & .top-tab-label-en {
+      display: none;
     }
   }
 
   & .top-tabs-socials {
     display: flex;
     align-items: center;
-    gap: 0.1rem;
-    padding-left: 0.4rem;
-    margin-left: 0.2rem;
-    border-left: 1px solid var(--lightgray);
+    gap: 0;
+    padding-left: 0.2rem;
+    margin-left: 0.1rem;
+    border-left: 0;
   }
 
   & .top-tabs-social {
+    box-sizing: border-box;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 2rem;
-    height: 2rem;
-    border-radius: 6px;
+    height: 2.5rem;
+    border-radius: var(--radius-sm, 6px);
     color: var(--gray);
     background: none;
+    text-decoration: none;
     transition:
       color 0.15s ease,
       background 0.15s ease;
 
     &:hover {
       color: var(--dark);
-      background: var(--lightgray);
+      background: none;
+      text-decoration: none;
     }
 
     & svg {
       display: block;
+      flex: 0 0 auto;
     }
+  }
+}
+
+:root[data-language="en"] .top-tab {
+  & .top-tab-label-zh {
+    display: none;
+  }
+
+  & .top-tab-label-en {
+    display: inline;
   }
 }
 
 @media all and (max-width: 600px) {
   .top-tabs {
     flex-wrap: nowrap;
-    gap: 0.5rem;
-
-    & .top-tabs-brand .top-tabs-brand-en {
-      display: none;
-    }
-
-    & .top-tab[data-tab-key="home"] {
-      display: none;
-    }
+    gap: 0.3rem;
 
     & .top-tab {
-      padding: 0.3rem 0.45rem;
-      font-size: 0.85rem;
+      min-height: 2.75rem;
+      padding: 0.3rem 0.38rem;
+      font-size: 0.8125rem;
     }
 
     & .top-tabs-socials {
@@ -117,15 +143,15 @@
 
 @media all and (max-width: 400px) {
   .top-tabs {
-    gap: 0.35rem;
+    gap: 0.2rem;
 
     & .top-tabs-links {
-      gap: 0.15rem;
+      gap: 0;
     }
 
     & .top-tab {
-      padding: 0.25rem 0.38rem;
-      font-size: 0.8rem;
+      padding: 0.25rem 0.3rem;
+      font-size: 0.75rem;
     }
   }
 }

@@ -41,8 +41,8 @@ const PostNavigation: QuartzComponent = ({ allFiles, fileData, cfg }: QuartzComp
 
   return (
     <nav class="post-navigation" aria-label="相邻文章">
-      {renderLink(newer, "较新")}
-      {renderLink(older, "较早")}
+      {renderLink(newer, "上一篇")}
+      {renderLink(older, "下一篇")}
     </nav>
   )
 }

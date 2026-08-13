@@ -16,6 +16,9 @@ async function* processFile(ctx: BuildCtx, file: VFile) {
     ) as FullSlug
 
     const redirUrl = resolveRelative(aliasTargetSlug, ogSlug)
+    const canonicalUrl = ctx.cfg.configuration.baseUrl
+      ? new URL(encodeURI(ogSlug), `https://${ctx.cfg.configuration.baseUrl}/`).toString()
+      : redirUrl
     yield write({
       ctx,
       content: `
@@ -23,7 +26,7 @@ async function* processFile(ctx: BuildCtx, file: VFile) {
         <html lang="en-us">
         <head>
         <title>${ogSlug}</title>
-        <link rel="canonical" href="${redirUrl}">
+        <link rel="canonical" href="${canonicalUrl}">
         <meta name="robots" content="noindex">
         <meta charset="utf-8">
         <meta http-equiv="refresh" content="0; url=${redirUrl}">

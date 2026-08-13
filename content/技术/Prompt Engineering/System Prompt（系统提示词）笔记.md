@@ -1,6 +1,10 @@
 ---
+title: System Prompt（系统提示词）设计笔记
+description: 介绍 System Prompt 系统提示词的职责、结构、优先级和设计方法，帮助约束大语言模型行为并提高 AI 应用输出稳定性。
 tags:
   - 技术
+  - AI
+  - Prompt Engineering
 aliases:
   - System Prompt
   - 系统提示词

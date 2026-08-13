@@ -1,6 +1,11 @@
 ---
+title: Context Engineering（上下文工程）实践笔记
+description: 系统理解 Context Engineering：如何为 AI Agent 组织系统提示、工具、记忆、检索结果与任务状态，构建可靠的上下文窗口。
 tags:
   - 技术
+  - AI
+  - Prompt Engineering
+  - Agent
 aliases:
   - Context Engineering
   - 上下文工程

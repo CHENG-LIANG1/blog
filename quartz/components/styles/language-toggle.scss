@@ -2,25 +2,48 @@
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.28rem;
   margin: 0;
   padding: 0;
   border: none;
   background: transparent;
 
   .lang-toggle-btn {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+    min-height: 2.5rem;
+    align-items: center;
+    justify-content: center;
     border: none;
     background: transparent;
     color: var(--gray);
     border-radius: 0;
-    padding: 0.05rem 0.1rem;
+    padding: 0 0.1rem;
     font-size: 0.82rem;
     font-weight: 500;
     line-height: 1.2;
     cursor: pointer;
     transition:
-      color 0.2s ease,
-      opacity 0.2s ease;
+      color 0.16s ease,
+      opacity 0.16s ease,
+      transform 0.12s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0.35rem;
+      width: 0.7rem;
+      height: 1px;
+      border-radius: 999px;
+      background: currentColor;
+      opacity: 0;
+      transform: translateX(-50%) scaleX(0.25);
+      transition:
+        opacity 0.16s ease,
+        transform 0.2s cubic-bezier(0.2, 0.72, 0.2, 1);
+    }
   }
 
   .lang-toggle-btn:hover {
@@ -31,11 +54,70 @@
   .lang-toggle-btn.active {
     color: var(--secondary);
     font-weight: 600;
+
+    &::after {
+      opacity: 0.9;
+      transform: translateX(-50%) scaleX(1);
+    }
   }
 
-  .lang-toggle-btn + .lang-toggle-btn::before {
-    content: "/";
+  .lang-toggle-btn:active {
+    transform: translateY(1px);
+  }
+
+  .lang-toggle-separator {
     color: var(--gray);
-    margin-right: 0.18rem;
+    font-size: 0.82rem;
+    line-height: 1;
+    opacity: 0.72;
+    pointer-events: none;
+  }
+}
+
+@keyframes language-control-feedback {
+  0% {
+    opacity: 0.72;
+    transform: translateY(1px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes language-content-feedback {
+  from {
+    opacity: 0.76;
+    transform: translateY(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root.is-language-switching {
+  & .lang-toggle-btn.active {
+    animation: language-control-feedback 0.2s ease-out both;
+  }
+
+  & body .center > article {
+    animation: language-content-feedback 0.22s ease-out both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .language-toggle .lang-toggle-btn,
+  .language-toggle .lang-toggle-btn::after {
+    transition: none;
+  }
+
+  :root.is-language-switching {
+    & .lang-toggle-btn.active,
+    & body .center > article {
+      animation: none;
+    }
   }
 }

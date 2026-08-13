@@ -11,10 +11,13 @@ const LanguageToggle: QuartzComponent = ({ displayClass }: QuartzComponentProps)
       role="group"
       aria-label="Language switch"
     >
-      <button type="button" class="lang-toggle-btn" data-lang-target="zh">
+      <button type="button" class="lang-toggle-btn" data-lang-target="zh" aria-pressed="false">
         中文
       </button>
-      <button type="button" class="lang-toggle-btn" data-lang-target="en">
+      <span class="lang-toggle-separator" aria-hidden="true">
+        /
+      </span>
+      <button type="button" class="lang-toggle-btn" data-lang-target="en" aria-pressed="false">
         EN
       </button>
     </div>

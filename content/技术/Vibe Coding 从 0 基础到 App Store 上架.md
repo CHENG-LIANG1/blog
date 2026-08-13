@@ -1,8 +1,11 @@
 ---
 title: Vibe Coding 从 0 基础到 App Store 上架
-description: 面向零编程基础读者的 Vibe Coding 实战指南，从想法、PRD 和 MVP 一路走到部署、测试与 App Store 上架。
+description: 面向零编程基础读者的 Vibe Coding 实战教程：从想法、PRD、MVP 和 AI 编程工具选择，一路完成测试、部署与 App Store 上架。
 tags:
   - 技术
+  - AI
+  - Vibe Coding
+  - 独立开发
 ---
 
 我这个教程面向无编程背景，无超能力的读者。
@@ -66,3 +69,8 @@ ios:
 4. 文案: 用哪个 agent 做，就让哪个 agent 帮忙写，他最懂你的项目
 5. 不会填的字段，截图发给 AI
 6. 隐私政策与用户协议：可以使用 Notion 或 GitHub Pages，让 Agent 帮你生成并部署单页 HTML，例如 [Roam Focus 隐私政策](https://cheng-liang1.github.io/App-Support/Roam%20Focus/privacy/index.html)
+
+## 延伸阅读
+
+- [Vibe Coding 指南：独立开发者的一周交付手册](/技术/Vibe-Coding-指南)
+- [从 0 到工程级项目：可维护、可验证的 Vibe Coding 方法](/技术/从-0-到工程级项目：我们的-Vibe-Coding-工作方法)

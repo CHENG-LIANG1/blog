@@ -1,6 +1,10 @@
 ---
+title: Chain of Thought（CoT）思维链提示笔记
+description: 介绍 Chain of Thought（CoT）思维链提示的定义、适用场景、局限与实践方式，帮助理解大语言模型的分步推理方法。
 tags:
   - 技术
+  - AI
+  - Prompt Engineering
 aliases:
   - CoT
   - Chain of Thought

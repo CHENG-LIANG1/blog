@@ -3,8 +3,6 @@ title: 相册
 description: 我的收藏与桌面角落。
 ---
 
-<section class="album-hero">
-</section>
 <section class="album-section">
 <h2 class="album-h2">AOT 痛车（真车）</h2>
 <p class="album-h2-desc">这两张是我的车，不是车模。</p>

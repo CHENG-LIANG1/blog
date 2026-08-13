@@ -1,12 +1,14 @@
 ---
+title: RAG 是什么：检索增强生成术语解释
+description: 简明解释 RAG（Retrieval-Augmented Generation，检索增强生成）的基本流程、核心组件和常见应用场景。
 aliases:
   - Retrieval-Augmented Generation
   - 检索增强生成
 tags:
   - 术语库
+  - AI
+  - RAG
 ---
-
-# RAG
 
 **RAG（Retrieval-Augmented Generation，检索增强生成）**：在模型回答前，先从外部知识库（文档/代码/数据库/网页等）里**检索出最相关的片段**，把这些片段作为“证据”塞进上下文，再让模型生成答案。
 

@@ -25,6 +25,7 @@ document.addEventListener("nav", () => {
     const subcategoryPanels = root.querySelectorAll("[data-rp-subcategory-panel]")
     const topicPanels = root.querySelectorAll("[data-rp-topic-panel]")
     const items = root.querySelectorAll("[data-rp-item-category]")
+    const groups = root.querySelectorAll("[data-rp-group]")
     const count = root.querySelector("[data-rp-count]")
     const clearButton = root.querySelector("[data-rp-clear]")
     const searchInput = root.querySelector("[data-rp-search]")
@@ -77,6 +78,13 @@ document.addEventListener("nav", () => {
         const visible = matchesCategory && matchesSubcategory && matchesTopic && matchesSearch
         item.hidden = !visible
         if (visible) visibleCount += 1
+      })
+
+      groups.forEach((group) => {
+        const visibleItem = Array.from(group.querySelectorAll("[data-rp-item-category]")).some(
+          (item) => !item.hidden,
+        )
+        group.hidden = !visibleItem
       })
 
       categoryButtons.forEach((button) => {
@@ -274,6 +282,7 @@ export default ((userOpts?: Partial<Options>) => {
     const categoryCounts = new Map<string, number>()
     const subcategoryMap = new Map<string, Map<string, number>>()
     const topicMap = new Map<string, Map<string, number>>()
+    const yearGroups = new Map<string, BlogListItem[]>()
 
     for (const item of items) {
       categoryCounts.set(item.category, (categoryCounts.get(item.category) ?? 0) + 1)
@@ -288,6 +297,12 @@ export default ((userOpts?: Partial<Options>) => {
         topics.set(item.topic, (topics.get(item.topic) ?? 0) + 1)
         topicMap.set(key, topics)
       }
+
+      const date = getDate(cfg, item.page)
+      const year = date ? `${date.getFullYear()}` : "未注明"
+      const yearItems = yearGroups.get(year) ?? []
+      yearItems.push(item)
+      yearGroups.set(year, yearItems)
     }
 
     const categories = [...categoryCounts.entries()].sort(([a], [b]) =>
@@ -386,39 +401,49 @@ export default ((userOpts?: Partial<Options>) => {
           )
         })}
 
-        <ol class="rp-list">
-          {items.map(({ page, category, subcategory, topic }) => {
-            const title = sanitizeListText(
-              (page.frontmatter?.title as string | undefined) ?? "无标题",
-            )
-            const dateStr = formatDate(cfg, page)
-            const description = getDescription(page)
+        <div class="rp-groups">
+          {[...yearGroups.entries()].map(([year, yearItems]) => (
+            <section class="rp-year-group" data-rp-group aria-labelledby={`rp-year-${year}`}>
+              <header class="rp-year-heading">
+                <span aria-hidden="true">Year</span>
+                <h2 id={`rp-year-${year}`}>{year}</h2>
+              </header>
+              <ol class="rp-list">
+                {yearItems.map(({ page, category, subcategory, topic }) => {
+                  const title = sanitizeListText(
+                    (page.frontmatter?.title as string | undefined) ?? "无标题",
+                  )
+                  const dateStr = formatDate(cfg, page)
+                  const description = getDescription(page)
 
-            return (
-              <li
-                class="rp-list-item"
-                data-rp-item-category={category}
-                data-rp-item-subcategory={subcategory ?? ""}
-                data-rp-item-topic={topic ?? ""}
-              >
-                <a class="rp-list-link" href={resolveRelative(fileData.slug!, page.slug!)}>
-                  <time class="rp-list-date">{dateStr || "未注明日期"}</time>
-                  <div class="rp-list-main">
-                    <div class="rp-list-heading">
-                      <h3>{title}</h3>
-                    </div>
-                    {description && <p>{description}</p>}
-                  </div>
-                  <div class="rp-list-tags" aria-label="目录">
-                    <span>{formatDirLabel(category)}</span>
-                    {subcategory && <span>{formatDirLabel(subcategory)}</span>}
-                    {topic && <span>{formatDirLabel(topic)}</span>}
-                  </div>
-                </a>
-              </li>
-            )
-          })}
-        </ol>
+                  return (
+                    <li
+                      class="rp-list-item"
+                      data-rp-item-category={category}
+                      data-rp-item-subcategory={subcategory ?? ""}
+                      data-rp-item-topic={topic ?? ""}
+                    >
+                      <a class="rp-list-link" href={resolveRelative(fileData.slug!, page.slug!)}>
+                        <time class="rp-list-date">{dateStr.slice(5) || "未注明"}</time>
+                        <div class="rp-list-main">
+                          <div class="rp-list-heading">
+                            <h3>{title}</h3>
+                          </div>
+                          {description && <p>{description}</p>}
+                        </div>
+                        <div class="rp-list-tags" aria-label="目录">
+                          <span>{formatDirLabel(category)}</span>
+                          {subcategory && <span>{formatDirLabel(subcategory)}</span>}
+                          {topic && <span>{formatDirLabel(topic)}</span>}
+                        </div>
+                      </a>
+                    </li>
+                  )
+                })}
+              </ol>
+            </section>
+          ))}
+        </div>
       </section>
     )
   }

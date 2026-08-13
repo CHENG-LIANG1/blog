@@ -1,12 +1,14 @@
 ---
+title: MCP 是什么：Model Context Protocol 术语解释
+description: 简明解释 MCP（Model Context Protocol，模型上下文协议）的作用，以及它如何让 AI Agent 连接工具、资源与外部数据。
 tags:
   - 术语库
+  - AI
+  - MCP
 aliases:
   - Model Context Protocol
   - 模型上下文协议
 ---
-
-# MCP
 
 **MCP（Model Context Protocol，模型上下文协议）**：一套让大模型/Agent 以“统一接口”连接外部工具与数据源的协议规范；你可以把它理解为 AI 世界的“USB-C 接口”。
 

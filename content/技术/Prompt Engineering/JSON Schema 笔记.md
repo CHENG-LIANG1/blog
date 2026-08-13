@@ -1,6 +1,10 @@
 ---
+title: JSON Schema 与大模型结构化输出笔记
+description: 介绍 JSON Schema 的核心概念、字段约束和验证方式，以及它在大模型结构化输出、Function Calling 和 API 数据契约中的应用。
 tags:
   - 技术
+  - AI
+  - Prompt Engineering
 aliases:
   - JSON Schema
 ---

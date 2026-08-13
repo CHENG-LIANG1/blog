@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chengliang.vercel.app/sitemap.xml
+Sitemap: https://www.chengliang.pro/sitemap.xml

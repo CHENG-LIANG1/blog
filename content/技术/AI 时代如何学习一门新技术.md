@@ -166,7 +166,7 @@ from app.routers.rag import router as rag_router
 可以先类比成：
 
 ```typescript
-import { router as ragRouter } from "./routers/rag";
+import { router as ragRouter } from "./routers/rag"
 ```
 
 Pydantic Model 也可以暂时借助 TypeScript 类型来理解：
@@ -178,7 +178,7 @@ class AskRequest(BaseModel):
 
 ```typescript
 interface AskRequest {
-  question: string;
+  question: string
 }
 ```
 
@@ -251,3 +251,8 @@ AI 没有让学习变得不重要，只是把学习的重心往上推了一层�
 > 我现在卡在哪里？为什么会卡？下一步最小的改动是什么？怎么证明它真的有效？
 
 只要这个循环还能继续，就已经在学习了。
+
+## 延伸阅读
+
+- [SciFlow：把 PDF RAG 做成可评测、可优化的检索系统](/技术/SciFlow：把-PDF-RAG-做成可评测、可优化的检索系统)
+- [从 0 到工程级项目：我们的 Vibe Coding 工作方法](/技术/从-0-到工程级项目：我们的-Vibe-Coding-工作方法)

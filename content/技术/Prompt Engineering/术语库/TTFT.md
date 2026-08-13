@@ -1,13 +1,14 @@
 ---
+title: TTFT 是什么：大模型首 Token 时间术语解释
+description: 简明解释 TTFT（Time To First Token，首 Token 时间）的含义、影响因素，以及它为什么是衡量大模型响应速度的重要指标。
 aliases:
   - Time To First Token
   - 首 Token 时间
   - 首字延迟
 tags:
   - 术语库
+  - AI
 ---
-
-# TTFT
 
 **TTFT（Time To First Token）**：从你发出请求开始，到模型**返回第一个 token**（也就是你看到第一点/第一个字）所花的时间。
 

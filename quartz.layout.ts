@@ -8,23 +8,12 @@ const isHub = (slug: string): boolean => HUB_SLUGS.has(slug)
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [
-    Component.TopTabs(),
-    Component.ConditionalRender({
-      component: Component.LanguageToggle(),
-      condition: (page) => page.fileData.slug === "index" || page.fileData.slug === "个人经历",
-    }),
-    Component.Darkmode(),
-  ],
+  header: [Component.TopTabs(), Component.LanguageToggle(), Component.Darkmode()],
   afterBody: [
     Component.PostNavigation(),
     Component.ConditionalRender({
       component: Component.RecentPosts({ limit: 200 }),
       condition: (page) => page.fileData.slug === "blog",
-    }),
-    Component.ConditionalRender({
-      component: Component.GithubActivity({ username: "CHENG-LIANG1", title: "GitHub" }),
-      condition: (page) => page.fileData.slug === "index",
     }),
   ],
   footer: Component.Footer({

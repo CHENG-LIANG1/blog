@@ -1,5 +1,5 @@
 import { i18n } from "../i18n"
-import { FullSlug, getFileExtension, joinSegments, pathToRoot } from "../util/path"
+import { FullSlug, getFileExtension, joinSegments, pathToRoot, simplifySlug } from "../util/path"
 import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/resources"
 import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
@@ -38,33 +38,116 @@ export default (() => {
     const iconPath = joinSegments(baseDir, "static/icon.png")
 
     // Url of current page
+    const canonicalSlug = fileData.slug === "index" ? "/" : simplifySlug(fileData.slug!)
     const socialUrl =
-      fileData.slug === "404" || fileData.slug === "index"
-        ? url.toString()
-        : joinSegments(url.toString(), fileData.slug!)
+      fileData.slug === "404" ? url.toString() : new URL(encodeURI(canonicalSlug), url).toString()
 
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
       (e) => e.name === CustomOgImagesEmitterName,
     )
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
-    const canonicalUrl = socialUrl.endsWith("/") ? socialUrl.slice(0, -1) : socialUrl
+    const canonicalUrl = socialUrl
+    const siteUrl = url.toString().replace(/\/$/, "")
+    const websiteId = `${siteUrl}/#website`
+    const personId = `${siteUrl}/#person`
+    const tags = fileData.frontmatter?.tags ?? []
+    const hubSlugs = new Set([
+      "index",
+      "blog",
+      "Projects/index",
+      "projects",
+      "album",
+      "collections",
+    ])
+    const isCollectionPage =
+      hubSlugs.has(fileData.slug ?? "") ||
+      fileData.slug?.startsWith("tags/") ||
+      fileData.slug?.endsWith("/index")
+    const isArticle = fileData.slug !== "404" && !isCollectionPage
+    const publishedDate = fileData.frontmatter?.published
+      ? fileData.dates?.published
+      : fileData.dates?.created
+    const modifiedDate = fileData.dates?.modified ?? publishedDate
+    const rawCustomStructuredData = fileData.frontmatter?.structuredData
+    const customStructuredData = Array.isArray(rawCustomStructuredData)
+      ? rawCustomStructuredData.filter(
+          (entry) => typeof entry === "object" && entry !== null && "@type" in entry,
+        )
+      : []
+    const articleStructuredData = isArticle
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "@id": `${canonicalUrl}#article`,
+            headline: seoTitle,
+            description: seoDescription,
+            url: canonicalUrl,
+            mainEntityOfPage: canonicalUrl,
+            image: [ogImageDefaultPath],
+            datePublished: publishedDate?.toISOString(),
+            dateModified: modifiedDate?.toISOString(),
+            inLanguage: fileData.frontmatter?.lang ?? cfg.locale,
+            isAccessibleForFree: true,
+            articleSection: tags[0] ?? "博客",
+            keywords: tags,
+            author: {
+              "@type": "Person",
+              "@id": personId,
+              name: "梁程",
+              alternateName: ["梁非凡 Ray", "Ray", "Liang Cheng", "Liang Feifan"],
+              url: siteUrl,
+            },
+            publisher: {
+              "@type": "Person",
+              "@id": personId,
+              name: "梁程",
+              url: siteUrl,
+            },
+            isPartOf: {
+              "@id": websiteId,
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "首页",
+                item: `${siteUrl}/`,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: seoTitle,
+                item: canonicalUrl,
+              },
+            ],
+          },
+          ...customStructuredData,
+        ]
+      : customStructuredData.length > 0
+        ? customStructuredData
+        : undefined
     const structuredData =
       fileData.slug === "index"
         ? [
             {
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "@id": "https://chengliang.vercel.app/#website",
+              "@id": websiteId,
               name: "梁程 | 梁非凡 Ray",
               alternateName: ["梁非凡", "梁非凡 Ray", "Ray", "Liang Cheng", "Liang Feifan"],
-              url: "https://chengliang.vercel.app",
+              url: siteUrl,
               description: seoDescription,
               inLanguage: ["zh-CN", "en"],
             },
             {
               "@context": "https://schema.org",
               "@type": "Person",
-              "@id": "https://chengliang.vercel.app/#person",
+              "@id": personId,
               name: "梁程",
               givenName: "程",
               familyName: "梁",
@@ -79,15 +162,15 @@ export default (() => {
               ],
               description: seoDescription,
               jobTitle: "Frontend / Flutter Engineer",
-              url: "https://chengliang.vercel.app",
-              mainEntityOfPage: "https://chengliang.vercel.app",
+              url: siteUrl,
+              mainEntityOfPage: siteUrl,
               sameAs: [
                 "https://github.com/CHENG-LIANG1",
                 "https://www.threads.com/@earthboundmother3",
                 "https://www.xiaoheihe.cn/bbs/user_profile_share?user_id=85696763823c&h_src=heyboxapp",
                 "https://xhslink.com/m/9Sb4uJ0KtIk",
               ],
-              email: "mailto:liangcheng2456@163.com",
+              email: "mailto:liangcheng2456@gmail.com",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Nanjing",
@@ -109,22 +192,22 @@ export default (() => {
             {
               "@context": "https://schema.org",
               "@type": "ProfilePage",
-              "@id": "https://chengliang.vercel.app/#profile",
-              url: "https://chengliang.vercel.app",
+              "@id": `${siteUrl}/#profile`,
+              url: siteUrl,
               name: seoTitle,
               description: seoDescription,
               isPartOf: {
-                "@id": "https://chengliang.vercel.app/#website",
+                "@id": websiteId,
               },
               about: {
-                "@id": "https://chengliang.vercel.app/#person",
+                "@id": personId,
               },
               mainEntity: {
-                "@id": "https://chengliang.vercel.app/#person",
+                "@id": personId,
               },
             },
           ]
-        : undefined
+        : articleStructuredData
 
     return (
       <head>
@@ -149,17 +232,32 @@ export default (() => {
         <meta name="author" content="梁程 / 梁非凡 Ray" />
         <meta name="creator" content="梁程 / 梁非凡 Ray" />
 
-        <meta name="og:site_name" content={cfg.pageTitle}></meta>
+        <meta property="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={seoTitle} />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href={canonicalUrl} />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta property="og:type" content={isArticle ? "article" : "website"} />
+        <meta property="og:locale" content="zh_CN" />
+        {fileData.slug !== "404" && <link rel="canonical" href={canonicalUrl} />}
+        <meta
+          name="robots"
+          content={
+            fileData.slug === "404"
+              ? "noindex, nofollow"
+              : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+          }
+        />
         {keywords && <meta name="keywords" content={keywords} />}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDescription} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:image:alt" content={seoDescription} />
+        {isArticle && publishedDate && (
+          <meta property="article:published_time" content={publishedDate.toISOString()} />
+        )}
+        {isArticle && modifiedDate && (
+          <meta property="article:modified_time" content={modifiedDate.toISOString()} />
+        )}
+        {isArticle && tags.map((tag) => <meta property="article:tag" content={tag} />)}
 
         {!usesCustomOgImage && (
           <>
@@ -187,7 +285,9 @@ export default (() => {
         {structuredData && (
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+            }}
           />
         )}
 

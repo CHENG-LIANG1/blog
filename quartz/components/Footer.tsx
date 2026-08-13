@@ -10,16 +10,20 @@ export default ((opts?: Options) => {
     const links = opts?.links ?? {}
     return (
       <footer class={`${displayClass ?? ""}`}>
-        <p class="footer-copyright">
-          <a
-            href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-            target="_blank"
-            rel="noopener"
-          >
-            CC BY-NC-SA 4.0
-          </a>{" "}
-          2026-PRESENT © 梁非凡 &amp; Tikkuu
-        </p>
+        <div class="footer-frame">
+          <p class="footer-copyright">
+            <span class="footer-copyright-meta">2026—PRESENT</span>
+          </p>
+          <a class="footer-signature" href="/" aria-label="Liang Cheng, Nanjing, China">
+            <span class="footer-signature-mark" aria-hidden="true">
+              LC
+            </span>
+            <span class="footer-signature-copy">
+              <strong>Liang Cheng</strong>
+              <small>Nanjing · CN</small>
+            </span>
+          </a>
+        </div>
         <ul>
           {Object.entries(links).map(([name, href]) => (
             <li>

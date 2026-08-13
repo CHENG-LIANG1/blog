@@ -1,11 +1,12 @@
 ---
-title: Vibe Coding 指南
-description: 独立开发者的一周交付手册
+title: Vibe Coding 指南：独立开发者的一周交付手册
+description: 一套面向独立开发者的 Vibe Coding 实操流程：用 AI 从真实痛点出发，在一周内完成需求、原型、代码、部署和发布闭环。
 tags:
   - 技术
+  - AI
+  - Vibe Coding
+  - 独立开发
 ---
-
-# Vibe Coding 指南：独立开发者的一周交付手册
 
 > **AI 负责生成，你负责判断。先完成闭环，再追求优雅。**
 
@@ -348,3 +349,8 @@ Google Login（谷歌登录）
 ---
 
 > **记住：先完成，再完美。**
+
+## 延伸阅读
+
+- [Vibe Coding 从 0 基础到 App Store 上架](/技术/Vibe-Coding-从-0-基础到-App-Store-上架)
+- [从 0 到工程级项目：我们的 Vibe Coding 工作方法](/技术/从-0-到工程级项目：我们的-Vibe-Coding-工作方法)

@@ -1,6 +1,8 @@
 type PreferredLanguage = "zh" | "en"
 
 const LANG_STORAGE_KEY = "preferred-language"
+const LANGUAGE_FEEDBACK_CLASS = "is-language-switching"
+let languageFeedbackTimer: number | undefined
 const EN_TOC_IDS = new Set([
   "app-store-apps",
   "other-projects",
@@ -25,6 +27,7 @@ const getPreferredLanguage = (): PreferredLanguage => {
 // 在 DOM 构建前尽早设置 data-language，配合 CSS 隐藏对应语言内容，避免 CLS
 const setDocumentLanguage = (lang: PreferredLanguage) => {
   document.documentElement.setAttribute("data-language", lang)
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en"
 }
 
 const initialLang = getPreferredLanguage()
@@ -167,7 +170,24 @@ const syncLanguageButtons = (lang: PreferredLanguage) => {
   for (const button of toggleButtons) {
     const isActive = button.dataset.langTarget === lang
     button.classList.toggle("active", isActive)
+    button.setAttribute("aria-pressed", String(isActive))
   }
+}
+
+const triggerLanguageFeedback = () => {
+  const root = document.documentElement
+  root.classList.remove(LANGUAGE_FEEDBACK_CLASS)
+  void root.offsetWidth
+  root.classList.add(LANGUAGE_FEEDBACK_CLASS)
+
+  if (languageFeedbackTimer !== undefined) {
+    window.clearTimeout(languageFeedbackTimer)
+  }
+
+  languageFeedbackTimer = window.setTimeout(() => {
+    root.classList.remove(LANGUAGE_FEEDBACK_CLASS)
+    languageFeedbackTimer = undefined
+  }, 240)
 }
 
 const applyLanguage = (lang: PreferredLanguage) => {
@@ -195,8 +215,13 @@ document.addEventListener("nav", () => {
       return
     }
 
+    if (document.documentElement.getAttribute("data-language") === targetLang) {
+      return
+    }
+
     localStorage.setItem(LANG_STORAGE_KEY, targetLang)
     applyLanguage(targetLang)
+    triggerLanguageFeedback()
   }
 
   for (const button of toggleButtons) {

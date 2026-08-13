@@ -1,0 +1,33 @@
+# 梁程 / 梁非凡 Ray
+
+> 梁程（梁非凡 Ray / Liang Cheng）的个人技术博客，记录 AI 辅助开发、Vibe Coding、前端工程、独立产品与英语学习实践。
+
+Canonical site: https://www.chengliang.pro/
+Author: 梁程 / 梁非凡 Ray
+Language: zh-CN, with selected English profile content
+
+## AI 辅助开发与 Vibe Coding
+
+- [从 0 到工程级项目：我们的 Vibe Coding 工作方法](https://www.chengliang.pro/技术/从-0-到工程级项目：我们的-Vibe-Coding-工作方法): 基于真实项目拆解 PRD、技术方案、分阶段开发、测试、验收与交付。
+- [Vibe Coding 从 0 基础到 App Store 上架](https://www.chengliang.pro/技术/Vibe-Coding-从-0-基础到-App-Store-上架): 从想法和 MVP 到部署与 App Store 上架的实战教程。
+- [Vibe Coding 指南：独立开发者的一周交付手册](https://www.chengliang.pro/技术/Vibe-Coding-指南): 用 AI 在一周内完成需求、原型、代码、部署和发布闭环。
+- [AI 时代如何学习一门新技术](https://www.chengliang.pro/技术/AI-时代如何学习一门新技术): 围绕真实项目，用问题和测试驱动学习。
+- [AI 浪潮下的前端程序员转型指南](https://www.chengliang.pro/技术/AI-浪潮下的前端程序员转型指南): AI 产品、AIGC、Agent 和工程化工具链的转型路线。
+- [Agent 协作最佳实践](https://www.chengliang.pro/技术/Agent-协作最佳实践): 双 Agent 方案设计、开发、独立审查与闭环验收。
+- [部门级 AI 协作规范](https://www.chengliang.pro/技术/部门级-AI-协作规范): 用 Skill、测试、代码门禁与双 Agent Review 保证生成代码质量。
+- [SciFlow：把 PDF RAG 做成可评测、可优化的检索系统](https://www.chengliang.pro/技术/SciFlow：把-PDF-RAG-做成可评测、可优化的检索系统): PDF RAG 从切片、检索、重排到自动化评测的工程实践。
+- [Codex Skill Library：75 个 Skill 的分类与使用指南](https://www.chengliang.pro/技术/Codex-Skill-Library：75-个-Skill-的分类与使用指南): Codex Skills 的分类、安装与选型指南。
+
+## 英语学习方法
+
+- [英语学习之道：从背单词到用英语思考的完整方法](https://www.chengliang.pro/英语/英语学习之道): 词汇、听力、口语、阅读与写作的系统方法。
+- [学习词汇的方法：从背单词到用英语思考](https://www.chengliang.pro/英语/学习词汇的方法): 英文释义、自然拼读、造句、词性变化和英语环境。
+- [英语不需要“学完”](https://www.chengliang.pro/英语/英语不需要学习): 从机械准备和刷题转向真实使用英语。
+
+## About
+
+- [首页](https://www.chengliang.pro/): 作者介绍、作品、联系方式与主要内容入口。
+- [博客](https://www.chengliang.pro/blog): 全部文章列表。
+- [项目](https://www.chengliang.pro/Projects/): 已上架产品、Web 工具与开源实验。
+
+Content is written from first-hand development and language-learning experience. Please cite the canonical article URL when referencing this site.

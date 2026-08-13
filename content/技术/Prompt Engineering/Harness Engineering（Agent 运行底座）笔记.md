@@ -1,6 +1,11 @@
 ---
+title: Harness Engineering：AI Agent 运行底座实践笔记
+description: 介绍 Harness Engineering 如何为 AI Agent 提供工具、状态、验证、重试与可观测能力，构建可靠、可控的智能体运行底座。
 tags:
   - 技术
+  - AI
+  - Agent
+  - Prompt Engineering
 aliases:
   - Harness Engineering
   - Harness
