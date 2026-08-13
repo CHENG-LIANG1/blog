@@ -5,6 +5,16 @@ import * as Component from "./quartz/components"
 const HUB_SLUGS = new Set(["index", "blog", "Projects/index", "projects", "album", "collections"])
 const isHub = (slug: string): boolean => HUB_SLUGS.has(slug)
 
+// 产品落地页自带完整 Hero，不重复显示 Quartz 的文章标题、元信息与标签。
+const PRODUCT_LANDING_SLUGS = new Set([
+  "Projects/Roam-Focus",
+  "Projects/兴曰",
+  "Projects/Active-Habits",
+  "Projects/GeekBio",
+])
+const isProductLanding = (slug: string): boolean => PRODUCT_LANDING_SLUGS.has(slug)
+const showArticleHeader = (slug: string): boolean => !isHub(slug) && !isProductLanding(slug)
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -39,23 +49,23 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ScrollControls(),
     Component.ConditionalRender({
       component: Component.Breadcrumbs(),
-      condition: (page) => !isHub(page.fileData.slug ?? ""),
+      condition: (page) => showArticleHeader(page.fileData.slug ?? ""),
     }),
     Component.ConditionalRender({
       component: Component.ArticleTitle(),
-      condition: (page) => !isHub(page.fileData.slug ?? ""),
+      condition: (page) => showArticleHeader(page.fileData.slug ?? ""),
     }),
     Component.ConditionalRender({
       component: Component.ContentMeta(),
-      condition: (page) => !isHub(page.fileData.slug ?? ""),
+      condition: (page) => showArticleHeader(page.fileData.slug ?? ""),
     }),
     Component.ConditionalRender({
       component: Component.TagList(),
-      condition: (page) => !isHub(page.fileData.slug ?? ""),
+      condition: (page) => showArticleHeader(page.fileData.slug ?? ""),
     }),
     Component.ConditionalRender({
       component: Component.ArticleSummary(),
-      condition: (page) => !isHub(page.fileData.slug ?? ""),
+      condition: (page) => showArticleHeader(page.fileData.slug ?? ""),
     }),
     Component.ConditionalRender({
       component: Component.TableOfContents(),
