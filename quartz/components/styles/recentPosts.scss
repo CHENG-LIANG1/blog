@@ -82,7 +82,9 @@
   }
 
   & .rp-filter-clear {
+    flex: 0 0 auto;
     color: var(--rp-muted);
+    white-space: nowrap;
   }
 
   & .rp-search {
@@ -288,7 +290,8 @@
     & .rp-toolbar {
       align-items: stretch;
       flex-direction: column;
-      margin-bottom: 2.75rem;
+      gap: 0.75rem;
+      margin-bottom: 2.25rem;
     }
 
     & .rp-filter-panel {
@@ -316,8 +319,8 @@
 
     & .rp-subcategory-panel,
     & .rp-topic-panel {
-      margin-top: -1.9rem;
-      margin-bottom: 2.4rem;
+      margin-top: -1.5rem;
+      margin-bottom: 2.25rem;
     }
 
     & .rp-year-group {

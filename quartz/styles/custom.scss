@@ -5188,3 +5188,10 @@ body[data-slug="collections"] {
     box-shadow: none;
   }
 }
+
+// Blog mobile: keep the navigation-to-filter transition compact and deliberate.
+@media all and (max-width: 720px) {
+  body[data-slug="blog"] .page-header header {
+    margin-bottom: 1.5rem;
+  }
+}
