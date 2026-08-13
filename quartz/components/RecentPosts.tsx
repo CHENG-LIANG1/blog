@@ -9,6 +9,7 @@ import { classNames } from "../util/lang"
 
 interface Options {
   title?: string
+  titleEn?: string
   limit: number
   filter: (f: QuartzPluginData) => boolean
   sort: (f1: QuartzPluginData, f2: QuartzPluginData) => number
@@ -311,6 +312,12 @@ export default ((userOpts?: Partial<Options>) => {
 
     return (
       <section class={classNames(displayClass, "recent-posts")}>
+        {opts.title && (
+          <h2 class="rp-title">
+            <span class="rp-title-zh">{opts.title}</span>
+            {opts.titleEn && <span class="rp-title-en">{opts.titleEn}</span>}
+          </h2>
+        )}
         <div class="rp-toolbar">
           <div class="rp-filter-panel" aria-label="按目录筛选文章">
             <button

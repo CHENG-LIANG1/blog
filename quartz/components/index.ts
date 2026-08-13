@@ -32,6 +32,7 @@ import RecentPosts from "./RecentPosts"
 import GithubActivity from "./GithubActivity"
 import ArticleSummary from "./ArticleSummary"
 import PostNavigation from "./PostNavigation"
+import HomeContact from "./HomeContact"
 
 export {
   ArticleTitle,
@@ -68,4 +69,5 @@ export {
   GithubActivity,
   ArticleSummary,
   PostNavigation,
+  HomeContact,
 }

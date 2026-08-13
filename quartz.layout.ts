@@ -15,6 +15,14 @@ export const sharedPageComponents: SharedLayout = {
       component: Component.RecentPosts({ limit: 200 }),
       condition: (page) => page.fileData.slug === "blog",
     }),
+    Component.ConditionalRender({
+      component: Component.RecentPosts({ limit: 5, title: "最近文章", titleEn: "Recent writing" }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+    Component.ConditionalRender({
+      component: Component.HomeContact(),
+      condition: (page) => page.fileData.slug === "index",
+    }),
   ],
   footer: Component.Footer({
     links: {

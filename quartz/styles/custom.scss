@@ -3483,6 +3483,25 @@ body[data-slug="index"] {
     letter-spacing: 0.015em;
   }
 
+  & .home-hero-row {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+  }
+
+  & .home-avatar {
+    width: 4.75rem;
+    height: 4.75rem;
+    flex: 0 0 auto;
+    border: 1px solid color-mix(in srgb, var(--lightgray) 85%, transparent);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  & .home-hero-text {
+    min-width: 0;
+  }
+
   & .home-title {
     margin: 0;
     color: var(--dark);
@@ -3755,6 +3774,106 @@ body[data-slug="index"] {
     }
   }
 
+  // 首页的最近文章：复用 RecentPosts 数据，视觉收敛成单行列表
+  & .recent-posts {
+    margin: 0 0 1rem;
+
+    & .rp-title {
+      margin: 0 0 0.9rem;
+      color: var(--gray);
+      font-family: var(--codeFont);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    & .rp-title-en {
+      display: none;
+    }
+
+    html[data-language="en"] & .rp-title-zh {
+      display: none;
+    }
+
+    html[data-language="en"] & .rp-title-en {
+      display: inline;
+    }
+
+    & .rp-toolbar,
+    & .rp-subcategory-panel,
+    & .rp-topic-panel,
+    & .rp-year-heading {
+      display: none;
+    }
+
+    & .rp-groups {
+      gap: 0;
+    }
+
+    & .rp-year-group {
+      display: block;
+    }
+
+    & .rp-list {
+      gap: 0;
+      border-top: 0;
+    }
+
+    & .rp-list-link {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1rem;
+      margin-inline: 0;
+      padding: 0.55rem 0.2rem;
+      border-bottom: 0;
+      border-radius: 0;
+
+      &:hover {
+        background: transparent;
+        transform: none;
+      }
+
+      &:hover .rp-list-heading h3 {
+        color: var(--secondary);
+      }
+    }
+
+    & .rp-list-main {
+      order: 1;
+    }
+
+    & .rp-list-main p,
+    & .rp-list-tags {
+      display: none;
+    }
+
+    & .rp-list-heading h3 {
+      color: var(--dark);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    & .rp-list-date {
+      order: 2;
+      padding-top: 0;
+      color: var(--gray);
+    }
+  }
+
+  // “找到我”组件化后按语言切换
+  & .home-find[lang="en"],
+  & .home-find[lang="zh"] {
+    display: none;
+  }
+
+  html[data-language="en"] & .home-find[lang="en"],
+  html[data-language="zh"] & .home-find[lang="zh"] {
+    display: block;
+  }
+
   & .home-profile a:focus-visible,
   & .page-header a:focus-visible,
   & .page-header button:focus-visible {
@@ -3819,6 +3938,15 @@ body[data-slug="index"] {
 
     & .home-status-label {
       font-size: 0.7rem;
+    }
+
+    & .home-hero-row {
+      gap: 1rem;
+    }
+
+    & .home-avatar {
+      width: 3.9rem;
+      height: 3.9rem;
     }
 
     & .home-chip {
@@ -4870,16 +4998,18 @@ body[data-slug="index"] {
     }
 
     & .home-status-lines {
+      gap: 0.95rem;
       margin-block: 1.6rem 1.9rem;
     }
 
     & .home-status-line {
-      grid-template-columns: 4.9rem minmax(0, 1fr);
-      gap: 0.5rem;
+      grid-template-columns: 1fr;
+      gap: 0.34rem;
     }
 
     & .home-status-label {
       font-size: 0.73rem;
+      line-height: 1.5;
     }
 
     & .home-chip {
@@ -4911,10 +5041,6 @@ body[data-slug="index"] {
 
     & .page-header header .top-tab {
       font-size: 0.76rem;
-    }
-
-    & .home-status-line {
-      grid-template-columns: 4.45rem minmax(0, 1fr);
     }
   }
 }

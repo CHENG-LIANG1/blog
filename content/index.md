@@ -28,12 +28,17 @@ aliases:
 <div class="home-profile" lang="en">
 
 <main class="home-intro">
+<div class="home-hero-row">
+<img class="home-avatar" src="/blog-assets/avatar.jpg" alt="Liang Cheng’s avatar" width="512" height="512" />
+<div class="home-hero-text">
 <h1 class="home-title">Liang Cheng</h1>
 <p class="home-lede">Hey, I’m Liang Cheng — also known as Ray. I’m a frontend engineer who ships independent products.</p>
+</div>
+</div>
 
 <div class="home-status-lines" aria-label="At a glance">
-<div class="home-status-line"><span class="home-status-label">Shipped</span><span class="home-status-items"><a class="home-chip" data-icon="roam" href="/Projects/Roam-Focus"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-map-pin" /></svg>Roam Focus</a><a class="home-chip" data-icon="quote" href="/Projects/兴曰"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-quote" /></svg>XingYue</a><a class="home-chip" data-icon="check" href="/Projects/Active-Habits"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-activity" /></svg>Active Habits</a><a class="home-chip" data-icon="code" href="/Projects/GeekBio"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-code" /></svg>GeekBio</a></span></div>
-<div class="home-status-line"><span class="home-status-label">Exploring</span><span class="home-status-items"><a class="home-chip" data-icon="search" href="/技术/SciFlow：把-PDF-RAG-做成可评测、可优化的检索系统"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-file-search" /></svg>SciFlow</a><a class="home-chip" data-icon="spark" href="/技术/从-0-到工程级项目：我们的-Vibe-Coding-工作方法"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-sparkles" /></svg>Vibe Coding</a></span></span></div>
+<div class="home-status-line"><span class="home-status-label">Shipped</span><span class="home-status-items"><a class="home-chip" data-icon="roam" title="Turns focus time into a real journey on the map" href="/Projects/Roam-Focus"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-map-pin" /></svg>Roam Focus</a><a class="home-chip" data-icon="quote" title="An immersive reader of Wang Xing’s Fanfou quotes" href="/Projects/兴曰"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-quote" /></svg>XingYue</a><a class="home-chip" data-icon="check" title="A privacy-first habit tracker for iOS" href="/Projects/Active-Habits"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-activity" /></svg>Active Habits</a><a class="home-chip" data-icon="code" title="Code-styled personal bio cards" href="/Projects/GeekBio"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-code" /></svg>GeekBio</a></span></div>
+<div class="home-status-line"><span class="home-status-label">Exploring</span><span class="home-status-items"><a class="home-chip" data-icon="search" title="Making PDF RAG evaluable and optimizable" href="/技术/SciFlow：把-PDF-RAG-做成可评测、可优化的检索系统"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-file-search" /></svg>SciFlow</a><a class="home-chip" data-icon="spark" title="Our workflow for engineering-grade AI-assisted building" href="/技术/从-0-到工程级项目：我们的-Vibe-Coding-工作方法"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-sparkles" /></svg>Vibe Coding</a></span></span></div>
 <div class="home-status-line"><span class="home-status-label">Working with</span><span class="home-status-items"><a class="home-chip" data-icon="flutter" href="https://flutter.dev/" target="_blank" rel="noopener noreferrer"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-flutter" /></svg>Flutter</a><a class="home-chip" data-icon="swift" href="https://developer.apple.com/swiftui/" target="_blank" rel="noopener noreferrer"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-swift" /></svg>SwiftUI</a><a class="home-chip" data-icon="react" href="https://react.dev/" target="_blank" rel="noopener noreferrer"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-react" /></svg>React</a><a class="home-chip" data-icon="ts" href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-typescript" /></svg>TypeScript</a></span></div>
 </div>
 
@@ -44,19 +49,6 @@ aliases:
 
 <p>Outside code, I collect physical games and music albums, and take photos — browse my <a href="/collections">collections</a> and <a href="/album">album</a>. I’m from Haimen and now based in <strong>Nanjing</strong>. <strong>IELTS 7.5</strong>; comfortable working in English.</p>
 </div>
-
-<div class="home-separator" aria-hidden="true"></div>
-
-<div class="home-find">
-<p class="home-find-label">Find me</p>
-<div class="home-social-links">
-<a href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener">GitHub</a>
-<a href="https://www.threads.com/@earthboundmother3" target="_blank" rel="noopener">Threads</a>
-<a href="https://xhslink.com/m/9Sb4uJ0KtIk" target="_blank" rel="noopener">RedNote</a>
-<a href="https://www.xiaoheihe.cn/bbs/user_profile_share?user_id=85696763823c&h_src=heyboxapp" target="_blank" rel="noopener">HeyBox</a>
-</div>
-<p class="home-email-line">Or email me at <a href="mailto:liangcheng2456@gmail.com">liangcheng2456@gmail.com</a>.</p>
-</div>
 </main>
 
 </div>
@@ -66,12 +58,17 @@ aliases:
 <div class="home-profile" lang="zh">
 
 <main class="home-intro">
+<div class="home-hero-row">
+<img class="home-avatar" src="/blog-assets/avatar.jpg" alt="梁程的头像" width="512" height="512" />
+<div class="home-hero-text">
 <h1 class="home-title">梁程</h1>
 <p class="home-lede">嗨，我是梁程，也叫梁非凡 Ray。前端工程师，也在独立开发自己的产品。</p>
+</div>
+</div>
 
 <div class="home-status-lines" aria-label="个人概览">
-<div class="home-status-line"><span class="home-status-label">已上架</span><span class="home-status-items"><a class="home-chip" data-icon="roam" href="/Projects/Roam-Focus"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-map-pin" /></svg>Roam Focus</a><a class="home-chip" data-icon="quote" href="/Projects/兴曰"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-quote" /></svg>兴曰</a><a class="home-chip" data-icon="check" href="/Projects/Active-Habits"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-activity" /></svg>Active Habits</a><a class="home-chip" data-icon="code" href="/Projects/GeekBio"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-code" /></svg>GeekBio</a></span></div>
-<div class="home-status-line"><span class="home-status-label">探索中</span><span class="home-status-items"><a class="home-chip" data-icon="search" href="/技术/SciFlow：把-PDF-RAG-做成可评测、可优化的检索系统"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-file-search" /></svg>SciFlow</a><a class="home-chip" data-icon="spark" href="/技术/从-0-到工程级项目：我们的-Vibe-Coding-工作方法"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-sparkles" /></svg>Vibe Coding</a></span></span></div>
+<div class="home-status-line"><span class="home-status-label">已上架</span><span class="home-status-items"><a class="home-chip" data-icon="roam" title="把专注时间变成地图上的真实旅程" href="/Projects/Roam-Focus"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-map-pin" /></svg>Roam Focus</a><a class="home-chip" data-icon="quote" title="沉浸式阅读王兴饭否语录" href="/Projects/兴曰"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-quote" /></svg>兴曰</a><a class="home-chip" data-icon="check" title="本地优先的习惯追踪 App" href="/Projects/Active-Habits"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-activity" /></svg>Active Habits</a><a class="home-chip" data-icon="code" title="用代码定义你的个人名片" href="/Projects/GeekBio"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-code" /></svg>GeekBio</a></span></div>
+<div class="home-status-line"><span class="home-status-label">探索中</span><span class="home-status-items"><a class="home-chip" data-icon="search" title="把 PDF RAG 做成可评测、可优化的检索系统" href="/技术/SciFlow：把-PDF-RAG-做成可评测、可优化的检索系统"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-file-search" /></svg>SciFlow</a><a class="home-chip" data-icon="spark" title="从 0 到工程级项目的 Vibe Coding 工作方法" href="/技术/从-0-到工程级项目：我们的-Vibe-Coding-工作方法"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-sparkles" /></svg>Vibe Coding</a></span></span></div>
 <div class="home-status-line"><span class="home-status-label">常用技术</span><span class="home-status-items"><a class="home-chip" data-icon="flutter" href="https://flutter.dev/" target="_blank" rel="noopener noreferrer"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-flutter" /></svg>Flutter</a><a class="home-chip" data-icon="swift" href="https://developer.apple.com/swiftui/" target="_blank" rel="noopener noreferrer"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-swift" /></svg>SwiftUI</a><a class="home-chip" data-icon="react" href="https://react.dev/" target="_blank" rel="noopener noreferrer"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-react" /></svg>React</a><a class="home-chip" data-icon="ts" href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer"><svg class="home-chip-icon" aria-hidden="true"><use href="#home-icon-typescript" /></svg>TypeScript</a></span></div>
 </div>
 
@@ -81,19 +78,6 @@ aliases:
 <p>我在<a href="/blog">博客</a>记录前端、Vibe Coding、独立开发和英语教学，包括<a href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架">从零上架 App</a>、<a href="/技术/我的博客是怎么做的">这个博客的工作流</a>，以及<a href="/英语/英语学习之道">把英语真正用起来</a>。</p>
 
 <p>代码之外，我收藏游戏实体盘和音乐专辑，也会拍照；这些都整理在<a href="/collections">收藏</a>和<a href="/album">相册</a>里。来自南通海门，现居<strong>南京</strong>。<strong>雅思 7.5</strong>，英语可以作为工作语言。</p>
-</div>
-
-<div class="home-separator" aria-hidden="true"></div>
-
-<div class="home-find">
-<p class="home-find-label">找到我</p>
-<div class="home-social-links">
-<a href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener">GitHub</a>
-<a href="https://www.threads.com/@earthboundmother3" target="_blank" rel="noopener">Threads</a>
-<a href="https://xhslink.com/m/9Sb4uJ0KtIk" target="_blank" rel="noopener">小红书</a>
-<a href="https://www.xiaoheihe.cn/bbs/user_profile_share?user_id=85696763823c&h_src=heyboxapp" target="_blank" rel="noopener">小黑盒</a>
-</div>
-<p class="home-email-line">也可以发邮件到 <a href="mailto:liangcheng2456@gmail.com">liangcheng2456@gmail.com</a>。</p>
 </div>
 </main>
 
