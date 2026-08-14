@@ -268,16 +268,7 @@ ul.toc-content.overflow {
 
 @media all and ($mobile) {
   .page-header .toc {
-    --toc-top: 4.75rem;
-    top: var(--toc-top);
-    bottom: auto;
-    left: 0.8rem;
-    width: calc(100vw - 1.6rem);
-    max-height: min(calc(100svh - var(--toc-top) - 0.8rem), 32rem);
-  }
-
-  ul.toc-content.overflow {
-    max-height: 52svh;
+    display: none;
   }
 }
 
