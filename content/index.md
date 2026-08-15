@@ -48,7 +48,7 @@ aliases:
 
 <p>I write about frontend engineering, Vibe Coding, indie development, and English teaching: <a href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架">shipping an app from zero</a>, <a href="/技术/我的博客是怎么做的">how this blog works</a>, and <a href="/英语/英语学习之道">learning English for real-world use</a>. More notes are in the <a href="/blog">blog</a>.</p>
 
-<p>Outside code, I collect physical games and music albums, and take photos — browse my <a href="/collections">collections</a> and <a href="/album">album</a>. My favorite artist is <strong>Soft Lipa</strong>. I’m from Haimen and now based in <strong>Nanjing</strong>. <strong>IELTS 7.5</strong>; comfortable working in English.</p>
+<p>Outside code, I collect physical games and music albums, and take photos — browse my <a href="/collections">collections</a> and <a href="/album">album</a>. My favorite artist is <a href="https://soft-lipa-archive.vercel.app/" target="_blank" rel="noopener noreferrer"><strong>Soft Lipa</strong></a>. I’m from Haimen and now based in <strong>Nanjing</strong>. <strong>IELTS 7.5</strong>; comfortable working in English.</p>
 </div>
 </main>
 
@@ -78,7 +78,7 @@ aliases:
 
 <p>我在<a href="/blog">博客</a>记录前端、Vibe Coding、独立开发和英语教学，包括<a href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架">从零上架 App</a>、<a href="/技术/我的博客是怎么做的">这个博客的工作流</a>，以及<a href="/英语/英语学习之道">把英语真正用起来</a>。</p>
 
-<p>代码之外，我收藏游戏实体盘和音乐专辑，也会拍照；这些都整理在<a href="/collections">收藏</a>和<a href="/album">相册</a>里。我最喜欢的歌手是<strong>蛋堡</strong>。来自南通海门，现居<strong>南京</strong>。<strong>雅思 7.5</strong>，英语可以作为工作语言。</p>
+<p>代码之外，我收藏游戏实体盘和音乐专辑，也会拍照；这些都整理在<a href="/collections">收藏</a>和<a href="/album">相册</a>里。我最喜欢的歌手是<a href="https://soft-lipa-archive.vercel.app/" target="_blank" rel="noopener noreferrer"><strong>蛋堡</strong></a>。来自南通海门，现居<strong>南京</strong>。<strong>雅思 7.5</strong>，英语可以作为工作语言。</p>
 </div>
 </main>
 
