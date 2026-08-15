@@ -21,9 +21,13 @@ const getCode = () => {
 }
 
 const showTotalViews = async (code: string) => {
+  const footer = document.querySelector<HTMLElement>(footerSelector)
   const container = document.querySelector<HTMLElement>("[data-site-views]")
   const count = container?.querySelector<HTMLElement>("[data-site-views-count]")
   if (!container || !count) return
+
+  const base = Number.parseInt(footer?.dataset.siteViewsBase ?? "0", 10)
+  const safeBase = Number.isSafeInteger(base) && base >= 0 ? base : 0
 
   try {
     const response = await fetch(`https://${code}.goatcounter.com/counter/TOTAL.json`, {
@@ -36,10 +40,13 @@ const showTotalViews = async (code: string) => {
     const value = typeof data.count === "string" ? data.count.trim() : ""
     if (!/^\d[\d\s,.]*$/.test(value)) return
 
-    count.textContent = value
+    const goatCounterViews = Number(value.replace(/[^\d]/g, ""))
+    if (!Number.isSafeInteger(goatCounterViews)) return
+
+    count.textContent = (safeBase + goatCounterViews).toLocaleString("en-US")
     container.hidden = false
   } catch {
-    // Keep the optional metric hidden when GoatCounter is unavailable or blocked.
+    // Keep showing the historical baseline when GoatCounter is unavailable or blocked.
   }
 }
 

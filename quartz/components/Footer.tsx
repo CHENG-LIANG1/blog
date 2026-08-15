@@ -5,12 +5,17 @@ import script from "./scripts/footerViews.inline"
 
 interface Options {
   goatCounterCode?: string
+  siteViewsBase?: number
   links: Record<string, string>
 }
 
 export default ((opts?: Options) => {
   const goatCounterCode = opts?.goatCounterCode?.trim().toLowerCase()
   const showSiteViews = goatCounterCode !== undefined && /^[a-z0-9-]+$/.test(goatCounterCode)
+  const siteViewsBase =
+    Number.isSafeInteger(opts?.siteViewsBase) && (opts?.siteViewsBase ?? 0) >= 0
+      ? (opts?.siteViewsBase ?? 0)
+      : 0
 
   const Footer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
     const links = opts?.links ?? {}
@@ -18,6 +23,7 @@ export default ((opts?: Options) => {
       <footer
         class={`${displayClass ?? ""}`}
         data-goatcounter-code={showSiteViews ? goatCounterCode : undefined}
+        data-site-views-base={showSiteViews ? siteViewsBase : undefined}
       >
         <div class="footer-frame">
           <p class="footer-copyright">
@@ -27,8 +33,8 @@ export default ((opts?: Options) => {
                 <span class="footer-copyright-divider" aria-hidden="true">
                   ·
                 </span>
-                <span class="footer-site-views" data-site-views hidden aria-live="polite">
-                  <span data-site-views-count></span> VIEWS
+                <span class="footer-site-views" data-site-views aria-live="polite">
+                  <span data-site-views-count>{siteViewsBase.toLocaleString("en-US")}</span> VIEWS
                 </span>
               </>
             )}
