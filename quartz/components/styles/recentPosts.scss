@@ -197,12 +197,9 @@
     color: var(--darkgray);
     background: transparent;
     text-decoration: none !important;
-    transition:
-      background-color 0.18s ease,
-      transform 0.18s ease;
+    transition: background-color 0.18s ease;
 
     &:hover {
-      transform: translateX(0.2rem);
       background: var(--rp-wash);
 
       & .rp-list-heading h3 {
@@ -379,9 +376,5 @@
   .recent-posts .rp-list-link,
   .recent-posts .rp-list-heading h3 {
     transition: none;
-  }
-
-  .recent-posts .rp-list-link:hover {
-    transform: none;
   }
 }
