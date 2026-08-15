@@ -46,6 +46,11 @@ footer {
     color: color-mix(in srgb, var(--gray) 56%, transparent);
   }
 
+  & .footer-site-views {
+    color: color-mix(in srgb, var(--gray) 82%, transparent);
+    font-variant-numeric: tabular-nums;
+  }
+
   & .footer-signature {
     display: inline-flex;
     min-height: 2.4rem;

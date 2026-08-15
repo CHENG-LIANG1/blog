@@ -35,6 +35,7 @@ export const sharedPageComponents: SharedLayout = {
     }),
   ],
   footer: Component.Footer({
+    goatCounterCode: "chengliang",
     links: {
       GitHub: "https://github.com/CHENG-LIANG1",
       Threads: "https://www.threads.com/@earthboundmother3",

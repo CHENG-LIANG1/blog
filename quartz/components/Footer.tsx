@@ -1,18 +1,37 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/footer.scss"
+// @ts-ignore
+import script from "./scripts/footerViews.inline"
 
 interface Options {
+  goatCounterCode?: string
   links: Record<string, string>
 }
 
 export default ((opts?: Options) => {
+  const goatCounterCode = opts?.goatCounterCode?.trim().toLowerCase()
+  const showSiteViews = goatCounterCode !== undefined && /^[a-z0-9-]+$/.test(goatCounterCode)
+
   const Footer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
     const links = opts?.links ?? {}
     return (
-      <footer class={`${displayClass ?? ""}`}>
+      <footer
+        class={`${displayClass ?? ""}`}
+        data-goatcounter-code={showSiteViews ? goatCounterCode : undefined}
+      >
         <div class="footer-frame">
           <p class="footer-copyright">
             <span class="footer-copyright-meta">2026—PRESENT</span>
+            {showSiteViews && (
+              <>
+                <span class="footer-copyright-divider" aria-hidden="true">
+                  ·
+                </span>
+                <span class="footer-site-views" data-site-views hidden aria-live="polite">
+                  <span data-site-views-count></span> VIEWS
+                </span>
+              </>
+            )}
           </p>
           <a class="footer-signature" href="/" aria-label="Liang Cheng, Nanjing, China">
             <span class="footer-signature-mark" aria-hidden="true">
@@ -38,5 +57,6 @@ export default ((opts?: Options) => {
   }
 
   Footer.css = style
+  Footer.afterDOMLoaded = script
   return Footer
 }) satisfies QuartzComponentConstructor
