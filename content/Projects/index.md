@@ -62,6 +62,7 @@ aliases:
     <a href="https://github.com/CHENG-LIANG1/WalkThru" target="_blank" rel="noopener"><strong>WalkThru</strong><span>分支叙事文字冒险</span><em>Story</em></a>
     <a href="https://github.com/CHENG-LIANG1/WangXing-Said" target="_blank" rel="noopener"><strong>WangXing-Said</strong><span>兴曰 App 开源仓库</span><em>iOS</em></a>
     <a href="https://github.com/CHENG-LIANG1/SoftLipa-Archive" target="_blank" rel="noopener"><strong>SoftLipa Archive</strong><span>蛋堡音乐档案与官方作品入口</span><em>Music</em></a>
+    <a href="https://github.com/CHENG-LIANG1/TizzyBac" target="_blank" rel="noopener"><strong>Tizzy Bac Archive</strong><span>专辑、现场与 EP 作品档案</span><em>Music</em></a>
     <a href="https://life-simulator-pied.vercel.app/" target="_blank" rel="noopener"><strong>Life Simulator</strong><span>人生选择与轨迹模拟</span><em>Game</em></a>
     <a href="https://moyu-calculator.vercel.app/" target="_blank" rel="noopener"><strong>Moyu Calculator</strong><span>上班时间价值计算器</span><em>Utility</em></a>
   </div>
