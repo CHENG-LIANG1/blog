@@ -11,9 +11,6 @@ const HomeContact: QuartzComponent = () => (
         <a href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener">
           GitHub
         </a>
-        <a href="https://www.threads.com/@earthboundmother3" target="_blank" rel="noopener">
-          Threads
-        </a>
         <a href="https://xhslink.com/m/9Sb4uJ0KtIk" target="_blank" rel="noopener">
           RedNote
         </a>
@@ -35,9 +32,6 @@ const HomeContact: QuartzComponent = () => (
       <div class="home-social-links">
         <a href="https://github.com/CHENG-LIANG1" target="_blank" rel="noopener">
           GitHub
-        </a>
-        <a href="https://www.threads.com/@earthboundmother3" target="_blank" rel="noopener">
-          Threads
         </a>
         <a href="https://xhslink.com/m/9Sb4uJ0KtIk" target="_blank" rel="noopener">
           小红书
