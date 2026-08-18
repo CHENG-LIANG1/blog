@@ -1,5 +1,6 @@
 ---
 title: Function Calling 与 Tool Use：AI 工具调用笔记
+created: 2026-04-23
 description: 解释大语言模型的 Function Calling 与 Tool Use 工作流程，包括工具定义、参数生成、执行结果回传和 AI Agent 工具调用实践。
 tags:
   - 技术

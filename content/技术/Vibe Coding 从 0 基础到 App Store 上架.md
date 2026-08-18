@@ -1,5 +1,6 @@
 ---
 title: Vibe Coding 从 0 基础到 App Store 上架
+created: 2026-05-22
 description: 面向零编程基础读者的 Vibe Coding 实战教程：从想法、PRD、MVP 和 AI 编程工具选择，一路完成测试、部署与 App Store 上架。
 tags:
   - 技术

@@ -1,5 +1,6 @@
 ---
 title: Structured Output（结构化输出）实践笔记
+created: 2026-04-23
 description: 介绍大语言模型 Structured Output 的实现方式、JSON Schema 约束、解析与验证，以及在 Python、Pydantic 和 Instructor 中的实践。
 tags:
   - 技术

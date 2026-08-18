@@ -1,5 +1,6 @@
 ---
 title: Few-Shot Prompting（少样本提示）实践笔记
+created: 2026-04-23
 description: 介绍 Few-Shot Prompting 少样本提示的原理、示例选择、格式设计和常见问题，帮助大语言模型通过少量示例稳定完成任务。
 tags:
   - 技术

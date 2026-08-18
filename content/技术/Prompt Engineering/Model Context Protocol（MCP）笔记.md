@@ -1,5 +1,6 @@
 ---
 title: Model Context Protocol（MCP）原理与实践笔记
+created: 2026-04-23
 description: 介绍 Model Context Protocol（MCP）的架构、Server 与 Client、Resources、Tools 和 Prompts，以及 AI Agent 接入外部能力的方法。
 tags:
   - 技术

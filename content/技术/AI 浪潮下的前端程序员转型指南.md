@@ -1,5 +1,6 @@
 ---
 title: AI 浪潮下的前端程序员转型指南
+created: 2026-04-11
 description: 前端工程师如何转向 AI 产品、AIGC、AI Agent 与工程化工具链？本文比较四条转型路线、所需能力、起步项目和选择建议。
 tags:
   - 技术

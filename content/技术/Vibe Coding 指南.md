@@ -1,5 +1,6 @@
 ---
 title: Vibe Coding 指南：独立开发者的一周交付手册
+created: 2026-04-12
 description: 一套面向独立开发者的 Vibe Coding 实操流程：用 AI 从真实痛点出发，在一周内完成需求、原型、代码、部署和发布闭环。
 tags:
   - 技术

@@ -1,5 +1,6 @@
 ---
 title: Chain of Thought（CoT）思维链提示笔记
+created: 2026-04-23
 description: 介绍 Chain of Thought（CoT）思维链提示的定义、适用场景、局限与实践方式，帮助理解大语言模型的分步推理方法。
 tags:
   - 技术

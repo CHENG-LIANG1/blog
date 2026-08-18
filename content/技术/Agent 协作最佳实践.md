@@ -1,5 +1,6 @@
 ---
 title: Agent 协作最佳实践：双 Agent 开发、代码审查与闭环验收
+created: 2026-07-19
 description: 使用 Codex 与 Qoder 完成方案设计、分步开发、独立代码审查和闭环验收，建立可复用、可验证的双 Agent 协作开发流程。
 tags:
   - 技术

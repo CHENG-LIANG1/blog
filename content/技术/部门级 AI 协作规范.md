@@ -1,5 +1,6 @@
 ---
 title: 部门级 AI 协作规范：用 Skill 和代码门禁保证生成代码质量
+created: 2026-08-10
 description: 将团队规范和项目知识沉淀为部门级、项目级 Skill，并结合 ESLint、测试、双 Agent Review 和代码门禁，建立可执行、可验证的 AI 协作规范。
 tags:
   - 技术
