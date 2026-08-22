@@ -1,6 +1,6 @@
 ---
 title: 项目
-description: 已上架产品、Web 工具与持续进行的实验。
+description: 已上架产品、Web 工具、自制音乐档案与持续进行的实验。
 hideFolderListing: true
 aliases:
   - projects
@@ -48,9 +48,50 @@ aliases:
   </div>
 </section>
 
-<section class="project-chapter project-chapter-labs" aria-labelledby="projects-labs">
+<section class="project-chapter project-chapter-archives" aria-labelledby="projects-archives">
   <header class="project-chapter-heading">
     <span class="project-chapter-number">03</span>
+    <div><p>Listening room</p><h2 id="projects-archives"><span lang="zh">为喜欢的音乐做档案</span><span lang="en">Fan-made discography sites</span></h2></div>
+  </header>
+  <div class="project-archive-grid">
+    <article class="project-archive-card" style="--archive-accent: #b1844a">
+      <a class="project-archive-main" href="https://soft-lipa-archive.vercel.app/" target="_blank" rel="noopener">
+        <span class="project-archive-disc" aria-hidden="true"><i></i></span>
+        <span class="project-archive-copy"><small>Soft Lipa · 蛋堡</small><strong>SoftLipa Archive</strong><span>主要专辑、完整曲序与官方作品入口</span></span>
+        <span class="project-archive-open" aria-hidden="true">↗</span>
+      </a>
+      <a class="project-archive-source" href="https://github.com/CHENG-LIANG1/SoftLipa-Archive" target="_blank" rel="noopener" aria-label="SoftLipa Archive GitHub 源码">GitHub ↗</a>
+    </article>
+    <article class="project-archive-card" style="--archive-accent: #c95f7e">
+      <a class="project-archive-main" href="https://tizzy-bac.vercel.app/" target="_blank" rel="noopener">
+        <span class="project-archive-disc" aria-hidden="true"><i></i></span>
+        <span class="project-archive-copy"><small>Tizzy Bac</small><strong>Tizzy Bac Archive</strong><span>专辑、现场与 EP 作品档案</span></span>
+        <span class="project-archive-open" aria-hidden="true">↗</span>
+      </a>
+      <a class="project-archive-source" href="https://github.com/CHENG-LIANG1/TizzyBac" target="_blank" rel="noopener" aria-label="Tizzy Bac Archive GitHub 源码">GitHub ↗</a>
+    </article>
+    <article class="project-archive-card" style="--archive-accent: #4f9276">
+      <a class="project-archive-main" href="https://sodagreen-seven.vercel.app/" target="_blank" rel="noopener">
+        <span class="project-archive-disc" aria-hidden="true"><i></i></span>
+        <span class="project-archive-copy"><small>Sodagreen · 苏打绿</small><strong>Sodagreen Archive</strong><span>专辑、现场与四季作品档案</span></span>
+        <span class="project-archive-open" aria-hidden="true">↗</span>
+      </a>
+      <a class="project-archive-source" href="https://github.com/CHENG-LIANG1/sodagreen" target="_blank" rel="noopener" aria-label="Sodagreen Archive GitHub 源码">GitHub ↗</a>
+    </article>
+    <article class="project-archive-card" style="--archive-accent: #7890ac">
+      <a class="project-archive-main" href="https://taylor-swift-black.vercel.app/" target="_blank" rel="noopener">
+        <span class="project-archive-disc" aria-hidden="true"><i></i></span>
+        <span class="project-archive-copy"><small>Taylor Swift</small><strong>Taylor Swift｜时代档案馆</strong><span>十二个时代、唱片试听与二十年音乐轨迹</span></span>
+        <span class="project-archive-open" aria-hidden="true">↗</span>
+      </a>
+      <a class="project-archive-source" href="https://github.com/CHENG-LIANG1/TaylorSwift" target="_blank" rel="noopener" aria-label="Taylor Swift 时代档案馆 GitHub 源码">GitHub ↗</a>
+    </article>
+  </div>
+</section>
+
+<section class="project-chapter project-chapter-labs" aria-labelledby="projects-labs">
+  <header class="project-chapter-heading">
+    <span class="project-chapter-number">04</span>
     <div><p>Open notebook</p><h2 id="projects-labs"><span lang="zh">开源与实验记录</span><span lang="en">Open source & experiments</span></h2></div>
   </header>
   <div class="project-lab-list">
@@ -61,9 +102,6 @@ aliases:
     <a href="https://github.com/CHENG-LIANG1/CrazyEffects" target="_blank" rel="noopener"><strong>CrazyEffects</strong><span>SwiftUI 特效目录与 Demo</span><em>SwiftUI</em></a>
     <a href="https://github.com/CHENG-LIANG1/WalkThru" target="_blank" rel="noopener"><strong>WalkThru</strong><span>分支叙事文字冒险</span><em>Story</em></a>
     <a href="https://github.com/CHENG-LIANG1/WangXing-Said" target="_blank" rel="noopener"><strong>WangXing-Said</strong><span>兴曰 App 开源仓库</span><em>iOS</em></a>
-    <a href="https://github.com/CHENG-LIANG1/SoftLipa-Archive" target="_blank" rel="noopener"><strong>SoftLipa Archive</strong><span>蛋堡音乐档案与官方作品入口</span><em>Music</em></a>
-    <a href="https://github.com/CHENG-LIANG1/TizzyBac" target="_blank" rel="noopener"><strong>Tizzy Bac Archive</strong><span>专辑、现场与 EP 作品档案</span><em>Music</em></a>
-    <a href="https://github.com/CHENG-LIANG1/sodagreen" target="_blank" rel="noopener"><strong>Sodagreen Archive</strong><span>苏打绿专辑、现场与四季作品档案</span><em>Music</em></a>
     <a href="https://life-simulator-pied.vercel.app/" target="_blank" rel="noopener"><strong>Life Simulator</strong><span>人生选择与轨迹模拟</span><em>Game</em></a>
     <a href="https://moyu-calculator.vercel.app/" target="_blank" rel="noopener"><strong>Moyu Calculator</strong><span>上班时间价值计算器</span><em>Utility</em></a>
   </div>
