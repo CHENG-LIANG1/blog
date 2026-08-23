@@ -12,23 +12,28 @@ aliases:
     <div><p>Build journal</p><h2 id="projects-products"><span lang="zh">已经交付的产品</span><span lang="en">Products in the world</span></h2></div>
   </header>
   <div class="project-journal">
-    <a class="project-journal-entry" href="/Projects/Roam-Focus">
+    <a class="project-journal-entry" href="/Projects/ClickArena">
       <span class="project-journal-index" aria-hidden="true">01</span>
+      <div class="project-journal-copy"><p class="project-journal-meta">Next.js · TypeScript · PostgreSQL</p><strong class="project-journal-title">Click Arena</strong><p><span lang="zh">真人助推决定排名的永久作品擂台，独立统计每个链接的访问与互动。</span><span lang="en">A permanent creative-work arena where human boosts decide the all-time ranking.</span></p></div>
+      <div class="project-journal-result"><span class="project-status"><i></i><span lang="zh">已上线</span><span lang="en">Live</span></span><strong>All-time</strong><small><span lang="zh">永久排行榜</span><span lang="en">leaderboard</span></small></div>
+    </a>
+    <a class="project-journal-entry" href="/Projects/Roam-Focus">
+      <span class="project-journal-index" aria-hidden="true">02</span>
       <div class="project-journal-copy"><p class="project-journal-meta">SwiftUI · iOS · Focus</p><strong class="project-journal-title">Roam Focus</strong><p><span lang="zh">把专注时间变成地图上的真实旅程，让完成一段工作和走完一段路拥有同样清晰的反馈。</span><span lang="en">Turns focused time into a real journey on the map.</span></p></div>
       <div class="project-journal-result"><span class="project-status"><i></i><span lang="zh">持续更新</span><span lang="en">Live</span></span><strong>1,000+</strong><small><span lang="zh">活跃用户</span><span lang="en">active users</span></small></div>
     </a>
     <a class="project-journal-entry" href="/Projects/兴曰">
-      <span class="project-journal-index" aria-hidden="true">02</span>
+      <span class="project-journal-index" aria-hidden="true">03</span>
       <div class="project-journal-copy"><p class="project-journal-meta">SwiftUI · iOS · Reading</p><strong class="project-journal-title">兴曰</strong><p><span lang="zh">每次打开只读一句，没有信息流、账号和广告，把阅读重新变成一件安静的事。</span><span lang="en">A quiet, one-quote-at-a-time reading experience.</span></p></div>
       <div class="project-journal-result"><span class="project-status"><i></i><span lang="zh">已上架</span><span lang="en">Shipped</span></span><strong>15K+</strong><small><span lang="zh">条公开文字</span><span lang="en">quotes</span></small></div>
     </a>
     <a class="project-journal-entry" href="/Projects/Active-Habits">
-      <span class="project-journal-index" aria-hidden="true">03</span>
+      <span class="project-journal-index" aria-hidden="true">04</span>
       <div class="project-journal-copy"><p class="project-journal-meta">SwiftUI · iOS · Habits</p><strong class="project-journal-title">Active Habits</strong><p><span lang="zh">用热力图、目标与成就反馈，让微小习惯变得可见，也更容易坚持。</span><span lang="en">Makes small habits visible through heatmaps, goals, and milestones.</span></p></div>
       <div class="project-journal-result"><span class="project-status"><i></i><span lang="zh">已上架</span><span lang="en">Shipped</span></span><strong>Daily</strong><small><span lang="zh">习惯系统</span><span lang="en">habit system</span></small></div>
     </a>
     <a class="project-journal-entry" href="/Projects/GeekBio">
-      <span class="project-journal-index" aria-hidden="true">04</span>
+      <span class="project-journal-index" aria-hidden="true">05</span>
       <div class="project-journal-copy"><p class="project-journal-meta">SwiftUI · iOS · Identity</p><strong class="project-journal-title">GeekBio</strong><p><span lang="zh">用代码编辑器的表达方式展示个人简介、身份与链接。</span><span lang="en">A developer-shaped profile and identity card.</span></p></div>
       <div class="project-journal-result"><span class="project-status"><i></i><span lang="zh">已上架</span><span lang="en">Shipped</span></span><strong>Code</strong><small><span lang="zh">个人名片</span><span lang="en">as identity</span></small></div>
     </a>
