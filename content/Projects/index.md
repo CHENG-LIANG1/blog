@@ -100,6 +100,7 @@ aliases:
     <div><p>Open notebook</p><h2 id="projects-labs"><span lang="zh">开源与实验记录</span><span lang="en">Open source & experiments</span></h2></div>
   </header>
   <div class="project-lab-list">
+    <a href="https://github.com/CHENG-LIANG1/ModelForgeAgent" target="_blank" rel="noopener"><strong>ModelForge Agent</strong><span>由类型化工具驱动的 3D 场景构建 Agent</span><em>3D Agent</em></a>
     <a href="https://github.com/CHENG-LIANG1/DoubanLens" target="_blank" rel="noopener"><strong>DoubanLens</strong><span>豆瓣数据分析</span><em>Data</em></a>
     <a href="https://github.com/CHENG-LIANG1/ai-agent-dashboard" target="_blank" rel="noopener"><strong>AI Agent Dashboard</strong><span>Computer Use Agent 工作台</span><em>Agent</em></a>
     <a href="https://github.com/CHENG-LIANG1/SciFlow" target="_blank" rel="noopener"><strong>SciFlow</strong><span>科研文档 RAG 与问答</span><em>RAG</em></a>
