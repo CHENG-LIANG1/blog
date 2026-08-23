@@ -108,6 +108,7 @@ aliases:
     <a href="https://github.com/CHENG-LIANG1/CrazyEffects" target="_blank" rel="noopener"><strong>CrazyEffects</strong><span>SwiftUI 特效目录与 Demo</span><em>SwiftUI</em></a>
     <a href="https://github.com/CHENG-LIANG1/WalkThru" target="_blank" rel="noopener"><strong>WalkThru</strong><span>分支叙事文字冒险</span><em>Story</em></a>
     <a href="https://github.com/CHENG-LIANG1/WangXing-Said" target="_blank" rel="noopener"><strong>WangXing-Said</strong><span>兴曰 App 开源仓库</span><em>iOS</em></a>
+    <a href="https://rick-and-morty-six-omega.vercel.app/" target="_blank" rel="noopener"><strong>Who Are You in R&amp;M?</strong><span>瑞克和莫蒂角色人格匹配测试</span><em>Quiz</em></a>
     <a href="https://life-simulator-pied.vercel.app/" target="_blank" rel="noopener"><strong>Life Simulator</strong><span>人生选择与轨迹模拟</span><em>Game</em></a>
     <a href="https://moyu-calculator.vercel.app/" target="_blank" rel="noopener"><strong>Moyu Calculator</strong><span>上班时间价值计算器</span><em>Utility</em></a>
   </div>
