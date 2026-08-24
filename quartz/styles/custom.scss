@@ -406,6 +406,11 @@ body[data-slug="index"] {
   }
 }
 
+html:has(body[data-slug="Projects/Roam-Focus"]),
+body[data-slug="Projects/Roam-Focus"] {
+  background: #070913;
+}
+
 body[data-slug="Projects/Roam-Focus"] {
   overflow-x: hidden;
   overflow-y: auto;
@@ -580,7 +585,7 @@ body[data-slug="Projects/兴曰"] .page > #quartz-body .center > article {
   }
 }
 
-.xy-button-primary {
+.xy-button.xy-button-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-deep));
   color: #fff;
   box-shadow: 0 12px 28px rgba(217, 79, 112, 0.35);
