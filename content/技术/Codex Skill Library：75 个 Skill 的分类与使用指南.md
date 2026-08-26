@@ -2,6 +2,7 @@
 title: Codex Skill Library：75 个 Skill 的分类与使用指南
 created: 2026-08-12
 description: 我整理了一份可审查、可安装的 Codex Skill Library，并按能力场景解释其中 75 个 Skill 分别解决什么问题、从哪里安装，以及应该如何选择。
+blogCategory: 项目/面试
 tags:
   - 技术
   - AI

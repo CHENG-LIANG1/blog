@@ -8,14 +8,13 @@ import styles from "./styles/githubActivity.scss"
 interface Options {
   username: string
   title: string
-  // ghchart 热力图颜色（不带 #）
-  heatColor: string
+  titleEn: string
 }
 
 const defaultOptions: Options = {
   username: "CHENG-LIANG1",
-  title: "GitHub",
-  heatColor: "42b883",
+  title: "GitHub 活动",
+  titleEn: "GitHub activity",
 }
 
 export default ((userOpts?: Partial<Options>) => {
@@ -25,7 +24,10 @@ export default ((userOpts?: Partial<Options>) => {
     return (
       <section class={classNames(displayClass, "github-activity")} data-user={opts.username}>
         <div class="gh-head">
-          <h2 class="gh-title">{opts.title}</h2>
+          <h2 class="gh-title">
+            <span lang="zh">{opts.title}</span>
+            <span lang="en">{opts.titleEn}</span>
+          </h2>
           <a
             class="gh-profile-link"
             href={`https://github.com/${opts.username}`}
@@ -46,9 +48,6 @@ export default ((userOpts?: Partial<Options>) => {
             <span class="gh-heatmap-loading">加载贡献热力图…</span>
           </div>
         </a>
-        <ul class="gh-commits" data-loaded="false">
-          <li class="gh-commit-loading">加载最近提交…</li>
-        </ul>
       </section>
     )
   }

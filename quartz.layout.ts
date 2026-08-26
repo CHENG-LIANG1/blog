@@ -30,6 +30,10 @@ export const sharedPageComponents: SharedLayout = {
       condition: (page) => page.fileData.slug === "index",
     }),
     Component.ConditionalRender({
+      component: Component.GithubActivity({ username: "CHENG-LIANG1" }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+    Component.ConditionalRender({
       component: Component.HomeContact(),
       condition: (page) => page.fileData.slug === "index",
     }),
