@@ -2,7 +2,6 @@
 title: SciFlow：从基础向量检索演进到可评测的高级 RAG
 created: 2026-08-03
 description: SciFlow 如何从基础向量检索演进到可评测的高级 RAG，并进一步成为支持跨文档问答、本地部署与在线体验的科研工作台。
-blogCategory: 项目/面试
 tags:
   - 技术
   - AI

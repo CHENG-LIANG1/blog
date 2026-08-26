@@ -2,7 +2,6 @@
 title: 从 0 到工程级项目：我们的 Vibe Coding 工作方法
 created: 2026-08-12
 description: 基于真实项目 ForceTrack，拆解工程级 Vibe Coding 如何完成 PRD、技术方案、分阶段开发、数据迁移、自动化测试、验收与交付。
-blogCategory: 项目/面试
 tags:
   - 技术
   - AI

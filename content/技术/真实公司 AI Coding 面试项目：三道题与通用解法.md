@@ -2,7 +2,7 @@
 title: 真实公司 AI Coding 面试项目：三道题与通用解法
 created: 2026-08-26
 description: 三道匿名化真实公司 AI Coding 项目的拆解：Computer Use Agent、React Native 行动 Agent 与 Jira 风格系统，以及限时交付的通用方法。
-blogCategory: 项目/面试
+blogSubcategory: 面试
 tags:
   - 技术
   - AI

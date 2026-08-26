@@ -200,7 +200,6 @@ const isBlogPost = (f: QuartzPluginData): boolean => {
 
 const CATEGORY_LABELS: Record<string, string> = {
   技术: "技术",
-  "项目/面试": "项目/面试",
   英语: "英语",
   其他: "其他",
 }
@@ -214,7 +213,7 @@ function formatDirLabel(segment: string): string {
   return CATEGORY_LABELS[segment] ?? SUBDIR_LABELS[segment] ?? segment
 }
 
-const CATEGORY_ORDER = ["技术", "项目/面试", "英语", "其他"]
+const CATEGORY_ORDER = ["技术", "英语", "其他"]
 function categorySortKey(cat: string): string {
   const idx = CATEGORY_ORDER.indexOf(cat)
   return idx >= 0 ? `${idx}` : `z${cat}`
@@ -239,16 +238,16 @@ function getPostSegments(slug: string): string[] {
 
 function getBlogListItem(page: QuartzPluginData): BlogListItem {
   const segments = getPostSegments(page.slug ?? "")
-  const frontmatterCategory = page.frontmatter?.blogCategory
+  const frontmatterSubcategory = page.frontmatter?.blogSubcategory
   return {
     page,
-    category:
-      typeof frontmatterCategory === "string" && frontmatterCategory.trim().length > 0
-        ? frontmatterCategory.trim()
-        : segments.length > 1
-          ? segments[0]
-          : "其他",
-    subcategory: segments.length > 2 ? segments[1] : undefined,
+    category: segments.length > 1 ? segments[0] : "其他",
+    subcategory:
+      typeof frontmatterSubcategory === "string" && frontmatterSubcategory.trim().length > 0
+        ? frontmatterSubcategory.trim()
+        : segments.length > 2
+          ? segments[1]
+          : undefined,
     topic: segments.length > 3 ? segments[2] : undefined,
   }
 }
