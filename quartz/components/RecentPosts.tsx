@@ -185,7 +185,10 @@ document.addEventListener("nav", () => {
 
 const isBlogPost = (f: QuartzPluginData): boolean => {
   const slug = f.slug ?? ""
+  const hideFromBlog =
+    f.frontmatter?.hideFromBlog === true || f.frontmatter?.hideFromBlog === "true"
   return (
+    !hideFromBlog &&
     slug !== "index" &&
     slug !== "blog" &&
     slug !== "album" &&
