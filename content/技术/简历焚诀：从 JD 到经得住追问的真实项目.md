@@ -2,6 +2,7 @@
 title: 简历焚诀：从 JD 到经得住追问的真实项目
 created: 2026-08-26
 description: 不要先包装简历。先找出目标岗位与真实经历之间的能力缺口，再用一条可运行、可解释、可验证的项目链路补上它。
+hideFromBlog: true
 blogSubcategory: 面试
 tags:
   - 技术
