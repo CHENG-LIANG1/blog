@@ -100,14 +100,6 @@ document.addEventListener("nav", () => {
           (item) => !item.hidden,
         )
         group.hidden = !visibleItem
-
-        const visibleMonthCount = Array.from(
-          group.querySelectorAll("[data-rp-month-group]"),
-        ).filter((monthGroup) => !monthGroup.hidden).length
-        const summaryZh = group.querySelector("[data-rp-year-summary-zh]")
-        const summaryEn = group.querySelector("[data-rp-year-summary-en]")
-        if (summaryZh) summaryZh.textContent = visibleMonthCount + " 个月"
-        if (summaryEn) summaryEn.textContent = visibleMonthCount + (visibleMonthCount === 1 ? " month" : " months")
       })
 
       categoryButtons.forEach((button) => {
@@ -334,12 +326,6 @@ function sanitizeListText(value: string): string {
   return value.replace(/[→↗]/g, "，").replace(/[└─]/g, "").replace(/\s+/g, " ").trim()
 }
 
-function formatDate(cfg: GlobalConfiguration, page: QuartzPluginData): string {
-  const date = getDate(cfg, page)
-  if (!date) return ""
-  return `${date.getFullYear()}-${`${date.getMonth() + 1}`.padStart(2, "0")}-${`${date.getDate()}`.padStart(2, "0")}`
-}
-
 export default ((userOpts?: Partial<Options>) => {
   const RecentPosts: QuartzComponent = ({
     allFiles,
@@ -492,14 +478,6 @@ export default ((userOpts?: Partial<Options>) => {
                     Year
                   </span>
                   <h2 id={`rp-year-${year}`}>{year}</h2>
-                  <span class="rp-year-summary">
-                    <span lang="zh" data-rp-year-summary-zh>
-                      {monthGroups.length} 个月
-                    </span>
-                    <span lang="en" data-rp-year-summary-en>
-                      {monthGroups.length} months
-                    </span>
-                  </span>
                 </header>
                 <div class="rp-months">
                   {monthGroups.map((month) => {
@@ -532,7 +510,6 @@ export default ((userOpts?: Partial<Options>) => {
                             const title = sanitizeListText(
                               (page.frontmatter?.title as string | undefined) ?? "无标题",
                             )
-                            const dateStr = formatDate(cfg, page)
                             const description = getDescription(page)
 
                             return (
@@ -546,13 +523,6 @@ export default ((userOpts?: Partial<Options>) => {
                                   class="rp-list-link"
                                   href={resolveRelative(fileData.slug!, page.slug!)}
                                 >
-                                  <time
-                                    class="rp-list-date"
-                                    datetime={dateStr || undefined}
-                                    aria-label={dateStr || "未注明日期"}
-                                  >
-                                    {dateStr.slice(-2) || "--"}
-                                  </time>
                                   <div class="rp-list-main">
                                     <div class="rp-list-heading">
                                       <h4>{title}</h4>

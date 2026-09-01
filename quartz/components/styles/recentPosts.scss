@@ -181,16 +181,6 @@
       letter-spacing: -0.08em;
       line-height: 1;
     }
-
-    & .rp-year-summary {
-      display: block;
-      margin-top: 0.65rem;
-      color: color-mix(in srgb, var(--rp-muted) 82%, transparent);
-      font-family: var(--codeFont);
-      font-size: 0.58rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
   }
 
   & .rp-months {
@@ -262,7 +252,7 @@
 
   & .rp-list-link {
     display: grid;
-    grid-template-columns: 2rem minmax(0, 1fr) minmax(4.8rem, auto);
+    grid-template-columns: minmax(0, 1fr) minmax(4.8rem, auto);
     align-items: start;
     gap: clamp(0.8rem, 2vw, 1.2rem);
     margin-inline: -0.75rem;
@@ -286,16 +276,6 @@
       outline: 2px solid color-mix(in srgb, var(--secondary) 65%, transparent);
       outline-offset: 2px;
     }
-  }
-
-  & .rp-list-date {
-    padding-top: 0.16rem;
-    color: color-mix(in srgb, var(--secondary) 72%, var(--rp-muted));
-    font-family: var(--codeFont);
-    font-size: 0.68rem;
-    font-weight: var(--weight-medium, 500);
-    letter-spacing: 0.02em;
-    white-space: nowrap;
   }
 
   & .rp-list-main {
@@ -402,21 +382,12 @@
 
     & .rp-year-heading {
       position: static;
-      display: grid;
-      grid-template-columns: auto auto;
-      align-items: end;
-      justify-content: start;
-      column-gap: 0.75rem;
+      display: block;
       padding: 0 0 0 0.75rem;
     }
 
     & .rp-year-heading .rp-year-label {
-      grid-column: 1 / -1;
-      margin: 0;
-    }
-
-    & .rp-year-heading .rp-year-summary {
-      margin: 0 0 0.16rem;
+      margin-bottom: 0.35rem;
     }
 
     & .rp-months {
@@ -433,8 +404,7 @@
     }
 
     & .rp-list-link {
-      grid-template-columns: 2rem minmax(0, 1fr);
-      gap: 0.7rem;
+      grid-template-columns: minmax(0, 1fr);
       margin-inline: -0.45rem;
       padding: 0.8rem 0.45rem;
     }
