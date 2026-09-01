@@ -26,6 +26,7 @@ document.addEventListener("nav", () => {
     const subcategoryPanels = root.querySelectorAll("[data-rp-subcategory-panel]")
     const topicPanels = root.querySelectorAll("[data-rp-topic-panel]")
     const items = root.querySelectorAll("[data-rp-item-category]")
+    const monthGroups = root.querySelectorAll("[data-rp-month-group]")
     const groups = root.querySelectorAll("[data-rp-group]")
     const count = root.querySelector("[data-rp-count]")
     const clearButton = root.querySelector("[data-rp-clear]")
@@ -81,11 +82,32 @@ document.addEventListener("nav", () => {
         if (visible) visibleCount += 1
       })
 
+      monthGroups.forEach((monthGroup) => {
+        const visibleItems = Array.from(
+          monthGroup.querySelectorAll("[data-rp-item-category]"),
+        ).filter((item) => !item.hidden)
+        const visibleItemCount = visibleItems.length
+        monthGroup.hidden = visibleItemCount === 0
+
+        const countZh = monthGroup.querySelector("[data-rp-month-count-zh]")
+        const countEn = monthGroup.querySelector("[data-rp-month-count-en]")
+        if (countZh) countZh.textContent = visibleItemCount + " 篇"
+        if (countEn) countEn.textContent = visibleItemCount + (visibleItemCount === 1 ? " post" : " posts")
+      })
+
       groups.forEach((group) => {
         const visibleItem = Array.from(group.querySelectorAll("[data-rp-item-category]")).some(
           (item) => !item.hidden,
         )
         group.hidden = !visibleItem
+
+        const visibleMonthCount = Array.from(
+          group.querySelectorAll("[data-rp-month-group]"),
+        ).filter((monthGroup) => !monthGroup.hidden).length
+        const summaryZh = group.querySelector("[data-rp-year-summary-zh]")
+        const summaryEn = group.querySelector("[data-rp-year-summary-en]")
+        if (summaryZh) summaryZh.textContent = visibleMonthCount + " 个月"
+        if (summaryEn) summaryEn.textContent = visibleMonthCount + (visibleMonthCount === 1 ? " month" : " months")
       })
 
       categoryButtons.forEach((button) => {
@@ -235,6 +257,28 @@ type BlogListItem = {
   topic?: string
 }
 
+type BlogMonthGroup = {
+  key: string
+  number: string
+  name: string
+  items: BlogListItem[]
+}
+
+const MONTH_NAMES = [
+  "JAN",
+  "FEB",
+  "MAR",
+  "APR",
+  "MAY",
+  "JUN",
+  "JUL",
+  "AUG",
+  "SEP",
+  "OCT",
+  "NOV",
+  "DEC",
+]
+
 function getPostSegments(slug: string): string[] {
   return slug.split("/").filter((part) => part.length > 0)
 }
@@ -263,6 +307,27 @@ function getDescription(page: QuartzPluginData): string {
 
   const description = page.description
   return typeof description === "string" ? sanitizeListText(description) : ""
+}
+
+function getMonthGroups(cfg: GlobalConfiguration, items: BlogListItem[]): BlogMonthGroup[] {
+  const monthGroups = new Map<string, BlogMonthGroup>()
+
+  for (const item of items) {
+    const date = getDate(cfg, item.page)
+    const monthIndex = date?.getMonth()
+    const number = monthIndex === undefined ? "--" : `${monthIndex + 1}`.padStart(2, "0")
+    const key = date ? `${date.getFullYear()}-${number}` : "undated"
+    const monthGroup = monthGroups.get(key) ?? {
+      key,
+      number,
+      name: monthIndex === undefined ? "UNDATED" : MONTH_NAMES[monthIndex],
+      items: [],
+    }
+    monthGroup.items.push(item)
+    monthGroups.set(key, monthGroup)
+  }
+
+  return [...monthGroups.values()]
 }
 
 function sanitizeListText(value: string): string {
@@ -418,47 +483,99 @@ export default ((userOpts?: Partial<Options>) => {
         })}
 
         <div class="rp-groups">
-          {[...yearGroups.entries()].map(([year, yearItems]) => (
-            <section class="rp-year-group" data-rp-group aria-labelledby={`rp-year-${year}`}>
-              <header class="rp-year-heading">
-                <span aria-hidden="true">Year</span>
-                <h2 id={`rp-year-${year}`}>{year}</h2>
-              </header>
-              <ol class="rp-list">
-                {yearItems.map(({ page, category, subcategory, topic }) => {
-                  const title = sanitizeListText(
-                    (page.frontmatter?.title as string | undefined) ?? "无标题",
-                  )
-                  const dateStr = formatDate(cfg, page)
-                  const description = getDescription(page)
+          {[...yearGroups.entries()].map(([year, yearItems]) => {
+            const monthGroups = getMonthGroups(cfg, yearItems)
+            return (
+              <section class="rp-year-group" data-rp-group aria-labelledby={`rp-year-${year}`}>
+                <header class="rp-year-heading">
+                  <span class="rp-year-label" aria-hidden="true">
+                    Year
+                  </span>
+                  <h2 id={`rp-year-${year}`}>{year}</h2>
+                  <span class="rp-year-summary">
+                    <span lang="zh" data-rp-year-summary-zh>
+                      {monthGroups.length} 个月
+                    </span>
+                    <span lang="en" data-rp-year-summary-en>
+                      {monthGroups.length} months
+                    </span>
+                  </span>
+                </header>
+                <div class="rp-months">
+                  {monthGroups.map((month) => {
+                    const monthHeadingId = `rp-month-${month.key}`
+                    return (
+                      <section
+                        class="rp-month-group"
+                        data-rp-month-group
+                        aria-labelledby={monthHeadingId}
+                      >
+                        <h3 class="rp-month-heading" id={monthHeadingId}>
+                          <span class="rp-month-number">{month.number}</span>
+                          <span class="rp-month-unit" lang="zh">
+                            月
+                          </span>
+                          <span class="rp-month-name" lang="en">
+                            {month.name}
+                          </span>
+                          <span class="rp-month-count">
+                            <span lang="zh" data-rp-month-count-zh>
+                              {month.items.length} 篇
+                            </span>
+                            <span lang="en" data-rp-month-count-en>
+                              {month.items.length} posts
+                            </span>
+                          </span>
+                        </h3>
+                        <ol class="rp-list">
+                          {month.items.map(({ page, category, subcategory, topic }) => {
+                            const title = sanitizeListText(
+                              (page.frontmatter?.title as string | undefined) ?? "无标题",
+                            )
+                            const dateStr = formatDate(cfg, page)
+                            const description = getDescription(page)
 
-                  return (
-                    <li
-                      class="rp-list-item"
-                      data-rp-item-category={category}
-                      data-rp-item-subcategory={subcategory ?? ""}
-                      data-rp-item-topic={topic ?? ""}
-                    >
-                      <a class="rp-list-link" href={resolveRelative(fileData.slug!, page.slug!)}>
-                        <time class="rp-list-date">{dateStr.slice(5) || "未注明"}</time>
-                        <div class="rp-list-main">
-                          <div class="rp-list-heading">
-                            <h3>{title}</h3>
-                          </div>
-                          {description && <p>{description}</p>}
-                        </div>
-                        <div class="rp-list-tags" aria-label="分类">
-                          <span>{formatDirLabel(category)}</span>
-                          {subcategory && <span>{formatDirLabel(subcategory)}</span>}
-                          {topic && <span>{formatDirLabel(topic)}</span>}
-                        </div>
-                      </a>
-                    </li>
-                  )
-                })}
-              </ol>
-            </section>
-          ))}
+                            return (
+                              <li
+                                class="rp-list-item"
+                                data-rp-item-category={category}
+                                data-rp-item-subcategory={subcategory ?? ""}
+                                data-rp-item-topic={topic ?? ""}
+                              >
+                                <a
+                                  class="rp-list-link"
+                                  href={resolveRelative(fileData.slug!, page.slug!)}
+                                >
+                                  <time
+                                    class="rp-list-date"
+                                    datetime={dateStr || undefined}
+                                    aria-label={dateStr || "未注明日期"}
+                                  >
+                                    {dateStr.slice(-2) || "--"}
+                                  </time>
+                                  <div class="rp-list-main">
+                                    <div class="rp-list-heading">
+                                      <h4>{title}</h4>
+                                    </div>
+                                    {description && <p>{description}</p>}
+                                  </div>
+                                  <div class="rp-list-tags" aria-label="分类">
+                                    <span>{formatDirLabel(category)}</span>
+                                    {subcategory && <span>{formatDirLabel(subcategory)}</span>}
+                                    {topic && <span>{formatDirLabel(topic)}</span>}
+                                  </div>
+                                </a>
+                              </li>
+                            )
+                          })}
+                        </ol>
+                      </section>
+                    )
+                  })}
+                </div>
+              </section>
+            )
+          })}
         </div>
       </section>
     )

@@ -76,6 +76,7 @@
   & .rp-filter[hidden],
   & .rp-subcategory-panel[hidden],
   & .rp-topic-panel[hidden],
+  & .rp-month-group[hidden],
   & .rp-year-group[hidden],
   & .rp-list-item[hidden] {
     display: none;
@@ -148,33 +149,107 @@
 
   & .rp-year-group {
     display: grid;
-    grid-template-columns: 6rem minmax(0, 1fr);
-    gap: clamp(1.25rem, 3vw, 2.75rem);
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: clamp(1.75rem, 4vw, 3.5rem);
   }
 
   & .rp-year-heading {
+    position: sticky;
+    top: 5.5rem;
+    display: block;
     align-self: start;
-    padding-top: 0.65rem;
+    padding: 0.15rem 0 0.3rem 0.9rem;
+    border-left: 2px solid color-mix(in srgb, var(--secondary) 78%, transparent);
 
-    & span {
+    & .rp-year-label {
       display: block;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.45rem;
       color: var(--rp-muted);
       font-family: var(--codeFont);
-      font-size: 0.64rem;
-      letter-spacing: 0.12em;
+      font-size: 0.6rem;
+      font-weight: var(--weight-medium, 500);
+      letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
     & h2 {
       margin: 0;
-      color: color-mix(in srgb, var(--rp-ink) 84%, var(--rp-muted));
+      color: var(--rp-ink);
       font-family: var(--codeFont);
-      font-size: 1rem;
-      font-weight: var(--weight-medium, 500);
-      letter-spacing: -0.03em;
-      line-height: 1.2;
+      font-size: clamp(1.65rem, 3vw, 2.15rem);
+      font-weight: var(--weight-semibold, 600);
+      letter-spacing: -0.08em;
+      line-height: 1;
     }
+
+    & .rp-year-summary {
+      display: block;
+      margin-top: 0.65rem;
+      color: color-mix(in srgb, var(--rp-muted) 82%, transparent);
+      font-family: var(--codeFont);
+      font-size: 0.58rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  }
+
+  & .rp-months {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  & .rp-month-group {
+    display: grid;
+    grid-template-columns: 3.65rem minmax(0, 1fr);
+    gap: clamp(0.9rem, 2.25vw, 1.5rem);
+  }
+
+  & .rp-month-heading {
+    display: grid;
+    grid-template-columns: 0.35rem auto auto;
+    align-content: start;
+    justify-content: start;
+    column-gap: 0.35rem;
+    margin: 0;
+    padding-top: 0.7rem;
+    color: var(--rp-muted);
+    font-family: var(--codeFont);
+    font-weight: var(--weight-medium, 500);
+    line-height: 1;
+
+    &::before {
+      width: 0.32rem;
+      height: 0.32rem;
+      margin-top: 0.45rem;
+      border-radius: 1px;
+      background: var(--secondary);
+      content: "";
+    }
+  }
+
+  & .rp-month-number {
+    color: color-mix(in srgb, var(--rp-ink) 78%, var(--rp-muted));
+    font-size: 1.15rem;
+    letter-spacing: -0.06em;
+  }
+
+  & .rp-month-unit,
+  & .rp-month-name {
+    align-self: end;
+    padding-bottom: 0.08rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  & .rp-month-count {
+    grid-column: 2 / -1;
+    margin-top: 0.45rem;
+    color: color-mix(in srgb, var(--rp-muted) 72%, transparent);
+    font-size: 0.55rem;
+    font-weight: var(--weight-regular, 400);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
   }
 
   & .rp-list {
@@ -187,7 +262,7 @@
 
   & .rp-list-link {
     display: grid;
-    grid-template-columns: 3.2rem minmax(0, 1fr) minmax(4.8rem, auto);
+    grid-template-columns: 2rem minmax(0, 1fr) minmax(4.8rem, auto);
     align-items: start;
     gap: clamp(0.8rem, 2vw, 1.2rem);
     margin-inline: -0.75rem;
@@ -202,7 +277,7 @@
     &:hover {
       background: var(--rp-wash);
 
-      & .rp-list-heading h3 {
+      & .rp-list-heading h4 {
         color: var(--secondary);
       }
     }
@@ -239,7 +314,7 @@
     }
   }
 
-  & .rp-list-heading h3 {
+  & .rp-list-heading h4 {
     margin: 0;
     color: var(--rp-ink);
     font-size: 0.98rem;
@@ -322,22 +397,43 @@
 
     & .rp-year-group {
       grid-template-columns: 1fr;
-      gap: 1rem;
+      gap: 1.4rem;
     }
 
     & .rp-year-heading {
-      display: flex;
-      align-items: baseline;
-      gap: 0.55rem;
-      padding: 0;
+      position: static;
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: end;
+      justify-content: start;
+      column-gap: 0.75rem;
+      padding: 0 0 0 0.75rem;
     }
 
-    & .rp-year-heading span {
+    & .rp-year-heading .rp-year-label {
+      grid-column: 1 / -1;
       margin: 0;
     }
 
+    & .rp-year-heading .rp-year-summary {
+      margin: 0 0 0.16rem;
+    }
+
+    & .rp-months {
+      gap: 2rem;
+    }
+
+    & .rp-month-group {
+      grid-template-columns: 1fr;
+      gap: 0.45rem;
+    }
+
+    & .rp-month-heading {
+      padding: 0 0 0.25rem 0.45rem;
+    }
+
     & .rp-list-link {
-      grid-template-columns: 2.8rem minmax(0, 1fr);
+      grid-template-columns: 2rem minmax(0, 1fr);
       gap: 0.7rem;
       margin-inline: -0.45rem;
       padding: 0.8rem 0.45rem;
@@ -374,7 +470,7 @@
   .recent-posts .rp-filter,
   .recent-posts .rp-search input,
   .recent-posts .rp-list-link,
-  .recent-posts .rp-list-heading h3 {
+  .recent-posts .rp-list-heading h4 {
     transition: none;
   }
 }
