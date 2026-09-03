@@ -29,14 +29,14 @@ export default ((opts?: Options) => {
           <p class="footer-copyright">
             <span class="footer-copyright-meta">2026—PRESENT</span>
             {showSiteViews && (
-              <>
+              <span class="footer-site-views-group" data-site-views aria-live="polite" hidden>
                 <span class="footer-copyright-divider" aria-hidden="true">
                   ·
                 </span>
-                <span class="footer-site-views" data-site-views aria-live="polite">
-                  <span data-site-views-count>{siteViewsBase.toLocaleString("en-US")}</span> VIEWS
+                <span class="footer-site-views">
+                  <span data-site-views-count /> VIEWS
                 </span>
-              </>
+              </span>
             )}
           </p>
           <a class="footer-signature" href="/" aria-label="Liang Cheng, Nanjing, China">

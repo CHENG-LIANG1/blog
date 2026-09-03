@@ -14,6 +14,7 @@ const goatWindow = window as GoatCounterWindow
 
 let activeCode: string | undefined
 let loadingScript: Promise<void> | undefined
+let resolvedTotalViews: { code: string; value: string } | undefined
 
 const getCode = () => {
   const code = document.querySelector<HTMLElement>(footerSelector)?.dataset.goatcounterCode
@@ -25,6 +26,15 @@ const showTotalViews = async (code: string) => {
   const container = document.querySelector<HTMLElement>("[data-site-views]")
   const count = container?.querySelector<HTMLElement>("[data-site-views-count]")
   if (!container || !count) return
+
+  if (resolvedTotalViews?.code === code) {
+    count.textContent = resolvedTotalViews.value
+    container.hidden = false
+    return
+  }
+
+  count.textContent = ""
+  container.hidden = true
 
   const base = Number.parseInt(footer?.dataset.siteViewsBase ?? "0", 10)
   const safeBase = Number.isSafeInteger(base) && base >= 0 ? base : 0
@@ -43,10 +53,12 @@ const showTotalViews = async (code: string) => {
     const goatCounterViews = Number(value.replace(/[^\d]/g, ""))
     if (!Number.isSafeInteger(goatCounterViews)) return
 
-    count.textContent = (safeBase + goatCounterViews).toLocaleString("en-US")
+    const formattedTotal = (safeBase + goatCounterViews).toLocaleString("en-US")
+    resolvedTotalViews = { code, value: formattedTotal }
+    count.textContent = formattedTotal
     container.hidden = false
   } catch {
-    // Keep showing the historical baseline when GoatCounter is unavailable or blocked.
+    // Leave the view count hidden when GoatCounter is unavailable or blocked.
   }
 }
 

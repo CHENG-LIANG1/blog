@@ -46,6 +46,15 @@ footer {
     color: color-mix(in srgb, var(--gray) 56%, transparent);
   }
 
+  & .footer-site-views-group {
+    display: inline-flex;
+    gap: 0.32rem;
+  }
+
+  & .footer-site-views-group[hidden] {
+    display: none;
+  }
+
   & .footer-site-views {
     color: color-mix(in srgb, var(--gray) 82%, transparent);
     font-variant-numeric: tabular-nums;
@@ -135,6 +144,10 @@ footer {
       gap: 0.24rem;
       font-size: 0.54rem;
       letter-spacing: 0.04em;
+    }
+
+    & .footer-site-views-group {
+      gap: 0.24rem;
     }
 
     & .footer-signature {
