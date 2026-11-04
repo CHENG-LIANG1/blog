@@ -1,7 +1,7 @@
 ---
-title: 梁非凡 Ray | 前端工程师与独立开发者
-description: 梁程（梁非凡 Ray / Liang Cheng）的个人网站与博客，记录前端开发、Vibe Coding、独立产品与生活收藏。
-socialDescription: 梁程（梁非凡 Ray / Liang Cheng）的个人网站与博客，记录前端开发、Vibe Coding、独立产品与生活收藏。
+title: 梁非凡 Ray | AI 全栈工程师与独立开发者
+description: 梁程（梁非凡 Ray / Liang Cheng）的个人网站与博客，记录 AI 全栈开发、Vibe Coding、独立产品与生活收藏。
+socialDescription: 梁程（梁非凡 Ray / Liang Cheng）的个人网站与博客，记录 AI 全栈开发、Vibe Coding、独立产品与生活收藏。
 aliases:
   - Liang Cheng
   - CHENG-LIANG1
@@ -36,7 +36,7 @@ aliases:
 <img class="home-avatar" src="/blog-assets/avatar.jpg" alt="Liang Cheng’s avatar" width="512" height="512" />
 <div class="home-hero-text">
 <h1 class="home-title">Liang Cheng</h1>
-<p class="home-lede">Hey, I’m Liang Cheng — also known as Ray. I’m a frontend engineer who ships independent products.</p>
+<p class="home-lede">Hey, I’m Liang Cheng — also known as Ray. I’m an AI full-stack engineer who builds and ships independent products.</p>
 </div>
 </div>
 
@@ -49,7 +49,7 @@ aliases:
 <div class="home-prose">
 <p>I turn ideas into products people can actually use — from interaction and interface work to engineering and release. See my <a href="/Projects/">complete project list</a>.</p>
 
-<p>I write about frontend engineering, Vibe Coding, indie development, and English teaching: <a href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架">shipping an app from zero</a>, <a href="/技术/我的博客是怎么做的">how this blog works</a>, and <a href="/英语/英语学习之道">learning English for real-world use</a>. More notes are in the <a href="/blog">blog</a>.</p>
+<p>I write about AI full-stack engineering, Vibe Coding, indie development, and English teaching: <a href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架">shipping an app from zero</a>, <a href="/技术/我的博客是怎么做的">how this blog works</a>, and <a href="/英语/英语学习之道">learning English for real-world use</a>. More notes are in the <a href="/blog">blog</a>.</p>
 
 <p>Outside code, I collect physical games and music albums, and take photos — browse my <a href="/collections">collections</a> and <a href="/album">album</a>. My favorite artist is <a href="https://soft-lipa-archive.vercel.app/" target="_blank" rel="noopener noreferrer"><strong>Soft Lipa</strong></a>. I’m from Haimen and now based in <strong>Nanjing</strong>. <strong>IELTS 7.5</strong>; comfortable working in English.</p>
 </div>
@@ -66,7 +66,7 @@ aliases:
 <img class="home-avatar" src="/blog-assets/avatar.jpg" alt="梁程的头像" width="512" height="512" />
 <div class="home-hero-text">
 <h1 class="home-title">梁程</h1>
-<p class="home-lede">嗨，我是梁程，也叫梁非凡 Ray。前端工程师，也在独立开发自己的产品。</p>
+<p class="home-lede">嗨，我是梁程，也叫梁非凡 Ray。AI 全栈工程师，也在独立开发自己的产品。</p>
 </div>
 </div>
 
@@ -79,7 +79,7 @@ aliases:
 <div class="home-prose">
 <p>我把想法做成真正可用、可以发布的产品——从界面与交互，到工程实现和上架。这里是我的<a href="/Projects/">完整项目列表</a>。</p>
 
-<p>我在<a href="/blog">博客</a>记录前端、Vibe Coding、独立开发和英语教学，包括<a href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架">从零上架 App</a>、<a href="/技术/我的博客是怎么做的">这个博客的工作流</a>，以及<a href="/英语/英语学习之道">把英语真正用起来</a>。</p>
+<p>我在<a href="/blog">博客</a>记录 AI 全栈开发、Vibe Coding、独立开发和英语教学，包括<a href="/技术/Vibe-Coding-从-0-基础到-App-Store-上架">从零上架 App</a>、<a href="/技术/我的博客是怎么做的">这个博客的工作流</a>，以及<a href="/英语/英语学习之道">把英语真正用起来</a>。</p>
 
 <p>代码之外，我收藏游戏实体盘和音乐专辑，也会拍照；这些都整理在<a href="/collections">收藏</a>和<a href="/album">相册</a>里。我最喜欢的歌手是<a href="https://soft-lipa-archive.vercel.app/" target="_blank" rel="noopener noreferrer"><strong>蛋堡</strong></a>。来自南通海门，现居<strong>南京</strong>。<strong>雅思 7.5</strong>，英语可以作为工作语言。</p>
 </div>

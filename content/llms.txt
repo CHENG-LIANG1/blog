@@ -1,6 +1,6 @@
 # 梁程 / 梁非凡 Ray
 
-> 梁程（梁非凡 Ray / Liang Cheng）的个人技术博客，记录 AI 辅助开发、Vibe Coding、前端工程、独立产品与英语学习实践。
+> 梁程（梁非凡 Ray / Liang Cheng）的个人技术博客，记录 AI 全栈开发、Vibe Coding、独立产品与英语学习实践。
 
 Canonical site: https://www.chengliang.pro/
 Author: 梁程 / 梁非凡 Ray
